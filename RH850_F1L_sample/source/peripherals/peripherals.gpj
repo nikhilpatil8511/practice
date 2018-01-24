@@ -1,0 +1,15 @@
+#!gbuild
+[Subproject]
+adc\adc.gpj
+clkc\clkc.gpj
+csi\csi.gpj
+enc\enc.gpj
+intc\intc.gpj
+lps\lps.gpj
+ostm\ostm.gpj
+port\port.gpj
+pwmd\pwmd.gpj
+rlin\rlin.gpj
+rscan\rscan.gpj
+stbc\stbc.gpj
+tau\tau.gpj

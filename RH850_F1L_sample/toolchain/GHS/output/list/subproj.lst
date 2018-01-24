@@ -1,0 +1,562 @@
+                                                                      Page 1
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+Command Line: C:\ghs\comp_201517\ease850.exe -w -elf -b0 -I..\..\device -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5 -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest -IC:\ghs\comp_201517\lib\rh850 -cg_underscore -cpu=rh850g3k -nofpu -no_v850_simd -rh850_fpsimd=none -nomacro -patch_dbo=C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS\output\obj\subproj.dbo -source=subproj.c -o output\obj\gh_000afdo1.o -list=output\list\subproj.lst C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s 
+Original File: C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+Source File: subproj.c
+Directory: C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+Host OS: Windows 7 Service Pack 1
+EASE: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win32-comp-ecom
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 01:50:13 2015
+
+Release Date: Thu Oct 22 03:32:32 2015
+
+                           1 --Driver Command: ccv850 -c -MD -I..\..\device
+                           2 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+                           3 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest
+                           4 --		-G -object_dir=output\obj -list -list_dir=output/list -passsource
+                           5 --		-bsp generic -fsoft -cpu=rh850g3k -D__GHS__ -dwarf2 -large_sda
+                           6 --		-sda -filetype.c ..\..\source\subprojtest\subproj.c -o
+                           7 --		output\obj\subproj.o
+                           8 --Source File:   ..\..\source\subprojtest\subproj.c
+                           9 --Directory:     
+                          10 --		C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+                          11 --Compile Date:  Thu Jan 18 08:13:42 2018
+                          12 --Host OS:       Win32
+                          13 --Version:       C-RH850 2015.1.7 RELEASE VERSION
+                          14 --Release:       Compiler v2015.1.7
+                          15 --Revision Date: Thu Oct 22 02:06:12 2015
+                          16 --Release Date:  Thu Oct 22 03:34:32 2015
+                          17 -- ecom  -g -w
+                          18 
+                          19 --1: #include "subproj.h"
+                          20 --3: int add_kar_le(int a, int b){
+                          21 	.text
+                          22 ..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Csubproj...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D86..0::
+                          23 	.align	2
+                          24 	.global	_add_kar_le
+                          25 _add_kar_le:
+00000000 0610             26 	mov	r6,r2
+00000002 0798             27 	mov	r7,r19
+                          28 --	    .bf
+                          29 .LDW01:
+                          30 --4:     int c = 0 ;
+00000004 000a             31 	mov	0,r1
+                          32 --5:     c= a+b;
+00000006 1308             33 	mov	r19,r1
+00000008 c209             34 	add	r2,r1
+                          35 --6:     return c;
+0000000a 0150             36 	mov	r1,r10
+                          37 --	    .ef
+                          38 .LDW11:
+0000000c 7f00             39 	jmp	[lp]
+                          40 	.global	___ghs_eofn_add_kar_le
+                          41 ___ghs_eofn_add_kar_le:
+                          42 	.type	_add_kar_le,@function
+                          43 	.size	_add_kar_le,.-_add_kar_le
+                          44 	.align	2
+                          45 --_c	r1	local
+                          46 
+                          47 --_a	r2	param
+                          48 --_b	r19	param
+                          49 
+                          50 	.section ".bss","awb"
+
+                                                                      Page 2
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+                          51 .L38:
+                          52 	.type	.L38,@object
+                          53 	.size	.L38,0
+                          54 	.data
+                          55 	.text
+                          56 
+                          57 --7: }
+                          58 	.align	2
+                          59 
+                          60 	.data
+                          61 	.ghsnote version,17
+                          62 	.ghsnote tools,3
+                          63 	.ghsnote options,144
+                          64 	.text
+                          65 	.align	2
+                          66 ..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Csubproj...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D86..0::
+                          67 	.section	.debug_info
+                          68 .Ldw_begin:
+00000000 11010000         69 	.word	.Ldw_end-.Ldw_begin-4
+00000004 0200             70 	.byte	2,0
+00000006 00000000*        71 	.word	.Ldw_abbr_begin
+0000000a 04               72 	.byte	4
+                          73 	.section	.debug_abbrev
+                          74 .Ldw_abbr_begin:
+                          75 	.section	.debug_info
+0000000b 01               76 	.byte	1
+0000000c 00000000*        77 	.word	..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Csubproj...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D86..0
+00000010 00000000*        78 	.word	..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Csubproj...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D86..0
+00000014 2e2e5c2e2e5c     79 	.strz	"..\\..\\source\\subprojtest\\subproj.c"
+0000001a 736f75726365 
+00000020 5c7375627072 
+00000026 6f6a74657374 
+0000002c 5c7375627072 
+00000032 6f6a2e6300 
+00000037 433a5c557365     80 	.strz	"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\toolchain\\GHS"
+0000003d 72735c6e696b 
+00000043 68696c2e7061 
+00000049 74696c5c446f 
+0000004f 63756d656e74 
+00000055 735c72656e65 
+0000005b 7361735c5248 
+00000061 3835305f4631 
+00000067 4c5f73616d70 
+0000006d 6c655c746f6f 
+00000073 6c636861696e 
+00000079 5c47485300 
+0000007e 474853204320     81 	.strz	"GHS C 2015.1.7 [dual]"
+00000084 323031352e31 
+0000008a 2e37205b6475 
+00000090 616c5d00 
+00000094 0100             82 	.byte	1,0
+00000096 00000000*        83 	.word	.Ldw_line_begin
+0000009a 00000000*        84 	.word	.Ldw_macinfo_begin
+0000009e 00               85 	.byte	0
+                          86 
+                          87 	.section	.debug_abbrev
+00000000 01               88 	.byte	1
+00000001 11               89 	.byte	17
+00000002 01               90 	.byte	1
+00000003 1101             91 	.byte	17,1
+00000005 1201             92 	.byte	18,1
+
+                                                                      Page 3
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+00000007 0308             93 	.byte	3,8
+00000009 1b08             94 	.byte	27,8
+0000000b 2508             95 	.byte	37,8
+0000000d 1305             96 	.byte	19,5
+0000000f 1006             97 	.byte	16,6
+00000011 4306             98 	.byte	67,6
+00000013 420b             99 	.byte	66,11
+00000015 0000            100 	.byte	0,0
+                         101 
+                         102 	.section	.debug_line
+                         103 .Ldw_line_begin:
+00000000 74000000        104 	.word	.Ldw_line_end-.Ldw_line_begin-4
+00000004 0200            105 	.byte	2,0
+00000006 00000000*       106 	.word	.Ldw_lpro_end-.Ldw_lpro_begin
+                         107 .Ldw_lpro_begin:
+0000000a 01              108 	.byte	1
+0000000b 00              109 	.byte	0
+0000000c 00              110 	.byte	0
+0000000d 04              111 	.byte	4
+0000000e 0a              112 	.byte	10
+0000000f 000101          113 	.byte	0,1,1
+00000012 010100          114 	.byte	1,1,0
+00000015 000001          115 	.byte	0,0,1
+00000018 00              116 	.byte	0
+00000019 2e2e5c2e2e5c    117 	.strz	"..\\..\\source\\subprojtest\\subproj.c"
+0000001f 736f75726365 
+00000025 5c7375627072 
+0000002b 6f6a74657374 
+00000031 5c7375627072 
+00000037 6f6a2e6300 
+0000003c 000000          118 	.byte	0,0,0
+0000003f 2e2e5c2e2e5c    119 	.strz	"..\\..\\source\\subprojtest\\subproj.h"
+00000045 736f75726365 
+0000004b 5c7375627072 
+00000051 6f6a74657374 
+00000057 5c7375627072 
+0000005d 6f6a2e6800 
+00000062 000000          120 	.byte	0,0,0
+00000065 00              121 	.byte	0
+                         122 .Ldw_lpro_end:
+                         123 	.section	.debug_macinfo
+                         124 .Ldw_macinfo_begin:
+                         125 	.section	.debug_frame
+                         126 .LDW_3ecfb50:
+00000000 00000000*       127 	.word	.LDW_unq_2-.LDW_unq_1
+                         128 .LDW_unq_1:
+00000004 ffffffff        129 	.byte	255,255,255,255
+00000008 01              130 	.byte	1
+00000009 00              131 	.byte	0
+0000000a 01              132 	.byte	1
+0000000b 01              133 	.byte	1
+0000000c 1f              134 	.byte	31
+0000000d 0c              135 	.byte	12
+0000000e 03              136 	.byte	3
+0000000f 00              137 	.byte	0
+00000010 07              138 	.byte	7
+00000011 00              139 	.byte	0
+00000012 07              140 	.byte	7
+00000013 01              141 	.byte	1
+00000014 07              142 	.byte	7
+00000015 02              143 	.byte	2
+
+                                                                      Page 4
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+00000016 07              144 	.byte	7
+00000017 03              145 	.byte	3
+00000018 07              146 	.byte	7
+00000019 04              147 	.byte	4
+0000001a 07              148 	.byte	7
+0000001b 05              149 	.byte	5
+0000001c 07              150 	.byte	7
+0000001d 06              151 	.byte	6
+0000001e 07              152 	.byte	7
+0000001f 07              153 	.byte	7
+00000020 07              154 	.byte	7
+00000021 08              155 	.byte	8
+00000022 07              156 	.byte	7
+00000023 09              157 	.byte	9
+00000024 07              158 	.byte	7
+00000025 0a              159 	.byte	10
+00000026 07              160 	.byte	7
+00000027 0b              161 	.byte	11
+00000028 07              162 	.byte	7
+00000029 0c              163 	.byte	12
+0000002a 07              164 	.byte	7
+0000002b 0d              165 	.byte	13
+0000002c 07              166 	.byte	7
+0000002d 0e              167 	.byte	14
+0000002e 07              168 	.byte	7
+0000002f 0f              169 	.byte	15
+00000030 07              170 	.byte	7
+00000031 10              171 	.byte	16
+00000032 07              172 	.byte	7
+00000033 11              173 	.byte	17
+00000034 07              174 	.byte	7
+00000035 12              175 	.byte	18
+00000036 07              176 	.byte	7
+00000037 13              177 	.byte	19
+00000038 08              178 	.byte	8
+00000039 14              179 	.byte	20
+0000003a 08              180 	.byte	8
+0000003b 15              181 	.byte	21
+0000003c 08              182 	.byte	8
+0000003d 16              183 	.byte	22
+0000003e 08              184 	.byte	8
+0000003f 17              185 	.byte	23
+00000040 08              186 	.byte	8
+00000041 18              187 	.byte	24
+00000042 08              188 	.byte	8
+00000043 19              189 	.byte	25
+00000044 08              190 	.byte	8
+00000045 1a              191 	.byte	26
+00000046 08              192 	.byte	8
+00000047 1b              193 	.byte	27
+00000048 08              194 	.byte	8
+00000049 1c              195 	.byte	28
+0000004a 08              196 	.byte	8
+0000004b 1d              197 	.byte	29
+0000004c 07              198 	.byte	7
+0000004d 1e              199 	.byte	30
+0000004e 08              200 	.byte	8
+0000004f 1f              201 	.byte	31
+00000050 07              202 	.byte	7
+00000051 20              203 	.byte	32
+00000052 07              204 	.byte	7
+
+                                                                      Page 5
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+00000053 21              205 	.byte	33
+00000054 07              206 	.byte	7
+00000055 22              207 	.byte	34
+00000056 07              208 	.byte	7
+00000057 23              209 	.byte	35
+00000058 07              210 	.byte	7
+00000059 24              211 	.byte	36
+0000005a 07              212 	.byte	7
+0000005b 25              213 	.byte	37
+0000005c 07              214 	.byte	7
+0000005d 26              215 	.byte	38
+0000005e 07              216 	.byte	7
+0000005f 27              217 	.byte	39
+00000060 07              218 	.byte	7
+00000061 28              219 	.byte	40
+00000062 07              220 	.byte	7
+00000063 29              221 	.byte	41
+00000064 07              222 	.byte	7
+00000065 2a              223 	.byte	42
+00000066 07              224 	.byte	7
+00000067 2b              225 	.byte	43
+00000068 07              226 	.byte	7
+00000069 2c              227 	.byte	44
+0000006a 07              228 	.byte	7
+0000006b 2d              229 	.byte	45
+0000006c 07              230 	.byte	7
+0000006d 2e              231 	.byte	46
+0000006e 07              232 	.byte	7
+0000006f 2f              233 	.byte	47
+00000070 07              234 	.byte	7
+00000071 30              235 	.byte	48
+00000072 07              236 	.byte	7
+00000073 31              237 	.byte	49
+00000074 07              238 	.byte	7
+00000075 32              239 	.byte	50
+00000076 07              240 	.byte	7
+00000077 33              241 	.byte	51
+00000078 07              242 	.byte	7
+00000079 34              243 	.byte	52
+0000007a 07              244 	.byte	7
+0000007b 35              245 	.byte	53
+0000007c 07              246 	.byte	7
+0000007d 36              247 	.byte	54
+0000007e 07              248 	.byte	7
+0000007f 37              249 	.byte	55
+00000080 07              250 	.byte	7
+00000081 38              251 	.byte	56
+00000082 07              252 	.byte	7
+00000083 39              253 	.byte	57
+00000084 07              254 	.byte	7
+00000085 3a              255 	.byte	58
+00000086 07              256 	.byte	7
+00000087 3b              257 	.byte	59
+00000088 07              258 	.byte	7
+00000089 3c              259 	.byte	60
+0000008a 07              260 	.byte	7
+0000008b 3d              261 	.byte	61
+0000008c 07              262 	.byte	7
+0000008d 3e              263 	.byte	62
+0000008e 07              264 	.byte	7
+0000008f 3f              265 	.byte	63
+
+                                                                      Page 6
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+                         266 .LDW_unq_2:
+                         267 	.section	.debug_info
+                         268 .LDW_169e270:
+0000009f 25              269 	.byte	37
+000000a0 696e7400        270 	.strz	"int"
+000000a4 05              271 	.byte	5
+000000a5 04              272 	.byte	4
+                         273 
+                         274 	.section	.debug_abbrev
+00000017 25              275 	.byte	37
+00000018 24              276 	.byte	36
+00000019 00              277 	.byte	0
+0000001a 0308            278 	.byte	3,8
+0000001c 3e0b            279 	.byte	62,11
+0000001e 0b0b            280 	.byte	11,11
+00000020 0000            281 	.byte	0,0
+                         282 
+                         283 	.section	.debug_info
+                         284 .LDW_169e2a8:
+000000a6 44              285 	.byte	68
+000000a7 00000000*       286 	.word	.LDW_169e270
+000000ab 01              287 	.byte	1
+                         288 
+                         289 	.section	.debug_abbrev
+00000022 44              290 	.byte	68
+00000023 15              291 	.byte	21
+00000024 01              292 	.byte	1
+00000025 4910            293 	.byte	73,16
+00000027 270c            294 	.byte	39,12
+00000029 0000            295 	.byte	0,0
+                         296 
+                         297 	.section	.debug_info
+                         298 .LDW_169a180:
+000000ac 12              299 	.byte	18
+000000ad 00000000*       300 	.word	.LDW_169e270
+000000b1 00              301 	.byte	0
+                         302 
+                         303 	.section	.debug_abbrev
+0000002b 12              304 	.byte	18
+0000002c 05              305 	.byte	5
+0000002d 00              306 	.byte	0
+0000002e 4910            307 	.byte	73,16
+00000030 4b0c            308 	.byte	75,12
+00000032 0000            309 	.byte	0,0
+                         310 
+                         311 	.section	.debug_info
+                         312 .LDW_169a1e0:
+000000b2 12              313 	.byte	18
+000000b3 00000000*       314 	.word	.LDW_169e270
+000000b7 00              315 	.byte	0
+                         316 
+000000b8 00              317 	.byte	0
+                         318 
+                         319 .LDW_16aff28:
+000000b9 14              320 	.byte	20
+000000ba 6164645f6b61    321 	.strz	"add_kar_le"
+000000c0 725f6c6500 
+000000c5 03              322 	.byte	3
+000000c6 05              323 	.byte	5
+000000c7 01              324 	.byte	1
+000000c8 00000000*       325 	.word	.LDW_169e270
+
+                                                                      Page 7
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+000000cc 00000000*       326 	.word	_add_kar_le
+000000d0 00000000*       327 	.word	___ghs_eofn_add_kar_le
+000000d4 0153            328 	.byte	1,83
+000000d6 02              329 	.byte	2
+000000d7 00              330 	.byte	0
+000000d8 02              331 	.byte	2
+000000d9 00              332 	.byte	0
+000000da 00              333 	.byte	0
+000000db 00              334 	.byte	0
+000000dc 00              335 	.byte	0
+000000dd 01              336 	.byte	1
+000000de 01              337 	.byte	1
+000000df 00              338 	.byte	0
+000000e0 01              339 	.byte	1
+                         340 
+                         341 	.section	.debug_abbrev
+00000034 14              342 	.byte	20
+00000035 2e              343 	.byte	46
+00000036 01              344 	.byte	1
+00000037 0308            345 	.byte	3,8
+00000039 3b0f            346 	.byte	59,15
+0000003b 390f            347 	.byte	57,15
+0000003d 3a0f            348 	.byte	58,15
+0000003f 4910            349 	.byte	73,16
+00000041 1101            350 	.byte	17,1
+00000043 1201            351 	.byte	18,1
+00000045 400a            352 	.byte	64,10
+00000047 8341            353 	.byte	131,65
+00000049 0f              354 	.byte	15
+0000004a 8741            355 	.byte	135,65
+0000004c 0d              356 	.byte	13
+0000004d 8541            357 	.byte	133,65
+0000004f 0f              358 	.byte	15
+00000050 8641            359 	.byte	134,65
+00000052 0d              360 	.byte	13
+00000053 9241            361 	.byte	146,65
+00000055 0f              362 	.byte	15
+00000056 3c0c            363 	.byte	60,12
+00000058 200b            364 	.byte	32,11
+0000005a 3f0c            365 	.byte	63,12
+0000005c 320b            366 	.byte	50,11
+0000005e 4c0b            367 	.byte	76,11
+00000060 270c            368 	.byte	39,12
+00000062 0000            369 	.byte	0,0
+                         370 
+                         371 	.section	.debug_frame
+                         372 .LDW_3f33fa8:
+00000090 00000000*       373 	.word	.LDW_unq_4-.LDW_unq_3
+                         374 .LDW_unq_3:
+00000094 00000000*       375 	.word	.LDW_3ecfb50
+00000098 00000000*       376 	.word	_add_kar_le
+0000009c 00000000*       377 	.word	___ghs_eofn_add_kar_le-_add_kar_le
+000000a0 01              378 	.byte	1
+000000a1 00000000*       379 	.word	.LDW11
+000000a5 00              380 	.byte	0
+000000a6 00              381 	.byte	0
+000000a7 00              382 	.byte	0
+                         383 .LDW_unq_4:
+                         384 	.section	.debug_line
+00000066 000502          385 	.byte	0,5,2
+00000069 00000000*       386 	.word	_add_kar_le
+
+                                                                      Page 8
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+0000006d 0c              387 	.byte	12
+0000006e 06              388 	.byte	6
+0000006f 1b              389 	.byte	27
+00000070 13              390 	.byte	19
+00000071 1b              391 	.byte	27
+00000072 13              392 	.byte	19
+00000073 02              393 	.byte	2
+00000074 02              394 	.byte	2
+00000075 000101          395 	.byte	0,1,1
+                         396 	.section	.debug_info
+                         397 .LDW_3ed0e08:
+000000e1 0f              398 	.byte	15
+000000e2 6100            399 	.strz	"a"
+000000e4 03              400 	.byte	3
+000000e5 14              401 	.byte	20
+000000e6 01              402 	.byte	1
+000000e7 00000000*       403 	.word	.LDW_169e270
+000000eb 00              404 	.byte	0
+000000ec 0152            405 	.byte	1,82
+                         406 
+                         407 	.section	.debug_abbrev
+00000064 0f              408 	.byte	15
+00000065 05              409 	.byte	5
+00000066 00              410 	.byte	0
+00000067 0308            411 	.byte	3,8
+00000069 3b0f            412 	.byte	59,15
+0000006b 390f            413 	.byte	57,15
+0000006d 3a0f            414 	.byte	58,15
+0000006f 4910            415 	.byte	73,16
+00000071 4b0c            416 	.byte	75,12
+00000073 020a            417 	.byte	2,10
+00000075 0000            418 	.byte	0,0
+                         419 
+                         420 	.section	.debug_info
+                         421 .LDW_3ed0e60:
+000000ee 0f              422 	.byte	15
+000000ef 6200            423 	.strz	"b"
+000000f1 03              424 	.byte	3
+000000f2 1b              425 	.byte	27
+000000f3 01              426 	.byte	1
+000000f4 00000000*       427 	.word	.LDW_169e270
+000000f8 00              428 	.byte	0
+000000f9 0163            429 	.byte	1,99
+                         430 
+                         431 .LDW_3ee2248:
+000000fb 1d              432 	.byte	29
+000000fc 00000000*       433 	.word	.LDW01
+00000100 00000000*       434 	.word	.LDW11
+                         435 
+                         436 	.section	.debug_abbrev
+00000077 1d              437 	.byte	29
+00000078 0b              438 	.byte	11
+00000079 01              439 	.byte	1
+0000007a 1101            440 	.byte	17,1
+0000007c 1201            441 	.byte	18,1
+0000007e 0000            442 	.byte	0,0
+                         443 
+                         444 	.section	.debug_info
+                         445 .LDW_3ed0eb8:
+00000104 04              446 	.byte	4
+00000105 6300            447 	.strz	"c"
+
+                                                                      Page 9
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000afdo1.s
+00000107 04              448 	.byte	4
+00000108 09              449 	.byte	9
+00000109 01              450 	.byte	1
+0000010a 00000000*       451 	.word	.LDW_169e270
+0000010e 00              452 	.byte	0
+0000010f 00              453 	.byte	0
+00000110 0151            454 	.byte	1,81
+                         455 
+                         456 	.section	.debug_abbrev
+00000080 04              457 	.byte	4
+00000081 34              458 	.byte	52
+00000082 00              459 	.byte	0
+00000083 0308            460 	.byte	3,8
+00000085 3b0f            461 	.byte	59,15
+00000087 390f            462 	.byte	57,15
+00000089 3a0f            463 	.byte	58,15
+0000008b 4910            464 	.byte	73,16
+0000008d 3f0c            465 	.byte	63,12
+0000008f 3c0c            466 	.byte	60,12
+00000091 020a            467 	.byte	2,10
+00000093 0000            468 	.byte	0,0
+                         469 
+                         470 	.section	.debug_info
+00000112 00              471 	.byte	0
+                         472 
+00000113 00              473 	.byte	0
+                         474 
+00000114 00              475 	.byte	0
+                         476 
+                         477 	.section	.debug_line
+                         478 .Ldw_line_end:
+                         479 	.section	.debug_macinfo
+00000000 03              480 	.byte	3
+00000001 00              481 	.byte	0
+00000002 01              482 	.byte	1
+00000003 03              483 	.byte	3
+00000004 01              484 	.byte	1
+00000005 02              485 	.byte	2
+00000006 04              486 	.byte	4
+00000007 04              487 	.byte	4
+00000008 00              488 	.byte	0
+                         489 	.section	.debug_abbrev
+00000095 00              490 	.byte	0
+                         491 	.section	.debug_info
+                         492 .Ldw_end:
+                         493 .rh850_flags REGMODE32,DATA_ALIGN8,GP_FIX,EP_NONFIX,TP_FIX,REG2_NONRESERVE,G3K,SDA_EXTRA_REGS_0

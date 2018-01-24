@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_csi.c
+r_csi.h

@@ -1,0 +1,12 @@
+#!gbuild
+[Subproject]
+	-I../modules/
+	-I../peripherals
+	-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subproject
+renesas128x96.h
+main.c
+	:sourceDir=C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source
+	-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+	:sourceDir=C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+r_tasks.c
+r_tasks.h

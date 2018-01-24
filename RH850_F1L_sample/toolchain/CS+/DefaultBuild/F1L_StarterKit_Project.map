@@ -1,0 +1,73 @@
+Renesas Optimizing Linker (W2.07.00 )             24-Jan-2018 11:40:59
+
+*** Options ***
+
+-subcommand=DefaultBuild\F1L_StarterKit_Project.clnk
+-input=DefaultBuild\main.obj
+-input=DefaultBuild\r_tasks.obj
+-input=DefaultBuild\r_can.obj
+-input=DefaultBuild\r_display.obj
+-input=DefaultBuild\r_led.obj
+-input=DefaultBuild\r_lin.obj
+-input=DefaultBuild\r_system.obj
+-input=DefaultBuild\r_uart.obj
+-input=DefaultBuild\r_ui.obj
+-input=DefaultBuild\r_adc.obj
+-input=DefaultBuild\r_clkc.obj
+-input=DefaultBuild\r_csi.obj
+-input=DefaultBuild\r_enc.obj
+-input=DefaultBuild\r_intc.obj
+-input=DefaultBuild\r_lps.obj
+-input=DefaultBuild\r_ostm.obj
+-input=DefaultBuild\r_port.obj
+-input=DefaultBuild\r_pwmd.obj
+-input=DefaultBuild\r_rlin.obj
+-input=DefaultBuild\r_can_table.obj
+-input=DefaultBuild\r_rscan.obj
+-input=DefaultBuild\r_stbc.obj
+-input=DefaultBuild\r_tau.obj
+-input=DefaultBuild\boot.obj
+-input=DefaultBuild\cstart.obj
+-debug
+-nocompress
+-output=DefaultBuild\F1L_StarterKit_Project.abs
+-library=v850e3v5\rhs8n.lib
+-library=v850e3v5\libmalloc.lib
+-list=DefaultBuild\F1L_StarterKit_Project.map
+-start=RESET,EIINTTBL/0,.const,.INIT_DSEC.const,.INIT_BSEC.const,.text,.data,RETENTION_RAM.data/00008000,.data.R,.bss,.stack.bss/FEDE0000,RETENTION_RAM.data.R,RETENTION_RAM.bss/FEE00000
+-rom=.data=.data.R,RETENTION_RAM.data=RETENTION_RAM.data.R
+-memory=high
+-nologo
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+RESET
+                                  00000000  000001f7       1f8   200
+EIINTTBL
+                                  00000200  00000327       128   200
+.const
+                                  00008000  0000902f      1030   4
+.INIT_DSEC.const
+                                  00009030  0000903b         c   4
+.INIT_BSEC.const
+                                  0000903c  00009043         8   4
+.text
+                                  00009044  0000ea5f      5a1c   2
+.data
+                                  0000ea60  00014a9f      6040   4
+RETENTION_RAM.data
+                                  00014aa0  00014aa0         0   4
+.data.R
+                                  fede0000  fede603f      6040   4
+.bss
+                                  fede6040  fede60bb        7c   4
+.stack.bss
+                                  fede60bc  fede62bb       200   4
+RETENTION_RAM.data.R
+                                  fee00000  fee00000         0   4
+RETENTION_RAM.bss
+                                  fee00000  fee0002f        30   4

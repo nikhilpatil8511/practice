@@ -1,0 +1,47 @@
+target_connection {
+     {
+        title = "RH850/F1L  E1 LPD4  16MHz MainOsc  E1 powered (5V)"
+        type = "Renesas V850/V850E ICE (850eserv2)"
+        short_type = "850eserv"
+        args = "  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -t5v -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        command = "850eserv2  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -t5v -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        logfile = ""
+        mode = "download"
+        setup_script = ""
+        run_mode_partner = ""
+        run_mode_policy = ""
+        sane = "yes"
+        log = "no"
+        timestamp = "0"
+    }
+     {
+        title = "RH850/F1L  E1 LPD4  16MHz MainOsc  E1 powered (3.3V)"
+        type = "Renesas V850/V850E ICE (850eserv2)"
+        short_type = "850eserv"
+        args = "  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -t3v -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        command = "850eserv2  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -t3v -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        logfile = ""
+        mode = ""
+        setup_script = ""
+        run_mode_partner = ""
+        run_mode_policy = ""
+        sane = "yes"
+        log = "no"
+        timestamp = "0"
+    }
+     {
+        title = "RH850/F1L  E1 LPD4  16MHz MainOsc  target powered"
+        type = "Renesas V850/V850E ICE (850eserv2)"
+        short_type = "850eserv"
+        args = "  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        command = "850eserv2  -df=\"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\device\\dr7f701057.dvf\" -rh850 -e1lpd4=default -dclock=16000,0,swoff -noiop -fastflashload -id ffffffffffffffffffffffffffffffff  -quiet -ip=../../device"
+        logfile = ""
+        mode = ""
+        setup_script = ""
+        run_mode_partner = ""
+        run_mode_policy = ""
+        sane = "yes"
+        log = "no"
+        timestamp = "0"
+    }
+}

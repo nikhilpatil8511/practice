@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_clkc.c
+r_clkc.h

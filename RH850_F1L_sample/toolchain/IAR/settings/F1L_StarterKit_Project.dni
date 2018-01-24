@@ -1,0 +1,26 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[PlDriver]
+MemConfigValue=C:\IAR\EW7.5\rh850\config\debugger\ior7f701057.ddf
+[Breakpoints2]
+Count=0
+[TraceHelper]
+Enabled=0
+ShowSource=1
+[Aliases]
+Count=0
+SuppressDialog=0
+[OCD]
+HardwareSettings=1,16411,0,16,FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+ClockSettings=1,16000,0,0
+TraceSettings=0,1,512,0,2151685632
+Leave target running=0
+Operating Frequency=16000000
