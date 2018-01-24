@@ -121,6 +121,7 @@ void main(void)
     __EI();
     //some_func();
     /* Start the Task-Function */
+    //test for github//
     R_TASKS_Start();
 }
 
