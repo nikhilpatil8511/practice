@@ -1,0 +1,34 @@
+#!gbuild
+primaryTarget=v800_standalone.tgt
+[Program]
+	-G
+	-object_dir=output/obj
+	-map
+	-gsize
+	-e _RESET
+	-list
+	-list_dir=output/list
+	:sourceDir=../../source
+	:sourceDir=../../debug
+	:sourceDir=../../device
+	-passsource
+	-Mx
+	-bsp generic
+	-callgraph
+	{optgroup=GhsCommonOptions} -o output/f1l_sk_v3_ghs.out
+	:postexec='gmemfile output/f1l_sk_v3_ghs.out -o output/f1l_sk_v3_ghs.mem'
+	:postexec='gsrec  -e 0 -hex386 output/f1l_sk_v3_ghs.out -o output/f1l_sk_v3_ghs.hex'
+	:postexec='gsrec  -e 0 -noS5 output/f1l_sk_v3_ghs.out -o output/f1l_sk_v3_ghs.s'
+	--no_additional_output
+	-fsoft
+	{optgroup=GhsCompilerOptions} -cpu=rh850g3k
+	-D__GHS__
+	-dwarf2
+	-large_sda
+	-sda
+	-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+	-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest
+debug.gpj
+device.gpj
+source.gpj
+output\f1l_sk_v3_ghs.map

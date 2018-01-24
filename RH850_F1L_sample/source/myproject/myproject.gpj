@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+test.h
+test.c

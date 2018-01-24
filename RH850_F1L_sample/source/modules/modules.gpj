@@ -1,0 +1,10 @@
+#!gbuild
+[Subproject]
+	-I../peripherals/
+can\can.gpj
+display\display.gpj
+led\led.gpj
+lin\lin.gpj
+system\system.gpj
+uart\uart.gpj
+user_input\user_input.gpj

@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_lps.c
+r_lps.h

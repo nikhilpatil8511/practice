@@ -1,0 +1,1690 @@
+Function	Function Call	Call Count	Percent of Total	Max Displacement (bits)
+#% BEGIN STATIC GRAPH
+__start	out	4	in	0
+	out	4	100%
+	_exit	1	25%	0	0	0
+	___ghs_ind_crt0	1	25%	0	233	0
+	___ghs_initial_dotsyscall	1	25%	0	23	0
+	___dotsyscall	1	25%	0	0	0
+	in	0	100%
+___ghs_multicore_wait_for_init	out	0	in	0
+	out	0	100%
+	in	0	100%
+_unused_isr	out	0	in	0
+	out	0	100%
+	in	0	100%
+_main	out	4	in	1
+	out	4	100%
+	_R_TASKS_Start	1	25%	0	61	0
+	_R_SYSTEM_ClockInit	1	25%	0	23	0
+	_add_kar_le	1	25%	0	39	0
+	_printf	1	25%	0	53	0
+	in	1	100%
+	___ghs_ind_crt1	1	100%	0	177	0
+_PrintText	out	2	in	5
+	out	2	100%
+	_R_UART_SendString	1	50%	0	15	0
+	_printf	1	50%	0	21	0
+	in	34	100%
+	_RgbLedDiagOutput	3	8%	0	259	0
+	_Mode1	3	8%	0	1921	0
+	_Mode2	3	8%	0	2541	0
+	_BoardCheck	17	50%	0	3851	0
+	_R_TASKS_Start	8	23%	0	4267	0
+_PwmErrorCallBack	out	1	in	3
+	out	3	100%
+	_R_LED_PwmStop	3	100%	0	149	0
+	in	3	100%
+	_Mode1	1	33%	0	1372	36
+	_Mode2	1	33%	0	2238	36
+	_BoardCheck	1	33%	0	3010	36
+_RgbLedDiagOutput	out	1	in	2
+	out	3	100%
+	_PrintText	3	100%	0	259	0
+	in	2	100%
+	_Mode1	1	50%	0	1751	174
+	_Mode2	1	50%	0	2445	174
+_UpperByteMirror	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_LedUpdate	1	100%	0	841	274
+_LedUpdate	out	5	in	1
+	out	8	100%
+	_UpperByteMirror	1	12%	0	841	274
+	_R_LED_SetPwmDuty	4	50%	0	591	0
+	_R_LED_RingUpdate	1	12%	0	857	0
+	_R_ENCA0_GetFlags	1	12%	0	645	0
+	_R_TAUJ0_CDR_Update	1	12%	0	349	0
+	in	1	100%
+	_Mode2	1	100%	0	2320	324
+_PrintStatus	out	2	in	2
+	out	2	100%
+	_R_UART_SendString	1	50%	0	1033	0
+	_sprintf	1	50%	0	1027	0
+	in	2	100%
+	_Mode1	1	50%	0	1771	936
+	_Mode2	1	50%	0	2387	936
+_SwitchRGBColor	out	1	in	2
+	out	3	100%
+	_R_LED_SetPwmDuty	3	100%	0	1169	0
+	in	2	100%
+	_Mode1	1	50%	0	1875	1052
+	_Mode2	1	50%	0	2495	1052
+_Mode1	out	28	in	1
+	out	48	100%
+	_PrintText	3	6%	0	1921	0
+	_PwmErrorCallBack	1	2%	0	1372	36
+	_RgbLedDiagOutput	1	2%	0	1751	174
+	_PrintStatus	1	2%	0	1771	936
+	_SwitchRGBColor	1	2%	0	1875	1052
+	_R_LED_SetPwmDuty	6	12%	0	1571	0
+	_R_LED_PwmStart	5	10%	0	1367	0
+	_R_LED_PwmStop	5	10%	0	2005	0
+	_R_LED_RingOutputEnable	1	2%	0	1419	0
+	_R_LED_RingOutputDisable	1	2%	0	2009	0
+	_R_LED_RingUpdate	4	8%	0	1725	0
+	_R_SYSTEM_TimerTick	2	4%	0	2017	0
+	_R_SYSTEM_TimerStart	1	2%	0	1499	0
+	_R_SYSTEM_TimerStop	1	2%	0	2027	0
+	_R_UI_ButtonS1_Init	1	2%	0	1263	0
+	_R_UI_ButtonS1_Handler	1	2%	0	1829	0
+	_R_UI_ButtonEnc1_Init	1	2%	0	1267	0
+	_R_UI_ButtonEnc1_Handler	1	2%	0	1835	0
+	_R_ADCA0_AssignLimitErrorCB	1	2%	0	1377	0
+	_R_ADCA0_PinRead	1	2%	0	1509	0
+	_R_ADCA0_SetUpperLowerLimit	1	2%	0	1407	0
+	_R_ADCA0_PwsaTriggerEnable	1	2%	0	1411	0
+	_R_ENCA0_Read	2	4%	0	1741	0
+	_R_ENCA0_GetFlags	1	2%	0	1595	0
+	_R_INTC_UnmaskInterrupt	1	2%	0	1393	0
+	_R_INTC_SetTableBit	1	2%	0	1385	0
+	_R_PWMD_DiagStart	1	2%	0	1415	0
+	_R_RLIN30_GetStatus	1	2%	0	1925	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4325	1188
+_Mode2	out	31	in	1
+	out	47	100%
+	_PrintText	3	6%	0	2541	0
+	_PwmErrorCallBack	1	2%	0	2238	36
+	_RgbLedDiagOutput	1	2%	0	2445	174
+	_LedUpdate	1	2%	0	2320	324
+	_PrintStatus	1	2%	0	2387	936
+	_SwitchRGBColor	1	2%	0	2495	1052
+	_R_LED_SetPwmDuty	3	6%	0	2203	0
+	_R_LED_PwmStart	5	10%	0	2233	0
+	_R_LED_PwmStop	5	10%	0	2643	0
+	_R_LED_RingInit	1	2%	0	2285	0
+	_R_LED_RingOutputEnable	1	2%	0	2289	0
+	_R_LED_RingOutputDisable	1	2%	0	2647	0
+	_R_SYSTEM_TimerTick	2	4%	0	2655	0
+	_R_SYSTEM_TimerStart	1	2%	0	2343	0
+	_R_UI_ButtonS1_Init	1	2%	0	2133	0
+	_R_UI_ButtonS1_Handler	1	2%	0	2449	0
+	_R_UI_ButtonEnc1_Handler	1	2%	0	2455	0
+	_R_ADCA0_AssignLimitErrorCB	1	2%	0	2243	0
+	_R_ADCA0_PinRead	1	2%	0	2351	0
+	_R_ADCA0_SetUpperLowerLimit	1	2%	0	2273	0
+	_R_ADCA0_PwsaTriggerEnable	1	2%	0	2277	0
+	_R_ENCA0_Start	1	2%	0	2293	0
+	_R_ENCA0_Read	2	4%	0	2361	0
+	_R_INTC_MaskInterrupt	1	2%	0	2613	0
+	_R_INTC_UnmaskInterrupt	2	4%	0	2333	0
+	_R_INTC_SetTableBit	1	2%	0	2251	0
+	_R_PWMD_DiagStart	1	2%	0	2281	0
+	_R_RLIN30_GetStatus	1	2%	0	2545	0
+	_R_TAUJ0_AssignChannel1ISR	2	4%	0	2605	0
+	_R_TAUJ0_Channel_Start	1	2%	0	2339	0
+	_R_TAUJ0_Channel_Stop	1	2%	0	2599	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4331	2068
+_DeepSTOP	out	5	in	1
+	out	5	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	20%	0	2721	0
+	_R_UI_Get_ButtonS1_State	1	20%	0	2705	0
+	_R_UI_INTP12_Init	1	20%	0	2713	0
+	_R_UI_INTP15_Init	1	20%	0	2717	0
+	_R_STBC_EnterDeepSTOP	1	20%	0	2725	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4337	2698
+_BoardCheck	out	26	in	1
+	out	99	100%
+	_PrintText	17	17%	0	3851	0
+	_PwmErrorCallBack	1	1%	0	3010	36
+	_R_CAN_Init	1	1%	0	2775	0
+	_R_CAN_Deinit	1	1%	0	2897	0
+	_R_CAN_Test	1	1%	0	2837	0
+	_R_DISPLAY_Init	1	1%	0	3793	0
+	_R_DISPLAY_DrawImg	1	1%	0	3833	0
+	_R_LED_SetPwmDuty	23	23%	0	3923	0
+	_R_LED_PwmStart	5	5%	0	2985	0
+	_R_LED_PwmStop	5	5%	0	3953	0
+	_R_LED_RingOutputEnable	1	1%	0	2989	0
+	_R_LED_RingUpdate	10	10%	0	3959	0
+	_R_LIN_Init	1	1%	0	2779	0
+	_R_LIN_Deinit	1	1%	0	2901	0
+	_R_LIN_Test	1	1%	0	2867	0
+	_R_SYSTEM_TimerTick	19	19%	0	3967	0
+	_R_SYSTEM_TimerStart	1	1%	0	2993	0
+	_R_UART_Init	1	1%	0	2783	0
+	_R_ADCA0_AssignLimitErrorCB	1	1%	0	3015	0
+	_R_ADCA0_SetUpperLowerLimit	1	1%	0	3045	0
+	_R_ADCA0_PwsaTriggerEnable	1	1%	0	3049	0
+	_R_INTC_MaskInterrupt	1	1%	0	3879	0
+	_R_INTC_UnmaskInterrupt	1	1%	0	3031	0
+	_R_INTC_SetTableBit	1	1%	0	3023	0
+	_R_PWMD_DiagStart	1	1%	0	3053	0
+	_R_PWMD_DiagStop	1	1%	0	3883	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4121	2736
+_R_TASKS_Start	out	21	in	1
+	out	32	100%
+	_PrintText	8	25%	0	4267	0
+	_Mode1	1	3%	0	4325	1188
+	_Mode2	1	3%	0	4331	2068
+	_DeepSTOP	1	3%	0	4337	2698
+	_BoardCheck	1	3%	0	4121	2736
+	_R_DISPLAY_ResetRelease	1	3%	0	4297	0
+	_R_LED_PwmInit	5	15%	0	4091	0
+	_R_LED_RgbDiagInit	1	3%	0	4107	0
+	_R_LED_RingInit	1	3%	0	4095	0
+	_R_SYSTEM_TimerInit	1	3%	0	4025	0
+	_R_UART_Init	1	3%	0	4029	0
+	_R_UI_Pot1_Init	1	3%	0	4103	0
+	_R_UI_Enc1_Init	1	3%	0	4099	0
+	_R_ADCA0_Init	1	3%	0	4033	0
+	_R_INTC_SetTableBit	1	3%	0	4061	0
+	_R_PWMD_DiagInit	1	3%	0	4037	0
+	_R_STBC_GetWakeUpFactor	1	3%	0	4111	0
+	_R_STBC_ReleaseIoHold	1	3%	0	4301	0
+	_R_TAUJ0_CK0_Prescaler	1	3%	0	4049	0
+	_R_TAUJ0_Channel1_Init	1	3%	0	4053	0
+	_R_TAUB0_CK0_Prescaler	1	3%	0	4043	0
+	in	1	100%
+	_main	1	100%	0	61	0
+_R_CAN_Init	out	3	in	1
+	out	7	100%
+	_R_PORT_SetGpioOutput	2	28%	0	71	0
+	_R_PORT_SetAltFunc	4	57%	0	51	0
+	_R_RSCAN0_Init	1	14%	0	75	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2775	0
+_R_CAN_Deinit	out	1	in	1
+	out	6	100%
+	_R_PORT_SetGpioHighZ	6	100%	0	137	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2897	0
+_R_CAN_Test	out	2	in	1
+	out	2	100%
+	_R_RSCAN0_ReadRxBuffer	1	50%	0	207	0
+	_R_RSCAN0_C3TrmByTxBuf	1	50%	0	183	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2837	0
+_R_DISPLAY_SDCard_Test	out	1	in	0
+	out	1	100%
+	_R_PORT_GetLevel	1	100%	0	11	0
+	in	0	100%
+_R_DISPLAY_Deinit	out	1	in	0
+	out	8	100%
+	_R_PORT_SetGpioHighZ	8	100%	0	99	0
+	in	0	100%
+_R_DISPLAY_ResetRelease	out	1	in	1
+	out	1	100%
+	_R_PORT_SetGpioOutput	1	100%	0	123	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4297	0
+_R_DISPLAY_Init	out	12	in	1
+	out	63	100%
+	_R_DISPLAY_DrawRect	1	1%	0	647	944
+	_writeCommand	20	31%	0	655	1842
+	_writeData	23	36%	0	627	1884
+	_delay	5	7%	0	663	1980
+	_R_ADCA0_ConnectPullDown	1	1%	0	143	0
+	_R_ADCA0_DisconnectPullDown	1	1%	0	175	0
+	_R_ADCA0_PinRead	1	1%	0	157	0
+	_R_CSIH2_Init	1	1%	0	299	0
+	_R_CSIH2_C4_SetTxSize	1	1%	0	305	0
+	_R_PORT_SetGpioOutput	4	6%	0	239	0
+	_R_PORT_SetGpioInput	1	1%	0	247	0
+	_R_PORT_SetAltFunc	4	6%	0	295	0
+	in	1	100%
+	_BoardCheck	1	100%	0	3793	0
+_R_DISPLAY_DrawImg	out	4	in	1
+	out	11	100%
+	_writeCommand	3	27%	0	867	1842
+	_writeData	5	45%	0	895	1884
+	_delay	1	9%	0	875	1980
+	_R_CSIH2_C4_SetTxSize	2	18%	0	883	0
+	in	1	100%
+	_BoardCheck	1	100%	0	3833	0
+_R_DISPLAY_DrawRect	out	4	in	2
+	out	11	100%
+	_writeCommand	3	27%	0	1135	1842
+	_writeData	5	45%	0	1161	1884
+	_delay	1	9%	0	1143	1980
+	_R_CSIH2_C4_SetTxSize	2	18%	0	1151	0
+	in	3	100%
+	_R_DISPLAY_Init	1	33%	0	647	944
+	_drawChar	2	66%	0	1429	944
+_drawChar	out	2	in	1
+	out	4	100%
+	_R_DISPLAY_DrawRect	2	50%	0	1429	944
+	_drawPixel	2	50%	0	1395	1606
+	in	1	100%
+	_R_DISPLAY_DrawText	1	100%	0	1787	1208
+_goTo	out	3	in	1
+	out	8	100%
+	_writeCommand	3	37%	0	1587	1842
+	_writeData	4	50%	0	1579	1884
+	_R_CSIH2_C4_SetTxSize	1	12%	0	1535	0
+	in	1	100%
+	_drawPixel	1	100%	0	1655	1496
+_drawPixel	out	3	in	1
+	out	3	100%
+	_goTo	1	33%	0	1655	1496
+	_writeData	1	33%	0	1669	1884
+	_R_CSIH2_C4_SetTxSize	1	33%	0	1663	0
+	in	2	100%
+	_drawChar	2	100%	0	1395	1606
+_R_DISPLAY_DrawText	out	1	in	0
+	out	1	100%
+	_drawChar	1	100%	0	1787	1208
+	in	0	100%
+_writeCommand	out	2	in	4
+	out	2	100%
+	_R_CSIH2_TransmitData	1	50%	0	1869	0
+	_R_PORT_SetGpioOutput	1	50%	0	1863	0
+	in	29	100%
+	_R_DISPLAY_Init	20	68%	0	655	1842
+	_R_DISPLAY_DrawImg	3	10%	0	867	1842
+	_R_DISPLAY_DrawRect	3	10%	0	1135	1842
+	_goTo	3	10%	0	1587	1842
+_writeData	out	2	in	5
+	out	2	100%
+	_R_CSIH2_TransmitData	1	50%	0	1911	0
+	_R_PORT_SetGpioOutput	1	50%	0	1905	0
+	in	38	100%
+	_R_DISPLAY_Init	23	60%	0	627	1884
+	_R_DISPLAY_DrawImg	5	13%	0	895	1884
+	_R_DISPLAY_DrawRect	5	13%	0	1161	1884
+	_goTo	4	10%	0	1579	1884
+	_drawPixel	1	2%	0	1669	1884
+_writeBuffer	out	2	in	0
+	out	2	100%
+	_R_CSIH2_TransmitBuffer	1	50%	0	1961	0
+	_R_PORT_SetGpioOutput	1	50%	0	1953	0
+	in	0	100%
+_delay	out	0	in	3
+	out	0	100%
+	in	7	100%
+	_R_DISPLAY_Init	5	71%	0	663	1980
+	_R_DISPLAY_DrawImg	1	14%	0	875	1980
+	_R_DISPLAY_DrawRect	1	14%	0	1143	1980
+_R_LED_GpioInit	out	1	in	0
+	out	5	100%
+	_R_PORT_SetGpioOutput	5	100%	0	91	0
+	in	0	100%
+_R_LED_GpioOn	out	1	in	0
+	out	5	100%
+	_R_PORT_SetGpioOutput	5	100%	0	201	0
+	in	0	100%
+_R_LED_GpioOff	out	1	in	0
+	out	5	100%
+	_R_PORT_SetGpioOutput	5	100%	0	311	0
+	in	0	100%
+_R_LED_PwmInit	out	9	in	1
+	out	13	100%
+	_R_PORT_SetAltFunc	5	38%	0	459	0
+	_R_PWMD_Channel64Init	1	7%	0	411	0
+	_R_PWMD_Channel65Init	1	7%	0	429	0
+	_R_PWMD_Channel66Init	1	7%	0	447	0
+	_R_PWMD_ClockInit	1	7%	0	477	0
+	_R_TAUJ0_Channel2_Init	1	7%	0	389	0
+	_R_TAUJ0_Channel3_Init	1	7%	0	393	0
+	_R_TAUB0_Channel6_Init	1	7%	0	367	0
+	_R_TAUB0_Channel8_Init	1	7%	0	371	0
+	in	5	100%
+	_R_TASKS_Start	5	100%	0	4091	0
+_R_LED_SetPwmDuty	out	5	in	5
+	out	5	100%
+	_R_PWMD_Channel64DutyUpdate	1	20%	0	569	0
+	_R_PWMD_Channel65DutyUpdate	1	20%	0	577	0
+	_R_PWMD_Channel66DutyUpdate	1	20%	0	585	0
+	_R_TAUJ0_CDR_Update	1	20%	0	561	0
+	_R_TAUB0_CDR_Update	1	20%	0	551	0
+	in	39	100%
+	_LedUpdate	4	10%	0	591	0
+	_SwitchRGBColor	3	7%	0	1169	0
+	_Mode1	6	15%	0	1571	0
+	_Mode2	3	7%	0	2203	0
+	_BoardCheck	23	58%	0	3923	0
+_R_LED_PwmStart	out	3	in	3
+	out	5	100%
+	_R_PWMD_StartChannel	3	60%	0	687	0
+	_R_TAUJ0_Channel_Start	1	20%	0	657	0
+	_R_TAUB0_Channel_Start	1	20%	0	649	0
+	in	15	100%
+	_Mode1	5	33%	0	1367	0
+	_Mode2	5	33%	0	2233	0
+	_BoardCheck	5	33%	0	2985	0
+_R_LED_PwmStop	out	3	in	4
+	out	5	100%
+	_R_PWMD_StopChannel	3	60%	0	785	0
+	_R_TAUJ0_Channel_Stop	1	20%	0	755	0
+	_R_TAUB0_Channel_Stop	1	20%	0	747	0
+	in	18	100%
+	_PwmErrorCallBack	3	16%	0	149	0
+	_Mode1	5	27%	0	2005	0
+	_Mode2	5	27%	0	2643	0
+	_BoardCheck	5	27%	0	3953	0
+_R_LED_RgbDiagInit	out	1	in	1
+	out	1	100%
+	_R_PWMD_DiagInit	1	100%	0	811	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4107	0
+_R_LED_RgbDiagStart	out	1	in	0
+	out	1	100%
+	_R_PWMD_DiagStart	1	100%	0	829	0
+	in	0	100%
+_R_LED_RgbDiagStop	out	1	in	0
+	out	1	100%
+	_R_PWMD_DiagStop	1	100%	0	847	0
+	in	0	100%
+_R_LED_RingInit	out	4	in	2
+	out	9	100%
+	_R_CSIG0_Init	1	11%	0	921	0
+	_R_CSIG0_TransmitData	1	11%	0	927	0
+	_R_PORT_SetGpioOutput	4	44%	0	947	0
+	_R_PORT_SetAltFunc	3	33%	0	917	0
+	in	2	100%
+	_Mode2	1	50%	0	2285	0
+	_R_TASKS_Start	1	50%	0	4095	0
+_R_LED_RingOutputEnable	out	1	in	3
+	out	1	100%
+	_R_PORT_SetGpioOutput	1	100%	0	971	0
+	in	3	100%
+	_Mode1	1	33%	0	1419	0
+	_Mode2	1	33%	0	2289	0
+	_BoardCheck	1	33%	0	2989	0
+_R_LED_RingOutputDisable	out	1	in	2
+	out	1	100%
+	_R_PORT_SetGpioOutput	1	100%	0	995	0
+	in	2	100%
+	_Mode1	1	50%	0	2009	0
+	_Mode2	1	50%	0	2647	0
+_R_LED_RingUpdate	out	2	in	3
+	out	3	100%
+	_R_CSIG0_TransmitData	1	33%	0	1023	0
+	_R_PORT_SetGpioOutput	2	66%	0	1043	0
+	in	15	100%
+	_LedUpdate	1	6%	0	857	0
+	_Mode1	4	26%	0	1725	0
+	_BoardCheck	10	66%	0	3959	0
+_R_LIN_Init	out	3	in	1
+	out	4	100%
+	_R_PORT_SetAltFunc	2	50%	0	27	0
+	_R_RLIN24_BaudrateInit	1	25%	0	31	0
+	_R_RLIN24_Channel1Init	1	25%	0	35	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2779	0
+_R_LIN_Deinit	out	1	in	1
+	out	2	100%
+	_R_PORT_SetGpioHighZ	2	100%	0	65	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2901	0
+_R_LIN_Test	out	1	in	1
+	out	1	100%
+	_R_RLIN24_Channel1TxFrame	1	100%	0	131	0
+	in	1	100%
+	_BoardCheck	1	100%	0	2867	0
+_R_LIN_TxFrame	out	1	in	0
+	out	1	100%
+	_R_RLIN24_Channel1TxFrame	1	100%	0	183	0
+	in	0	100%
+_R_LIN_RxFrame	out	1	in	0
+	out	1	100%
+	_R_RLIN24_Channel1RxFrame	1	100%	0	227	0
+	in	0	100%
+_loc_LpsManualRead	out	4	in	1
+	out	35	100%
+	_R_PORT_SetGpioOutput	25	71%	0	383	0
+	_R_PORT_SetGpioInput	1	2%	0	35	0
+	_R_PORT_GetLevel	8	22%	0	391	0
+	_R_PORT_SetPushPull	1	2%	0	17	0
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	611	0
+_R_SYSTEM_ClockInit	out	4	in	1
+	out	4	100%
+	_R_CLKC_PllInit	1	25%	0	423	0
+	_R_CLKC_SetRscanClockDomain	1	25%	0	443	0
+	_R_CLKC_SetAdca0ClockDomain	1	25%	0	429	0
+	_R_CLKC_SetTaujClockDomain	1	25%	0	435	0
+	in	1	100%
+	_main	1	100%	0	23	0
+_R_SYSTEM_PrepareDeepSTOP	out	16	in	1
+	out	25	100%
+	_loc_LpsManualRead	1	4%	0	611	0
+	_R_ADCA0_PinRead	1	4%	0	525	0
+	_R_ADCA0_LpsInit	1	4%	0	607	0
+	_R_ADCA0_SetUpperLowerLimit	3	12%	0	591	0
+	_R_CLKC_SetAdca0ClockDomain	1	4%	0	501	0
+	_R_CLKC_SetTaujClockDomain	1	4%	0	495	0
+	_R_CLKC_SetAdca0StopMask	1	4%	0	505	0
+	_R_CLKC_SetTaujStopMask	1	4%	0	509	0
+	_R_LPS_Init	1	4%	0	687	0
+	_R_LPS_SetCompareValue	1	4%	0	619	0
+	_R_PORT_SetGpioOutput	1	4%	0	519	0
+	_R_PORT_SetAltFunc	6	24%	0	679	0
+	_R_STBC_PrepareWakeUp	1	4%	0	729	0
+	_R_TAUJ0_CDR_Update	2	8%	0	713	0
+	_R_TAUJ0_Channel0_Init	1	4%	0	683	0
+	_R_TAUJ0_Channel_Start	2	8%	0	719	0
+	in	1	100%
+	_DeepSTOP	1	100%	0	2721	0
+_R_SYSTEM_TimerInit	out	2	in	1
+	out	2	100%
+	_R_OSTM0_Init	1	50%	0	769	0
+	_R_OSTM0_SetCompareValue	1	50%	0	777	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4025	0
+_R_SYSTEM_TimerTick	out	2	in	3
+	out	2	100%
+	_R_INTC_GetRequestFlag	1	50%	0	799	0
+	_R_INTC_ResetRequestFlag	1	50%	0	811	0
+	in	23	100%
+	_Mode1	2	8%	0	2017	0
+	_Mode2	2	8%	0	2655	0
+	_BoardCheck	19	82%	0	3967	0
+_R_SYSTEM_TimerStart	out	1	in	3
+	out	1	100%
+	_R_OSTM0_Start	1	100%	0	829	0
+	in	3	100%
+	_Mode1	1	33%	0	1499	0
+	_Mode2	1	33%	0	2343	0
+	_BoardCheck	1	33%	0	2993	0
+_R_SYSTEM_TimerStop	out	1	in	1
+	out	1	100%
+	_R_OSTM0_Stop	1	100%	0	847	0
+	in	1	100%
+	_Mode1	1	100%	0	2027	0
+_R_SYSTEM_GetResetCause	out	0	in	1
+	out	0	100%
+	in	1	100%
+	___lowinit	1	100%	0	909	858
+_R_SYSTEM_ClearResetCause	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_SYSTEM_ClearRetentionRAM	out	0	in	1
+	out	0	100%
+	in	1	100%
+	___lowinit	1	100%	0	917	878
+___lowinit	out	2	in	0
+	out	2	100%
+	_R_SYSTEM_GetResetCause	1	50%	0	909	858
+	_R_SYSTEM_ClearRetentionRAM	1	50%	0	917	878
+	in	0	100%
+_R_UART_Init	out	4	in	2
+	out	5	100%
+	_R_INTC_UnmaskInterrupt	1	20%	0	47	0
+	_R_INTC_SetTableBit	1	20%	0	39	0
+	_R_PORT_SetAltFunc	2	40%	0	27	0
+	_R_RLIN30_UartInit	1	20%	0	31	0
+	in	2	100%
+	_BoardCheck	1	50%	0	2783	0
+	_R_TASKS_Start	1	50%	0	4029	0
+_R_UART_Deinit	out	1	in	0
+	out	2	100%
+	_R_PORT_SetGpioHighZ	2	100%	0	77	0
+	in	0	100%
+_R_UART_SendString	out	2	in	2
+	out	3	100%
+	_R_RLIN30_UartSendString	1	33%	0	119	0
+	_R_RLIN30_GetStatus	2	66%	0	109	0
+	in	2	100%
+	_PrintText	1	50%	0	15	0
+	_PrintStatus	1	50%	0	1033	0
+_R_UI_Pot1_Init	out	2	in	1
+	out	2	100%
+	_R_PORT_SetGpioOutput	1	50%	0	13	0
+	_R_PORT_SetGpioHighZ	1	50%	0	21	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4103	0
+_R_UI_Pot1_Read	out	1	in	0
+	out	1	100%
+	_R_ADCA0_PinRead	1	100%	0	41	0
+	in	0	100%
+_R_UI_ButtonS1_Init	out	1	in	2
+	out	1	100%
+	_R_PORT_SetGpioInput	1	100%	0	65	0
+	in	2	100%
+	_Mode1	1	50%	0	1263	0
+	_Mode2	1	50%	0	2133	0
+_R_UI_ButtonS1_Deinit	out	1	in	0
+	out	1	100%
+	_R_PORT_SetGpioHighZ	1	100%	0	87	0
+	in	0	100%
+_R_UI_Get_ButtonS1_State	out	1	in	1
+	out	1	100%
+	_R_PORT_GetLevel	1	100%	0	109	0
+	in	1	100%
+	_DeepSTOP	1	100%	0	2705	0
+_R_UI_ButtonS1_Handler	out	1	in	2
+	out	1	100%
+	_R_PORT_GetLevel	1	100%	0	141	0
+	in	2	100%
+	_Mode1	1	50%	0	1829	0
+	_Mode2	1	50%	0	2449	0
+_R_UI_ButtonEnc1_Init	out	1	in	1
+	out	1	100%
+	_R_PORT_SetGpioInput	1	100%	0	237	0
+	in	1	100%
+	_Mode1	1	100%	0	1267	0
+_R_UI_ButtonEnc_Deinit	out	1	in	0
+	out	1	100%
+	_R_PORT_SetGpioHighZ	1	100%	0	259	0
+	in	0	100%
+_R_UI_Get_ButtonEnc1_State	out	1	in	0
+	out	1	100%
+	_R_PORT_GetLevel	1	100%	0	281	0
+	in	0	100%
+_R_UI_ButtonEnc1_Handler	out	1	in	2
+	out	1	100%
+	_R_PORT_GetLevel	1	100%	0	313	0
+	in	2	100%
+	_Mode1	1	50%	0	1835	0
+	_Mode2	1	50%	0	2455	0
+_R_UI_INTP12_Init	out	2	in	1
+	out	2	100%
+	_R_PORT_SetAltFunc	1	50%	0	421	0
+	_R_PORT_SetAnalogFilter	1	50%	0	409	0
+	in	1	100%
+	_DeepSTOP	1	100%	0	2713	0
+_R_UI_INTP15_Init	out	2	in	1
+	out	2	100%
+	_R_PORT_SetAltFunc	1	50%	0	455	0
+	_R_PORT_SetAnalogFilter	1	50%	0	443	0
+	in	1	100%
+	_DeepSTOP	1	100%	0	2717	0
+_R_UI_Enc1_Init	out	3	in	1
+	out	4	100%
+	_R_ENCA0_Init	1	25%	0	497	0
+	_R_ENCA0_Start	1	25%	0	501	0
+	_R_PORT_SetAltFunc	2	50%	0	493	0
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4099	0
+_R_UI_Enc1_Deinit	out	2	in	0
+	out	3	100%
+	_R_ENCA0_Stop	1	33%	0	535	0
+	_R_PORT_SetGpioHighZ	2	66%	0	531	0
+	in	0	100%
+_INTADCA0ERR	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_ADCA0_AssignLimitErrorCB	out	0	in	3
+	out	0	100%
+	in	3	100%
+	_Mode1	1	33%	0	1377	0
+	_Mode2	1	33%	0	2243	0
+	_BoardCheck	1	33%	0	3015	0
+_R_ADCA0_ConnectPullDown	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_DISPLAY_Init	1	100%	0	143	0
+_R_ADCA0_DisconnectPullDown	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_DISPLAY_Init	1	100%	0	175	0
+_R_ADCA0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4033	0
+_R_ADCA0_PinRead	out	0	in	5
+	out	0	100%
+	in	5	100%
+	_Mode1	1	20%	0	1509	0
+	_Mode2	1	20%	0	2351	0
+	_R_DISPLAY_Init	1	20%	0	157	0
+	_R_SYSTEM_PrepareDeepSTOP	1	20%	0	525	0
+	_R_UI_Pot1_Read	1	20%	0	41	0
+_R_ADCA0_LpsInit	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	607	0
+_R_ADCA0_SetUpperLowerLimit	out	0	in	4
+	out	0	100%
+	in	6	100%
+	_Mode1	1	16%	0	1407	0
+	_Mode2	1	16%	0	2273	0
+	_BoardCheck	1	16%	0	3045	0
+	_R_SYSTEM_PrepareDeepSTOP	3	50%	0	591	0
+_R_ADCA0_PwsaTriggerEnable	out	0	in	3
+	out	0	100%
+	in	3	100%
+	_Mode1	1	33%	0	1411	0
+	_Mode2	1	33%	0	2277	0
+	_BoardCheck	1	33%	0	3049	0
+_R_ADCA0_PwsaTriggerDisable	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_CLKC_PllInit	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_ClockInit	1	100%	0	423	0
+_R_CLKC_SetRscanClockDomain	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_ClockInit	1	100%	0	443	0
+_R_CLKC_SetAdca0ClockDomain	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_SYSTEM_ClockInit	1	50%	0	429	0
+	_R_SYSTEM_PrepareDeepSTOP	1	50%	0	501	0
+_R_CLKC_SetTaujClockDomain	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_SYSTEM_ClockInit	1	50%	0	435	0
+	_R_SYSTEM_PrepareDeepSTOP	1	50%	0	495	0
+_R_CLKC_SetAdca0StopMask	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	505	0
+_R_CLKC_ResetAdca0StopMask	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_CLKC_SetTaujStopMask	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	509	0
+_R_CLKC_ResetTaujStopMask	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_CSIH2_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_DISPLAY_Init	1	100%	0	299	0
+_R_CSIH2_C4_SetTxSize	out	0	in	5
+	out	0	100%
+	in	7	100%
+	_R_DISPLAY_Init	1	14%	0	305	0
+	_R_DISPLAY_DrawImg	2	28%	0	883	0
+	_R_DISPLAY_DrawRect	2	28%	0	1151	0
+	_goTo	1	14%	0	1535	0
+	_drawPixel	1	14%	0	1663	0
+_R_CSIH2_TransmitBuffer	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_writeBuffer	1	100%	0	1961	0
+_R_CSIH2_TransmitData	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_writeCommand	1	50%	0	1869	0
+	_writeData	1	50%	0	1911	0
+_R_CSIG0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_RingInit	1	100%	0	921	0
+_R_CSIG0_TransmitData	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_LED_RingInit	1	50%	0	927	0
+	_R_LED_RingUpdate	1	50%	0	1023	0
+_R_ENCA0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_UI_Enc1_Init	1	100%	0	497	0
+_R_ENCA0_Start	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_Mode2	1	50%	0	2293	0
+	_R_UI_Enc1_Init	1	50%	0	501	0
+_R_ENCA0_Stop	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_UI_Enc1_Deinit	1	100%	0	535	0
+_R_ENCA0_Read	out	0	in	2
+	out	0	100%
+	in	4	100%
+	_Mode1	2	50%	0	1741	0
+	_Mode2	2	50%	0	2361	0
+_R_ENCA0_GetFlags	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_LedUpdate	1	50%	0	645	0
+	_Mode1	1	50%	0	1595	0
+_R_INTC_MaskInterrupt	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_Mode2	1	50%	0	2613	0
+	_BoardCheck	1	50%	0	3879	0
+_R_INTC_UnmaskInterrupt	out	0	in	4
+	out	0	100%
+	in	5	100%
+	_Mode1	1	20%	0	1393	0
+	_Mode2	2	40%	0	2333	0
+	_BoardCheck	1	20%	0	3031	0
+	_R_UART_Init	1	20%	0	47	0
+_R_INTC_SetPriority	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_INTC_SetTableBit	out	0	in	5
+	out	0	100%
+	in	5	100%
+	_Mode1	1	20%	0	1385	0
+	_Mode2	1	20%	0	2251	0
+	_BoardCheck	1	20%	0	3023	0
+	_R_TASKS_Start	1	20%	0	4061	0
+	_R_UART_Init	1	20%	0	39	0
+_R_INTC_ResetTableBit	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_INTC_SetRequestFlag	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_INTC_GetRequestFlag	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerTick	1	100%	0	799	0
+_R_INTC_ResetRequestFlag	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerTick	1	100%	0	811	0
+_R_LPS_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	687	0
+_R_LPS_Disable	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_LPS_SetCompareValue	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	619	0
+_R_OSTM0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerInit	1	100%	0	769	0
+_R_OSTM0_Start	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerStart	1	100%	0	829	0
+_R_OSTM0_Stop	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerStop	1	100%	0	847	0
+_R_OSTM0_SetCompareValue	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_TimerInit	1	100%	0	777	0
+_R_PORT_SetGpioOutput	out	0	in	16
+	out	0	100%
+	in	60	100%
+	_R_CAN_Init	2	3%	0	71	0
+	_R_DISPLAY_ResetRelease	1	1%	0	123	0
+	_R_DISPLAY_Init	4	6%	0	239	0
+	_writeCommand	1	1%	0	1863	0
+	_writeData	1	1%	0	1905	0
+	_writeBuffer	1	1%	0	1953	0
+	_R_LED_GpioInit	5	8%	0	91	0
+	_R_LED_GpioOn	5	8%	0	201	0
+	_R_LED_GpioOff	5	8%	0	311	0
+	_R_LED_RingInit	4	6%	0	947	0
+	_R_LED_RingOutputEnable	1	1%	0	971	0
+	_R_LED_RingOutputDisable	1	1%	0	995	0
+	_R_LED_RingUpdate	2	3%	0	1043	0
+	_loc_LpsManualRead	25	41%	0	383	0
+	_R_SYSTEM_PrepareDeepSTOP	1	1%	0	519	0
+	_R_UI_Pot1_Init	1	1%	0	13	0
+_R_PORT_ToggleGpioOutput	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_PORT_SetGpioInput	out	0	in	4
+	out	0	100%
+	in	4	100%
+	_R_DISPLAY_Init	1	25%	0	247	0
+	_loc_LpsManualRead	1	25%	0	35	0
+	_R_UI_ButtonS1_Init	1	25%	0	65	0
+	_R_UI_ButtonEnc1_Init	1	25%	0	237	0
+_R_PORT_SetGpioHighZ	out	0	in	8
+	out	0	100%
+	in	23	100%
+	_R_CAN_Deinit	6	26%	0	137	0
+	_R_DISPLAY_Deinit	8	34%	0	99	0
+	_R_LIN_Deinit	2	8%	0	65	0
+	_R_UART_Deinit	2	8%	0	77	0
+	_R_UI_Pot1_Init	1	4%	0	21	0
+	_R_UI_ButtonS1_Deinit	1	4%	0	87	0
+	_R_UI_ButtonEnc_Deinit	1	4%	0	259	0
+	_R_UI_Enc1_Deinit	2	8%	0	531	0
+_R_PORT_SetAltFunc	out	0	in	10
+	out	0	100%
+	in	30	100%
+	_R_CAN_Init	4	13%	0	51	0
+	_R_DISPLAY_Init	4	13%	0	295	0
+	_R_LED_PwmInit	5	16%	0	459	0
+	_R_LED_RingInit	3	10%	0	917	0
+	_R_LIN_Init	2	6%	0	27	0
+	_R_SYSTEM_PrepareDeepSTOP	6	20%	0	679	0
+	_R_UART_Init	2	6%	0	27	0
+	_R_UI_INTP12_Init	1	3%	0	421	0
+	_R_UI_INTP15_Init	1	3%	0	455	0
+	_R_UI_Enc1_Init	2	6%	0	493	0
+_R_PORT_GetLevel	out	0	in	6
+	out	0	100%
+	in	13	100%
+	_R_DISPLAY_SDCard_Test	1	7%	0	11	0
+	_loc_LpsManualRead	8	61%	0	391	0
+	_R_UI_Get_ButtonS1_State	1	7%	0	109	0
+	_R_UI_ButtonS1_Handler	1	7%	0	141	0
+	_R_UI_Get_ButtonEnc1_State	1	7%	0	281	0
+	_R_UI_ButtonEnc1_Handler	1	7%	0	313	0
+_R_PORT_SetOpenDrain	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_PORT_SetPushPull	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_loc_LpsManualRead	1	100%	0	17	0
+_R_PORT_SetAnalogFilter	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_UI_INTP12_Init	1	50%	0	409	0
+	_R_UI_INTP15_Init	1	50%	0	443	0
+_R_PWMD_Channel64Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	411	0
+_R_PWMD_Channel65Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	429	0
+_R_PWMD_Channel66Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	447	0
+_R_PWMD_ClockInit	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	477	0
+_R_PWMD_StartChannel	out	0	in	1
+	out	0	100%
+	in	3	100%
+	_R_LED_PwmStart	3	100%	0	687	0
+_R_PWMD_StopChannel	out	0	in	1
+	out	0	100%
+	in	3	100%
+	_R_LED_PwmStop	3	100%	0	785	0
+_R_PWMD_Channel64DutyUpdate	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_SetPwmDuty	1	100%	0	569	0
+_R_PWMD_Channel65DutyUpdate	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_SetPwmDuty	1	100%	0	577	0
+_R_PWMD_Channel66DutyUpdate	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_SetPwmDuty	1	100%	0	585	0
+_R_PWMD_DiagInit	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_TASKS_Start	1	50%	0	4037	0
+	_R_LED_RgbDiagInit	1	50%	0	811	0
+_R_PWMD_DiagStart	out	0	in	4
+	out	0	100%
+	in	4	100%
+	_Mode1	1	25%	0	1415	0
+	_Mode2	1	25%	0	2281	0
+	_BoardCheck	1	25%	0	3053	0
+	_R_LED_RgbDiagStart	1	25%	0	829	0
+_R_PWMD_DiagStop	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_BoardCheck	1	50%	0	3883	0
+	_R_LED_RgbDiagStop	1	50%	0	847	0
+_INTRLIN30UR0	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_RLIN24_BaudrateInit	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LIN_Init	1	100%	0	31	0
+_R_RLIN24_Channel1Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LIN_Init	1	100%	0	35	0
+_R_RLIN24_Channel1TxFrame	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_R_LIN_Test	1	50%	0	131	0
+	_R_LIN_TxFrame	1	50%	0	183	0
+_R_RLIN24_Channel1RxFrame	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LIN_RxFrame	1	100%	0	227	0
+_R_RLIN30_UartInit	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_UART_Init	1	100%	0	31	0
+_R_RLIN30_UartSendString	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_UART_SendString	1	100%	0	119	0
+_R_RLIN30_GetStatus	out	0	in	3
+	out	0	100%
+	in	4	100%
+	_Mode1	1	25%	0	1925	0
+	_Mode2	1	25%	0	2545	0
+	_R_UART_SendString	2	50%	0	109	0
+_R_RSCAN0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_CAN_Init	1	100%	0	75	0
+_R_RSCAN0_SetRxRule..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_rscan.	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_RSCAN0_ReadRxBuffer	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_CAN_Test	1	100%	0	207	0
+_R_RSCAN0_C3TrmByTxBuf	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_CAN_Test	1	100%	0	183	0
+_R_RSCAN0_C4TrmByTxBuf	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_STBC_PrepareWakeUp	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	729	0
+_R_STBC_EnterDeepSTOP	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_DeepSTOP	1	100%	0	2725	0
+_R_STBC_GetWakeUpFactor	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4111	0
+_R_STBC_ReleaseIoHold	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4301	0
+_INTTAUJ0I1	out	0	in	0
+	out	0	100%
+	in	0	100%
+_R_TAUJ0_AssignChannel1ISR	out	0	in	1
+	out	0	100%
+	in	2	100%
+	_Mode2	2	100%	0	2605	0
+_R_TAUJ0_CK0_Prescaler	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4049	0
+_R_TAUJ0_CDR_Update	out	0	in	3
+	out	0	100%
+	in	4	100%
+	_LedUpdate	1	25%	0	349	0
+	_R_LED_SetPwmDuty	1	25%	0	561	0
+	_R_SYSTEM_PrepareDeepSTOP	2	50%	0	713	0
+_R_TAUJ0_Channel0_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_SYSTEM_PrepareDeepSTOP	1	100%	0	683	0
+_R_TAUJ0_Channel1_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4053	0
+_R_TAUJ0_Channel2_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	389	0
+_R_TAUJ0_Channel3_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	393	0
+_R_TAUJ0_Channel_Start	out	0	in	3
+	out	0	100%
+	in	4	100%
+	_Mode2	1	25%	0	2339	0
+	_R_LED_PwmStart	1	25%	0	657	0
+	_R_SYSTEM_PrepareDeepSTOP	2	50%	0	719	0
+_R_TAUJ0_Channel_Stop	out	0	in	2
+	out	0	100%
+	in	2	100%
+	_Mode2	1	50%	0	2599	0
+	_R_LED_PwmStop	1	50%	0	755	0
+_R_TAUB0_CK0_Prescaler	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_TASKS_Start	1	100%	0	4043	0
+_R_TAUB0_Channel6_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	367	0
+_R_TAUB0_Channel8_Init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmInit	1	100%	0	371	0
+_R_TAUB0_CDR_Update	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_SetPwmDuty	1	100%	0	551	0
+_R_TAUB0_Channel_Start	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmStart	1	100%	0	649	0
+_R_TAUB0_Channel_Stop	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_R_LED_PwmStop	1	100%	0	747	0
+_add_kar_le	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_main	1	100%	0	39	0
+__multiend	out	1	in	0
+	out	1	100%
+	_multiBreak	1	100%	0	0	4
+	in	0	100%
+_multiBreak	out	0	in	1
+	out	0	100%
+	in	1	100%
+	__multiend	1	100%	0	0	4
+_vsprintf	out	1	in	1
+	out	1	100%
+	___gh_vsprintf	1	100%	0	53	0
+	in	1	100%
+	_sprintf	1	100%	0	113	0
+_sprintf	out	1	in	1
+	out	1	100%
+	_vsprintf	1	100%	0	113	0
+	in	1	100%
+	_PrintStatus	1	100%	0	1027	0
+_sputc..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccsprntf.	out	0	in	0
+	out	0	100%
+	in	0	100%
+_printf	out	1	in	2
+	out	1	100%
+	_vfprintf	1	100%	0	47	0
+	in	2	100%
+	_main	1	50%	0	53	0
+	_PrintText	1	50%	0	21	0
+_exit	out	1	in	2
+	out	1	100%
+	__Exit	1	100%	0	79	0
+	in	2	100%
+	__start	1	50%	0	0	0
+	___ghs_ind_crt1	1	50%	0	183	0
+___gh_xxdecout	out	0	in	1
+	out	0	100%
+	in	1	100%
+	.static0000267b	1	100%	0	573	0
+___gh_outchars	out	2	in	2
+	out	2	100%
+	___ghssave25a	1	50%	0	33	0
+	___ghsload25	1	50%	0	65	0
+	in	2	100%
+	___gh_outspaces	1	50%	0	73	32
+	___gh_strout	1	50%	0	445	32
+___gh_outspaces	out	1	in	1
+	out	1	100%
+	___gh_outchars	1	100%	0	73	32
+	in	2	100%
+	___gh_strout	2	100%	0	539	68
+___gh_strout	out	7	in	3
+	out	9	100%
+	___gh_outchars	1	11%	0	445	32
+	___gh_outspaces	2	22%	0	539	68
+	_strlen	1	11%	0	157	0
+	___gh_wctomb	2	22%	0	465	0
+	_wctomb	1	11%	0	137	0
+	___ghssave20	1	11%	0	79	0
+	___ghsload20	1	11%	0	549	0
+	in	3	100%
+	.static0000267b	1	33%	0	597	78
+	___gh_octhexout	1	33%	0	723	78
+	___gh_vsprintf	1	33%	0	1869	78
+_unsout..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccvsprnt.	out	0	in	0
+	out	0	100%
+	in	0	100%
+___gh_hexout	out	0	in	1
+	out	0	100%
+	in	1	100%
+	___gh_octhexout	1	100%	0	715	608
+___gh_octhexout	out	4	in	1
+	out	4	100%
+	___gh_strout	1	25%	0	723	78
+	___gh_hexout	1	25%	0	715	608
+	___ghssave29	1	25%	0	675	0
+	___ghsload29	1	25%	0	731	0
+	in	1	100%
+	___gh_vsprintf	1	100%	0	1493	674
+___gh_vsprintf	out	2	in	2
+	out	2	100%
+	___gh_strout	1	50%	0	1869	78
+	___gh_octhexout	1	50%	0	1493	674
+	in	2	100%
+	_vsprintf	1	50%	0	53	0
+	_vfprintf	1	50%	0	155	0
+_vfprintf	out	8	in	1
+	out	12	100%
+	___gh_vsprintf	1	8%	0	155	0
+	___gh_bufsize	1	8%	0	107	0
+	___gh_bufinit	2	16%	0	195	0
+	_putc_unlocked	2	16%	0	150	0
+	_flockfile	1	8%	0	59	0
+	_funlockfile	1	8%	0	231	0
+	_fflush	2	16%	0	213	0
+	___gh_set_errno	2	16%	0	71	0
+	in	1	100%
+	_printf	1	100%	0	47	0
+___gh_bufsize	out	0	in	3
+	out	0	100%
+	in	3	100%
+	_vfprintf	1	33%	0	107	0
+	__flsbuf	1	33%	0	135	0
+	_fflush	1	33%	0	133	0
+___gh_bufclose	out	0	in	0
+	out	0	100%
+	in	0	100%
+___gh_bufinit	out	0	in	1
+	out	0	100%
+	in	2	100%
+	_vfprintf	2	100%	0	195	0
+_putc_unlocked	out	1	in	1
+	out	1	100%
+	__flsbuf	1	100%	0	13	0
+	in	2	100%
+	_vfprintf	2	100%	0	150	0
+__flsbuf	out	6	in	1
+	out	6	100%
+	___gh_bufsize	1	16%	0	135	0
+	_fflush	1	16%	0	107	0
+	___gh_set_errno	1	16%	0	43	0
+	_write	1	16%	0	89	0
+	___ghssave28	1	16%	0	3	0
+	___ghsload28	1	16%	0	153	0
+	in	1	100%
+	_putc_unlocked	1	100%	0	13	0
+_flockcreate	out	4	in	1
+	out	4	100%
+	___ghs_flock_create	1	25%	0	15	0
+	___ghs_flock_ptr	1	25%	0	5	0
+	___ghssavelpa	1	25%	0	1	0
+	___ghsloadlp	1	25%	0	19	0
+	in	3	100%
+	___gh_iob_init	3	100%	0	167	0
+_flockdestroy	out	4	in	0
+	out	4	100%
+	___ghs_flock_destroy	1	25%	0	45	0
+	___ghs_flock_ptr	1	25%	0	27	0
+	___ghssave29a	1	25%	0	23	0
+	___ghsload29	1	25%	0	53	0
+	in	0	100%
+_flockfile	out	4	in	2
+	out	4	100%
+	___ghs_flock_file	1	25%	0	77	0
+	___ghs_flock_ptr	1	25%	0	61	0
+	___ghssavelpa	1	25%	0	57	0
+	___ghsloadlp	1	25%	0	81	0
+	in	2	100%
+	_vfprintf	1	50%	0	59	0
+	_fflush	1	50%	0	43	0
+_funlockfile	out	4	in	2
+	out	4	100%
+	___ghs_funlock_file	1	25%	0	105	0
+	___ghs_flock_ptr	1	25%	0	89	0
+	___ghssavelpa	1	25%	0	85	0
+	___ghsloadlp	1	25%	0	109	0
+	in	2	100%
+	_vfprintf	1	50%	0	231	0
+	_fflush	1	50%	0	143	0
+_ftrylockfile	out	4	in	0
+	out	4	100%
+	___ghs_ftrylock_file	1	25%	0	133	0
+	___ghs_flock_ptr	1	25%	0	117	0
+	___ghssavelpa	1	25%	0	113	0
+	___ghsloadlp	1	25%	0	141	0
+	in	0	100%
+___ghs_flock_in_use	out	3	in	0
+	out	4	100%
+	___ghs_flock_ptr	2	50%	0	181	0
+	___ghssave28a	1	25%	0	145	0
+	___ghsload28	1	25%	0	207	0
+	in	0	100%
+_fflush	out	6	in	2
+	out	6	100%
+	___gh_bufsize	1	16%	0	133	0
+	_flockfile	1	16%	0	43	0
+	_funlockfile	1	16%	0	143	0
+	_write	1	16%	0	75	0
+	___ghssave25a	1	16%	0	1	0
+	___ghsload25	1	16%	0	157	0
+	in	3	100%
+	_vfprintf	2	66%	0	213	0
+	__flsbuf	1	33%	0	107	0
+___ghs_strlen	out	0	in	0
+	out	0	100%
+	in	0	100%
+_strlen	out	0	in	1
+	out	0	100%
+	in	1	100%
+	___gh_strout	1	100%	0	157	0
+___gh_store_wc	out	0	in	0
+	out	0	100%
+	in	0	100%
+___gh_wctomb	out	1	in	1
+	out	1	100%
+	_wctomb	1	100%	0	41	0
+	in	2	100%
+	___gh_strout	2	100%	0	465	0
+_wctomb	out	0	in	2
+	out	0	100%
+	in	2	100%
+	___gh_strout	1	50%	0	137	0
+	___gh_wctomb	1	50%	0	41	0
+___ghs_ind_crt0	out	3	in	1
+	out	6	100%
+	_memset	2	33%	0	68	0
+	_memcpy	2	33%	0	58	0
+	___ghs_ind_crt1	2	33%	0	74	0
+	in	1	100%
+	__start	1	100%	0	233	0
+_memset	out	0	in	1
+	out	0	100%
+	in	2	100%
+	___ghs_ind_crt0	2	100%	0	68	0
+_memcpy..trg.2Frh850.2Fobjs.2Flibs.2Flibstartup.2Find_mcpy.	out	0	in	0
+	out	0	100%
+	in	0	100%
+_memcpy	out	0	in	1
+	out	0	100%
+	in	2	100%
+	___ghs_ind_crt0	2	100%	0	58	0
+___mcopy	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_GetThreadLocalStorageItem	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_SaveSignalContext	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_RestoreSignalContext	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_flock_file	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_flockfile	1	100%	0	77	0
+___ghs_funlock_file	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_funlockfile	1	100%	0	105	0
+___ghs_ftrylock_file	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_ftrylockfile	1	100%	0	133	0
+___ghs_flock_create	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_flockcreate	1	100%	0	15	0
+___ghs_flock_destroy	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_flockdestroy	1	100%	0	45	0
+___ghs_flock_ptr	out	0	in	7
+	out	0	100%
+	in	8	100%
+	_flockcreate	1	12%	0	5	0
+	_flockdestroy	1	12%	0	27	0
+	_flockfile	1	12%	0	61	0
+	_funlockfile	1	12%	0	89	0
+	_ftrylockfile	1	12%	0	117	0
+	___ghs_flock_in_use	2	25%	0	181	0
+	___ghs_flock_word	1	12%	0	49	0
+___ghs_flock_word	out	1	in	0
+	out	1	100%
+	___ghs_flock_ptr	1	100%	0	49	0
+	in	0	100%
+___gh_iob_init	out	1	in	1
+	out	3	100%
+	_flockcreate	3	100%	0	167	0
+	in	1	100%
+	___ghs_ind_crt1	1	100%	0	69	0
+__exit	out	0	in	0
+	out	0	100%
+	in	0	100%
+__Exit	out	3	in	1
+	out	3	100%
+	___ghs_syscall	1	33%	0	101	0
+	___ghsLock	1	33%	0	39	0
+	___ghsUnlock	1	33%	0	93	0
+	in	1	100%
+	_exit	1	100%	0	79	0
+___ghs_at_exit	out	2	in	0
+	out	2	100%
+	___ghsLock	1	50%	0	133	0
+	___ghsUnlock	1	50%	0	149	0
+	in	0	100%
+___gh_set_errno	out	0	in	3
+	out	0	100%
+	in	4	100%
+	_vfprintf	2	50%	0	71	0
+	__flsbuf	1	25%	0	43	0
+	___ghs_syscall	1	25%	0	21	0
+___gh_errno_ptr	out	0	in	0
+	out	0	100%
+	in	0	100%
+___gh_get_errno	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_initial_dotsyscall	out	0	in	1
+	out	0	100%
+	in	1	100%
+	__start	1	100%	0	23	0
+___dotsyscall	out	0	in	2
+	out	0	100%
+	in	2	100%
+	__start	1	50%	0	0	0
+	___ghs_syscall	1	50%	0	12	0
+___ghs_syscall	out	2	in	9
+	out	2	100%
+	___gh_set_errno	1	50%	0	21	0
+	___dotsyscall	1	50%	0	12	0
+	in	9	100%
+	__Exit	1	11%	0	101	0
+	___ghs_hostio_write	1	11%	0	25	0
+	___ghs_hostio_read	1	11%	0	63	0
+	___ghs_hostio_open	1	11%	0	135	0
+	___ghs_hostio_creat	1	11%	0	175	0
+	___ghs_hostio_close	1	11%	0	211	0
+	___ghs_hostio_lseek	1	11%	0	251	0
+	___ghs_hostio_unlink	1	11%	0	287	0
+	___ghs_hostio_fcntl	1	11%	0	327	0
+_write	out	0	in	2
+	out	0	100%
+	in	2	100%
+	__flsbuf	1	50%	0	89	0
+	_fflush	1	50%	0	75	0
+___ghs_hostio_write	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	25	0
+	in	0	100%
+_read	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_read	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	63	0
+	in	0	100%
+_open	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_open	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	135	0
+	in	0	100%
+_creat	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_creat	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	175	0
+	in	0	100%
+_close	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_close	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	211	0
+	in	0	100%
+_lseek	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_lseek	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	251	0
+	in	0	100%
+_unlink	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_unlink	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	287	0
+	in	0	100%
+_fcntl	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghs_hostio_fcntl	out	1	in	0
+	out	1	100%
+	___ghs_syscall	1	100%	0	327	0
+	in	0	100%
+___ghs_ind_crt1	out	4	in	1
+	out	4	100%
+	_main	1	25%	0	177	0
+	_exit	1	25%	0	183	0
+	___gh_iob_init	1	25%	0	69	0
+	___gh_lock_init	1	25%	0	57	0
+	in	2	100%
+	___ghs_ind_crt0	2	100%	0	74	0
+___ghsLock	out	0	in	2
+	out	0	100%
+	in	2	100%
+	__Exit	1	50%	0	39	0
+	___ghs_at_exit	1	50%	0	133	0
+___ghsUnlock	out	0	in	2
+	out	0	100%
+	in	2	100%
+	__Exit	1	50%	0	93	0
+	___ghs_at_exit	1	50%	0	149	0
+___gh_lock_init	out	0	in	1
+	out	0	100%
+	in	1	100%
+	___ghs_ind_crt1	1	100%	0	57	0
+___ghssave29a	out	0	in	1
+	out	0	100%
+	in	1	100%
+	_flockdestroy	1	100%	0	23	0
+___ghssave28a	out	1	in	1
+	out	1	100%
+	___ghs_save27a	1	100%	0	6	16
+	in	1	100%
+	___ghs_flock_in_use	1	100%	0	145	0
+___ghssave27a	out	1	in	0
+	out	1	100%
+	___ghs_save27a	1	100%	0	12	16
+	in	0	100%
+___ghs_save27a	out	1	in	4
+	out	1	100%
+	___ghs_save27a	1	100%	0	16	16
+	in	4	100%
+	___ghssave28a	1	25%	0	6	16
+	___ghssave27a	1	25%	0	12	16
+	___ghs_save27a	1	25%	0	16	16
+	___ghs_save23a	1	25%	0	43	0
+___ghssave26a	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghssave25a	out	1	in	2
+	out	1	100%
+	___ghs_save23a	1	100%	0	6	24
+	in	2	100%
+	___gh_outchars	1	50%	0	33	0
+	_fflush	1	50%	0	1	0
+___ghssave24a	out	1	in	0
+	out	1	100%
+	___ghs_save23a	1	100%	0	12	24
+	in	0	100%
+___ghssave23a	out	1	in	0
+	out	1	100%
+	___ghs_save23a	1	100%	0	18	24
+	in	0	100%
+___ghs_save23a	out	2	in	4
+	out	2	100%
+	___ghs_save27a	1	50%	0	43	0
+	___ghs_save23a	1	50%	0	24	24
+	in	4	100%
+	___ghssave25a	1	25%	0	6	24
+	___ghssave24a	1	25%	0	12	24
+	___ghssave23a	1	25%	0	18	24
+	___ghs_save23a	1	25%	0	24	24
+___ghssavelp	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghssave29	out	1	in	1
+	out	1	100%
+	___ghs_save27	1	100%	0	6	22
+	in	1	100%
+	___gh_octhexout	1	100%	0	675	0
+___ghssave28	out	1	in	2
+	out	1	100%
+	___ghs_save27	1	100%	0	12	22
+	in	2	100%
+	.static0000267b	1	50%	0	555	0
+	__flsbuf	1	50%	0	3	0
+___ghssave27	out	1	in	0
+	out	1	100%
+	___ghs_save27	1	100%	0	18	22
+	in	0	100%
+___ghs_save27	out	1	in	5
+	out	1	100%
+	___ghs_save27	1	100%	0	22	22
+	in	5	100%
+	___ghssave29	1	20%	0	6	22
+	___ghssave28	1	20%	0	12	22
+	___ghssave27	1	20%	0	18	22
+	___ghs_save27	1	20%	0	22	22
+	___ghs_save23	1	20%	0	43	0
+___ghssave22	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghssave21	out	1	in	0
+	out	1	100%
+	___ghssave20	1	100%	0	6	12
+	in	0	100%
+___ghssave20	out	2	in	3
+	out	2	100%
+	___ghssave20	1	50%	0	12	12
+	___ghs_save23	1	50%	0	31	0
+	in	3	100%
+	___gh_strout	1	33%	0	79	0
+	___ghssave21	1	33%	0	6	12
+	___ghssave20	1	33%	0	12	12
+___ghsload29	out	0	in	2
+	out	0	100%
+	in	2	100%
+	___gh_octhexout	1	50%	0	731	0
+	_flockdestroy	1	50%	0	53	0
+___ghsload28	out	1	in	3
+	out	1	100%
+	___ghs_load27	1	100%	0	4	10
+	in	3	100%
+	.static0000267b	1	33%	0	605	0
+	__flsbuf	1	33%	0	153	0
+	___ghs_flock_in_use	1	33%	0	207	0
+___ghsload27	out	1	in	0
+	out	1	100%
+	___ghs_load27	1	100%	0	8	10
+	in	0	100%
+___ghs_load27	out	1	in	4
+	out	1	100%
+	___ghs_load27	1	100%	0	10	10
+	in	4	100%
+	___ghsload28	1	25%	0	4	10
+	___ghsload27	1	25%	0	8	10
+	___ghs_load27	1	25%	0	10	10
+	___ghs_load23	1	25%	0	31	0
+___ghsload26	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghsload25	out	1	in	2
+	out	1	100%
+	___ghs_load23	1	100%	0	4	14
+	in	2	100%
+	___gh_outchars	1	50%	0	65	0
+	_fflush	1	50%	0	157	0
+___ghsload24	out	1	in	0
+	out	1	100%
+	___ghs_load23	1	100%	0	8	14
+	in	0	100%
+___ghsload23	out	1	in	0
+	out	1	100%
+	___ghs_load23	1	100%	0	12	14
+	in	0	100%
+___ghs_load23	out	2	in	5
+	out	2	100%
+	___ghs_load27	1	50%	0	31	0
+	___ghs_load23	1	50%	0	14	14
+	in	5	100%
+	___ghsload25	1	20%	0	4	14
+	___ghsload24	1	20%	0	8	14
+	___ghsload23	1	20%	0	12	14
+	___ghs_load23	1	20%	0	14	14
+	___ghsload20	1	20%	0	23	0
+___ghsload22	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghsload21	out	1	in	0
+	out	1	100%
+	___ghsload20	1	100%	0	4	8
+	in	0	100%
+___ghsload20	out	2	in	3
+	out	2	100%
+	___ghs_load23	1	50%	0	23	0
+	___ghsload20	1	50%	0	8	8
+	in	3	100%
+	___gh_strout	1	33%	0	549	0
+	___ghsload21	1	33%	0	4	8
+	___ghsload20	1	33%	0	8	8
+___ghssavelpa	out	0	in	4
+	out	0	100%
+	in	4	100%
+	_flockcreate	1	25%	0	1	0
+	_flockfile	1	25%	0	57	0
+	_funlockfile	1	25%	0	85	0
+	_ftrylockfile	1	25%	0	113	0
+___ghsloadlpx	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghsloadlp	out	1	in	5
+	out	1	100%
+	___ghsloadlp	1	100%	0	16	16
+	in	5	100%
+	_flockcreate	1	20%	0	19	0
+	_flockfile	1	20%	0	81	0
+	_funlockfile	1	20%	0	109	0
+	_ftrylockfile	1	20%	0	141	0
+	___ghsloadlp	1	20%	0	16	16
+___ghssave26	out	0	in	0
+	out	0	100%
+	in	0	100%
+___ghssave25	out	1	in	0
+	out	1	100%
+	___ghs_save23	1	100%	0	6	24
+	in	0	100%
+___ghssave24	out	1	in	0
+	out	1	100%
+	___ghs_save23	1	100%	0	12	24
+	in	0	100%
+___ghssave23	out	1	in	0
+	out	1	100%
+	___ghs_save23	1	100%	0	18	24
+	in	0	100%
+___ghs_save23	out	2	in	5
+	out	2	100%
+	___ghs_save27	1	50%	0	43	0
+	___ghs_save23	1	50%	0	24	24
+	in	5	100%
+	___ghssave20	1	20%	0	31	0
+	___ghssave25	1	20%	0	6	24
+	___ghssave24	1	20%	0	12	24
+	___ghssave23	1	20%	0	18	24
+	___ghs_save23	1	20%	0	24	24
+.static0000267b	out	4	in	0
+	out	4	100%
+	___gh_xxdecout	1	25%	0	573	0
+	___gh_strout	1	25%	0	597	78
+	___ghssave28	1	25%	0	555	0
+	___ghsload28	1	25%	0	605	0
+	in	0	100%
+#% END STATIC GRAPH

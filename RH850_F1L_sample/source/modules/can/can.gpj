@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_can.c
+r_can.h

@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_stbc.c
+r_stbc.h

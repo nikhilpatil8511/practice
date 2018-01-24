@@ -1,0 +1,4 @@
+#!gbuild
+[Subproject]
+r_enc.c
+r_enc.h

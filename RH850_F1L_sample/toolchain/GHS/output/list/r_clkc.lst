@@ -1,0 +1,2699 @@
+                                                                      Page 1
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+Command Line: C:\ghs\comp_201517\ease850.exe -w -elf -b0 -I..\..\device -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5 -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest -IC:\ghs\comp_201517\lib\rh850 -cg_underscore -cpu=rh850g3k -nofpu -no_v850_simd -rh850_fpsimd=none -nomacro -patch_dbo=C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS\output\obj\r_clkc.dbo -source=r_clkc.c -o output\obj\gh_000ad6s1.o -list=output\list\r_clkc.lst C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s 
+Original File: C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+Source File: r_clkc.c
+Directory: C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+Host OS: Windows 7 Service Pack 1
+EASE: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win32-comp-ecom
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 01:50:13 2015
+
+Release Date: Thu Oct 22 03:32:32 2015
+
+                           1 --Driver Command: ccv850 -c -MD -I..\..\device
+                           2 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+                           3 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest
+                           4 --		-G -object_dir=output\obj -list -list_dir=output/list -passsource
+                           5 --		-bsp generic -fsoft -cpu=rh850g3k -D__GHS__ -dwarf2 -large_sda
+                           6 --		-sda -filetype.c ..\..\source\peripherals\clkc\r_clkc.c -o
+                           7 --		output\obj\r_clkc.o
+                           8 --Source File:   ..\..\source\peripherals\clkc\r_clkc.c
+                           9 --Directory:     
+                          10 --		C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+                          11 --Compile Date:  Thu Jan 18 08:13:38 2018
+                          12 --Host OS:       Win32
+                          13 --Version:       C-RH850 2015.1.7 RELEASE VERSION
+                          14 --Release:       Compiler v2015.1.7
+                          15 --Revision Date: Thu Oct 22 02:06:12 2015
+                          16 --Release Date:  Thu Oct 22 03:34:32 2015
+                          17 -- ecom  -g -w
+                          18 
+                          19 --1: /*===========================================================================*/
+                          20 --2: /* Project:  F1x StarterKit V3 Sample Software                               */
+                          21 --3: /* Module :  r_clkc.c                                                        */
+                          22 --4: /* Version:  V1.00                                                           */
+                          23 --5: /*===========================================================================*/
+                          24 --6: /*                                  COPYRIGHT                                */
+                          25 --7: /*===========================================================================*/
+                          26 --8: /* Copyright (c) 2016 by Renesas Electronics Europe GmbH,                    */
+                          27 --9: /*               a company of the Renesas Electronics Corporation            */
+                          28 --10: /*===========================================================================*/
+                          29 --11: /* In case of any question please do not hesitate to contact:                */
+                          30 --12: /*                                                                           */
+                          31 --13: /*        ABG Software Tool Support                                          */
+                          32 --14: /*                                                                           */
+                          33 --15: /*        Renesas Electronics Europe GmbH                                    */
+                          34 --16: /*        Arcadiastrasse 10                                                  */
+                          35 --17: /*        D-40472 Duesseldorf, Germany                                       */
+                          36 --18: /*                                                                           */
+                          37 --19: /*        e-mail: software_support-eu@lm.renesas.com                         */
+                          38 --20: /*        FAX:   +49 - (0)211 / 65 03 - 11 31                                */
+                          39 --21: /*                                                                           */
+                          40 --22: /*===========================================================================*/
+                          41 --23: /* Warranty Disclaimer                                                       */
+                          42 --24: /*                                                                           */
+                          43 --25: /* Because the Product(s) is licensed free of charge, there is no warranty   */
+                          44 --26: /* of any kind whatsoever and expressly disclaimed and excluded by Renesas,  */
+                          45 --27: /* either expressed or implied, including but not limited to those for       */
+                          46 --28: /* non-infringement of intellectual property, merchantability and/or         */
+                          47 --29: /* fitness for the particular purpose.                                       */
+                          48 --30: /* Renesas shall not have any obligation to maintain, service or provide bug */
+                          49 --31: /* fixes for the supplied Product(s) and/or the Application.                 */
+                          50 --32: /*                                                                           */
+
+                                                                      Page 2
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                          51 --33: /* Each User is solely responsible for determining the appropriateness of    */
+                          52 --34: /* using the Product(s) and assumes all risks associated with its exercise   */
+                          53 --35: /* of rights under this Agreement, including, but not limited to the risks   */
+                          54 --36: /* and costs of program errors, compliance with applicable laws, damage to   */
+                          55 --37: /* or loss of data, programs or equipment, and unavailability or             */
+                          56 --38: /* interruption of operations.                                               */
+                          57 --39: /*                                                                           */
+                          58 --40: /* Limitation of Liability                                                   */
+                          59 --41: /*                                                                           */
+                          60 --42: /* In no event shall Renesas be liable to the User for any incidental,       */
+                          61 --43: /* consequential, indirect, or punitive damage (including but not limited    */
+                          62 --44: /* to lost profits) regardless of whether such liability is based on breach  */
+                          63 --45: /* of contract, tort, strict liability, breach of warranties, failure of     */
+                          64 --46: /* essential purpose or otherwise and even if advised of the possibility of  */
+                          65 --47: /* such damages. Renesas shall not be liable for any services or products    */
+                          66 --48: /* provided by third party vendors, developers or consultants identified or  */
+                          67 --49: /* referred to the User by Renesas in connection with the Product(s) and/or  */
+                          68 --50: /* the Application.                                                          */
+                          69 --51: /*                                                                           */
+                          70 --52: /*===========================================================================*/
+                          71 --53: /* History:                                                                  */
+                          72 --54: /*              V1.00: Initial version                                       */
+                          73 --55: /*                                                                           */
+                          74 --56: /*===========================================================================*/
+                          75 --57: /*                                                                           */
+                          76 --58: /* Source code for the clock controller configurations.                      */
+                          77 --59: /*                                                                           */
+                          78 --60: /*===========================================================================*/
+                          79 --63: /*===========================================================================*/
+                          80 --64: /* Includes */
+                          81 --65: /*===========================================================================*/
+                          82 --66: #include "r_device.h"
+                          83 --67: #include "r_clkc.h"                 
+                          84 --69: /*===========================================================================*/
+                          85 --70: /* Functions */
+                          86 --71: /*===========================================================================*/
+                          87 --72: /*****************************************************************************
+                          88 --73: ** Function:    R_CLKC_PllInit
+                          89 --74: ** Description: This function generates 120MHz CPU CLK and 80MHz PeripheralPLL CLK.
+                          90 --75: ** Parameter:   None
+                          91 --76: ** Return:      None
+                          92 --77: ******************************************************************************/
+                          93 --78: void R_CLKC_PllInit(void)
+                          94 	.text
+                          95 ..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0::
+                          96 	.align	2
+                          97 	.global	_R_CLKC_PllInit
+                          98 _R_CLKC_PllInit:
+                          99 --	    .bf
+                         100 .LDW01:
+                         101 --79: { 
+                         102 --80:   /* Prepare 16MHz MainOsc */
+                         103 --81:     if((MOSCS&0x04u) != 0x4u)                       /* Check if MainOsc needs to be started */
+00000000 8007490822f0    104 	ld.w	4294447364[zero],r1
+00000006 830a            105 	shr	3,r1
+00000008 d125*           106 	bl	.L4
+                         107 --82:   {
+                         108 --83:    MOSCC=0x06;                                      /* Set MainOSC gain for 16MHz */
+                         109 --line83
+                         110 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.1::
+                         111 .LDWlin1:
+
+                                                                      Page 3
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+0000000a 060a            112 	mov	6,r1
+0000000c 80078f0822f0    113 	st.w	r1,4294447368[zero]
+                         114 --84:    MOSCST=0x00008000;                               /* Set MainOSC stabilization time to ~4.1ms */
+00000012 800e0080        115 	ori	32768,zero,r1
+00000016 8007cf0822f0    116 	st.w	r1,4294447372[zero]
+                         117 --85:    protected_write(PROTCMD0,PROTS0,MOSCE,0x01u);    /* Trigger Enable (protected write) */
+                         118 .L8:
+0000001c 200ea500        119 	movea	165,zero,r1
+00000020 80070f0800f0    120 	st.w	r1,4294443008[zero]
+00000026 010a            121 	mov	1,r1
+00000028 80070f0822f0    122 	st.w	r1,4294447360[zero]
+0000002e 1e0a            123 	mov	-2,r1
+00000030 80070f0822f0    124 	st.w	r1,4294447360[zero]
+00000036 010a            125 	mov	1,r1
+00000038 80070f0822f0    126 	st.w	r1,4294447360[zero]
+0000003e 8007490800f0    127 	ld.w	4294443012[zero],r1
+00000044 610a            128 	cmp	1,r1
+00000046 b2ed*           129 	be	.L8
+                         130 --86:    while ((MOSCS&0x04u) != 0x04u);                  /* Wait for active MainOSC */
+                         131 .L9:
+                         132 --line86
+                         133 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.2::
+                         134 .LDWlin2:
+00000048 8007490822f0    135 	ld.w	4294447364[zero],r1
+0000004e 830a            136 	shr	3,r1
+00000050 c9fd*           137 	bnl	.L9
+                         138 .L4:
+                         139 --87:   }
+                         140 --89:   if((PLLS&0x04u) != 0x04u)                         /* Check if PLL needs to be started */
+                         141 --line89
+                         142 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.3::
+                         143 .LDWlin3:
+00000052 8007490820f1    144 	ld.w	4294479876[zero],r1
+00000058 830a            145 	shr	3,r1
+0000005a 9125*           146 	bl	.L12
+                         147 --90:   {
+                         148 --91:     /* Prepare PLL*/
+                         149 --92:     PLLC=0x00000a27u;                               /* 16 MHz MainOSC -> 80MHz PLL */
+                         150 --line92
+                         151 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.4::
+                         152 .LDWlin4:
+0000005c 200e270a        153 	movea	2599,zero,r1
+00000060 80078f0820f1    154 	st.w	r1,4294479880[zero]
+                         155 --93:     protected_write(PROTCMD1,PROTS1,PLLE,0x01u);    /* Enable PLL */
+                         156 .L16:
+00000066 200ea500        157 	movea	165,zero,r1
+0000006a 80070f0800f1    158 	st.w	r1,4294475776[zero]
+00000070 010a            159 	mov	1,r1
+00000072 80070f0820f1    160 	st.w	r1,4294479872[zero]
+00000078 1e0a            161 	mov	-2,r1
+0000007a 80070f0820f1    162 	st.w	r1,4294479872[zero]
+00000080 010a            163 	mov	1,r1
+00000082 80070f0820f1    164 	st.w	r1,4294479872[zero]
+00000088 8007490800f1    165 	ld.w	4294475780[zero],r1
+0000008e 610a            166 	cmp	1,r1
+00000090 b2ed*           167 	be	.L16
+                         168 --94:     while((PLLS&0x04u) != 0x04u){}                  /* Wait for active PLL */
+                         169 .L17:
+                         170 --line94
+                         171 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.5::
+                         172 .LDWlin5:
+
+                                                                      Page 4
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000092 8007490820f1    173 	ld.w	4294479876[zero],r1
+00000098 830a            174 	shr	3,r1
+0000009a c9fd*           175 	bnl	.L17
+                         176 .L12:
+                         177 --95:   }
+                         178 --96:   
+                         179 --97:   /* PLL0 -> CPU Clock */ 
+                         180 --98:   protected_write(PROTCMD1,PROTS1,CKSC_CPUCLKS_CTL,0x03u);
+                         181 .L22:
+                         182 --line98
+                         183 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.6::
+                         184 .LDWlin6:
+0000009c 200ea500        185 	movea	165,zero,r1
+000000a0 80070f0800f1    186 	st.w	r1,4294475776[zero]
+000000a6 030a            187 	mov	3,r1
+000000a8 80070f0840f1    188 	st.w	r1,4294483968[zero]
+000000ae 1c0a            189 	mov	-4,r1
+000000b0 80070f0840f1    190 	st.w	r1,4294483968[zero]
+000000b6 030a            191 	mov	3,r1
+000000b8 80070f0840f1    192 	st.w	r1,4294483968[zero]
+000000be 8007490800f1    193 	ld.w	4294475780[zero],r1
+000000c4 610a            194 	cmp	1,r1
+000000c6 b2ed*           195 	be	.L22
+                         196 --99:   while(CKSC_CPUCLKS_ACT!=0x03u);
+                         197 .L23:
+                         198 --line99
+                         199 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.7::
+                         200 .LDWlin7:
+000000c8 8007890840f1    201 	ld.w	4294483976[zero],r1
+000000ce 630a            202 	cmp	3,r1
+000000d0 cafd*           203 	bne	.L23
+                         204 --100:   
+                         205 --101:   /* CPU Clock divider = PLL0/1 */
+                         206 --102:   protected_write(PROTCMD1,PROTS1,CKSC_CPUCLKD_CTL,0x01u);
+                         207 .L28:
+                         208 --line102
+                         209 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.8::
+                         210 .LDWlin8:
+000000d2 200ea500        211 	movea	165,zero,r1
+000000d6 80070f0800f1    212 	st.w	r1,4294475776[zero]
+000000dc 010a            213 	mov	1,r1
+000000de 80070f0842f1    214 	st.w	r1,4294484224[zero]
+000000e4 1e0a            215 	mov	-2,r1
+000000e6 80070f0842f1    216 	st.w	r1,4294484224[zero]
+000000ec 010a            217 	mov	1,r1
+000000ee 80070f0842f1    218 	st.w	r1,4294484224[zero]
+000000f4 8007490800f1    219 	ld.w	4294475780[zero],r1
+000000fa 610a            220 	cmp	1,r1
+000000fc b2ed*           221 	be	.L28
+                         222 --103:   while(CKSC_CPUCLKD_ACT!=0x01u);
+                         223 .L29:
+                         224 --line103
+                         225 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.9::
+                         226 .LDWlin9:
+000000fe 8007890842f1    227 	ld.w	4294484232[zero],r1
+00000104 610a            228 	cmp	1,r1
+00000106 cafd*           229 	bne	.L29
+                         230 --105:   /* Set Peripheral CLK2 to 40 MHZ (PPLL2) */
+                         231 --106:   protected_write(PROTCMD1,PROTS1,CKSC_IPERI2S_CTL,0x02u);
+                         232 .L34:
+                         233 --line106
+
+                                                                      Page 5
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         234 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.10::
+                         235 .LDWlin10:
+00000108 200ea500        236 	movea	165,zero,r1
+0000010c 80070f0800f1    237 	st.w	r1,4294475776[zero]
+00000112 020a            238 	mov	2,r1
+00000114 80070f0846f1    239 	st.w	r1,4294484736[zero]
+0000011a 1d0a            240 	mov	-3,r1
+0000011c 80070f0846f1    241 	st.w	r1,4294484736[zero]
+00000122 020a            242 	mov	2,r1
+00000124 80070f0846f1    243 	st.w	r1,4294484736[zero]
+0000012a 8007490800f1    244 	ld.w	4294475780[zero],r1
+00000130 610a            245 	cmp	1,r1
+00000132 b2ed*           246 	be	.L34
+                         247 --107:   while(CKSC_IPERI2S_ACT!=0x02u);
+                         248 .L35:
+                         249 --line107
+                         250 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.11::
+                         251 .LDWlin11:
+00000134 8007890846f1    252 	ld.w	4294484744[zero],r1
+0000013a 620a            253 	cmp	2,r1
+0000013c cafd*           254 	bne	.L35
+                         255 --108: }
+                         256 --	    .ef
+                         257 .LDW11:
+                         258 --line108
+                         259 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.12::
+                         260 .LDWlin12:
+0000013e 7f00            261 	jmp	[lp]
+                         262 	.global	___ghs_eofn_R_CLKC_PllInit
+                         263 ___ghs_eofn_R_CLKC_PllInit:
+                         264 	.type	_R_CLKC_PllInit,@function
+                         265 	.size	_R_CLKC_PllInit,.-_R_CLKC_PllInit
+                         266 	.align	2
+                         267 
+                         268 	.section ".bss","awb"
+                         269 .L277:
+                         270 	.type	.L277,@object
+                         271 	.size	.L277,0
+                         272 	.data
+                         273 	.text
+                         274 
+                         275 
+                         276 --110: /*****************************************************************************
+                         277 --111: ** Function:    R_CLKC_SetRscanClockDomain
+                         278 --112: ** Description: Select the RS-CAN Module Clock and the Communication Clock.
+                         279 --113: ** Parameter:   RscanModuleClockDomain - Clock for operation of the CAN module itself.
+                         280 --114: **              RscanComClockDomain - Clock used for the communication speed setting.
+                         281 --115: ** Return:      None
+                         282 --116: ******************************************************************************/
+                         283 --117: void R_CLKC_SetRscanClockDomain(uint32_t RscanModuleClockDomain, uint32_t RscanComClockDomain)
+                         284 	.align	2
+                         285 	.align	2
+                         286 	.global	_R_CLKC_SetRscanClockDomain
+                         287 _R_CLKC_SetRscanClockDomain:
+00000140 0608            288 	mov	r6,r1
+00000142 0710            289 	mov	r7,r2
+                         290 --	    .bf
+                         291 .LDW21:
+                         292 --118: {
+                         293 --119:   /* Select RS-CAN Module Clock */
+                         294 --120:   protected_write(PROTCMD1, PROTS1, CKSC_ICANS_CTL, RscanModuleClockDomain);
+
+                                                                      Page 6
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         295 .L432:
+00000144 209ea500        296 	movea	165,zero,r19
+00000148 80070f9800f1    297 	st.w	r19,4294475776[zero]
+0000014e 80070f0852f1    298 	st.w	r1,4294486272[zero]
+00000154 2198            299 	not	r1,r19
+00000156 80070f9852f1    300 	st.w	r19,4294486272[zero]
+0000015c 80070f0852f1    301 	st.w	r1,4294486272[zero]
+00000162 8007499800f1    302 	ld.w	4294475780[zero],r19
+00000168 619a            303 	cmp	1,r19
+0000016a d2ed*           304 	be	.L432
+                         305 --121:   while (CKSC_ICANS_ACT !=RscanModuleClockDomain);
+                         306 .L433:
+                         307 --line121
+                         308 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.13::
+                         309 .LDWlin13:
+0000016c 8007899852f1    310 	ld.w	4294486280[zero],r19
+00000172 e199            311 	cmp	r1,r19
+00000174 cafd*           312 	bne	.L433
+                         313 --123:   /* Select RS-CAN Communication Clock */
+                         314 --124:   protected_write(PROTCMD1, PROTS1, CKSC_ICANOSCD_CTL, RscanComClockDomain);
+                         315 .L438:
+                         316 --line124
+                         317 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.14::
+                         318 .LDWlin14:
+00000176 209ea500        319 	movea	165,zero,r19
+0000017a 80070f9800f1    320 	st.w	r19,4294475776[zero]
+00000180 80070f1054f1    321 	st.w	r2,4294486528[zero]
+00000186 2298            322 	not	r2,r19
+00000188 80070f9854f1    323 	st.w	r19,4294486528[zero]
+0000018e 80070f1054f1    324 	st.w	r2,4294486528[zero]
+00000194 8007499800f1    325 	ld.w	4294475780[zero],r19
+0000019a 619a            326 	cmp	1,r19
+0000019c d2ed*           327 	be	.L438
+                         328 --125:   while (CKSC_ICANOSCD_CTL != RscanComClockDomain);
+                         329 .L439:
+                         330 --line125
+                         331 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.15::
+                         332 .LDWlin15:
+0000019e 8007099854f1    333 	ld.w	4294486528[zero],r19
+000001a4 e299            334 	cmp	r2,r19
+000001a6 cafd*           335 	bne	.L439
+                         336 --126: }
+                         337 --	    .ef
+                         338 .LDW31:
+                         339 --line126
+                         340 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.16::
+                         341 .LDWlin16:
+000001a8 7f00            342 	jmp	[lp]
+                         343 	.global	___ghs_eofn_R_CLKC_SetRscanClockDomain
+                         344 ___ghs_eofn_R_CLKC_SetRscanClockDomain:
+                         345 	.type	_R_CLKC_SetRscanClockDomain,@function
+                         346 	.size	_R_CLKC_SetRscanClockDomain,.-_R_CLKC_SetRscanClockDomain
+                         347 	.align	2
+                         348 
+                         349 --_RscanModuleClockDomain	r1	param
+                         350 --_RscanComClockDomain	r2	param
+                         351 
+                         352 	.section ".bss","awb"
+                         353 .L526:
+                         354 	.type	.L526,@object
+                         355 	.size	.L526,0
+
+                                                                      Page 7
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         356 	.data
+                         357 	.text
+                         358 
+                         359 
+                         360 --128: /*****************************************************************************
+                         361 --129: ** Function:    R_CLKC_SetAdca0ClockDomain
+                         362 --130: ** Description: Select the ADCA0 Clock domain.
+                         363 --131: ** Parameter:   None
+                         364 --132: ** Return:      None
+                         365 --133: ******************************************************************************/
+                         366 --134: void R_CLKC_SetAdca0ClockDomain(uint32_t Adca0ClockDomain)
+                         367 	.align	2
+                         368 	.align	2
+                         369 	.global	_R_CLKC_SetAdca0ClockDomain
+                         370 _R_CLKC_SetAdca0ClockDomain:
+000001aa 0608            371 	mov	r6,r1
+                         372 --	    .bf
+                         373 .LDW41:
+                         374 --135: {
+                         375 --136:   protected_write(PROTCMD0, PROTS0, CKSC_AADCAS_CTL, Adca0ClockDomain);
+                         376 .L590:
+000001ac 2016a500        377 	movea	165,zero,r2
+000001b0 80070f1000f0    378 	st.w	r2,4294443008[zero]
+000001b6 80070f084af0    379 	st.w	r1,4294452480[zero]
+000001bc 2110            380 	not	r1,r2
+000001be 80070f104af0    381 	st.w	r2,4294452480[zero]
+000001c4 80070f084af0    382 	st.w	r1,4294452480[zero]
+000001ca 8007491000f0    383 	ld.w	4294443012[zero],r2
+000001d0 6112            384 	cmp	1,r2
+000001d2 d2ed*           385 	be	.L590
+                         386 --137:   while(CKSC_AADCAS_ACT != Adca0ClockDomain);
+                         387 .L591:
+                         388 --line137
+                         389 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.17::
+                         390 .LDWlin17:
+000001d4 800789104af0    391 	ld.w	4294452488[zero],r2
+000001da e111            392 	cmp	r1,r2
+000001dc cafd*           393 	bne	.L591
+                         394 --138: }
+                         395 --	    .ef
+                         396 .LDW51:
+                         397 --line138
+                         398 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.18::
+                         399 .LDWlin18:
+000001de 7f00            400 	jmp	[lp]
+                         401 	.global	___ghs_eofn_R_CLKC_SetAdca0ClockDomain
+                         402 ___ghs_eofn_R_CLKC_SetAdca0ClockDomain:
+                         403 	.type	_R_CLKC_SetAdca0ClockDomain,@function
+                         404 	.size	_R_CLKC_SetAdca0ClockDomain,.-_R_CLKC_SetAdca0ClockDomain
+                         405 	.align	2
+                         406 
+                         407 --_Adca0ClockDomain	r1	param
+                         408 
+                         409 	.section ".bss","awb"
+                         410 .L654:
+                         411 	.type	.L654,@object
+                         412 	.size	.L654,0
+                         413 	.data
+                         414 	.text
+                         415 
+                         416 
+
+                                                                      Page 8
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         417 --140: /*****************************************************************************
+                         418 --141: ** Function:    R_CLKC_SetTaujClockDomain
+                         419 --142: ** Description: Select the TAUJ Clock domain.
+                         420 --143: ** Parameter:   None
+                         421 --144: ** Return:      None
+                         422 --145: ******************************************************************************/
+                         423 --146: void R_CLKC_SetTaujClockDomain(uint32_t TaujClockDomain)
+                         424 	.align	2
+                         425 	.align	2
+                         426 	.global	_R_CLKC_SetTaujClockDomain
+                         427 _R_CLKC_SetTaujClockDomain:
+000001e0 0608            428 	mov	r6,r1
+                         429 --	    .bf
+                         430 .LDW61:
+                         431 --147: {
+                         432 --148:   protected_write(PROTCMD0, PROTS0, CKSC_ATAUJS_CTL, TaujClockDomain);
+                         433 .L694:
+000001e2 2016a500        434 	movea	165,zero,r2
+000001e6 80070f1000f0    435 	st.w	r2,4294443008[zero]
+000001ec 80070f0842f0    436 	st.w	r1,4294451456[zero]
+000001f2 2110            437 	not	r1,r2
+000001f4 80070f1042f0    438 	st.w	r2,4294451456[zero]
+000001fa 80070f0842f0    439 	st.w	r1,4294451456[zero]
+00000200 8007491000f0    440 	ld.w	4294443012[zero],r2
+00000206 6112            441 	cmp	1,r2
+00000208 d2ed*           442 	be	.L694
+                         443 --149:   while(CKSC_ATAUJS_CTL != TaujClockDomain);
+                         444 .L695:
+                         445 --line149
+                         446 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.19::
+                         447 .LDWlin19:
+0000020a 8007091042f0    448 	ld.w	4294451456[zero],r2
+00000210 e111            449 	cmp	r1,r2
+00000212 cafd*           450 	bne	.L695
+                         451 --150: }  
+                         452 --	    .ef
+                         453 .LDW71:
+                         454 --line150
+                         455 ..lin.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc.20::
+                         456 .LDWlin20:
+00000214 7f00            457 	jmp	[lp]
+                         458 	.global	___ghs_eofn_R_CLKC_SetTaujClockDomain
+                         459 ___ghs_eofn_R_CLKC_SetTaujClockDomain:
+                         460 	.type	_R_CLKC_SetTaujClockDomain,@function
+                         461 	.size	_R_CLKC_SetTaujClockDomain,.-_R_CLKC_SetTaujClockDomain
+                         462 	.align	2
+                         463 
+                         464 --_TaujClockDomain	r1	param
+                         465 
+                         466 	.section ".bss","awb"
+                         467 .L750:
+                         468 	.type	.L750,@object
+                         469 	.size	.L750,0
+                         470 	.data
+                         471 	.text
+                         472 
+                         473 
+                         474 --152: /*****************************************************************************
+                         475 --153: ** Function:    R_CLKC_SetAdca0StopMask
+                         476 --154: ** Description: Sets the stop-mask bit for the ADCA0 clock supply so it is not  
+                         477 --155: **              stopped in DeepSTOP.
+
+                                                                      Page 9
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         478 --156: ** Parameter:   None
+                         479 --157: ** Return:      None
+                         480 --158: ******************************************************************************/
+                         481 --159: void R_CLKC_SetAdca0StopMask(void)
+                         482 	.align	2
+                         483 	.align	2
+                         484 	.global	_R_CLKC_SetAdca0StopMask
+                         485 _R_CLKC_SetAdca0StopMask:
+                         486 --	    .bf
+                         487 .LDW81:
+                         488 --160: {
+                         489 --161:     CKSC_AADCAD_STPM = R_CLKC_STOPMASK_SET;
+00000216 030a            490 	mov	3,r1
+00000218 80078f094cf0    491 	st.w	r1,4294452760[zero]
+                         492 --162: }
+                         493 --	    .ef
+                         494 .LDW91:
+0000021e 7f00            495 	jmp	[lp]
+                         496 	.global	___ghs_eofn_R_CLKC_SetAdca0StopMask
+                         497 ___ghs_eofn_R_CLKC_SetAdca0StopMask:
+                         498 	.type	_R_CLKC_SetAdca0StopMask,@function
+                         499 	.size	_R_CLKC_SetAdca0StopMask,.-_R_CLKC_SetAdca0StopMask
+                         500 	.align	2
+                         501 
+                         502 	.section ".bss","awb"
+                         503 .L818:
+                         504 	.type	.L818,@object
+                         505 	.size	.L818,0
+                         506 	.data
+                         507 	.text
+                         508 
+                         509 
+                         510 --164: /*****************************************************************************
+                         511 --165: ** Function:    R_CLKC_ResetAdca0StopMask
+                         512 --166: ** Description: Resets the stop-mask bit for the ADCA0 clock supply so it is  
+                         513 --167: **              stopped in DeepSTOP.
+                         514 --168: ** Parameter:   None
+                         515 --169: ** Return:      None
+                         516 --170: ******************************************************************************/
+                         517 --171: void R_CLKC_ResetAdca0StopMask(void)
+                         518 	.align	2
+                         519 	.align	2
+                         520 	.global	_R_CLKC_ResetAdca0StopMask
+                         521 _R_CLKC_ResetAdca0StopMask:
+                         522 --	    .bf
+                         523 .LDW02:
+                         524 --172: {
+                         525 --173:     CKSC_AADCAD_STPM = R_CLKC_STOPMASK_RESET;
+00000220 020a            526 	mov	2,r1
+00000222 80078f094cf0    527 	st.w	r1,4294452760[zero]
+                         528 --174: }
+                         529 --	    .ef
+                         530 .LDW12:
+00000228 7f00            531 	jmp	[lp]
+                         532 	.global	___ghs_eofn_R_CLKC_ResetAdca0StopMask
+                         533 ___ghs_eofn_R_CLKC_ResetAdca0StopMask:
+                         534 	.type	_R_CLKC_ResetAdca0StopMask,@function
+                         535 	.size	_R_CLKC_ResetAdca0StopMask,.-_R_CLKC_ResetAdca0StopMask
+                         536 	.align	2
+                         537 
+                         538 	.section ".bss","awb"
+
+                                                                      Page 10
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         539 .L866:
+                         540 	.type	.L866,@object
+                         541 	.size	.L866,0
+                         542 	.data
+                         543 	.text
+                         544 
+                         545 
+                         546 --176: /*****************************************************************************
+                         547 --177: ** Function:    R_CLKC_SetTaujStopMask
+                         548 --178: ** Description: Sets the stop-mask bit for the TAUJ clock supply so it is not  
+                         549 --179: **              stopped in DeepSTOP.
+                         550 --180: ** Parameter:   None
+                         551 --181: ** Return:      None
+                         552 --182: ******************************************************************************/
+                         553 --183: void R_CLKC_SetTaujStopMask(void)
+                         554 	.align	2
+                         555 	.align	2
+                         556 	.global	_R_CLKC_SetTaujStopMask
+                         557 _R_CLKC_SetTaujStopMask:
+                         558 --	    .bf
+                         559 .LDW22:
+                         560 --184: {
+                         561 --185:     CKSC_ATAUJD_STPM = R_CLKC_STOPMASK_SET;
+0000022a 030a            562 	mov	3,r1
+0000022c 80078f0944f0    563 	st.w	r1,4294451736[zero]
+                         564 --186: }
+                         565 --	    .ef
+                         566 .LDW32:
+00000232 7f00            567 	jmp	[lp]
+                         568 	.global	___ghs_eofn_R_CLKC_SetTaujStopMask
+                         569 ___ghs_eofn_R_CLKC_SetTaujStopMask:
+                         570 	.type	_R_CLKC_SetTaujStopMask,@function
+                         571 	.size	_R_CLKC_SetTaujStopMask,.-_R_CLKC_SetTaujStopMask
+                         572 	.align	2
+                         573 
+                         574 	.section ".bss","awb"
+                         575 .L914:
+                         576 	.type	.L914,@object
+                         577 	.size	.L914,0
+                         578 	.data
+                         579 	.text
+                         580 
+                         581 
+                         582 --188: /*****************************************************************************
+                         583 --189: ** Function:    R_CLKC_ResetTaujStopMask
+                         584 --190: ** Description: Resets the stop-mask bit for the TAUJ clock supply so it is  
+                         585 --191: **              stopped in DeepSTOP.
+                         586 --192: ** Parameter:   None
+                         587 --193: ** Return:      None
+                         588 --194: ******************************************************************************/
+                         589 --195: void R_CLKC_ResetTaujStopMask(void)
+                         590 	.align	2
+                         591 	.align	2
+                         592 	.global	_R_CLKC_ResetTaujStopMask
+                         593 _R_CLKC_ResetTaujStopMask:
+                         594 --	    .bf
+                         595 .LDW42:
+                         596 --196: {
+                         597 --197:     CKSC_ATAUJD_STPM = R_CLKC_STOPMASK_RESET;
+00000234 020a            598 	mov	2,r1
+00000236 80078f0944f0    599 	st.w	r1,4294451736[zero]
+
+                                                                      Page 11
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         600 --198: }
+                         601 --	    .ef
+                         602 .LDW52:
+0000023c 7f00            603 	jmp	[lp]
+                         604 	.global	___ghs_eofn_R_CLKC_ResetTaujStopMask
+                         605 ___ghs_eofn_R_CLKC_ResetTaujStopMask:
+                         606 	.type	_R_CLKC_ResetTaujStopMask,@function
+                         607 	.size	_R_CLKC_ResetTaujStopMask,.-_R_CLKC_ResetTaujStopMask
+                         608 	.align	2
+                         609 
+                         610 	.section ".bss","awb"
+                         611 .L962:
+                         612 	.type	.L962,@object
+                         613 	.size	.L962,0
+                         614 	.data
+                         615 	.text
+                         616 
+                         617 	.align	2
+                         618 
+                         619 	.data
+                         620 	.ghsnote version,17
+                         621 	.ghsnote tools,3
+                         622 	.ghsnote options,144
+                         623 	.text
+                         624 	.align	2
+                         625 ..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0::
+                         626 	.section	.debug_info
+                         627 .Ldw_begin:
+00000000 62030000        628 	.word	.Ldw_end-.Ldw_begin-4
+00000004 0200            629 	.byte	2,0
+00000006 00000000*       630 	.word	.Ldw_abbr_begin
+0000000a 04              631 	.byte	4
+                         632 	.section	.debug_abbrev
+                         633 .Ldw_abbr_begin:
+                         634 	.section	.debug_info
+0000000b 01              635 	.byte	1
+0000000c 00000000*       636 	.word	..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0
+00000010 00000000*       637 	.word	..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_clkc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0
+00000014 2e2e5c2e2e5c    638 	.strz	"..\\..\\source\\peripherals\\clkc\\r_clkc.c"
+0000001a 736f75726365 
+00000020 5c7065726970 
+00000026 686572616c73 
+0000002c 5c636c6b635c 
+00000032 725f636c6b63 
+00000038 2e6300 
+0000003b 433a5c557365    639 	.strz	"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\toolchain\\GHS"
+00000041 72735c6e696b 
+00000047 68696c2e7061 
+0000004d 74696c5c446f 
+00000053 63756d656e74 
+00000059 735c72656e65 
+0000005f 7361735c5248 
+00000065 3835305f4631 
+0000006b 4c5f73616d70 
+00000071 6c655c746f6f 
+00000077 6c636861696e 
+0000007d 5c47485300 
+00000082 474853204320    640 	.strz	"GHS C 2015.1.7 [dual]"
+00000088 323031352e31 
+0000008e 2e37205b6475 
+00000094 616c5d00 
+
+                                                                      Page 12
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000098 0100            641 	.byte	1,0
+0000009a 00000000*       642 	.word	.Ldw_line_begin
+0000009e 00000000*       643 	.word	.Ldw_macinfo_begin
+000000a2 00              644 	.byte	0
+                         645 
+                         646 	.section	.debug_abbrev
+00000000 01              647 	.byte	1
+00000001 11              648 	.byte	17
+00000002 01              649 	.byte	1
+00000003 1101            650 	.byte	17,1
+00000005 1201            651 	.byte	18,1
+00000007 0308            652 	.byte	3,8
+00000009 1b08            653 	.byte	27,8
+0000000b 2508            654 	.byte	37,8
+0000000d 1305            655 	.byte	19,5
+0000000f 1006            656 	.byte	16,6
+00000011 4306            657 	.byte	67,6
+00000013 420b            658 	.byte	66,11
+00000015 0000            659 	.byte	0,0
+                         660 
+                         661 	.section	.debug_line
+                         662 .Ldw_line_begin:
+00000000 05030000        663 	.word	.Ldw_line_end-.Ldw_line_begin-4
+00000004 0200            664 	.byte	2,0
+00000006 00000000*       665 	.word	.Ldw_lpro_end-.Ldw_lpro_begin
+                         666 .Ldw_lpro_begin:
+0000000a 01              667 	.byte	1
+0000000b 00              668 	.byte	0
+0000000c 00              669 	.byte	0
+0000000d 04              670 	.byte	4
+0000000e 0a              671 	.byte	10
+0000000f 000101          672 	.byte	0,1,1
+00000012 010100          673 	.byte	1,1,0
+00000015 000001          674 	.byte	0,0,1
+00000018 00              675 	.byte	0
+00000019 2e2e5c2e2e5c    676 	.strz	"..\\..\\source\\peripherals\\clkc\\r_clkc.c"
+0000001f 736f75726365 
+00000025 5c7065726970 
+0000002b 686572616c73 
+00000031 5c636c6b635c 
+00000037 725f636c6b63 
+0000003d 2e6300 
+00000040 000000          677 	.byte	0,0,0
+00000043 2e2e5c2e2e5c    678 	.strz	"..\\..\\device\\r_device.h"
+00000049 646576696365 
+0000004f 5c725f646576 
+00000055 6963652e6800 
+0000005b 000000          679 	.byte	0,0,0
+0000005e 2e2e5c2e2e5c    680 	.strz	"..\\..\\device\\dr7f701057.dvf.h"
+00000064 646576696365 
+0000006a 5c6472376637 
+00000070 30313035372e 
+00000076 6476662e6800 
+0000007c 000000          681 	.byte	0,0,0
+0000007f 2e2e5c2e2e5c    682 	.strz	"..\\..\\device\\icu_feret.h"
+00000085 646576696365 
+0000008b 5c6963755f66 
+00000091 657265742e68 
+00000097 00 
+00000098 000000          683 	.byte	0,0,0
+0000009b 2e2e5c2e2e5c    684 	.strz	"..\\..\\device\\cpu.h"
+
+                                                                      Page 13
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000000a1 646576696365 
+000000a7 5c6370752e68 
+000000ad 00 
+000000ae 000000          685 	.byte	0,0,0
+000000b1 433a5c676873    686 	.strz	"C:\\ghs\\comp_201517\\ansi\\..\\include\\v800\\v800_ghs.h"
+000000b7 5c636f6d705f 
+000000bd 323031353137 
+000000c3 5c616e73695c 
+000000c9 2e2e5c696e63 
+000000cf 6c7564655c76 
+000000d5 3830305c7638 
+000000db 30305f676873 
+000000e1 2e6800 
+000000e4 000000          687 	.byte	0,0,0
+000000e7 2e2e5c2e2e5c    688 	.strz	"..\\..\\device\\r_typedefs.h"
+000000ed 646576696365 
+000000f3 5c725f747970 
+000000f9 65646566732e 
+000000ff 6800 
+00000101 000000          689 	.byte	0,0,0
+00000104 2e2e5c2e2e5c    690 	.strz	"..\\..\\source\\peripherals\\clkc\\r_clkc.h"
+0000010a 736f75726365 
+00000110 5c7065726970 
+00000116 686572616c73 
+0000011c 5c636c6b635c 
+00000122 725f636c6b63 
+00000128 2e6800 
+0000012b 000000          691 	.byte	0,0,0
+0000012e 00              692 	.byte	0
+                         693 .Ldw_lpro_end:
+                         694 	.section	.debug_macinfo
+                         695 .Ldw_macinfo_begin:
+                         696 	.section	.debug_frame
+                         697 .LDW_46b2a50:
+00000000 00000000*       698 	.word	.LDW_unq_2-.LDW_unq_1
+                         699 .LDW_unq_1:
+00000004 ffffffff        700 	.byte	255,255,255,255
+00000008 01              701 	.byte	1
+00000009 00              702 	.byte	0
+0000000a 01              703 	.byte	1
+0000000b 01              704 	.byte	1
+0000000c 1f              705 	.byte	31
+0000000d 0c              706 	.byte	12
+0000000e 03              707 	.byte	3
+0000000f 00              708 	.byte	0
+00000010 07              709 	.byte	7
+00000011 00              710 	.byte	0
+00000012 07              711 	.byte	7
+00000013 01              712 	.byte	1
+00000014 07              713 	.byte	7
+00000015 02              714 	.byte	2
+00000016 07              715 	.byte	7
+00000017 03              716 	.byte	3
+00000018 07              717 	.byte	7
+00000019 04              718 	.byte	4
+0000001a 07              719 	.byte	7
+0000001b 05              720 	.byte	5
+0000001c 07              721 	.byte	7
+0000001d 06              722 	.byte	6
+0000001e 07              723 	.byte	7
+0000001f 07              724 	.byte	7
+
+                                                                      Page 14
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000020 07              725 	.byte	7
+00000021 08              726 	.byte	8
+00000022 07              727 	.byte	7
+00000023 09              728 	.byte	9
+00000024 07              729 	.byte	7
+00000025 0a              730 	.byte	10
+00000026 07              731 	.byte	7
+00000027 0b              732 	.byte	11
+00000028 07              733 	.byte	7
+00000029 0c              734 	.byte	12
+0000002a 07              735 	.byte	7
+0000002b 0d              736 	.byte	13
+0000002c 07              737 	.byte	7
+0000002d 0e              738 	.byte	14
+0000002e 07              739 	.byte	7
+0000002f 0f              740 	.byte	15
+00000030 07              741 	.byte	7
+00000031 10              742 	.byte	16
+00000032 07              743 	.byte	7
+00000033 11              744 	.byte	17
+00000034 07              745 	.byte	7
+00000035 12              746 	.byte	18
+00000036 07              747 	.byte	7
+00000037 13              748 	.byte	19
+00000038 08              749 	.byte	8
+00000039 14              750 	.byte	20
+0000003a 08              751 	.byte	8
+0000003b 15              752 	.byte	21
+0000003c 08              753 	.byte	8
+0000003d 16              754 	.byte	22
+0000003e 08              755 	.byte	8
+0000003f 17              756 	.byte	23
+00000040 08              757 	.byte	8
+00000041 18              758 	.byte	24
+00000042 08              759 	.byte	8
+00000043 19              760 	.byte	25
+00000044 08              761 	.byte	8
+00000045 1a              762 	.byte	26
+00000046 08              763 	.byte	8
+00000047 1b              764 	.byte	27
+00000048 08              765 	.byte	8
+00000049 1c              766 	.byte	28
+0000004a 08              767 	.byte	8
+0000004b 1d              768 	.byte	29
+0000004c 07              769 	.byte	7
+0000004d 1e              770 	.byte	30
+0000004e 08              771 	.byte	8
+0000004f 1f              772 	.byte	31
+00000050 07              773 	.byte	7
+00000051 20              774 	.byte	32
+00000052 07              775 	.byte	7
+00000053 21              776 	.byte	33
+00000054 07              777 	.byte	7
+00000055 22              778 	.byte	34
+00000056 07              779 	.byte	7
+00000057 23              780 	.byte	35
+00000058 07              781 	.byte	7
+00000059 24              782 	.byte	36
+0000005a 07              783 	.byte	7
+0000005b 25              784 	.byte	37
+0000005c 07              785 	.byte	7
+
+                                                                      Page 15
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+0000005d 26              786 	.byte	38
+0000005e 07              787 	.byte	7
+0000005f 27              788 	.byte	39
+00000060 07              789 	.byte	7
+00000061 28              790 	.byte	40
+00000062 07              791 	.byte	7
+00000063 29              792 	.byte	41
+00000064 07              793 	.byte	7
+00000065 2a              794 	.byte	42
+00000066 07              795 	.byte	7
+00000067 2b              796 	.byte	43
+00000068 07              797 	.byte	7
+00000069 2c              798 	.byte	44
+0000006a 07              799 	.byte	7
+0000006b 2d              800 	.byte	45
+0000006c 07              801 	.byte	7
+0000006d 2e              802 	.byte	46
+0000006e 07              803 	.byte	7
+0000006f 2f              804 	.byte	47
+00000070 07              805 	.byte	7
+00000071 30              806 	.byte	48
+00000072 07              807 	.byte	7
+00000073 31              808 	.byte	49
+00000074 07              809 	.byte	7
+00000075 32              810 	.byte	50
+00000076 07              811 	.byte	7
+00000077 33              812 	.byte	51
+00000078 07              813 	.byte	7
+00000079 34              814 	.byte	52
+0000007a 07              815 	.byte	7
+0000007b 35              816 	.byte	53
+0000007c 07              817 	.byte	7
+0000007d 36              818 	.byte	54
+0000007e 07              819 	.byte	7
+0000007f 37              820 	.byte	55
+00000080 07              821 	.byte	7
+00000081 38              822 	.byte	56
+00000082 07              823 	.byte	7
+00000083 39              824 	.byte	57
+00000084 07              825 	.byte	7
+00000085 3a              826 	.byte	58
+00000086 07              827 	.byte	7
+00000087 3b              828 	.byte	59
+00000088 07              829 	.byte	7
+00000089 3c              830 	.byte	60
+0000008a 07              831 	.byte	7
+0000008b 3d              832 	.byte	61
+0000008c 07              833 	.byte	7
+0000008d 3e              834 	.byte	62
+0000008e 07              835 	.byte	7
+0000008f 3f              836 	.byte	63
+                         837 .LDW_unq_2:
+                         838 	.section	.debug_info
+                         839 .LDW_177e468:
+000000a3 25              840 	.byte	37
+000000a4 756e7369676e    841 	.strz	"unsigned long"
+000000aa 6564206c6f6e 
+000000b0 6700 
+000000b2 07              842 	.byte	7
+000000b3 04              843 	.byte	4
+                         844 
+
+                                                                      Page 16
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                         845 	.section	.debug_abbrev
+00000017 25              846 	.byte	37
+00000018 24              847 	.byte	36
+00000019 00              848 	.byte	0
+0000001a 0308            849 	.byte	3,8
+0000001c 3e0b            850 	.byte	62,11
+0000001e 0b0b            851 	.byte	11,11
+00000020 0000            852 	.byte	0,0
+                         853 
+                         854 	.section	.debug_info
+                         855 .LDW_4739d70:
+000000b4 45              856 	.byte	69
+000000b5 01              857 	.byte	1
+                         858 
+                         859 	.section	.debug_abbrev
+00000022 45              860 	.byte	69
+00000023 15              861 	.byte	21
+00000024 01              862 	.byte	1
+00000025 270c            863 	.byte	39,12
+00000027 0000            864 	.byte	0,0
+                         865 
+                         866 	.section	.debug_info
+000000b6 00              867 	.byte	0
+                         868 
+                         869 .LDW_4739da8:
+000000b7 45              870 	.byte	69
+000000b8 01              871 	.byte	1
+                         872 
+                         873 .LDW_4727a80:
+000000b9 12              874 	.byte	18
+000000ba 00000000*       875 	.word	.LDW_4703d90
+000000be 00              876 	.byte	0
+                         877 
+                         878 	.section	.debug_abbrev
+00000029 12              879 	.byte	18
+0000002a 05              880 	.byte	5
+0000002b 00              881 	.byte	0
+0000002c 4910            882 	.byte	73,16
+0000002e 4b0c            883 	.byte	75,12
+00000030 0000            884 	.byte	0,0
+                         885 
+                         886 	.section	.debug_info
+                         887 .LDW_4727ab0:
+000000bf 12              888 	.byte	18
+000000c0 00000000*       889 	.word	.LDW_4703d90
+000000c4 00              890 	.byte	0
+                         891 
+000000c5 00              892 	.byte	0
+                         893 
+                         894 .LDW_4739de0:
+000000c6 45              895 	.byte	69
+000000c7 01              896 	.byte	1
+                         897 
+                         898 .LDW_4727b10:
+000000c8 12              899 	.byte	18
+000000c9 00000000*       900 	.word	.LDW_4703d90
+000000cd 00              901 	.byte	0
+                         902 
+000000ce 00              903 	.byte	0
+                         904 
+                         905 .LDW_4739e18:
+
+                                                                      Page 17
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000000cf 45              906 	.byte	69
+000000d0 01              907 	.byte	1
+                         908 
+                         909 .LDW_4727b70:
+000000d1 12              910 	.byte	18
+000000d2 00000000*       911 	.word	.LDW_4703d90
+000000d6 00              912 	.byte	0
+                         913 
+000000d7 00              914 	.byte	0
+                         915 
+                         916 .LDW_4739e50:
+000000d8 45              917 	.byte	69
+000000d9 01              918 	.byte	1
+                         919 
+000000da 00              920 	.byte	0
+                         921 
+                         922 .LDW_4739e88:
+000000db 45              923 	.byte	69
+000000dc 01              924 	.byte	1
+                         925 
+000000dd 00              926 	.byte	0
+                         927 
+                         928 .LDW_4739ec0:
+000000de 45              929 	.byte	69
+000000df 01              930 	.byte	1
+                         931 
+000000e0 00              932 	.byte	0
+                         933 
+                         934 .LDW_4739ef8:
+000000e1 45              935 	.byte	69
+000000e2 01              936 	.byte	1
+                         937 
+000000e3 00              938 	.byte	0
+                         939 
+                         940 .LDW_4703ff8:
+000000e4 28              941 	.byte	40
+000000e5 75696e743332    942 	.strz	"uint32"
+000000eb 00 
+000000ec 2b              943 	.byte	43
+000000ed 19              944 	.byte	25
+000000ee 03              945 	.byte	3
+000000ef 00000000*       946 	.word	.LDW_177e468
+                         947 
+                         948 	.section	.debug_abbrev
+00000032 28              949 	.byte	40
+00000033 16              950 	.byte	22
+00000034 00              951 	.byte	0
+00000035 0308            952 	.byte	3,8
+00000037 3b0f            953 	.byte	59,15
+00000039 390f            954 	.byte	57,15
+0000003b 3a0f            955 	.byte	58,15
+0000003d 4910            956 	.byte	73,16
+0000003f 0000            957 	.byte	0,0
+                         958 
+                         959 	.section	.debug_info
+                         960 .LDW_4703d90:
+000000f3 28              961 	.byte	40
+000000f4 75696e743332    962 	.strz	"uint32_t"
+000000fa 5f7400 
+000000fd 7d              963 	.byte	125
+000000fe 1c              964 	.byte	28
+
+                                                                      Page 18
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000000ff 07              965 	.byte	7
+00000100 00000000*       966 	.word	.LDW_177e468
+                         967 
+                         968 .LDW_4738118:
+00000104 13              969 	.byte	19
+00000105 525f434c4b43    970 	.strz	"R_CLKC_PllInit"
+0000010b 5f506c6c496e 
+00000111 697400 
+00000114 4e              971 	.byte	78
+00000115 06              972 	.byte	6
+00000116 01              973 	.byte	1
+00000117 00000000*       974 	.word	_R_CLKC_PllInit
+0000011b 00000000*       975 	.word	___ghs_eofn_R_CLKC_PllInit
+0000011f 0153            976 	.byte	1,83
+00000121 02              977 	.byte	2
+00000122 00              978 	.byte	0
+00000123 02              979 	.byte	2
+00000124 00              980 	.byte	0
+00000125 00              981 	.byte	0
+00000126 00              982 	.byte	0
+00000127 00              983 	.byte	0
+00000128 01              984 	.byte	1
+00000129 01              985 	.byte	1
+0000012a 00              986 	.byte	0
+0000012b 01              987 	.byte	1
+                         988 
+                         989 	.section	.debug_abbrev
+00000041 13              990 	.byte	19
+00000042 2e              991 	.byte	46
+00000043 01              992 	.byte	1
+00000044 0308            993 	.byte	3,8
+00000046 3b0f            994 	.byte	59,15
+00000048 390f            995 	.byte	57,15
+0000004a 3a0f            996 	.byte	58,15
+0000004c 1101            997 	.byte	17,1
+0000004e 1201            998 	.byte	18,1
+00000050 400a            999 	.byte	64,10
+00000052 8341           1000 	.byte	131,65
+00000054 0f             1001 	.byte	15
+00000055 8741           1002 	.byte	135,65
+00000057 0d             1003 	.byte	13
+00000058 8541           1004 	.byte	133,65
+0000005a 0f             1005 	.byte	15
+0000005b 8641           1006 	.byte	134,65
+0000005d 0d             1007 	.byte	13
+0000005e 9241           1008 	.byte	146,65
+00000060 0f             1009 	.byte	15
+00000061 3c0c           1010 	.byte	60,12
+00000063 200b           1011 	.byte	32,11
+00000065 3f0c           1012 	.byte	63,12
+00000067 320b           1013 	.byte	50,11
+00000069 4c0b           1014 	.byte	76,11
+0000006b 270c           1015 	.byte	39,12
+0000006d 0000           1016 	.byte	0,0
+                        1017 
+                        1018 	.section	.debug_frame
+                        1019 .LDW_439ff58:
+00000090 00000000*      1020 	.word	.LDW_unq_4-.LDW_unq_3
+                        1021 .LDW_unq_3:
+00000094 00000000*      1022 	.word	.LDW_46b2a50
+00000098 00000000*      1023 	.word	_R_CLKC_PllInit
+
+                                                                      Page 19
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+0000009c 00000000*      1024 	.word	___ghs_eofn_R_CLKC_PllInit-_R_CLKC_PllInit
+000000a0 01             1025 	.byte	1
+000000a1 00000000*      1026 	.word	.LDW11
+000000a5 00             1027 	.byte	0
+000000a6 00             1028 	.byte	0
+000000a7 00             1029 	.byte	0
+                        1030 .LDW_unq_4:
+                        1031 	.section	.debug_line
+0000012f 000502         1032 	.byte	0,5,2
+00000132 00000000*      1033 	.word	_R_CLKC_PllInit
+00000136 06             1034 	.byte	6
+00000137 03             1035 	.byte	3
+00000138 d000           1036 	.byte	208,0
+0000013a 02             1037 	.byte	2
+0000013b 00             1038 	.byte	0
+0000013c 01             1039 	.byte	1
+0000013d 000502         1040 	.byte	0,5,2
+00000140 00000000*      1041 	.word	.LDWlin1
+00000144 0b             1042 	.byte	11
+00000145 0b             1043 	.byte	11
+00000146 2b             1044 	.byte	43
+00000147 33             1045 	.byte	51
+00000148 02             1046 	.byte	2
+00000149 00             1047 	.byte	0
+0000014a 02             1048 	.byte	2
+0000014b 0a             1049 	.byte	10
+0000014c 02             1050 	.byte	2
+0000014d 08             1051 	.byte	8
+0000014e 02             1052 	.byte	2
+0000014f 08             1053 	.byte	8
+00000150 02             1054 	.byte	2
+00000151 08             1055 	.byte	8
+00000152 000502         1056 	.byte	0,5,2
+00000155 00000000*      1057 	.word	.LDWlin2
+00000159 02             1058 	.byte	2
+0000015a 00             1059 	.byte	0
+0000015b 0b             1060 	.byte	11
+0000015c 02             1061 	.byte	2
+0000015d 00             1062 	.byte	0
+0000015e 000502         1063 	.byte	0,5,2
+00000161 00000000*      1064 	.word	.LDWlin3
+00000165 02             1065 	.byte	2
+00000166 00             1066 	.byte	0
+00000167 0b             1067 	.byte	11
+00000168 02             1068 	.byte	2
+00000169 00             1069 	.byte	0
+0000016a 0c             1070 	.byte	12
+0000016b 000502         1071 	.byte	0,5,2
+0000016e 00000000*      1072 	.word	.LDWlin4
+00000172 0b             1073 	.byte	11
+00000173 0c             1074 	.byte	12
+00000174 33             1075 	.byte	51
+00000175 02             1076 	.byte	2
+00000176 00             1077 	.byte	0
+00000177 02             1078 	.byte	2
+00000178 0a             1079 	.byte	10
+00000179 02             1080 	.byte	2
+0000017a 08             1081 	.byte	8
+0000017b 02             1082 	.byte	2
+0000017c 08             1083 	.byte	8
+0000017d 02             1084 	.byte	2
+
+                                                                      Page 20
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+0000017e 08             1085 	.byte	8
+0000017f 000502         1086 	.byte	0,5,2
+00000182 00000000*      1087 	.word	.LDWlin5
+00000186 02             1088 	.byte	2
+00000187 00             1089 	.byte	0
+00000188 0b             1090 	.byte	11
+00000189 02             1091 	.byte	2
+0000018a 00             1092 	.byte	0
+0000018b 000502         1093 	.byte	0,5,2
+0000018e 00000000*      1094 	.word	.LDWlin6
+00000192 02             1095 	.byte	2
+00000193 00             1096 	.byte	0
+00000194 0b             1097 	.byte	11
+00000195 02             1098 	.byte	2
+00000196 00             1099 	.byte	0
+00000197 0d             1100 	.byte	13
+00000198 02             1101 	.byte	2
+00000199 00             1102 	.byte	0
+0000019a 02             1103 	.byte	2
+0000019b 0a             1104 	.byte	10
+0000019c 02             1105 	.byte	2
+0000019d 08             1106 	.byte	8
+0000019e 02             1107 	.byte	2
+0000019f 08             1108 	.byte	8
+000001a0 02             1109 	.byte	2
+000001a1 08             1110 	.byte	8
+000001a2 000502         1111 	.byte	0,5,2
+000001a5 00000000*      1112 	.word	.LDWlin7
+000001a9 02             1113 	.byte	2
+000001aa 00             1114 	.byte	0
+000001ab 0b             1115 	.byte	11
+000001ac 02             1116 	.byte	2
+000001ad 00             1117 	.byte	0
+000001ae 000502         1118 	.byte	0,5,2
+000001b1 00000000*      1119 	.word	.LDWlin8
+000001b5 02             1120 	.byte	2
+000001b6 00             1121 	.byte	0
+000001b7 0d             1122 	.byte	13
+000001b8 02             1123 	.byte	2
+000001b9 00             1124 	.byte	0
+000001ba 02             1125 	.byte	2
+000001bb 0a             1126 	.byte	10
+000001bc 02             1127 	.byte	2
+000001bd 08             1128 	.byte	8
+000001be 02             1129 	.byte	2
+000001bf 08             1130 	.byte	8
+000001c0 02             1131 	.byte	2
+000001c1 08             1132 	.byte	8
+000001c2 000502         1133 	.byte	0,5,2
+000001c5 00000000*      1134 	.word	.LDWlin9
+000001c9 02             1135 	.byte	2
+000001ca 00             1136 	.byte	0
+000001cb 0b             1137 	.byte	11
+000001cc 02             1138 	.byte	2
+000001cd 00             1139 	.byte	0
+000001ce 000502         1140 	.byte	0,5,2
+000001d1 00000000*      1141 	.word	.LDWlin10
+000001d5 02             1142 	.byte	2
+000001d6 00             1143 	.byte	0
+000001d7 0d             1144 	.byte	13
+000001d8 02             1145 	.byte	2
+
+                                                                      Page 21
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000001d9 00             1146 	.byte	0
+000001da 02             1147 	.byte	2
+000001db 0a             1148 	.byte	10
+000001dc 02             1149 	.byte	2
+000001dd 08             1150 	.byte	8
+000001de 02             1151 	.byte	2
+000001df 08             1152 	.byte	8
+000001e0 02             1153 	.byte	2
+000001e1 08             1154 	.byte	8
+000001e2 000502         1155 	.byte	0,5,2
+000001e5 00000000*      1156 	.word	.LDWlin11
+000001e9 02             1157 	.byte	2
+000001ea 00             1158 	.byte	0
+000001eb 0b             1159 	.byte	11
+000001ec 02             1160 	.byte	2
+000001ed 00             1161 	.byte	0
+000001ee 000502         1162 	.byte	0,5,2
+000001f1 00000000*      1163 	.word	.LDWlin12
+000001f5 02             1164 	.byte	2
+000001f6 00             1165 	.byte	0
+000001f7 0b             1166 	.byte	11
+000001f8 02             1167 	.byte	2
+000001f9 02             1168 	.byte	2
+000001fa 000101         1169 	.byte	0,1,1
+                        1170 	.section	.debug_info
+                        1171 .LDW_4727a50:
+0000012c 1d             1172 	.byte	29
+0000012d 00000000*      1173 	.word	.LDW01
+00000131 00000000*      1174 	.word	.LDW11
+                        1175 
+                        1176 	.section	.debug_abbrev
+0000006f 1d             1177 	.byte	29
+00000070 0b             1178 	.byte	11
+00000071 01             1179 	.byte	1
+00000072 1101           1180 	.byte	17,1
+00000074 1201           1181 	.byte	18,1
+00000076 0000           1182 	.byte	0,0
+                        1183 
+                        1184 	.section	.debug_info
+00000135 00             1185 	.byte	0
+                        1186 
+00000136 00             1187 	.byte	0
+                        1188 
+                        1189 .LDW_47381b0:
+00000137 13             1190 	.byte	19
+00000138 525f434c4b43   1191 	.strz	"R_CLKC_SetRscanClockDomain"
+0000013e 5f5365745273 
+00000144 63616e436c6f 
+0000014a 636b446f6d61 
+00000150 696e00 
+00000153 75             1192 	.byte	117
+00000154 06             1193 	.byte	6
+00000155 01             1194 	.byte	1
+00000156 00000000*      1195 	.word	_R_CLKC_SetRscanClockDomain
+0000015a 00000000*      1196 	.word	___ghs_eofn_R_CLKC_SetRscanClockDomain
+0000015e 0153           1197 	.byte	1,83
+00000160 02             1198 	.byte	2
+00000161 00             1199 	.byte	0
+00000162 02             1200 	.byte	2
+00000163 00             1201 	.byte	0
+00000164 00             1202 	.byte	0
+
+                                                                      Page 22
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000165 00             1203 	.byte	0
+00000166 00             1204 	.byte	0
+00000167 01             1205 	.byte	1
+00000168 01             1206 	.byte	1
+00000169 00             1207 	.byte	0
+0000016a 01             1208 	.byte	1
+                        1209 
+                        1210 	.section	.debug_frame
+                        1211 .LDW_41026f8:
+000000a8 00000000*      1212 	.word	.LDW_unq_6-.LDW_unq_5
+                        1213 .LDW_unq_5:
+000000ac 00000000*      1214 	.word	.LDW_46b2a50
+000000b0 00000000*      1215 	.word	_R_CLKC_SetRscanClockDomain
+000000b4 00000000*      1216 	.word	___ghs_eofn_R_CLKC_SetRscanClockDomain-_R_CLKC_SetRscanClockDomain
+000000b8 01             1217 	.byte	1
+000000b9 00000000*      1218 	.word	.LDW31
+000000bd 00             1219 	.byte	0
+000000be 00             1220 	.byte	0
+000000bf 00             1221 	.byte	0
+                        1222 .LDW_unq_6:
+                        1223 	.section	.debug_line
+000001fd 000502         1224 	.byte	0,5,2
+00000200 00000000*      1225 	.word	_R_CLKC_SetRscanClockDomain
+00000204 03             1226 	.byte	3
+00000205 f500           1227 	.byte	245,0
+00000207 02             1228 	.byte	2
+00000208 00             1229 	.byte	0
+00000209 01             1230 	.byte	1
+0000020a 06             1231 	.byte	6
+0000020b 1c             1232 	.byte	28
+0000020c 02             1233 	.byte	2
+0000020d 00             1234 	.byte	0
+0000020e 02             1235 	.byte	2
+0000020f 0a             1236 	.byte	10
+00000210 02             1237 	.byte	2
+00000211 06             1238 	.byte	6
+00000212 02             1239 	.byte	2
+00000213 08             1240 	.byte	8
+00000214 02             1241 	.byte	2
+00000215 06             1242 	.byte	6
+00000216 000502         1243 	.byte	0,5,2
+00000219 00000000*      1244 	.word	.LDWlin13
+0000021d 02             1245 	.byte	2
+0000021e 00             1246 	.byte	0
+0000021f 0b             1247 	.byte	11
+00000220 02             1248 	.byte	2
+00000221 00             1249 	.byte	0
+00000222 000502         1250 	.byte	0,5,2
+00000225 00000000*      1251 	.word	.LDWlin14
+00000229 02             1252 	.byte	2
+0000022a 00             1253 	.byte	0
+0000022b 0d             1254 	.byte	13
+0000022c 02             1255 	.byte	2
+0000022d 00             1256 	.byte	0
+0000022e 02             1257 	.byte	2
+0000022f 0a             1258 	.byte	10
+00000230 02             1259 	.byte	2
+00000231 06             1260 	.byte	6
+00000232 02             1261 	.byte	2
+00000233 08             1262 	.byte	8
+00000234 02             1263 	.byte	2
+
+                                                                      Page 23
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000235 06             1264 	.byte	6
+00000236 000502         1265 	.byte	0,5,2
+00000239 00000000*      1266 	.word	.LDWlin15
+0000023d 02             1267 	.byte	2
+0000023e 00             1268 	.byte	0
+0000023f 0b             1269 	.byte	11
+00000240 02             1270 	.byte	2
+00000241 00             1271 	.byte	0
+00000242 000502         1272 	.byte	0,5,2
+00000245 00000000*      1273 	.word	.LDWlin16
+00000249 02             1274 	.byte	2
+0000024a 00             1275 	.byte	0
+0000024b 0b             1276 	.byte	11
+0000024c 02             1277 	.byte	2
+0000024d 02             1278 	.byte	2
+0000024e 000101         1279 	.byte	0,1,1
+                        1280 	.section	.debug_info
+                        1281 .LDW_4703de8:
+0000016b 0f             1282 	.byte	15
+0000016c 527363616e4d   1283 	.strz	"RscanModuleClockDomain"
+00000172 6f64756c6543 
+00000178 6c6f636b446f 
+0000017e 6d61696e00 
+00000183 75             1284 	.byte	117
+00000184 2a             1285 	.byte	42
+00000185 01             1286 	.byte	1
+00000186 00000000*      1287 	.word	.LDW_4703d90
+0000018a 00             1288 	.byte	0
+0000018b 0151           1289 	.byte	1,81
+                        1290 
+                        1291 	.section	.debug_abbrev
+00000078 0f             1292 	.byte	15
+00000079 05             1293 	.byte	5
+0000007a 00             1294 	.byte	0
+0000007b 0308           1295 	.byte	3,8
+0000007d 3b0f           1296 	.byte	59,15
+0000007f 390f           1297 	.byte	57,15
+00000081 3a0f           1298 	.byte	58,15
+00000083 4910           1299 	.byte	73,16
+00000085 4b0c           1300 	.byte	75,12
+00000087 020a           1301 	.byte	2,10
+00000089 0000           1302 	.byte	0,0
+                        1303 
+                        1304 	.section	.debug_info
+                        1305 .LDW_4703e40:
+0000018d 0f             1306 	.byte	15
+0000018e 527363616e43   1307 	.strz	"RscanComClockDomain"
+00000194 6f6d436c6f63 
+0000019a 6b446f6d6169 
+000001a0 6e00 
+000001a2 75             1308 	.byte	117
+000001a3 4b             1309 	.byte	75
+000001a4 01             1310 	.byte	1
+000001a5 00000000*      1311 	.word	.LDW_4703d90
+000001a9 00             1312 	.byte	0
+000001aa 0152           1313 	.byte	1,82
+                        1314 
+                        1315 .LDW_4727ae0:
+000001ac 1d             1316 	.byte	29
+000001ad 00000000*      1317 	.word	.LDW21
+000001b1 00000000*      1318 	.word	.LDW31
+
+                                                                      Page 24
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                        1319 
+000001b5 00             1320 	.byte	0
+                        1321 
+000001b6 00             1322 	.byte	0
+                        1323 
+                        1324 .LDW_4738248:
+000001b7 13             1325 	.byte	19
+000001b8 525f434c4b43   1326 	.strz	"R_CLKC_SetAdca0ClockDomain"
+000001be 5f5365744164 
+000001c4 636130436c6f 
+000001ca 636b446f6d61 
+000001d0 696e00 
+000001d3 8601           1327 	.byte	134,1
+000001d5 06             1328 	.byte	6
+000001d6 01             1329 	.byte	1
+000001d7 00000000*      1330 	.word	_R_CLKC_SetAdca0ClockDomain
+000001db 00000000*      1331 	.word	___ghs_eofn_R_CLKC_SetAdca0ClockDomain
+000001df 0153           1332 	.byte	1,83
+000001e1 02             1333 	.byte	2
+000001e2 00             1334 	.byte	0
+000001e3 02             1335 	.byte	2
+000001e4 00             1336 	.byte	0
+000001e5 00             1337 	.byte	0
+000001e6 00             1338 	.byte	0
+000001e7 00             1339 	.byte	0
+000001e8 01             1340 	.byte	1
+000001e9 01             1341 	.byte	1
+000001ea 00             1342 	.byte	0
+000001eb 01             1343 	.byte	1
+                        1344 
+                        1345 	.section	.debug_frame
+                        1346 .LDW_41027f8:
+000000c0 00000000*      1347 	.word	.LDW_unq_8-.LDW_unq_7
+                        1348 .LDW_unq_7:
+000000c4 00000000*      1349 	.word	.LDW_46b2a50
+000000c8 00000000*      1350 	.word	_R_CLKC_SetAdca0ClockDomain
+000000cc 00000000*      1351 	.word	___ghs_eofn_R_CLKC_SetAdca0ClockDomain-_R_CLKC_SetAdca0ClockDomain
+000000d0 01             1352 	.byte	1
+000000d1 00000000*      1353 	.word	.LDW51
+000000d5 00             1354 	.byte	0
+000000d6 00             1355 	.byte	0
+000000d7 00             1356 	.byte	0
+                        1357 .LDW_unq_8:
+                        1358 	.section	.debug_line
+00000251 000502         1359 	.byte	0,5,2
+00000254 00000000*      1360 	.word	_R_CLKC_SetAdca0ClockDomain
+00000258 03             1361 	.byte	3
+00000259 8601           1362 	.byte	134,1
+0000025b 02             1363 	.byte	2
+0000025c 00             1364 	.byte	0
+0000025d 01             1365 	.byte	1
+0000025e 06             1366 	.byte	6
+0000025f 13             1367 	.byte	19
+00000260 02             1368 	.byte	2
+00000261 00             1369 	.byte	0
+00000262 02             1370 	.byte	2
+00000263 0a             1371 	.byte	10
+00000264 02             1372 	.byte	2
+00000265 06             1373 	.byte	6
+00000266 02             1374 	.byte	2
+00000267 08             1375 	.byte	8
+
+                                                                      Page 25
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000268 02             1376 	.byte	2
+00000269 06             1377 	.byte	6
+0000026a 000502         1378 	.byte	0,5,2
+0000026d 00000000*      1379 	.word	.LDWlin17
+00000271 02             1380 	.byte	2
+00000272 00             1381 	.byte	0
+00000273 0b             1382 	.byte	11
+00000274 02             1383 	.byte	2
+00000275 00             1384 	.byte	0
+00000276 000502         1385 	.byte	0,5,2
+00000279 00000000*      1386 	.word	.LDWlin18
+0000027d 02             1387 	.byte	2
+0000027e 00             1388 	.byte	0
+0000027f 0b             1389 	.byte	11
+00000280 02             1390 	.byte	2
+00000281 02             1391 	.byte	2
+00000282 000101         1392 	.byte	0,1,1
+                        1393 	.section	.debug_info
+                        1394 .LDW_4703e98:
+000001ec 0f             1395 	.byte	15
+000001ed 416463613043   1396 	.strz	"Adca0ClockDomain"
+000001f3 6c6f636b446f 
+000001f9 6d61696e00 
+000001fe 8601           1397 	.byte	134,1
+00000200 2a             1398 	.byte	42
+00000201 01             1399 	.byte	1
+00000202 00000000*      1400 	.word	.LDW_4703d90
+00000206 00             1401 	.byte	0
+00000207 0151           1402 	.byte	1,81
+                        1403 
+                        1404 .LDW_4727b40:
+00000209 1d             1405 	.byte	29
+0000020a 00000000*      1406 	.word	.LDW41
+0000020e 00000000*      1407 	.word	.LDW51
+                        1408 
+00000212 00             1409 	.byte	0
+                        1410 
+00000213 00             1411 	.byte	0
+                        1412 
+                        1413 .LDW_47382e0:
+00000214 13             1414 	.byte	19
+00000215 525f434c4b43   1415 	.strz	"R_CLKC_SetTaujClockDomain"
+0000021b 5f5365745461 
+00000221 756a436c6f63 
+00000227 6b446f6d6169 
+0000022d 6e00 
+0000022f 9201           1416 	.byte	146,1
+00000231 06             1417 	.byte	6
+00000232 01             1418 	.byte	1
+00000233 00000000*      1419 	.word	_R_CLKC_SetTaujClockDomain
+00000237 00000000*      1420 	.word	___ghs_eofn_R_CLKC_SetTaujClockDomain
+0000023b 0153           1421 	.byte	1,83
+0000023d 02             1422 	.byte	2
+0000023e 00             1423 	.byte	0
+0000023f 02             1424 	.byte	2
+00000240 00             1425 	.byte	0
+00000241 00             1426 	.byte	0
+00000242 00             1427 	.byte	0
+00000243 00             1428 	.byte	0
+00000244 01             1429 	.byte	1
+00000245 01             1430 	.byte	1
+
+                                                                      Page 26
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000246 00             1431 	.byte	0
+00000247 01             1432 	.byte	1
+                        1433 
+                        1434 	.section	.debug_frame
+                        1435 .LDW_41028f8:
+000000d8 00000000*      1436 	.word	.LDW_unq_a-.LDW_unq_9
+                        1437 .LDW_unq_9:
+000000dc 00000000*      1438 	.word	.LDW_46b2a50
+000000e0 00000000*      1439 	.word	_R_CLKC_SetTaujClockDomain
+000000e4 00000000*      1440 	.word	___ghs_eofn_R_CLKC_SetTaujClockDomain-_R_CLKC_SetTaujClockDomain
+000000e8 01             1441 	.byte	1
+000000e9 00000000*      1442 	.word	.LDW71
+000000ed 00             1443 	.byte	0
+000000ee 00             1444 	.byte	0
+000000ef 00             1445 	.byte	0
+                        1446 .LDW_unq_a:
+                        1447 	.section	.debug_line
+00000285 000502         1448 	.byte	0,5,2
+00000288 00000000*      1449 	.word	_R_CLKC_SetTaujClockDomain
+0000028c 03             1450 	.byte	3
+0000028d 9201           1451 	.byte	146,1
+0000028f 02             1452 	.byte	2
+00000290 00             1453 	.byte	0
+00000291 01             1454 	.byte	1
+00000292 06             1455 	.byte	6
+00000293 13             1456 	.byte	19
+00000294 02             1457 	.byte	2
+00000295 00             1458 	.byte	0
+00000296 02             1459 	.byte	2
+00000297 0a             1460 	.byte	10
+00000298 02             1461 	.byte	2
+00000299 06             1462 	.byte	6
+0000029a 02             1463 	.byte	2
+0000029b 08             1464 	.byte	8
+0000029c 02             1465 	.byte	2
+0000029d 06             1466 	.byte	6
+0000029e 000502         1467 	.byte	0,5,2
+000002a1 00000000*      1468 	.word	.LDWlin19
+000002a5 02             1469 	.byte	2
+000002a6 00             1470 	.byte	0
+000002a7 0b             1471 	.byte	11
+000002a8 02             1472 	.byte	2
+000002a9 00             1473 	.byte	0
+000002aa 000502         1474 	.byte	0,5,2
+000002ad 00000000*      1475 	.word	.LDWlin20
+000002b1 02             1476 	.byte	2
+000002b2 00             1477 	.byte	0
+000002b3 0b             1478 	.byte	11
+000002b4 02             1479 	.byte	2
+000002b5 02             1480 	.byte	2
+000002b6 000101         1481 	.byte	0,1,1
+                        1482 	.section	.debug_info
+                        1483 .LDW_4703ef0:
+00000248 0f             1484 	.byte	15
+00000249 5461756a436c   1485 	.strz	"TaujClockDomain"
+0000024f 6f636b446f6d 
+00000255 61696e00 
+00000259 9201           1486 	.byte	146,1
+0000025b 29             1487 	.byte	41
+0000025c 01             1488 	.byte	1
+0000025d 00000000*      1489 	.word	.LDW_4703d90
+
+                                                                      Page 27
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000261 00             1490 	.byte	0
+00000262 0151           1491 	.byte	1,81
+                        1492 
+                        1493 .LDW_4727ba0:
+00000264 1d             1494 	.byte	29
+00000265 00000000*      1495 	.word	.LDW61
+00000269 00000000*      1496 	.word	.LDW71
+                        1497 
+0000026d 00             1498 	.byte	0
+                        1499 
+0000026e 00             1500 	.byte	0
+                        1501 
+                        1502 .LDW_4738378:
+0000026f 13             1503 	.byte	19
+00000270 525f434c4b43   1504 	.strz	"R_CLKC_SetAdca0StopMask"
+00000276 5f5365744164 
+0000027c 63613053746f 
+00000282 704d61736b00 
+00000288 9f01           1505 	.byte	159,1
+0000028a 06             1506 	.byte	6
+0000028b 01             1507 	.byte	1
+0000028c 00000000*      1508 	.word	_R_CLKC_SetAdca0StopMask
+00000290 00000000*      1509 	.word	___ghs_eofn_R_CLKC_SetAdca0StopMask
+00000294 0153           1510 	.byte	1,83
+00000296 02             1511 	.byte	2
+00000297 00             1512 	.byte	0
+00000298 02             1513 	.byte	2
+00000299 00             1514 	.byte	0
+0000029a 00             1515 	.byte	0
+0000029b 00             1516 	.byte	0
+0000029c 00             1517 	.byte	0
+0000029d 01             1518 	.byte	1
+0000029e 01             1519 	.byte	1
+0000029f 00             1520 	.byte	0
+000002a0 01             1521 	.byte	1
+                        1522 
+                        1523 	.section	.debug_frame
+                        1524 .LDW_41029f8:
+000000f0 00000000*      1525 	.word	.LDW_unq_c-.LDW_unq_b
+                        1526 .LDW_unq_b:
+000000f4 00000000*      1527 	.word	.LDW_46b2a50
+000000f8 00000000*      1528 	.word	_R_CLKC_SetAdca0StopMask
+000000fc 00000000*      1529 	.word	___ghs_eofn_R_CLKC_SetAdca0StopMask-_R_CLKC_SetAdca0StopMask
+00000100 01             1530 	.byte	1
+00000101 00000000*      1531 	.word	.LDW91
+00000105 00             1532 	.byte	0
+00000106 00             1533 	.byte	0
+00000107 00             1534 	.byte	0
+                        1535 .LDW_unq_c:
+                        1536 	.section	.debug_line
+000002b9 000502         1537 	.byte	0,5,2
+000002bc 00000000*      1538 	.word	_R_CLKC_SetAdca0StopMask
+000002c0 06             1539 	.byte	6
+000002c1 03             1540 	.byte	3
+000002c2 a001           1541 	.byte	160,1
+000002c4 02             1542 	.byte	2
+000002c5 00             1543 	.byte	0
+000002c6 01             1544 	.byte	1
+000002c7 2b             1545 	.byte	43
+000002c8 02             1546 	.byte	2
+000002c9 02             1547 	.byte	2
+
+                                                                      Page 28
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000002ca 000101         1548 	.byte	0,1,1
+                        1549 	.section	.debug_info
+                        1550 .LDW_4727bd0:
+000002a1 1d             1551 	.byte	29
+000002a2 00000000*      1552 	.word	.LDW81
+000002a6 00000000*      1553 	.word	.LDW91
+                        1554 
+000002aa 00             1555 	.byte	0
+                        1556 
+000002ab 00             1557 	.byte	0
+                        1558 
+                        1559 .LDW_4738410:
+000002ac 13             1560 	.byte	19
+000002ad 525f434c4b43   1561 	.strz	"R_CLKC_ResetAdca0StopMask"
+000002b3 5f5265736574 
+000002b9 416463613053 
+000002bf 746f704d6173 
+000002c5 6b00 
+000002c7 ab01           1562 	.byte	171,1
+000002c9 06             1563 	.byte	6
+000002ca 01             1564 	.byte	1
+000002cb 00000000*      1565 	.word	_R_CLKC_ResetAdca0StopMask
+000002cf 00000000*      1566 	.word	___ghs_eofn_R_CLKC_ResetAdca0StopMask
+000002d3 0153           1567 	.byte	1,83
+000002d5 02             1568 	.byte	2
+000002d6 00             1569 	.byte	0
+000002d7 02             1570 	.byte	2
+000002d8 00             1571 	.byte	0
+000002d9 00             1572 	.byte	0
+000002da 00             1573 	.byte	0
+000002db 00             1574 	.byte	0
+000002dc 01             1575 	.byte	1
+000002dd 01             1576 	.byte	1
+000002de 00             1577 	.byte	0
+000002df 01             1578 	.byte	1
+                        1579 
+                        1580 	.section	.debug_frame
+                        1581 .LDW_4102af8:
+00000108 00000000*      1582 	.word	.LDW_unq_e-.LDW_unq_d
+                        1583 .LDW_unq_d:
+0000010c 00000000*      1584 	.word	.LDW_46b2a50
+00000110 00000000*      1585 	.word	_R_CLKC_ResetAdca0StopMask
+00000114 00000000*      1586 	.word	___ghs_eofn_R_CLKC_ResetAdca0StopMask-_R_CLKC_ResetAdca0StopMask
+00000118 01             1587 	.byte	1
+00000119 00000000*      1588 	.word	.LDW12
+0000011d 00             1589 	.byte	0
+0000011e 00             1590 	.byte	0
+0000011f 00             1591 	.byte	0
+                        1592 .LDW_unq_e:
+                        1593 	.section	.debug_line
+000002cd 000502         1594 	.byte	0,5,2
+000002d0 00000000*      1595 	.word	_R_CLKC_ResetAdca0StopMask
+000002d4 06             1596 	.byte	6
+000002d5 03             1597 	.byte	3
+000002d6 ac01           1598 	.byte	172,1
+000002d8 02             1599 	.byte	2
+000002d9 00             1600 	.byte	0
+000002da 01             1601 	.byte	1
+000002db 2b             1602 	.byte	43
+000002dc 02             1603 	.byte	2
+000002dd 02             1604 	.byte	2
+
+                                                                      Page 29
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000002de 000101         1605 	.byte	0,1,1
+                        1606 	.section	.debug_info
+                        1607 .LDW_4727c00:
+000002e0 1d             1608 	.byte	29
+000002e1 00000000*      1609 	.word	.LDW02
+000002e5 00000000*      1610 	.word	.LDW12
+                        1611 
+000002e9 00             1612 	.byte	0
+                        1613 
+000002ea 00             1614 	.byte	0
+                        1615 
+                        1616 .LDW_47384a8:
+000002eb 13             1617 	.byte	19
+000002ec 525f434c4b43   1618 	.strz	"R_CLKC_SetTaujStopMask"
+000002f2 5f5365745461 
+000002f8 756a53746f70 
+000002fe 4d61736b00 
+00000303 b701           1619 	.byte	183,1
+00000305 06             1620 	.byte	6
+00000306 01             1621 	.byte	1
+00000307 00000000*      1622 	.word	_R_CLKC_SetTaujStopMask
+0000030b 00000000*      1623 	.word	___ghs_eofn_R_CLKC_SetTaujStopMask
+0000030f 0153           1624 	.byte	1,83
+00000311 02             1625 	.byte	2
+00000312 00             1626 	.byte	0
+00000313 02             1627 	.byte	2
+00000314 00             1628 	.byte	0
+00000315 00             1629 	.byte	0
+00000316 00             1630 	.byte	0
+00000317 00             1631 	.byte	0
+00000318 01             1632 	.byte	1
+00000319 01             1633 	.byte	1
+0000031a 00             1634 	.byte	0
+0000031b 01             1635 	.byte	1
+                        1636 
+                        1637 	.section	.debug_frame
+                        1638 .LDW_4102bf8:
+00000120 00000000*      1639 	.word	.LDW_unq_10-.LDW_unq_f
+                        1640 .LDW_unq_f:
+00000124 00000000*      1641 	.word	.LDW_46b2a50
+00000128 00000000*      1642 	.word	_R_CLKC_SetTaujStopMask
+0000012c 00000000*      1643 	.word	___ghs_eofn_R_CLKC_SetTaujStopMask-_R_CLKC_SetTaujStopMask
+00000130 01             1644 	.byte	1
+00000131 00000000*      1645 	.word	.LDW32
+00000135 00             1646 	.byte	0
+00000136 00             1647 	.byte	0
+00000137 00             1648 	.byte	0
+                        1649 .LDW_unq_10:
+                        1650 	.section	.debug_line
+000002e1 000502         1651 	.byte	0,5,2
+000002e4 00000000*      1652 	.word	_R_CLKC_SetTaujStopMask
+000002e8 06             1653 	.byte	6
+000002e9 03             1654 	.byte	3
+000002ea b801           1655 	.byte	184,1
+000002ec 02             1656 	.byte	2
+000002ed 00             1657 	.byte	0
+000002ee 01             1658 	.byte	1
+000002ef 2b             1659 	.byte	43
+000002f0 02             1660 	.byte	2
+000002f1 02             1661 	.byte	2
+000002f2 000101         1662 	.byte	0,1,1
+
+                                                                      Page 30
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                        1663 	.section	.debug_info
+                        1664 .LDW_3cdffc0:
+0000031c 1d             1665 	.byte	29
+0000031d 00000000*      1666 	.word	.LDW22
+00000321 00000000*      1667 	.word	.LDW32
+                        1668 
+00000325 00             1669 	.byte	0
+                        1670 
+00000326 00             1671 	.byte	0
+                        1672 
+                        1673 .LDW_4738540:
+00000327 13             1674 	.byte	19
+00000328 525f434c4b43   1675 	.strz	"R_CLKC_ResetTaujStopMask"
+0000032e 5f5265736574 
+00000334 5461756a5374 
+0000033a 6f704d61736b 
+00000340 00 
+00000341 c301           1676 	.byte	195,1
+00000343 06             1677 	.byte	6
+00000344 01             1678 	.byte	1
+00000345 00000000*      1679 	.word	_R_CLKC_ResetTaujStopMask
+00000349 00000000*      1680 	.word	___ghs_eofn_R_CLKC_ResetTaujStopMask
+0000034d 0153           1681 	.byte	1,83
+0000034f 02             1682 	.byte	2
+00000350 00             1683 	.byte	0
+00000351 02             1684 	.byte	2
+00000352 00             1685 	.byte	0
+00000353 00             1686 	.byte	0
+00000354 00             1687 	.byte	0
+00000355 00             1688 	.byte	0
+00000356 01             1689 	.byte	1
+00000357 01             1690 	.byte	1
+00000358 00             1691 	.byte	0
+00000359 01             1692 	.byte	1
+                        1693 
+                        1694 	.section	.debug_frame
+                        1695 .LDW_4102cf8:
+00000138 00000000*      1696 	.word	.LDW_unq_12-.LDW_unq_11
+                        1697 .LDW_unq_11:
+0000013c 00000000*      1698 	.word	.LDW_46b2a50
+00000140 00000000*      1699 	.word	_R_CLKC_ResetTaujStopMask
+00000144 00000000*      1700 	.word	___ghs_eofn_R_CLKC_ResetTaujStopMask-_R_CLKC_ResetTaujStopMask
+00000148 01             1701 	.byte	1
+00000149 00000000*      1702 	.word	.LDW52
+0000014d 00             1703 	.byte	0
+0000014e 00             1704 	.byte	0
+0000014f 00             1705 	.byte	0
+                        1706 .LDW_unq_12:
+                        1707 	.section	.debug_line
+000002f5 000502         1708 	.byte	0,5,2
+000002f8 00000000*      1709 	.word	_R_CLKC_ResetTaujStopMask
+000002fc 06             1710 	.byte	6
+000002fd 03             1711 	.byte	3
+000002fe c401           1712 	.byte	196,1
+00000300 02             1713 	.byte	2
+00000301 00             1714 	.byte	0
+00000302 01             1715 	.byte	1
+00000303 2b             1716 	.byte	43
+00000304 02             1717 	.byte	2
+00000305 02             1718 	.byte	2
+00000306 000101         1719 	.byte	0,1,1
+
+                                                                      Page 31
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+                        1720 	.section	.debug_info
+                        1721 .LDW_3cdfff0:
+0000035a 1d             1722 	.byte	29
+0000035b 00000000*      1723 	.word	.LDW42
+0000035f 00000000*      1724 	.word	.LDW52
+                        1725 
+00000363 00             1726 	.byte	0
+                        1727 
+00000364 00             1728 	.byte	0
+                        1729 
+00000365 00             1730 	.byte	0
+                        1731 
+                        1732 	.section	.debug_line
+                        1733 .Ldw_line_end:
+                        1734 	.section	.debug_macinfo
+00000000 01             1735 	.byte	1
+00000001 00             1736 	.byte	0
+00000002 5f5f474e555f   1737 	.strz	"__GNU_ASM_SUPPORT__ 1"
+00000008 41534d5f5355 
+0000000e 50504f52545f 
+00000014 5f203100 
+00000018 01             1738 	.byte	1
+00000019 00             1739 	.byte	0
+0000001a 5f5f67687320   1740 	.strz	"__ghs 1"
+00000020 3100 
+00000022 01             1741 	.byte	1
+00000023 00             1742 	.byte	0
+00000024 5f5f41545452   1743 	.strz	"__ATTRIBUTES 1"
+0000002a 494255544553 
+00000030 203100 
+00000033 01             1744 	.byte	1
+00000034 00             1745 	.byte	0
+00000035 5f5f4544475f   1746 	.strz	"__EDG__ 1"
+0000003b 5f203100 
+0000003f 01             1747 	.byte	1
+00000040 00             1748 	.byte	0
+00000041 5f5f536f6674   1749 	.strz	"__SoftwareFloat__ 1"
+00000047 77617265466c 
+0000004d 6f61745f5f20 
+00000053 3100 
+00000055 01             1750 	.byte	1
+00000056 00             1751 	.byte	0
+00000057 5f5f434f5245   1752 	.strz	"__CORE_V850E3V5__ 1"
+0000005d 5f5638353045 
+00000063 3356355f5f20 
+00000069 3100 
+0000006b 01             1753 	.byte	1
+0000006c 00             1754 	.byte	0
+0000006d 5f5f56383530   1755 	.strz	"__V850E__ 1"
+00000073 455f5f203100 
+00000079 01             1756 	.byte	1
+0000007a 00             1757 	.byte	0
+0000007b 5f5f56383530   1758 	.strz	"__V850E2__ 1"
+00000081 45325f5f2031 
+00000087 00 
+00000088 01             1759 	.byte	1
+00000089 00             1760 	.byte	0
+0000008a 5f5f56383530   1761 	.strz	"__V850E2R__ 1"
+00000090 4532525f5f20 
+00000096 3100 
+00000098 01             1762 	.byte	1
+
+                                                                      Page 32
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000099 00             1763 	.byte	0
+0000009a 5f5f56383530   1764 	.strz	"__V850E2V3__ 1"
+000000a0 453256335f5f 
+000000a6 203100 
+000000a9 01             1765 	.byte	1
+000000aa 00             1766 	.byte	0
+000000ab 5f5f56383530   1767 	.strz	"__V850E3__ 1"
+000000b1 45335f5f2031 
+000000b7 00 
+000000b8 01             1768 	.byte	1
+000000b9 00             1769 	.byte	0
+000000ba 5f5f56383030   1770 	.strz	"__V800_registermode 32"
+000000c0 5f7265676973 
+000000c6 7465726d6f64 
+000000cc 6520333200 
+000000d1 01             1771 	.byte	1
+000000d2 00             1772 	.byte	0
+000000d3 5f5f4748535f   1773 	.strz	"__GHS__ 1"
+000000d9 5f203100 
+000000dd 03             1774 	.byte	3
+000000de 00             1775 	.byte	0
+000000df 01             1776 	.byte	1
+000000e0 03             1777 	.byte	3
+000000e1 42             1778 	.byte	66
+000000e2 02             1779 	.byte	2
+000000e3 03             1780 	.byte	3
+000000e4 34             1781 	.byte	52
+000000e5 03             1782 	.byte	3
+000000e6 01             1783 	.byte	1
+000000e7 f41b           1784 	.byte	244,27
+000000e9 50524f54434d   1785 	.strz	"PROTCMD0 (*(volatile uint32 *)0xFFF80000)"
+000000ef 443020282a28 
+000000f5 766f6c617469 
+000000fb 6c652075696e 
+00000101 743332202a29 
+00000107 307846464638 
+0000010d 303030302900 
+00000113 01             1786 	.byte	1
+00000114 f51b           1787 	.byte	245,27
+00000116 50524f545330   1788 	.strz	"PROTS0 (*(const volatile uint32 *)0xFFF80004)"
+0000011c 20282a28636f 
+00000122 6e737420766f 
+00000128 6c6174696c65 
+0000012e 2075696e7433 
+00000134 32202a293078 
+0000013a 464646383030 
+00000140 30342900 
+00000144 01             1789 	.byte	1
+00000145 8f1c           1790 	.byte	143,28
+00000147 4d4f53434520   1791 	.strz	"MOSCE (*(volatile uint32 *)0xFFF81100)"
+0000014d 282a28766f6c 
+00000153 6174696c6520 
+00000159 75696e743332 
+0000015f 202a29307846 
+00000165 464638313130 
+0000016b 302900 
+0000016e 01             1792 	.byte	1
+0000016f 901c           1793 	.byte	144,28
+00000171 4d4f53435320   1794 	.strz	"MOSCS (*(const volatile uint32 *)0xFFF81104)"
+00000177 282a28636f6e 
+0000017d 737420766f6c 
+
+                                                                      Page 33
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000183 6174696c6520 
+00000189 75696e743332 
+0000018f 202a29307846 
+00000195 464638313130 
+0000019b 342900 
+0000019e 01             1795 	.byte	1
+0000019f 911c           1796 	.byte	145,28
+000001a1 4d4f53434320   1797 	.strz	"MOSCC (*(volatile uint32 *)0xFFF81108)"
+000001a7 282a28766f6c 
+000001ad 6174696c6520 
+000001b3 75696e743332 
+000001b9 202a29307846 
+000001bf 464638313130 
+000001c5 382900 
+000001c8 01             1798 	.byte	1
+000001c9 921c           1799 	.byte	146,28
+000001cb 4d4f53435354   1800 	.strz	"MOSCST (*(volatile uint32 *)0xFFF8110C)"
+000001d1 20282a28766f 
+000001d7 6c6174696c65 
+000001dd 2075696e7433 
+000001e3 32202a293078 
+000001e9 464646383131 
+000001ef 30432900 
+000001f3 01             1801 	.byte	1
+000001f4 9a1c           1802 	.byte	154,28
+000001f6 434b53435f41   1803 	.strz	"CKSC_ATAUJS_CTL (*(volatile uint32 *)0xFFF82100)"
+000001fc 5441554a535f 
+00000202 43544c20282a 
+00000208 28766f6c6174 
+0000020e 696c65207569 
+00000214 6e743332202a 
+0000021a 293078464646 
+00000220 383231303029 
+00000226 00 
+00000227 01             1804 	.byte	1
+00000228 9e1c           1805 	.byte	158,28
+0000022a 434b53435f41   1806 	.strz	"CKSC_ATAUJD_STPM (*(volatile uint32 *)0xFFF82218)"
+00000230 5441554a445f 
+00000236 5354504d2028 
+0000023c 2a28766f6c61 
+00000242 74696c652075 
+00000248 696e74333220 
+0000024e 2a2930784646 
+00000254 463832323138 
+0000025a 2900 
+0000025c 01             1807 	.byte	1
+0000025d a41c           1808 	.byte	164,28
+0000025f 434b53435f41   1809 	.strz	"CKSC_AADCAS_CTL (*(volatile uint32 *)0xFFF82500)"
+00000265 41444341535f 
+0000026b 43544c20282a 
+00000271 28766f6c6174 
+00000277 696c65207569 
+0000027d 6e743332202a 
+00000283 293078464646 
+00000289 383235303029 
+0000028f 00 
+00000290 01             1810 	.byte	1
+00000291 a51c           1811 	.byte	165,28
+00000293 434b53435f41   1812 	.strz	"CKSC_AADCAS_ACT (*(const volatile uint32 *)0xFFF82508)"
+00000299 41444341535f 
+0000029f 41435420282a 
+
+                                                                      Page 34
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000002a5 28636f6e7374 
+000002ab 20766f6c6174 
+000002b1 696c65207569 
+000002b7 6e743332202a 
+000002bd 293078464646 
+000002c3 383235303829 
+000002c9 00 
+000002ca 01             1813 	.byte	1
+000002cb a81c           1814 	.byte	168,28
+000002cd 434b53435f41   1815 	.strz	"CKSC_AADCAD_STPM (*(volatile uint32 *)0xFFF82618)"
+000002d3 41444341445f 
+000002d9 5354504d2028 
+000002df 2a28766f6c61 
+000002e5 74696c652075 
+000002eb 696e74333220 
+000002f1 2a2930784646 
+000002f7 463832363138 
+000002fd 2900 
+000002ff 01             1816 	.byte	1
+00000300 ae1c           1817 	.byte	174,28
+00000302 50524f54434d   1818 	.strz	"PROTCMD1 (*(volatile uint32 *)0xFFF88000)"
+00000308 443120282a28 
+0000030e 766f6c617469 
+00000314 6c652075696e 
+0000031a 743332202a29 
+00000320 307846464638 
+00000326 383030302900 
+0000032c 01             1819 	.byte	1
+0000032d af1c           1820 	.byte	175,28
+0000032f 50524f545331   1821 	.strz	"PROTS1 (*(const volatile uint32 *)0xFFF88004)"
+00000335 20282a28636f 
+0000033b 6e737420766f 
+00000341 6c6174696c65 
+00000347 2075696e7433 
+0000034d 32202a293078 
+00000353 464646383830 
+00000359 30342900 
+0000035d 01             1822 	.byte	1
+0000035e b31c           1823 	.byte	179,28
+00000360 504c4c452028   1824 	.strz	"PLLE (*(volatile uint32 *)0xFFF89000)"
+00000366 2a28766f6c61 
+0000036c 74696c652075 
+00000372 696e74333220 
+00000378 2a2930784646 
+0000037e 463839303030 
+00000384 2900 
+00000386 01             1825 	.byte	1
+00000387 b41c           1826 	.byte	180,28
+00000389 504c4c532028   1827 	.strz	"PLLS (*(const volatile uint32 *)0xFFF89004)"
+0000038f 2a28636f6e73 
+00000395 7420766f6c61 
+0000039b 74696c652075 
+000003a1 696e74333220 
+000003a7 2a2930784646 
+000003ad 463839303034 
+000003b3 2900 
+000003b5 01             1828 	.byte	1
+000003b6 b51c           1829 	.byte	181,28
+000003b8 504c4c432028   1830 	.strz	"PLLC (*(volatile uint32 *)0xFFF89008)"
+000003be 2a28766f6c61 
+000003c4 74696c652075 
+
+                                                                      Page 35
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000003ca 696e74333220 
+000003d0 2a2930784646 
+000003d6 463839303038 
+000003dc 2900 
+000003de 01             1831 	.byte	1
+000003df b61c           1832 	.byte	182,28
+000003e1 434b53435f43   1833 	.strz	"CKSC_CPUCLKS_CTL (*(volatile uint32 *)0xFFF8A000)"
+000003e7 5055434c4b53 
+000003ed 5f43544c2028 
+000003f3 2a28766f6c61 
+000003f9 74696c652075 
+000003ff 696e74333220 
+00000405 2a2930784646 
+0000040b 463841303030 
+00000411 2900 
+00000413 01             1834 	.byte	1
+00000414 b71c           1835 	.byte	183,28
+00000416 434b53435f43   1836 	.strz	"CKSC_CPUCLKS_ACT (*(const volatile uint32 *)0xFFF8A008)"
+0000041c 5055434c4b53 
+00000422 5f4143542028 
+00000428 2a28636f6e73 
+0000042e 7420766f6c61 
+00000434 74696c652075 
+0000043a 696e74333220 
+00000440 2a2930784646 
+00000446 463841303038 
+0000044c 2900 
+0000044e 01             1837 	.byte	1
+0000044f b81c           1838 	.byte	184,28
+00000451 434b53435f43   1839 	.strz	"CKSC_CPUCLKD_CTL (*(volatile uint32 *)0xFFF8A100)"
+00000457 5055434c4b44 
+0000045d 5f43544c2028 
+00000463 2a28766f6c61 
+00000469 74696c652075 
+0000046f 696e74333220 
+00000475 2a2930784646 
+0000047b 463841313030 
+00000481 2900 
+00000483 01             1840 	.byte	1
+00000484 b91c           1841 	.byte	185,28
+00000486 434b53435f43   1842 	.strz	"CKSC_CPUCLKD_ACT (*(const volatile uint32 *)0xFFF8A108)"
+0000048c 5055434c4b44 
+00000492 5f4143542028 
+00000498 2a28636f6e73 
+0000049e 7420766f6c61 
+000004a4 74696c652075 
+000004aa 696e74333220 
+000004b0 2a2930784646 
+000004b6 463841313038 
+000004bc 2900 
+000004be 01             1843 	.byte	1
+000004bf bc1c           1844 	.byte	188,28
+000004c1 434b53435f49   1845 	.strz	"CKSC_IPERI2S_CTL (*(volatile uint32 *)0xFFF8A300)"
+000004c7 504552493253 
+000004cd 5f43544c2028 
+000004d3 2a28766f6c61 
+000004d9 74696c652075 
+000004df 696e74333220 
+000004e5 2a2930784646 
+000004eb 463841333030 
+000004f1 2900 
+
+                                                                      Page 36
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000004f3 01             1846 	.byte	1
+000004f4 bd1c           1847 	.byte	189,28
+000004f6 434b53435f49   1848 	.strz	"CKSC_IPERI2S_ACT (*(const volatile uint32 *)0xFFF8A308)"
+000004fc 504552493253 
+00000502 5f4143542028 
+00000508 2a28636f6e73 
+0000050e 7420766f6c61 
+00000514 74696c652075 
+0000051a 696e74333220 
+00000520 2a2930784646 
+00000526 463841333038 
+0000052c 2900 
+0000052e 01             1849 	.byte	1
+0000052f c71c           1850 	.byte	199,28
+00000531 434b53435f49   1851 	.strz	"CKSC_ICANS_CTL (*(volatile uint32 *)0xFFF8A900)"
+00000537 43414e535f43 
+0000053d 544c20282a28 
+00000543 766f6c617469 
+00000549 6c652075696e 
+0000054f 743332202a29 
+00000555 307846464638 
+0000055b 413930302900 
+00000561 01             1852 	.byte	1
+00000562 c81c           1853 	.byte	200,28
+00000564 434b53435f49   1854 	.strz	"CKSC_ICANS_ACT (*(const volatile uint32 *)0xFFF8A908)"
+0000056a 43414e535f41 
+00000570 435420282a28 
+00000576 636f6e737420 
+0000057c 766f6c617469 
+00000582 6c652075696e 
+00000588 743332202a29 
+0000058e 307846464638 
+00000594 413930382900 
+0000059a 01             1855 	.byte	1
+0000059b ca1c           1856 	.byte	202,28
+0000059d 434b53435f49   1857 	.strz	"CKSC_ICANOSCD_CTL (*(volatile uint32 *)0xFFF8AA00)"
+000005a3 43414e4f5343 
+000005a9 445f43544c20 
+000005af 282a28766f6c 
+000005b5 6174696c6520 
+000005bb 75696e743332 
+000005c1 202a29307846 
+000005c7 464638414130 
+000005cd 302900 
+000005d0 04             1858 	.byte	4
+000005d1 03             1859 	.byte	3
+000005d2 35             1860 	.byte	53
+000005d3 04             1861 	.byte	4
+000005d4 01             1862 	.byte	1
+000005d5 3c             1863 	.byte	60
+000005d6 5f5f4841535f   1864 	.strz	"__HAS_FPU__ "
+000005dc 4650555f5f20 
+000005e2 00 
+000005e3 04             1865 	.byte	4
+000005e4 03             1866 	.byte	3
+000005e5 36             1867 	.byte	54
+000005e6 05             1868 	.byte	5
+000005e7 01             1869 	.byte	1
+000005e8 37             1870 	.byte	55
+000005e9 5f494e4c494e   1871 	.strz	"_INLINE_ __inline"
+000005ef 455f205f5f69 
+
+                                                                      Page 37
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000005f5 6e6c696e6500 
+000005fb 03             1872 	.byte	3
+000005fc 3f             1873 	.byte	63
+000005fd 06             1874 	.byte	6
+000005fe 01             1875 	.byte	1
+000005ff 0f             1876 	.byte	15
+00000600 5f5f41545452   1877 	.strz	"__ATTRIBUTE(x) __attribute__(x)"
+00000606 494255544528 
+0000060c 7829205f5f61 
+00000612 747472696275 
+00000618 74655f5f2878 
+0000061e 2900 
+00000620 01             1878 	.byte	1
+00000621 9101           1879 	.byte	145,1
+00000623 5f5f47455453   1880 	.strz	"__GETSP_macro() asm (\"mov sp, %0\" : \"=r\" (result));"
+00000629 505f6d616372 
+0000062f 6f2829206173 
+00000635 6d2028226d6f 
+0000063b 762073702c20 
+00000641 253022203a20 
+00000647 223d72222028 
+0000064d 726573756c74 
+00000653 29293b00 
+00000657 04             1881 	.byte	4
+00000658 01             1882 	.byte	1
+00000659 46             1883 	.byte	70
+0000065a 7533325f5420   1884 	.strz	"u32_T unsigned long"
+00000660 756e7369676e 
+00000666 6564206c6f6e 
+0000066c 6700 
+0000066e 01             1885 	.byte	1
+0000066f 8803           1886 	.byte	136,3
+00000671 50535720352c   1887 	.strz	"PSW 5, 0"
+00000677 203000 
+0000067a 01             1888 	.byte	1
+0000067b 9203           1889 	.byte	146,3
+0000067d 4d4346473020   1890 	.strz	"MCFG0 0, 1"
+00000683 302c203100 
+00000688 01             1891 	.byte	1
+00000689 9403           1892 	.byte	148,3
+0000068b 454241534520   1893 	.strz	"EBASE 3, 1"
+00000691 332c203100 
+00000696 01             1894 	.byte	1
+00000697 9503           1895 	.byte	149,3
+00000699 494e54425020   1896 	.strz	"INTBP 4, 1"
+0000069f 342c203100 
+000006a4 01             1897 	.byte	1
+000006a5 9603           1898 	.byte	150,3
+000006a7 4d43544c2035   1899 	.strz	"MCTL 5, 1"
+000006ad 2c203100 
+000006b1 01             1900 	.byte	1
+000006b2 9703           1901 	.byte	151,3
+000006b4 50494420362c   1902 	.strz	"PID 6, 1"
+000006ba 203100 
+000006bd 01             1903 	.byte	1
+000006be 9803           1904 	.byte	152,3
+000006c0 534343464720   1905 	.strz	"SCCFG 11, 1"
+000006c6 31312c203100 
+000006cc 01             1906 	.byte	1
+000006cd 9d03           1907 	.byte	157,3
+000006cf 415349442037   1908 	.strz	"ASID 7, 2"
+
+                                                                      Page 38
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000006d5 2c203200 
+000006d9 01             1909 	.byte	1
+000006da 9f03           1910 	.byte	159,3
+000006dc 495350522031   1911 	.strz	"ISPR 10, 2"
+000006e2 302c203200 
+000006e7 01             1912 	.byte	1
+000006e8 a003           1913 	.byte	160,3
+000006ea 504d52203131   1914 	.strz	"PMR 11, 2"
+000006f0 2c203200 
+000006f4 01             1915 	.byte	1
+000006f5 a103           1916 	.byte	161,3
+000006f7 494353522031   1917 	.strz	"ICSR 12, 2"
+000006fd 322c203200 
+00000702 01             1918 	.byte	1
+00000703 a203           1919 	.byte	162,3
+00000705 494e54434647   1920 	.strz	"INTCFG 13, 2"
+0000070b 2031332c2032 
+00000711 00 
+00000712 01             1921 	.byte	1
+00000713 a403           1922 	.byte	164,3
+00000715 4d504d20302c   1923 	.strz	"MPM 0, 5"
+0000071b 203500 
+0000071e 01             1924 	.byte	1
+0000071f a503           1925 	.byte	165,3
+00000721 4d5052432031   1926 	.strz	"MPRC 1, 5"
+00000727 2c203500 
+0000072b 01             1927 	.byte	1
+0000072c a603           1928 	.byte	166,3
+0000072e 4d504252474e   1929 	.strz	"MPBRGN 4, 5"
+00000734 20342c203500 
+0000073a 01             1930 	.byte	1
+0000073b a703           1931 	.byte	167,3
+0000073d 4d505452474e   1932 	.strz	"MPTRGN 5, 5"
+00000743 20352c203500 
+00000749 01             1933 	.byte	1
+0000074a a803           1934 	.byte	168,3
+0000074c 4d434120382c   1935 	.strz	"MCA 8, 5"
+00000752 203500 
+00000755 01             1936 	.byte	1
+00000756 a903           1937 	.byte	169,3
+00000758 4d435320392c   1938 	.strz	"MCS 9, 5"
+0000075e 203500 
+00000761 01             1939 	.byte	1
+00000762 aa03           1940 	.byte	170,3
+00000764 4d4343203130   1941 	.strz	"MCC 10, 5"
+0000076a 2c203500 
+0000076e 01             1942 	.byte	1
+0000076f ab03           1943 	.byte	171,3
+00000771 4d4352203131   1944 	.strz	"MCR 11, 5"
+00000777 2c203500 
+0000077b 01             1945 	.byte	1
+0000077c ad03           1946 	.byte	173,3
+0000077e 4d504c413020   1947 	.strz	"MPLA0 0, 6"
+00000784 302c203600 
+00000789 01             1948 	.byte	1
+0000078a ae03           1949 	.byte	174,3
+0000078c 4d5055413020   1950 	.strz	"MPUA0 1, 6"
+00000792 312c203600 
+00000797 01             1951 	.byte	1
+00000798 af03           1952 	.byte	175,3
+0000079a 4d5041543020   1953 	.strz	"MPAT0 2, 6"
+
+                                                                      Page 39
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+000007a0 322c203600 
+000007a5 01             1954 	.byte	1
+000007a6 b003           1955 	.byte	176,3
+000007a8 4d504c413120   1956 	.strz	"MPLA1 4, 6"
+000007ae 342c203600 
+000007b3 01             1957 	.byte	1
+000007b4 b103           1958 	.byte	177,3
+000007b6 4d5055413120   1959 	.strz	"MPUA1 5, 6"
+000007bc 352c203600 
+000007c1 01             1960 	.byte	1
+000007c2 b203           1961 	.byte	178,3
+000007c4 4d5041543120   1962 	.strz	"MPAT1 6, 6"
+000007ca 362c203600 
+000007cf 01             1963 	.byte	1
+000007d0 b303           1964 	.byte	179,3
+000007d2 4d504c413220   1965 	.strz	"MPLA2 8, 6"
+000007d8 382c203600 
+000007dd 01             1966 	.byte	1
+000007de b403           1967 	.byte	180,3
+000007e0 4d5055413220   1968 	.strz	"MPUA2 9, 6"
+000007e6 392c203600 
+000007eb 01             1969 	.byte	1
+000007ec b503           1970 	.byte	181,3
+000007ee 4d5041543220   1971 	.strz	"MPAT2 10, 6"
+000007f4 31302c203600 
+000007fa 01             1972 	.byte	1
+000007fb b603           1973 	.byte	182,3
+000007fd 4d504c413320   1974 	.strz	"MPLA3 12, 6"
+00000803 31322c203600 
+00000809 01             1975 	.byte	1
+0000080a b703           1976 	.byte	183,3
+0000080c 4d5055413320   1977 	.strz	"MPUA3 13, 6"
+00000812 31332c203600 
+00000818 01             1978 	.byte	1
+00000819 b803           1979 	.byte	184,3
+0000081b 4d5041543320   1980 	.strz	"MPAT3 14, 6"
+00000821 31342c203600 
+00000827 01             1981 	.byte	1
+00000828 b903           1982 	.byte	185,3
+0000082a 4d504c413420   1983 	.strz	"MPLA4 16, 6"
+00000830 31362c203600 
+00000836 01             1984 	.byte	1
+00000837 ba03           1985 	.byte	186,3
+00000839 4d5055413420   1986 	.strz	"MPUA4 17, 6"
+0000083f 31372c203600 
+00000845 01             1987 	.byte	1
+00000846 bb03           1988 	.byte	187,3
+00000848 4d5041543420   1989 	.strz	"MPAT4 18, 6"
+0000084e 31382c203600 
+00000854 01             1990 	.byte	1
+00000855 bc03           1991 	.byte	188,3
+00000857 4d504c413520   1992 	.strz	"MPLA5 20, 6"
+0000085d 32302c203600 
+00000863 01             1993 	.byte	1
+00000864 bd03           1994 	.byte	189,3
+00000866 4d5055413520   1995 	.strz	"MPUA5 21, 6"
+0000086c 32312c203600 
+00000872 01             1996 	.byte	1
+00000873 be03           1997 	.byte	190,3
+00000875 4d5041543520   1998 	.strz	"MPAT5 22, 6"
+0000087b 32322c203600 
+
+                                                                      Page 40
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000881 01             1999 	.byte	1
+00000882 bf03           2000 	.byte	191,3
+00000884 4d504c413620   2001 	.strz	"MPLA6 24, 6"
+0000088a 32342c203600 
+00000890 01             2002 	.byte	1
+00000891 c003           2003 	.byte	192,3
+00000893 4d5055413620   2004 	.strz	"MPUA6 25, 6"
+00000899 32352c203600 
+0000089f 01             2005 	.byte	1
+000008a0 c103           2006 	.byte	193,3
+000008a2 4d5041543620   2007 	.strz	"MPAT6 26, 6"
+000008a8 32362c203600 
+000008ae 01             2008 	.byte	1
+000008af c203           2009 	.byte	194,3
+000008b1 4d4c55413720   2010 	.strz	"MLUA7 28, 6"
+000008b7 32382c203600 
+000008bd 01             2011 	.byte	1
+000008be c303           2012 	.byte	195,3
+000008c0 4d5055413720   2013 	.strz	"MPUA7 29, 6"
+000008c6 32392c203600 
+000008cc 01             2014 	.byte	1
+000008cd c403           2015 	.byte	196,3
+000008cf 4d5041543720   2016 	.strz	"MPAT7 30, 6"
+000008d5 33302c203600 
+000008db 01             2017 	.byte	1
+000008dc c503           2018 	.byte	197,3
+000008de 4d504c413820   2019 	.strz	"MPLA8 0, 7"
+000008e4 302c203700 
+000008e9 01             2020 	.byte	1
+000008ea c603           2021 	.byte	198,3
+000008ec 4d5055413820   2022 	.strz	"MPUA8 1, 7"
+000008f2 312c203700 
+000008f7 01             2023 	.byte	1
+000008f8 c703           2024 	.byte	199,3
+000008fa 4d5041543820   2025 	.strz	"MPAT8 2, 7"
+00000900 322c203700 
+00000905 01             2026 	.byte	1
+00000906 c803           2027 	.byte	200,3
+00000908 4d504c413920   2028 	.strz	"MPLA9 4, 7"
+0000090e 342c203700 
+00000913 01             2029 	.byte	1
+00000914 c903           2030 	.byte	201,3
+00000916 4d5055413920   2031 	.strz	"MPUA9 5, 7"
+0000091c 352c203700 
+00000921 01             2032 	.byte	1
+00000922 ca03           2033 	.byte	202,3
+00000924 4d5041543920   2034 	.strz	"MPAT9 6, 7"
+0000092a 362c203700 
+0000092f 01             2035 	.byte	1
+00000930 cb03           2036 	.byte	203,3
+00000932 4d504c413130   2037 	.strz	"MPLA10 8, 7"
+00000938 20382c203700 
+0000093e 01             2038 	.byte	1
+0000093f cc03           2039 	.byte	204,3
+00000941 4d5055413130   2040 	.strz	"MPUA10 9, 7"
+00000947 20392c203700 
+0000094d 01             2041 	.byte	1
+0000094e cd03           2042 	.byte	205,3
+00000950 4d5041543130   2043 	.strz	"MPAT10 10, 7"
+00000956 2031302c2037 
+0000095c 00 
+
+                                                                      Page 41
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+0000095d 01             2044 	.byte	1
+0000095e ce03           2045 	.byte	206,3
+00000960 4d504c413131   2046 	.strz	"MPLA11 12, 7"
+00000966 2031322c2037 
+0000096c 00 
+0000096d 01             2047 	.byte	1
+0000096e cf03           2048 	.byte	207,3
+00000970 4d5055413131   2049 	.strz	"MPUA11 13, 7"
+00000976 2031332c2037 
+0000097c 00 
+0000097d 01             2050 	.byte	1
+0000097e d003           2051 	.byte	208,3
+00000980 4d5041543131   2052 	.strz	"MPAT11 14, 7"
+00000986 2031342c2037 
+0000098c 00 
+0000098d 01             2053 	.byte	1
+0000098e d103           2054 	.byte	209,3
+00000990 4d504c413132   2055 	.strz	"MPLA12 16, 7"
+00000996 2031362c2037 
+0000099c 00 
+0000099d 01             2056 	.byte	1
+0000099e d203           2057 	.byte	210,3
+000009a0 4d5055413132   2058 	.strz	"MPUA12 17, 7"
+000009a6 2031372c2037 
+000009ac 00 
+000009ad 01             2059 	.byte	1
+000009ae d303           2060 	.byte	211,3
+000009b0 4d5041543132   2061 	.strz	"MPAT12 18, 7"
+000009b6 2031382c2037 
+000009bc 00 
+000009bd 01             2062 	.byte	1
+000009be d403           2063 	.byte	212,3
+000009c0 4d504c413133   2064 	.strz	"MPLA13 20, 7"
+000009c6 2032302c2037 
+000009cc 00 
+000009cd 01             2065 	.byte	1
+000009ce d503           2066 	.byte	213,3
+000009d0 4d5055413133   2067 	.strz	"MPUA13 21, 7"
+000009d6 2032312c2037 
+000009dc 00 
+000009dd 01             2068 	.byte	1
+000009de d603           2069 	.byte	214,3
+000009e0 4d5041543133   2070 	.strz	"MPAT13 22, 7"
+000009e6 2032322c2037 
+000009ec 00 
+000009ed 01             2071 	.byte	1
+000009ee d703           2072 	.byte	215,3
+000009f0 4d504c413134   2073 	.strz	"MPLA14 24, 7"
+000009f6 2032342c2037 
+000009fc 00 
+000009fd 01             2074 	.byte	1
+000009fe d803           2075 	.byte	216,3
+00000a00 4d5055413134   2076 	.strz	"MPUA14 25, 7"
+00000a06 2032352c2037 
+00000a0c 00 
+00000a0d 01             2077 	.byte	1
+00000a0e d903           2078 	.byte	217,3
+00000a10 4d5041543134   2079 	.strz	"MPAT14 26, 7"
+00000a16 2032362c2037 
+00000a1c 00 
+00000a1d 01             2080 	.byte	1
+
+                                                                      Page 42
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000a1e da03           2081 	.byte	218,3
+00000a20 4d504c413135   2082 	.strz	"MPLA15 28, 7"
+00000a26 2032382c2037 
+00000a2c 00 
+00000a2d 01             2083 	.byte	1
+00000a2e db03           2084 	.byte	219,3
+00000a30 4d5055413135   2085 	.strz	"MPUA15 29, 7"
+00000a36 2032392c2037 
+00000a3c 00 
+00000a3d 01             2086 	.byte	1
+00000a3e dc03           2087 	.byte	220,3
+00000a40 4d5041543135   2088 	.strz	"MPAT15 30, 7"
+00000a46 2033302c2037 
+00000a4c 00 
+00000a4d 04             2089 	.byte	4
+00000a4e 03             2090 	.byte	3
+00000a4f 47             2091 	.byte	71
+00000a50 07             2092 	.byte	7
+00000a51 04             2093 	.byte	4
+00000a52 01             2094 	.byte	1
+00000a53 4d             2095 	.byte	77
+00000a54 70726f746563   2096 	.strz	"protected_write(preg,pstatus,reg,value) do{ (preg)=0xa5u; (reg)=(value); (reg)=~(value); (reg)=(value); }while((pstatus)==1u)"
+00000a5a 7465645f7772 
+00000a60 697465287072 
+00000a66 65672c707374 
+00000a6c 617475732c72 
+00000a72 65672c76616c 
+00000a78 75652920646f 
+00000a7e 7b2028707265 
+00000a84 67293d307861 
+00000a8a 35753b202872 
+00000a90 6567293d2876 
+00000a96 616c7565293b 
+00000a9c 202872656729 
+00000aa2 3d7e2876616c 
+00000aa8 7565293b2028 
+00000aae 726567293d28 
+00000ab4 76616c756529 
+00000aba 3b207d776869 
+00000ac0 6c6528287073 
+00000ac6 746174757329 
+00000acc 3d3d31752900 
+00000ad2 04             2097 	.byte	4
+00000ad3 03             2098 	.byte	3
+00000ad4 43             2099 	.byte	67
+00000ad5 08             2100 	.byte	8
+00000ad6 01             2101 	.byte	1
+00000ad7 3f             2102 	.byte	63
+00000ad8 525f434c4b43   2103 	.strz	"R_CLKC_STOPMASK_SET 0x03"
+00000ade 5f53544f504d 
+00000ae4 41534b5f5345 
+00000aea 542030783033 
+00000af0 00 
+00000af1 01             2104 	.byte	1
+00000af2 40             2105 	.byte	64
+00000af3 525f434c4b43   2106 	.strz	"R_CLKC_STOPMASK_RESET 0x02"
+00000af9 5f53544f504d 
+00000aff 41534b5f5245 
+00000b05 534554203078 
+00000b0b 303200 
+00000b0e 04             2107 	.byte	4
+
+                                                                      Page 43
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000ad6s1.s
+00000b0f 04             2108 	.byte	4
+00000b10 00             2109 	.byte	0
+                        2110 	.section	.debug_abbrev
+0000008b 00             2111 	.byte	0
+                        2112 	.section	.debug_info
+                        2113 .Ldw_end:
+                        2114 .rh850_flags REGMODE32,DATA_ALIGN8,GP_FIX,EP_NONFIX,TP_FIX,REG2_NONRESERVE,G3K,SDA_EXTRA_REGS_0

@@ -1,0 +1,1816 @@
+Host OS:	Windows 7 Service Pack 1
+ELXR: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win64-comp
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 03:05:22 2015
+
+Release Date: Thu Oct 22 03:32:31 2015
+
+
+
+
+Load Map Thu Jan 18 08:16:37 2018
+Image Summary
+
+  Section              Base      Size(hex)    Size(dec)  SecOffs
+  .intvect             00000000  00000668         1640   0000220
+  .intvect_end         00000668  00000000            0   0000000
+  .rozdata             00000668  00000000            0   0000000
+  .robase              00000668  00000000            0   0000000
+  .rosdata             00000668  00000007            7   0000888
+  .rodata              00000670  00000dbf         3519   0000890
+  .text                00001430  000054ec        21740   0001650
+  .fixaddr             0000691c  00000000            0   0000000
+  .fixtype             0000691c  00000000            0   0000000
+  .secinfo             0000691c  00000060           96   0006b3c
+  .syscall             0000697c  00000006            6   0006b9c
+  .romdata             00006984  00006034        24628   0006ba4
+  .romzdata            0000c9b8  00000000            0   0000000
+  .romsdata            0000c9b8  00000030           48   000cbd8
+  .romtdata            0000c9e8  00000000            0   0000000
+  .romsldata           0000c9e8  00000000            0   0000000
+  .bcode               01000000  00000000            0   0000000
+  .bconst              01000000  00000000            0   0000000
+  .data                fede0000  00006034        24628   0006ba4
+  .bss                 fede6034  00000670         1648   0000000
+  .sda_start           fede66a4  00000000            0   0000000
+  .sdata               fede66a4  00000030           48   000cbd8
+  .sbss                fede66d4  00000014           20   0000000
+  .sda_end             fede66e8  00000000            0   0000000
+  .zdata               fede66e8  00000000            0   0000000
+  .zbss                fede66e8  00000000            0   0000000
+  .tdata               fede66e8  00000000            0   0000000
+  .stack               fede66e8  00000800         2048   0000000
+  .heapbase            fede6ee8  00000000            0   0000000
+  .heap                fede6ee8  00019118       102680   0000000
+  .sldata              fedd8000  00000000            0   0000000
+  .slbss               fedd8000  00000000            0   0000000
+  .rdata               fee00000  00000030           48   0000000
+  .rbss                fee00030  00000000            0   0000000
+  .debug_abbrev        00000000  0000184f         6223   000cc08
+  .debug_info          00000000  00015521        87329   000e457
+  .debug_line          00000000  000057a5        22437   0023978
+  .debug_macinfo       00000000  00014777        83831   002911d
+  .debug_frame         00000000  00002148         8520   003d894
+  .note.renesas        00000000  0000003c           60   003f9dc
+  .linfix              00000000  00000000            0   0000000
+  .gstackfix           00000000  00000000            0   0000000
+
+Load Map Thu Jan 18 08:16:37 2018
+Module Summary
+
+  Origin+Size    Section          Module
+00001430+000128  .text            crt0.o
+00001558+000062  .text            dr7f701057_startup.o
+00000000+000024  .debug_abbrev    dr7f701057_startup.o
+00000000+000117  .debug_info      dr7f701057_startup.o
+00000000+0001eb  .debug_line      dr7f701057_startup.o
+00000000+000668  .intvect         dr7f701057_startup.o
+00000000+00003c  .note.renesas    <RENESAS ABI INFO>
+000015ba+000056  .text            main.o
+00000670+00000f  .rodata          main.o
+00000117+0001dc  .debug_info      main.o
+00000024+0000cf  .debug_abbrev    main.o
+000001eb+00027e  .debug_line      main.o
+00000000+0006c1  .debug_macinfo   main.o
+00000000+0000d4  .debug_frame     main.o
+00001610+0010fa  .text            r_tasks.o
+fede0000+006000  .data            r_tasks.o
+00000680+00055e  .rodata          r_tasks.o
+fede66a4+00001a  .sdata           r_tasks.o
+fede66e4+000004  .sbss            r_tasks.o
+00000668+000007  .rosdata         r_tasks.o
+fee00000+000030  .rdata           r_tasks.o
+000002f3+0014f1  .debug_info      r_tasks.o
+000000f3+000182  .debug_abbrev    r_tasks.o
+00000469+001290  .debug_line      r_tasks.o
+000006c1+00092f  .debug_macinfo   r_tasks.o
+000000d4+00025c  .debug_frame     r_tasks.o
+0000270a+000116  .text            r_can.o
+fede6000+000010  .data            r_can.o
+00000be0+000010  .rodata          r_can.o
+000017e4+0005df  .debug_info      r_can.o
+00000275+00017c  .debug_abbrev    r_can.o
+000016f9+000255  .debug_line      r_can.o
+00000ff0+00189d  .debug_macinfo   r_can.o
+00000330+0000f4  .debug_frame     r_can.o
+00002820+0007d4  .text            r_display.o
+00000bf0+000500  .rodata          r_display.o
+00001dc3+000c7f  .debug_info      r_display.o
+000003f1+000154  .debug_abbrev    r_display.o
+0000194e+000867  .debug_line      r_display.o
+0000288d+001b0b  .debug_macinfo   r_display.o
+00000424+0002c4  .debug_frame     r_display.o
+00002ff4+000422  .text            r_led.o
+fede66c0+000004  .sdata           r_led.o
+00002a42+000aa0  .debug_info      r_led.o
+00000545+0000da  .debug_abbrev    r_led.o
+000021b5+000677  .debug_line      r_led.o
+00004398+0018d9  .debug_macinfo   r_led.o
+000006e8+00023c  .debug_frame     r_led.o
+00003416+0000fc  .text            r_lin.o
+000034e2+00055e  .debug_info      r_lin.o
+0000061f+00014d  .debug_abbrev    r_lin.o
+0000282c+000256  .debug_line      r_lin.o
+00005c71+0018b6  .debug_macinfo   r_lin.o
+00000924+00012c  .debug_frame     r_lin.o
+00003512+0003a0  .text            r_system.o
+00003a40+000b30  .debug_info      r_system.o
+0000076c+00013c  .debug_abbrev    r_system.o
+00002a82+0005df  .debug_line      r_system.o
+00007527+001afd  .debug_macinfo   r_system.o
+00000a50+0001d4  .debug_frame     r_system.o
+000038b2+000086  .text            r_uart.o
+00004570+00042f  .debug_info      r_uart.o
+000008a8+0000f7  .debug_abbrev    r_uart.o
+00003061+000239  .debug_line      r_uart.o
+00009024+0018ff  .debug_macinfo   r_uart.o
+00000c24+0000e8  .debug_frame     r_uart.o
+00003938+000222  .text            r_ui.o
+fede66c4+000008  .sdata           r_ui.o
+0000499f+000a63  .debug_info      r_ui.o
+0000099f+00011b  .debug_abbrev    r_ui.o
+0000329a+0003ff  .debug_line      r_ui.o
+0000a923+0018f4  .debug_macinfo   r_ui.o
+00000d0c+000218  .debug_frame     r_ui.o
+00003b5a+000200  .text            r_adc.o
+fede66cc+000004  .sdata           r_adc.o
+00005402+0016d9  .debug_info      r_adc.o
+00000aba+000151  .debug_abbrev    r_adc.o
+00003699+000269  .debug_line      r_adc.o
+0000c217+00080b  .debug_macinfo   r_adc.o
+00000f24+0001fc  .debug_frame     r_adc.o
+00003d5a+00023e  .text            r_clkc.o
+00006adb+000366  .debug_info      r_clkc.o
+00000c0b+00008c  .debug_abbrev    r_clkc.o
+00003902+000309  .debug_line      r_clkc.o
+0000ca22+000b11  .debug_macinfo   r_clkc.o
+00001120+000150  .debug_frame     r_clkc.o
+00003f98+00013c  .text            r_csi.o
+00006e41+000b2c  .debug_info      r_csi.o
+00000c97+000111  .debug_abbrev    r_csi.o
+00003c0b+000227  .debug_line      r_csi.o
+0000d533+000759  .debug_macinfo   r_csi.o
+00001270+000120  .debug_frame     r_csi.o
+000040d4+000038  .text            r_enc.o
+0000796d+0004b1  .debug_info      r_enc.o
+00000da8+0000ea  .debug_abbrev    r_enc.o
+00003e32+000190  .debug_line      r_enc.o
+0000dc8c+00063b  .debug_macinfo   r_enc.o
+00001390+000108  .debug_frame     r_enc.o
+0000410c+000074  .text            r_intc.o
+00007e1e+0003e6  .debug_info      r_intc.o
+00000e92+0000d3  .debug_abbrev    r_intc.o
+00003fc2+0001ef  .debug_line      r_intc.o
+0000e2c7+0005a1  .debug_macinfo   r_intc.o
+00001498+000150  .debug_frame     r_intc.o
+00004180+0000e2  .text            r_lps.o
+00008204+0001dc  .debug_info      r_lps.o
+00000f65+00008c  .debug_abbrev    r_lps.o
+000041b1+00017e  .debug_line      r_lps.o
+0000e868+000897  .debug_macinfo   r_lps.o
+000015e8+0000d8  .debug_frame     r_lps.o
+00004262+00002c  .text            r_ostm.o
+000083e0+000348  .debug_info      r_ostm.o
+00000ff1+0000cd  .debug_abbrev    r_ostm.o
+0000432f+000181  .debug_line      r_ostm.o
+0000f0ff+00060a  .debug_macinfo   r_ostm.o
+000016c0+0000f0  .debug_frame     r_ostm.o
+0000428e+000462  .text            r_port.o
+000010f0+000270  .rodata          r_port.o
+00008728+00098b  .debug_info      r_port.o
+000010be+00014b  .debug_abbrev    r_port.o
+000044b0+0002ce  .debug_line      r_port.o
+0000f709+0019c9  .debug_macinfo   r_port.o
+000017b0+000168  .debug_frame     r_port.o
+000046f0+000188  .text            r_pwmd.o
+000090b3+000e99  .debug_info      r_pwmd.o
+00001209+0000cd  .debug_abbrev    r_pwmd.o
+0000477e+0002aa  .debug_line      r_pwmd.o
+000110d2+0008e3  .debug_macinfo   r_pwmd.o
+00001918+0001b0  .debug_frame     r_pwmd.o
+00004878+00025e  .text            r_rlin.o
+00009f4c+000a7d  .debug_info      r_rlin.o
+000012d6+000131  .debug_abbrev    r_rlin.o
+00004a28+0002e7  .debug_line      r_rlin.o
+000119b5+0009e0  .debug_macinfo   r_rlin.o
+00001ac8+000150  .debug_frame     r_rlin.o
+00001360+0000c0  .rodata          r_can_table.o
+0000a9c9+00014a  .debug_info      r_can_table.o
+00001407+000088  .debug_abbrev    r_can_table.o
+00004d0f+00013b  .debug_line      r_can_table.o
+00012395+000583  .debug_macinfo   r_can_table.o
+00004ad6+000372  .text            r_rscan.o
+0000ab13+007e29  .debug_info      r_rscan.o
+0000148f+000164  .debug_abbrev    r_rscan.o
+00004e4a+0003c5  .debug_line      r_rscan.o
+00012918+000c91  .debug_macinfo   r_rscan.o
+00001c18+00010c  .debug_frame     r_rscan.o
+00004e48+0000ae  .text            r_stbc.o
+0001293c+000232  .debug_info      r_stbc.o
+000015f3+0000c5  .debug_abbrev    r_stbc.o
+0000520f+0001c1  .debug_line      r_stbc.o
+000135a9+00080a  .debug_macinfo   r_stbc.o
+00001d24+0000f0  .debug_frame     r_stbc.o
+00004ef6+000338  .text            r_tau.o
+fede66d0+000004  .sdata           r_tau.o
+00012b6e+002806  .debug_info      r_tau.o
+000016b8+0000e9  .debug_abbrev    r_tau.o
+000053d0+000307  .debug_line      r_tau.o
+00013db3+0009b2  .debug_macinfo   r_tau.o
+00001e14+00028c  .debug_frame     r_tau.o
+0000522e+00000e  .text            subproj.o
+00015374+000115  .debug_info      subproj.o
+000017a1+000096  .debug_abbrev    subproj.o
+000056d7+000078  .debug_line      subproj.o
+00014765+000009  .debug_macinfo   subproj.o
+000020a0+0000a8  .debug_frame     subproj.o
+00015489+000098  .debug_info      test5.o
+00001837+000018  .debug_abbrev    test5.o
+0000574f+000056  .debug_line      test5.o
+0001476e+000009  .debug_macinfo   test5.o
+0000523c+000006  .text            libmulti.a
+fede6010+000004  .data            libmulti.a
+fede60d0+0003e8  .bss             libmulti.a
+00005242+000094  .text            libansi.a(ccsprntf.o)
+000052d6+00003c  .text            libansi.a(ccprintf.o)
+00005312+000066  .text            libansi.a(ccexit.o)
+00005378+000776  .text            libansi.a(ccvsprnt.o)
+00001420+00000f  .rodata          libansi.a(ccvsprnt.o)
+00005aee+000106  .text            libansi.a(ccvprntf.o)
+00005bf4+000070  .text            libansi.a(ccbufsiz.o)
+fede64b8+000050  .bss             libansi.a(ccbufsiz.o)
+00005c64+000024  .text            libansi.a(ccputcu.o)
+00005c88+00009c  .text            libansi.a(ccflsbuf.o)
+00005d24+0000d2  .text            libansi.a(ccflock.o)
+00005df6+0000a0  .text            libansi.a(ccfflush.o)
+00005e96+000016  .text            libansi.a(ccstrlen.o)
+00005eac+000030  .text            libwc_s32.a(ccstorewc.o)
+00005edc+000042  .text            libwc_s32.a(ccwctomb.o)
+00005f1e+00035e  .text            libstartup.a(ind_crt0.o)
+00006280+000060  .text            libstartup.a(ind_mset.o)
+000062e0+000114  .text            libstartup.a(ind_mcpy.o)
+000063f4+000020  .text            libsys.a(ind_thrd.o)
+fede6508+000004  .bss             libsys.a(ind_thrd.o)
+00006414+0000ba  .text            libsys.a(ind_iob.o)
+fede6014+000002  .data            libsys.a(ind_iob.o)
+fede650c+000194  .bss             libsys.a(ind_iob.o)
+000064ce+0000ac  .text            libsys.a(ind_exit.o)
+fede66a0+000004  .bss             libsys.a(ind_exit.o)
+0000657a+00001c  .text            libsys.a(ind_errn.o)
+0000697c+000006  .syscall         libsys.a(ind_dots.o)
+00006596+000022  .text            libsys.a(ind_call.o)
+000065b8+000156  .text            libsys.a(ind_io.o)
+0000670e+0000ba  .text            libsys.a(ind_crt1.o)
+fede6018+00001c  .data            libsys.a(ind_crt1.o)
+000067c8+000006  .text            libsys.a(ind_lock.o)
+000067ce+000024  .text            libarch.a(indarchj.o)
+000067f2+00002e  .text            libarch.a(indarchi.o)
+00006820+000036  .text            libarch.a(indarchg.o)
+00006856+000022  .text            libarch.a(indarche.o)
+00006878+000022  .text            libarch.a(indarchd.o)
+0000689a+000022  .text            libarch.a(indarchc.o)
+000068bc+00001a  .text            libarch.a(indarchb.o)
+000068d6+000018  .text            libarch.a(indarcha.o)
+000068ee+00002e  .text            libarch.a(indarchf.o)
+0000691c+000060  .secinfo         <section info>
+fede66d4+000010  SMALLCOMMON -> .sbss <commons>
+fede6034+00009c  COMMON -> .bss   <commons>
+
+Load Map Thu Jan 18 08:16:37 2018
+Global Symbols (sorted alphabetically)
+
+ .intvect         00000000+000000 .intvect..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cdr7f701057_startup.
+ .text            000020c0+0004f4 _BoardCheck
+ .data            fede6000+000010 _CANRecData
+ .rodata          00000be0+000010 _CANTraStandData
+ .text            0000209a+000026 _DeepSTOP
+ .text            00003b5a+000086 _INTADCA0ERR
+ .text            00004878+00004c _INTRLIN30UR0
+ .text            00004ef6+00006c _INTTAUJ0I1
+ .text            00001754+000264 _LedUpdate
+ .text            00001ab4+000370 _Mode1
+ .text            00001e24+000276 _Mode2
+ .rodata          000010f0+000270 _PortList..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_port.
+ .text            000019b8+000074 _PrintStatus
+ .text            00001610+000024 _PrintText
+ .text            00001634+00008a _PwmErrorCallBack
+ .text            00001558+000000 _RESET
+ .rodata          00001360+0000c0 _RX_RULE_TABLE_LIST
+ .text            00003be0+00000a _R_ADCA0_AssignLimitErrorCB
+ .text            00003bea+000018 _R_ADCA0_ConnectPullDown
+ .text            00003c02+00001a _R_ADCA0_DisconnectPullDown
+ .text            00003c1c+000032 _R_ADCA0_Init
+ .sdata           fede66cc+000004 _R_ADCA0_LimitErrorCB
+ .text            00003c78+000046 _R_ADCA0_LpsInit
+ .text            00003c4e+00002a _R_ADCA0_PinRead
+ .text            00003d4c+00000e _R_ADCA0_PwsaTriggerDisable
+ .text            00003d3a+000012 _R_ADCA0_PwsaTriggerEnable
+ .text            00003cbe+00007c _R_ADCA0_SetUpperLowerLimit
+ .text            00002760+00003e _R_CAN_Deinit
+ .text            0000270a+000056 _R_CAN_Init
+ .text            0000279e+000082 _R_CAN_Test
+ .text            00003d5a+000140 _R_CLKC_PllInit
+ .text            00003f7a+00000a _R_CLKC_ResetAdca0StopMask
+ .text            00003f8e+00000a _R_CLKC_ResetTaujStopMask
+ .text            00003f04+000036 _R_CLKC_SetAdca0ClockDomain
+ .text            00003f70+00000a _R_CLKC_SetAdca0StopMask
+ .text            00003e9a+00006a _R_CLKC_SetRscanClockDomain
+ .text            00003f3a+000036 _R_CLKC_SetTaujClockDomain
+ .text            00003f84+00000a _R_CLKC_SetTaujStopMask
+ .text            00004088+00002c _R_CSIG0_Init
+ .text            000040b4+000020 _R_CSIG0_TransmitData
+ .text            00003ff4+000032 _R_CSIH2_C4_SetTxSize
+ .text            00003f98+00005c _R_CSIH2_Init
+ .text            00004026+00003c _R_CSIH2_TransmitBuffer
+ .text            00004062+000026 _R_CSIH2_TransmitData
+ .text            00002840+00004e _R_DISPLAY_Deinit
+ .text            00002ac4+00010c _R_DISPLAY_DrawImg
+ .text            00002bd0+000108 _R_DISPLAY_DrawRect
+ .text            00002ebe+000094 _R_DISPLAY_DrawText
+ .text            000028a6+00021e _R_DISPLAY_Init
+ .text            0000288e+000018 _R_DISPLAY_ResetRelease
+ .text            00002820+000020 _R_DISPLAY_SDCard_Test
+ .text            00004104+000008 _R_ENCA0_GetFlags
+ .text            000040d4+000014 _R_ENCA0_Init
+ .text            000040fc+000008 _R_ENCA0_Read
+ .text            000040e8+00000a _R_ENCA0_Start
+ .text            000040f2+00000a _R_ENCA0_Stop
+ .text            00004164+000010 _R_INTC_GetRequestFlag
+ .text            0000410c+00000c _R_INTC_MaskInterrupt
+ .text            00004174+00000c _R_INTC_ResetRequestFlag
+ .text            0000414c+00000c _R_INTC_ResetTableBit
+ .text            00004124+00001c _R_INTC_SetPriority
+ .text            00004158+00000c _R_INTC_SetRequestFlag
+ .text            00004140+00000c _R_INTC_SetTableBit
+ .text            00004118+00000c _R_INTC_UnmaskInterrupt
+ .sdata           fede66d0+000004 _R_INTTAUJ0I1_ISR
+ .text            00002ff4+00006e _R_LED_GpioInit
+ .text            000030d0+00006e _R_LED_GpioOff
+ .text            00003062+00006e _R_LED_GpioOn
+ .text            0000313e+0000aa _R_LED_PwmInit
+ .text            00003254+000062 _R_LED_PwmStart
+ .text            000032b6+000062 _R_LED_PwmStop
+ .text            00003318+000012 _R_LED_RgbDiagInit
+ .text            0000332a+000012 _R_LED_RgbDiagStart
+ .text            0000333c+000012 _R_LED_RgbDiagStop
+ .text            0000334e+000064 _R_LED_RingInit
+ .text            000033ca+000018 _R_LED_RingOutputDisable
+ .text            000033b2+000018 _R_LED_RingOutputEnable
+ .text            000033e2+000034 _R_LED_RingUpdate
+ .text            000031e8+00006c _R_LED_SetPwmDuty
+ .text            00003444+00001e _R_LIN_Deinit
+ .text            00003416+00002e _R_LIN_Init
+ .text            000034ea+000028 _R_LIN_RxFrame
+ .text            00003462+000052 _R_LIN_Test
+ .text            000034b4+000036 _R_LIN_TxFrame
+ .text            000041e0+00000c _R_LPS_Disable
+ .text            00004180+000060 _R_LPS_Init
+ .text            000041ec+000076 _R_LPS_SetCompareValue
+ .text            00004262+00000e _R_OSTM0_Init
+ .text            00004284+00000a _R_OSTM0_SetCompareValue
+ .text            00004270+00000a _R_OSTM0_Start
+ .text            0000427a+00000a _R_OSTM0_Stop
+ .text            000045cc+00002e _R_PORT_GetLevel
+ .text            000043c0+00020c _R_PORT_SetAltFunc
+ .text            000046c0+000030 _R_PORT_SetAnalogFilter
+ .text            00004382+00003e _R_PORT_SetGpioHighZ
+ .text            0000432c+000056 _R_PORT_SetGpioInput
+ .text            0000428e+00007a _R_PORT_SetGpioOutput
+ .text            000045fa+000062 _R_PORT_SetOpenDrain
+ .text            0000465c+000064 _R_PORT_SetPushPull
+ .text            00004308+000024 _R_PORT_ToggleGpioOutput
+ .text            00004812+000014 _R_PWMD_Channel64DutyUpdate
+ .text            000046f0+00001e _R_PWMD_Channel64Init
+ .text            00004826+000014 _R_PWMD_Channel65DutyUpdate
+ .text            0000470e+00001e _R_PWMD_Channel65Init
+ .text            0000483a+000014 _R_PWMD_Channel66DutyUpdate
+ .text            0000472c+00001e _R_PWMD_Channel66Init
+ .text            0000474a+000012 _R_PWMD_ClockInit
+ .text            0000484e+000018 _R_PWMD_DiagInit
+ .text            00004866+00000a _R_PWMD_DiagStart
+ .text            00004870+000008 _R_PWMD_DiagStop
+ .text            0000475c+000058 _R_PWMD_StartChannel
+ .text            000047b4+00005e _R_PWMD_StopChannel
+ .text            000048c4+00001c _R_RLIN24_BaudrateInit
+ .text            000048e0+000066 _R_RLIN24_Channel1Init
+ .text            000049f0+00006c _R_RLIN24_Channel1RxFrame
+ .text            00004946+0000aa _R_RLIN24_Channel1TxFrame
+ .text            00004ac4+000012 _R_RLIN30_GetStatus
+ .text            00004a5c+000046 _R_RLIN30_UartInit
+ .text            00004aa2+000022 _R_RLIN30_UartSendString
+ .text            00004d80+000064 _R_RSCAN0_C3TrmByTxBuf
+ .text            00004de4+000064 _R_RSCAN0_C4TrmByTxBuf
+ .text            00004ad6+000114 _R_RSCAN0_Init
+ .text            00004c88+0000f8 _R_RSCAN0_ReadRxBuffer
+ .text            00004bea+00009e _R_RSCAN0_SetRxRule..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_rscan.
+ .text            00004e8c+00002e _R_STBC_EnterDeepSTOP
+ .text            00004eba+000008 _R_STBC_GetWakeUpFactor
+ .text            00004e48+000044 _R_STBC_PrepareWakeUp
+ .text            00004ec2+000034 _R_STBC_ReleaseIoHold
+ .text            00003874+00000c _R_SYSTEM_ClearResetCause
+ .text            00003880+000018 _R_SYSTEM_ClearRetentionRAM
+ .text            000036b2+000026 _R_SYSTEM_ClockInit
+ .text            0000386c+000008 _R_SYSTEM_GetResetCause
+ .text            000036d8+000134 _R_SYSTEM_PrepareDeepSTOP
+ .text            0000380c+00001a _R_SYSTEM_TimerInit
+ .text            00003848+000012 _R_SYSTEM_TimerStart
+ .text            0000385a+000012 _R_SYSTEM_TimerStop
+ .text            00003826+000022 _R_SYSTEM_TimerTick
+ .text            000025b4+000156 _R_TASKS_Start
+ .text            000051d6+000040 _R_TAUB0_CDR_Update
+ .text            000050ea+00002a _R_TAUB0_CK0_Prescaler
+ .text            00005114+000046 _R_TAUB0_Channel6_Init
+ .text            0000515a+00007c _R_TAUB0_Channel8_Init
+ .text            00005216+00000c _R_TAUB0_Channel_Start
+ .text            00005222+00000c _R_TAUB0_Channel_Stop
+ .text            00004f62+00000a _R_TAUJ0_AssignChannel1ISR
+ .text            00004f96+000060 _R_TAUJ0_CDR_Update
+ .text            00004f6c+00002a _R_TAUJ0_CK0_Prescaler
+ .text            00004ff6+000018 _R_TAUJ0_Channel0_Init
+ .text            0000500e+000020 _R_TAUJ0_Channel1_Init
+ .text            0000502e+00003e _R_TAUJ0_Channel2_Init
+ .text            0000506c+000066 _R_TAUJ0_Channel3_Init
+ .text            000050d2+00000c _R_TAUJ0_Channel_Start
+ .text            000050de+00000c _R_TAUJ0_Channel_Stop
+ .text            000038ec+00001e _R_UART_Deinit
+ .text            000038b2+00003a _R_UART_Init
+ .text            0000390a+00002e _R_UART_SendString
+ .text            00003a66+000060 _R_UI_ButtonEnc1_Handler
+ .text            00003a1a+000016 _R_UI_ButtonEnc1_Init
+ .text            00003a30+000016 _R_UI_ButtonEnc_Deinit
+ .text            00003984+000016 _R_UI_ButtonS1_Deinit
+ .text            000039ba+000060 _R_UI_ButtonS1_Handler
+ .text            0000396e+000016 _R_UI_ButtonS1_Init
+ .text            00003b38+000022 _R_UI_Enc1_Deinit
+ .text            00003b0a+00002e _R_UI_Enc1_Init
+ .text            00003a46+000020 _R_UI_Get_ButtonEnc1_State
+ .text            0000399a+000020 _R_UI_Get_ButtonS1_State
+ .text            00003ac6+000022 _R_UI_INTP12_Init
+ .text            00003ae8+000022 _R_UI_INTP15_Init
+ .text            00003938+000020 _R_UI_Pot1_Init
+ .text            00003958+000016 _R_UI_Pot1_Read
+ .data            fede0000+006000 _RenesasPicture
+ .text            000016be+000064 _RgbLedDiagOutput
+ .text            00001a2c+000088 _SwitchRGBColor
+ .text            00001722+000032 _UpperByteMirror
+ .text            000064ce+00006a __Exit
+                  00000000+000000 ___atexit_cleanup_func
+                  00000000+000000 ___cpp_exception_cleanup
+                  00000000+000000 ___cpp_exception_init
+ .syscall         0000697c+000006 ___dotsyscall
+ .data            fede6014+000002 ___gh_FOPEN_MAX
+ .text            00005c1a+000022 ___gh_bufclose
+ .bss             fede64b8+000050 ___gh_buffersizes
+ .text            00005c3c+000028 ___gh_bufinit
+ .text            00005bf4+000026 ___gh_bufsize
+ .text            00006584+000008 ___gh_errno_ptr
+                  00000000+000000 ___gh_float_printf
+ .text            0000658c+00000a ___gh_get_errno
+ .text            000055d8+000040 ___gh_hexout
+ .text            00006458+000076 ___gh_iob_init
+ .text            000067cc+000002 ___gh_lock_init
+                  00000000+000000 ___gh_long_long_printf
+ .text            0000561a+00003c ___gh_octhexout
+ .text            00005398+000024 ___gh_outchars
+ .text            000053bc+000008 ___gh_outspaces
+ .text            0000657a+00000a ___gh_set_errno
+ .text            00005eac+000014 ___gh_store_wc
+ .text            000053c6+0001da ___gh_strout
+                  00000000+000000 ___gh_undefined_float_func
+                  00000000+000000 ___gh_undefined_long_long_func
+                  00000000+000000 ___gh_undefined_uns_long_long_func
+                  00000000+000000 ___gh_ungetc_cleanup
+                  00000000+000000 ___gh_uns_long_long_printf
+ .text            00005656+000498 ___gh_vsprintf
+ .text            00005ec0+00001c ___gh_wctomb
+ .text            00005378+000020 ___gh_xxdecout
+ .text            000067c8+000002 ___ghsLock
+ .text            000067ca+000002 ___ghsUnlock
+                  00000000+000000 ___ghs_GetCurrentThreadID
+                  00000000+000000 ___ghs_GetCurrentThreadName
+ .text            000063f4+00000e ___ghs_GetThreadLocalStorageItem
+                  00000000+000000 ___ghs_InterruptLock
+                  00000000+000000 ___ghs_InterruptUnlock
+ .text            00006406+000002 ___ghs_RestoreSignalContext
+                  00000000+000000 ___ghs_RunTimeErrorDetected
+ .text            00006402+000004 ___ghs_SaveSignalContext
+ .text            00006538+000042 ___ghs_at_exit
+                  00000000+000000 ___ghs_board_cache_sync
+                  00000000+000000 ___ghs_board_devices_init
+                  00000000+000000 ___ghs_board_memory_init
+                  00000000+000000 ___ghs_call_table
+                  00000000+000000 ___ghs_checksum
+                  00000000+000000 ___ghs_coverage_init
+                  00000000+000000 ___ghs_cpp_exception_cleanup
+                  00000000+000000 ___ghs_cpp_exception_init
+                  00000000+000000 ___ghs_decompress
+ .text            000025b4+000000 ___ghs_eofn_BoardCheck
+ .text            000020c0+000000 ___ghs_eofn_DeepSTOP
+ .text            00003be0+000000 ___ghs_eofn_INTADCA0ERR
+ .text            000048c4+000000 ___ghs_eofn_INTRLIN30UR0
+ .text            00004f62+000000 ___ghs_eofn_INTTAUJ0I1
+ .text            000019b8+000000 ___ghs_eofn_LedUpdate
+ .text            00001e24+000000 ___ghs_eofn_Mode1
+ .text            0000209a+000000 ___ghs_eofn_Mode2
+ .text            00001a2c+000000 ___ghs_eofn_PrintStatus
+ .text            00001634+000000 ___ghs_eofn_PrintText
+ .text            000016be+000000 ___ghs_eofn_PwmErrorCallBack
+ .text            00003bea+000000 ___ghs_eofn_R_ADCA0_AssignLimitErrorCB
+ .text            00003c02+000000 ___ghs_eofn_R_ADCA0_ConnectPullDown
+ .text            00003c1c+000000 ___ghs_eofn_R_ADCA0_DisconnectPullDown
+ .text            00003c4e+000000 ___ghs_eofn_R_ADCA0_Init
+ .text            00003cbe+000000 ___ghs_eofn_R_ADCA0_LpsInit
+ .text            00003c78+000000 ___ghs_eofn_R_ADCA0_PinRead
+ .text            00003d5a+000000 ___ghs_eofn_R_ADCA0_PwsaTriggerDisable
+ .text            00003d4c+000000 ___ghs_eofn_R_ADCA0_PwsaTriggerEnable
+ .text            00003d3a+000000 ___ghs_eofn_R_ADCA0_SetUpperLowerLimit
+ .text            0000279e+000000 ___ghs_eofn_R_CAN_Deinit
+ .text            00002760+000000 ___ghs_eofn_R_CAN_Init
+ .text            00002820+000000 ___ghs_eofn_R_CAN_Test
+ .text            00003e9a+000000 ___ghs_eofn_R_CLKC_PllInit
+ .text            00003f84+000000 ___ghs_eofn_R_CLKC_ResetAdca0StopMask
+ .text            00003f98+000000 ___ghs_eofn_R_CLKC_ResetTaujStopMask
+ .text            00003f3a+000000 ___ghs_eofn_R_CLKC_SetAdca0ClockDomain
+ .text            00003f7a+000000 ___ghs_eofn_R_CLKC_SetAdca0StopMask
+ .text            00003f04+000000 ___ghs_eofn_R_CLKC_SetRscanClockDomain
+ .text            00003f70+000000 ___ghs_eofn_R_CLKC_SetTaujClockDomain
+ .text            00003f8e+000000 ___ghs_eofn_R_CLKC_SetTaujStopMask
+ .text            000040b4+000000 ___ghs_eofn_R_CSIG0_Init
+ .text            000040d4+000000 ___ghs_eofn_R_CSIG0_TransmitData
+ .text            00004026+000000 ___ghs_eofn_R_CSIH2_C4_SetTxSize
+ .text            00003ff4+000000 ___ghs_eofn_R_CSIH2_Init
+ .text            00004062+000000 ___ghs_eofn_R_CSIH2_TransmitBuffer
+ .text            00004088+000000 ___ghs_eofn_R_CSIH2_TransmitData
+ .text            0000288e+000000 ___ghs_eofn_R_DISPLAY_Deinit
+ .text            00002bd0+000000 ___ghs_eofn_R_DISPLAY_DrawImg
+ .text            00002cd8+000000 ___ghs_eofn_R_DISPLAY_DrawRect
+ .text            00002f52+000000 ___ghs_eofn_R_DISPLAY_DrawText
+ .text            00002ac4+000000 ___ghs_eofn_R_DISPLAY_Init
+ .text            000028a6+000000 ___ghs_eofn_R_DISPLAY_ResetRelease
+ .text            00002840+000000 ___ghs_eofn_R_DISPLAY_SDCard_Test
+ .text            0000410c+000000 ___ghs_eofn_R_ENCA0_GetFlags
+ .text            000040e8+000000 ___ghs_eofn_R_ENCA0_Init
+ .text            00004104+000000 ___ghs_eofn_R_ENCA0_Read
+ .text            000040f2+000000 ___ghs_eofn_R_ENCA0_Start
+ .text            000040fc+000000 ___ghs_eofn_R_ENCA0_Stop
+ .text            00004174+000000 ___ghs_eofn_R_INTC_GetRequestFlag
+ .text            00004118+000000 ___ghs_eofn_R_INTC_MaskInterrupt
+ .text            00004180+000000 ___ghs_eofn_R_INTC_ResetRequestFlag
+ .text            00004158+000000 ___ghs_eofn_R_INTC_ResetTableBit
+ .text            00004140+000000 ___ghs_eofn_R_INTC_SetPriority
+ .text            00004164+000000 ___ghs_eofn_R_INTC_SetRequestFlag
+ .text            0000414c+000000 ___ghs_eofn_R_INTC_SetTableBit
+ .text            00004124+000000 ___ghs_eofn_R_INTC_UnmaskInterrupt
+ .text            00003062+000000 ___ghs_eofn_R_LED_GpioInit
+ .text            0000313e+000000 ___ghs_eofn_R_LED_GpioOff
+ .text            000030d0+000000 ___ghs_eofn_R_LED_GpioOn
+ .text            000031e8+000000 ___ghs_eofn_R_LED_PwmInit
+ .text            000032b6+000000 ___ghs_eofn_R_LED_PwmStart
+ .text            00003318+000000 ___ghs_eofn_R_LED_PwmStop
+ .text            0000332a+000000 ___ghs_eofn_R_LED_RgbDiagInit
+ .text            0000333c+000000 ___ghs_eofn_R_LED_RgbDiagStart
+ .text            0000334e+000000 ___ghs_eofn_R_LED_RgbDiagStop
+ .text            000033b2+000000 ___ghs_eofn_R_LED_RingInit
+ .text            000033e2+000000 ___ghs_eofn_R_LED_RingOutputDisable
+ .text            000033ca+000000 ___ghs_eofn_R_LED_RingOutputEnable
+ .text            00003416+000000 ___ghs_eofn_R_LED_RingUpdate
+ .text            00003254+000000 ___ghs_eofn_R_LED_SetPwmDuty
+ .text            00003462+000000 ___ghs_eofn_R_LIN_Deinit
+ .text            00003444+000000 ___ghs_eofn_R_LIN_Init
+ .text            00003512+000000 ___ghs_eofn_R_LIN_RxFrame
+ .text            000034b4+000000 ___ghs_eofn_R_LIN_Test
+ .text            000034ea+000000 ___ghs_eofn_R_LIN_TxFrame
+ .text            000041ec+000000 ___ghs_eofn_R_LPS_Disable
+ .text            000041e0+000000 ___ghs_eofn_R_LPS_Init
+ .text            00004262+000000 ___ghs_eofn_R_LPS_SetCompareValue
+ .text            00004270+000000 ___ghs_eofn_R_OSTM0_Init
+ .text            0000428e+000000 ___ghs_eofn_R_OSTM0_SetCompareValue
+ .text            0000427a+000000 ___ghs_eofn_R_OSTM0_Start
+ .text            00004284+000000 ___ghs_eofn_R_OSTM0_Stop
+ .text            000045fa+000000 ___ghs_eofn_R_PORT_GetLevel
+ .text            000045cc+000000 ___ghs_eofn_R_PORT_SetAltFunc
+ .text            000046f0+000000 ___ghs_eofn_R_PORT_SetAnalogFilter
+ .text            000043c0+000000 ___ghs_eofn_R_PORT_SetGpioHighZ
+ .text            00004382+000000 ___ghs_eofn_R_PORT_SetGpioInput
+ .text            00004308+000000 ___ghs_eofn_R_PORT_SetGpioOutput
+ .text            0000465c+000000 ___ghs_eofn_R_PORT_SetOpenDrain
+ .text            000046c0+000000 ___ghs_eofn_R_PORT_SetPushPull
+ .text            0000432c+000000 ___ghs_eofn_R_PORT_ToggleGpioOutput
+ .text            00004826+000000 ___ghs_eofn_R_PWMD_Channel64DutyUpdate
+ .text            0000470e+000000 ___ghs_eofn_R_PWMD_Channel64Init
+ .text            0000483a+000000 ___ghs_eofn_R_PWMD_Channel65DutyUpdate
+ .text            0000472c+000000 ___ghs_eofn_R_PWMD_Channel65Init
+ .text            0000484e+000000 ___ghs_eofn_R_PWMD_Channel66DutyUpdate
+ .text            0000474a+000000 ___ghs_eofn_R_PWMD_Channel66Init
+ .text            0000475c+000000 ___ghs_eofn_R_PWMD_ClockInit
+ .text            00004866+000000 ___ghs_eofn_R_PWMD_DiagInit
+ .text            00004870+000000 ___ghs_eofn_R_PWMD_DiagStart
+ .text            00004878+000000 ___ghs_eofn_R_PWMD_DiagStop
+ .text            000047b4+000000 ___ghs_eofn_R_PWMD_StartChannel
+ .text            00004812+000000 ___ghs_eofn_R_PWMD_StopChannel
+ .text            000048e0+000000 ___ghs_eofn_R_RLIN24_BaudrateInit
+ .text            00004946+000000 ___ghs_eofn_R_RLIN24_Channel1Init
+ .text            00004a5c+000000 ___ghs_eofn_R_RLIN24_Channel1RxFrame
+ .text            000049f0+000000 ___ghs_eofn_R_RLIN24_Channel1TxFrame
+ .text            00004ad6+000000 ___ghs_eofn_R_RLIN30_GetStatus
+ .text            00004aa2+000000 ___ghs_eofn_R_RLIN30_UartInit
+ .text            00004ac4+000000 ___ghs_eofn_R_RLIN30_UartSendString
+ .text            00004de4+000000 ___ghs_eofn_R_RSCAN0_C3TrmByTxBuf
+ .text            00004e48+000000 ___ghs_eofn_R_RSCAN0_C4TrmByTxBuf
+ .text            00004bea+000000 ___ghs_eofn_R_RSCAN0_Init
+ .text            00004d80+000000 ___ghs_eofn_R_RSCAN0_ReadRxBuffer
+ .text            00004eba+000000 ___ghs_eofn_R_STBC_EnterDeepSTOP
+ .text            00004ec2+000000 ___ghs_eofn_R_STBC_GetWakeUpFactor
+ .text            00004e8c+000000 ___ghs_eofn_R_STBC_PrepareWakeUp
+ .text            00004ef6+000000 ___ghs_eofn_R_STBC_ReleaseIoHold
+ .text            00003880+000000 ___ghs_eofn_R_SYSTEM_ClearResetCause
+ .text            00003898+000000 ___ghs_eofn_R_SYSTEM_ClearRetentionRAM
+ .text            000036d8+000000 ___ghs_eofn_R_SYSTEM_ClockInit
+ .text            00003874+000000 ___ghs_eofn_R_SYSTEM_GetResetCause
+ .text            0000380c+000000 ___ghs_eofn_R_SYSTEM_PrepareDeepSTOP
+ .text            00003826+000000 ___ghs_eofn_R_SYSTEM_TimerInit
+ .text            0000385a+000000 ___ghs_eofn_R_SYSTEM_TimerStart
+ .text            0000386c+000000 ___ghs_eofn_R_SYSTEM_TimerStop
+ .text            00003848+000000 ___ghs_eofn_R_SYSTEM_TimerTick
+ .text            0000270a+000000 ___ghs_eofn_R_TASKS_Start
+ .text            00005216+000000 ___ghs_eofn_R_TAUB0_CDR_Update
+ .text            00005114+000000 ___ghs_eofn_R_TAUB0_CK0_Prescaler
+ .text            0000515a+000000 ___ghs_eofn_R_TAUB0_Channel6_Init
+ .text            000051d6+000000 ___ghs_eofn_R_TAUB0_Channel8_Init
+ .text            00005222+000000 ___ghs_eofn_R_TAUB0_Channel_Start
+ .text            0000522e+000000 ___ghs_eofn_R_TAUB0_Channel_Stop
+ .text            00004f6c+000000 ___ghs_eofn_R_TAUJ0_AssignChannel1ISR
+ .text            00004ff6+000000 ___ghs_eofn_R_TAUJ0_CDR_Update
+ .text            00004f96+000000 ___ghs_eofn_R_TAUJ0_CK0_Prescaler
+ .text            0000500e+000000 ___ghs_eofn_R_TAUJ0_Channel0_Init
+ .text            0000502e+000000 ___ghs_eofn_R_TAUJ0_Channel1_Init
+ .text            0000506c+000000 ___ghs_eofn_R_TAUJ0_Channel2_Init
+ .text            000050d2+000000 ___ghs_eofn_R_TAUJ0_Channel3_Init
+ .text            000050de+000000 ___ghs_eofn_R_TAUJ0_Channel_Start
+ .text            000050ea+000000 ___ghs_eofn_R_TAUJ0_Channel_Stop
+ .text            0000390a+000000 ___ghs_eofn_R_UART_Deinit
+ .text            000038ec+000000 ___ghs_eofn_R_UART_Init
+ .text            00003938+000000 ___ghs_eofn_R_UART_SendString
+ .text            00003ac6+000000 ___ghs_eofn_R_UI_ButtonEnc1_Handler
+ .text            00003a30+000000 ___ghs_eofn_R_UI_ButtonEnc1_Init
+ .text            00003a46+000000 ___ghs_eofn_R_UI_ButtonEnc_Deinit
+ .text            0000399a+000000 ___ghs_eofn_R_UI_ButtonS1_Deinit
+ .text            00003a1a+000000 ___ghs_eofn_R_UI_ButtonS1_Handler
+ .text            00003984+000000 ___ghs_eofn_R_UI_ButtonS1_Init
+ .text            00003b5a+000000 ___ghs_eofn_R_UI_Enc1_Deinit
+ .text            00003b38+000000 ___ghs_eofn_R_UI_Enc1_Init
+ .text            00003a66+000000 ___ghs_eofn_R_UI_Get_ButtonEnc1_State
+ .text            000039ba+000000 ___ghs_eofn_R_UI_Get_ButtonS1_State
+ .text            00003ae8+000000 ___ghs_eofn_R_UI_INTP12_Init
+ .text            00003b0a+000000 ___ghs_eofn_R_UI_INTP15_Init
+ .text            00003958+000000 ___ghs_eofn_R_UI_Pot1_Init
+ .text            0000396e+000000 ___ghs_eofn_R_UI_Pot1_Read
+ .text            00001722+000000 ___ghs_eofn_RgbLedDiagOutput
+ .text            00001ab4+000000 ___ghs_eofn_SwitchRGBColor
+ .text            00001754+000000 ___ghs_eofn_UpperByteMirror
+ .text            000038b2+000000 ___ghs_eofn___lowinit
+ .text            0000523c+000000 ___ghs_eofn_add_kar_le
+ .text            00002ff4+000000 ___ghs_eofn_delay
+ .text            00002df8+000000 ___ghs_eofn_drawChar
+ .text            00002ebe+000000 ___ghs_eofn_drawPixel
+ .text            00002e66+000000 ___ghs_eofn_goTo
+ .text            000036b2+000000 ___ghs_eofn_loc_LpsManualRead
+ .text            00001610+000000 ___ghs_eofn_main
+ .text            000015be+000000 ___ghs_eofn_unused_isr
+ .text            00002fdc+000000 ___ghs_eofn_writeBuffer
+ .text            00002f7c+000000 ___ghs_eofn_writeCommand
+ .text            00002fa6+000000 ___ghs_eofn_writeData
+ .text            00006410+000002 ___ghs_flock_create
+ .text            00006412+000002 ___ghs_flock_destroy
+ .text            00006408+000002 ___ghs_flock_file
+ .text            00005db4+000042 ___ghs_flock_in_use
+ .text            00006414+000024 ___ghs_flock_ptr
+ .text            00006438+000020 ___ghs_flock_word
+ .text            0000640c+000004 ___ghs_ftrylock_file
+ .text            0000640a+000002 ___ghs_funlock_file
+ .text            00006676+000024 ___ghs_hostio_close
+ .text            00006650+000026 ___ghs_hostio_creat
+ .text            000066e6+000028 ___ghs_hostio_fcntl
+ .text            0000669a+000028 ___ghs_hostio_lseek
+ .text            00006606+00004a ___ghs_hostio_open
+ .text            000065e0+000026 ___ghs_hostio_read
+ .text            000066c2+000024 ___ghs_hostio_unlink
+ .text            000065b8+000028 ___ghs_hostio_write
+ .text            00005f1e+00035e ___ghs_ind_crt0
+ .text            0000670e+0000ba ___ghs_ind_crt1
+ .syscall         0000697c+000006 ___ghs_initial_dotsyscall
+ .text            000068a8+000014 ___ghs_load23
+ .text            00006882+000018 ___ghs_load27
+                  00000000+000000 ___ghs_lock_create
+                  00000000+000000 ___ghs_lock_destroy
+                  00000000+000000 ___ghs_lock_lock
+                  00000000+000000 ___ghs_lock_unlock
+                  00000002+000000 ___ghs_log_fee_level
+                  00000000+000000 ___ghs_manprf_init
+                  00000000+000000 ___ghs_multicore_init_flag
+ .text            00001540+000018 ___ghs_multicore_wait_for_init
+                  00000000+000000 ___ghs_rambootcodeend
+                  00000000+000000 ___ghs_rambootcodestart
+                  fee00000+000000 ___ghs_ramend
+                  fede0000+000000 ___ghs_ramstart
+                  00000000+000000 ___ghs_rombootcodeend
+                  00000000+000000 ___ghs_rombootcodestart
+                  00200000+000000 ___ghs_romend
+                  00000000+000000 ___ghs_romstart
+                  fee08000+000000 ___ghs_rramend
+                  fee00000+000000 ___ghs_rramstart
+ .text            00006906+000016 ___ghs_save23
+ .text            0000680a+000016 ___ghs_save23a
+ .text            00006836+000020 ___ghs_save27
+ .text            000067de+000014 ___ghs_save27a
+                  00000000+000000 ___ghs_set_stack_chk_guard
+ .text            00005e96+000016 ___ghs_strlen
+ .text            00006596+000022 ___ghs_syscall
+                  00000000+000000 ___ghs_undefined_func
+                  00000000+000000 ___ghs_undefined_ungetc_func
+ .fixaddr         0000691c+000000 ___ghsbegin_fixaddr
+ .fixtype         0000691c+000000 ___ghsbegin_fixtype
+                  00000000+000000 ___ghsbegin_picbase
+                  00000000+000000 ___ghsbegin_pidbase
+ .robase          00000668+000000 ___ghsbegin_robase
+ .sda_end         fede66e8+000000 ___ghsbegin_sda_end
+ .sda_start       fede66a4+000000 ___ghsbegin_sda_start
+                  00000000+000000 ___ghsbegin_sdabase
+ .secinfo         0000691c+000000 ___ghsbegin_secinfo
+ .secinfo         00006940+000000 ___ghsbinfo_aclear
+ .secinfo         0000697c+000000 ___ghsbinfo_acopy
+ .secinfo         0000697c+000000 ___ghsbinfo_bcopy
+ .secinfo         0000691c+000024 ___ghsbinfo_clear
+ .secinfo         0000697c+000000 ___ghsbinfo_comacopy
+ .secinfo         0000697c+000000 ___ghsbinfo_comcopy
+ .secinfo         0000697c+000000 ___ghsbinfo_comtcopy
+ .secinfo         00006940+00003c ___ghsbinfo_copy
+ .secinfo         0000697c+000000 ___ghsbinfo_tcopy
+ .secinfo         0000697c+000000 ___ghseinfo_bcopy
+ .secinfo         00006940+000000 ___ghseinfo_clear
+ .secinfo         0000697c+000000 ___ghseinfo_comcopy
+ .secinfo         0000697c+000000 ___ghseinfo_copy
+ .fixaddr         0000691c+000000 ___ghsend_fixaddr
+ .fixtype         0000691c+000000 ___ghsend_fixtype
+ .stack           fede6ee8+000000 ___ghsend_stack
+ .text            000068c4+000012 ___ghsload20
+ .text            000068c0+000004 ___ghsload21
+ .text            000068bc+000004 ___ghsload22
+ .text            000068a6+000002 ___ghsload23
+ .text            000068a2+000004 ___ghsload24
+ .text            0000689e+000004 ___ghsload25
+ .text            0000689a+000004 ___ghsload26
+ .text            00006880+000002 ___ghsload27
+ .text            0000687c+000004 ___ghsload28
+ .text            00006878+000004 ___ghsload29
+ .text            000068e6+000008 ___ghsloadlp
+ .text            000068de+000008 ___ghsloadlpx
+ .text            00006862+000016 ___ghssave20
+ .text            0000685c+000006 ___ghssave21
+ .text            00006856+000006 ___ghssave22
+ .text            00006900+000006 ___ghssave23
+ .text            00006804+000006 ___ghssave23a
+ .text            000068fa+000006 ___ghssave24
+ .text            000067fe+000006 ___ghssave24a
+ .text            000068f4+000006 ___ghssave25
+ .text            000067f8+000006 ___ghssave25a
+ .text            000068ee+000006 ___ghssave26
+ .text            000067f2+000006 ___ghssave26a
+ .text            00006832+000004 ___ghssave27
+ .text            000067da+000004 ___ghssave27a
+ .text            0000682c+000006 ___ghssave28
+ .text            000067d4+000006 ___ghssave28a
+ .text            00006826+000006 ___ghssave29
+ .text            000067ce+000006 ___ghssave29a
+ .text            00006820+000006 ___ghssavelp
+ .text            000068d6+000008 ___ghssavelpa
+ .text            00003898+00001a ___lowinit
+ .text            000063d0+000024 ___mcopy
+                  00000000+000000 __cleanup
+ .tdata           fede66e8+000000 __ep
+ .text            000064ce+00006a __exit
+ .text            00005c8a+00009a __flsbuf
+                  00000000+000000 __ghs_rh850_misalign
+                  00000000+000000 __ghs_v800_r20_initializer
+                  00000000+000000 __ghs_v800_r21_initializer
+                  00000000+000000 __ghs_v800_r22_initializer
+                  00000000+000000 __ghs_v800_r23_initializer
+                  00000000+000000 __ghs_v800_r24_initializer
+                  00000001+000000 __ghs_v800_sda_model
+ .sda_start       fede66c8+000000 __gp
+ .bss             fede650c+000140 __iob
+ .bss             fede664c+000054 __iob_lock
+ .bss             fede6034+000030 __multiArgs
+ .data            fede6010+000004 __multibufSize
+ .bss             fede60d0+0003e8 __multibuffer
+ .text            0000523c+000004 __multiend
+ .text            00001430+0000ee __start
+                  fede0000+000000 __top_of_iRAM_0
+                  fee00000+000000 __top_of_iRAM_1
+                  fee08000+000000 __top_of_iRAM_R
+                  01008000+000000 __top_of_iROM1
+                  00200000+000000 __top_of_iROM_0
+ .rosdata         00008668+000000 __tp
+ .text            000015b8+000000 __unused_isr
+ .text            0000522e+00000e _add_kar_le
+ .text            00006676+000024 _close
+ .text            00006650+000026 _creat
+ .text            00002fdc+000018 _delay
+ .text            00002cd8+000120 _drawChar
+ .text            00002e66+000058 _drawPixel
+ .bss             fede6068+000004 _environ
+ .bss             fede6064+000004 _errno
+ .text            00005312+000066 _exit
+ .text            000066e6+000028 _fcntl
+ .text            00005df6+0000a0 _fflush
+ .text            00005d24+000016 _flockcreate
+ .text            00005d3a+000022 _flockdestroy
+ .text            00005d5c+00001c _flockfile
+ .rodata          00000bf0+000500 _font
+ .text            00005d94+000020 _ftrylockfile
+ .text            00005d78+00001c _funlockfile
+ .sbss            fede66dc+000004 _g_Enc1Compare
+ .sbss            fede66d8+000004 _g_Enc1Value
+ .rodata          00000bb4+00002a _g_FixedRGBColors
+ .rodata          00000b94+000020 _g_LEDRingPattern
+ .sdata           fede66c0+000004 _g_PWMDClockInitDone
+ .sbss            fede66d4+000004 _g_Pot1Value
+ .bss             fede606c+000064 _g_StatusText
+ .rdata           fee00000+000030 _g_SystemStatus
+ .sbss            fede66e0+000004 _g_pNextData
+ .text            00002df8+00006e _goTo
+ .sdata           fede66c8+000004 _loc_ButtonEnc1Count.R_UI_ButtonEnc1_Handler.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_ui..1
+ .sdata           fede66c4+000004 _loc_ButtonS1Count.R_UI_ButtonS1_Handler.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_ui..0
+ .sdata           fede66a4+000004 _loc_LED1Duty.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..0
+ .sdata           fede66a8+000004 _loc_LED2Duty.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..1
+ .sdata           fede66b8+000004 _loc_LEDRingMask.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..5
+ .sdata           fede66b0+000004 _loc_LEDWave.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..3
+ .sdata           fede66ac+000004 _loc_LEDWaveDirection.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..2
+ .text            00003512+0001a0 _loc_LpsManualRead
+ .sdata           fede66bc+000002 _loc_PatternNr.Mode1.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..7
+ .sdata           fede66b4+000004 _loc_UpdateCounter.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..4
+ .sbss            fede66e4+000004 _loc_temp.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..6
+ .text            0000669a+000028 _lseek
+ .text            000015be+000052 _main
+ .text            000062e0+0000f0 _memcpy
+ .text            000062e0+0000f0 _memcpy..trg.2Frh850.2Fobjs.2Flibs.2Flibstartup.2Find_mcpy.
+ .text            000062e0+000000 _memcpy_mcopy
+ .text            00006280+000060 _memset
+ .text            00005240+000002 _multiBreak
+ .text            0000523c+000000 _multiCall
+ .text            00006606+00004a _open
+ .text            000052d6+00003c _printf
+ .text            00005c64+000024 _putc_unlocked
+ .text            000065e0+000026 _read
+ .text            00005290+000030 _sprintf
+ .text            000052c0+000016 _sputc..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccsprntf.
+ .text            00005e96+000016 _strlen
+                  00000000+000000 _undefined_cleanup
+                  00000000+000000 _undefined_cleanup_func
+ .text            000066c2+000024 _unlink
+ .text            000055a2+000036 _unsout..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccvsprnt.
+ .text            000015ba+000004 _unused_isr
+ .text            00005aee+000106 _vfprintf
+ .text            00005242+00004e _vsprintf
+ .text            00005edc+000042 _wctomb
+ .text            000065b8+000028 _write
+ .text            00002fa6+000036 _writeBuffer
+ .text            00002f52+00002a _writeCommand
+ .text            00002f7c+00002a _writeData
+
+Load Map Thu Jan 18 08:16:37 2018
+Global Cross Reference
+
+.intvect..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cdr7f701057_startup.
+_BoardCheck         r_tasks.o               002629
+_CANRecData         r_can.o                 0027b8
+_CANTraStandData    r_can.o                 0027b2
+_DeepSTOP           r_tasks.o               002701
+_INTADCA0ERR        r_adc.o                
+                    dr7f701057_startup.o    0002bc
+_INTRLIN30UR0       r_rlin.o               
+                    dr7f701057_startup.o    000268
+_INTTAUJ0I1         r_tau.o                
+                    dr7f701057_startup.o    000324
+_LedUpdate          r_tasks.o               001f20
+_Mode1              r_tasks.o               0026f5
+_Mode2              r_tasks.o               0026fb
+_PortList..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_port. r_port.o               
+_PrintStatus        r_tasks.o               001cfb
+                                            001f63
+_PrintText          r_tasks.o               0016e3
+                                            0016fb 001713 001d4b 001d71 001d91
+                                            001fb7 001fdd 001ffd 0020f9 002103
+                                            00210d 002117 002121 002133 00213f
+                                            002151 00215d 00216f 00249b 0024a7
+                                            0024b9 0024cb 0024dd 0024ef 00251b
+                                            002643 002655 002665 002675 002685
+                                            002697 0026af 0026bb
+_PwmErrorCallBack   r_tasks.o               001b6c
+                                            001ece 0021d2
+_RESET              dr7f701057_startup.o    000001
+_RX_RULE_TABLE_LIST r_can_table.o          
+                    r_rscan.o               004c48
+_R_ADCA0_AssignLimitErrorCB r_adc.o                
+                    r_tasks.o               001b71 001ed3 0021d7
+_R_ADCA0_ConnectPullDown r_adc.o                
+                    r_display.o             0028af
+_R_ADCA0_DisconnectPullDown r_adc.o                
+                    r_display.o             0028cf
+_R_ADCA0_Init       r_adc.o                
+                    r_tasks.o               0025d1
+_R_ADCA0_LimitErrorCB r_adc.o                 003b90 003ba0 003be4
+_R_ADCA0_LpsInit    r_adc.o                
+                    r_system.o              003771
+_R_ADCA0_PinRead    r_adc.o                
+                    r_tasks.o               001bf5 001f3f
+                    r_display.o             0028bd
+                    r_system.o              00371f
+                    r_ui.o                  003961
+_R_ADCA0_PwsaTriggerDisable r_adc.o                
+_R_ADCA0_PwsaTriggerEnable r_adc.o                
+                    r_tasks.o               001b93 001ef5 0021f9
+_R_ADCA0_SetUpperLowerLimit r_adc.o                
+                    r_tasks.o               001b8f 001ef1 0021f5
+                    r_system.o              003735 00374d 003761
+_R_CAN_Deinit       r_can.o                
+                    r_tasks.o               002161
+_R_CAN_Init         r_can.o                
+                    r_tasks.o               0020e7
+_R_CAN_Test         r_can.o                
+                    r_tasks.o               002125
+_R_CLKC_PllInit     r_clkc.o               
+                    r_system.o              0036b9
+_R_CLKC_ResetAdca0StopMask r_clkc.o               
+_R_CLKC_ResetTaujStopMask r_clkc.o               
+_R_CLKC_SetAdca0ClockDomain r_clkc.o               
+                    r_system.o              0036bf 003707
+_R_CLKC_SetAdca0StopMask r_clkc.o               
+                    r_system.o              00370b
+_R_CLKC_SetRscanClockDomain r_clkc.o               
+                    r_system.o              0036cd
+_R_CLKC_SetTaujClockDomain r_clkc.o               
+                    r_system.o              0036c5 003701
+_R_CLKC_SetTaujStopMask r_clkc.o               
+                    r_system.o              00370f
+_R_CSIG0_Init       r_csi.o                
+                    r_led.o                 00338d
+_R_CSIG0_TransmitData r_csi.o                
+                    r_led.o                 003393 0033f3
+_R_CSIH2_C4_SetTxSize r_csi.o                
+                    r_display.o             002951 002b43 002b93 002c4f 002c9f
+                                            002e1f 002e9f
+_R_CSIH2_Init       r_csi.o                
+                    r_display.o             00294b
+_R_CSIH2_TransmitBuffer r_csi.o                
+                    r_display.o             002fc9
+_R_CSIH2_TransmitData r_csi.o                
+                    r_display.o             002f6d 002f97
+_R_DISPLAY_Deinit   r_display.o            
+_R_DISPLAY_DrawImg  r_display.o            
+                    r_tasks.o               002509
+_R_DISPLAY_DrawRect r_display.o             002aa7
+                                            002d77 002db5
+_R_DISPLAY_DrawText r_display.o            
+_R_DISPLAY_Init     r_display.o            
+                    r_tasks.o               0024e1
+_R_DISPLAY_ResetRelease r_display.o            
+                    r_tasks.o               0026d9
+_R_DISPLAY_SDCard_Test r_display.o            
+_R_ENCA0_GetFlags   r_enc.o                
+                    r_tasks.o               001895 001c4b
+_R_ENCA0_Init       r_enc.o                
+                    r_ui.o                  003b29
+_R_ENCA0_Read       r_enc.o                
+                    r_tasks.o               001b9f 001cdd 001f09 001f49
+_R_ENCA0_Start      r_enc.o                
+                    r_tasks.o               001f05
+                    r_ui.o                  003b2d
+_R_ENCA0_Stop       r_enc.o                
+                    r_ui.o                  003b4f
+_R_INTC_GetRequestFlag r_intc.o               
+                    r_system.o              003831
+_R_INTC_MaskInterrupt r_intc.o               
+                    r_tasks.o               002045 002537
+_R_INTC_ResetRequestFlag r_intc.o               
+                    r_system.o              00383d
+_R_INTC_ResetTableBit r_intc.o               
+_R_INTC_SetPriority r_intc.o               
+_R_INTC_SetRequestFlag r_intc.o               
+_R_INTC_SetTableBit r_intc.o               
+                    r_tasks.o               001b79 001edb 0021df 0025ed
+                    r_uart.o                0038d9
+_R_INTC_UnmaskInterrupt r_intc.o               
+                    r_tasks.o               001b81 001ee3 001f2d 0021e7
+                    r_uart.o                0038e1
+_R_INTTAUJ0I1_ISR   r_tau.o                 004f20 004f2a 004f66
+_R_LED_GpioInit     r_led.o                
+_R_LED_GpioOff      r_led.o                
+_R_LED_GpioOn       r_led.o                
+_R_LED_PwmInit      r_led.o                
+                    r_tasks.o               0025f3 0025f9 0025ff 002605 00260b
+_R_LED_PwmStart     r_led.o                
+                    r_tasks.o               001b4f 001b55 001b5b 001b61 001b67
+                                            001eb1 001eb7 001ebd 001ec3 001ec9
+                                            0021a1 0021a7 0021ad 0021b3 0021b9
+_R_LED_PwmStop      r_led.o                
+                    r_tasks.o               00166d 001689 0016a5 001dcd 001dd3
+                                            001dd9 001ddf 001de5 00204b 002051
+                                            002057 00205d 002063 002569 00256f
+                                            002575 00257b 002581
+_R_LED_RgbDiagInit  r_led.o                
+                    r_tasks.o               00261b
+_R_LED_RgbDiagStart r_led.o                
+_R_LED_RgbDiagStop  r_led.o                
+_R_LED_RingInit     r_led.o                
+                    r_tasks.o               001efd 00260f
+_R_LED_RingOutputDisable r_led.o                
+                    r_tasks.o               001de9 002067
+_R_LED_RingOutputEnable r_led.o                
+                    r_tasks.o               001b9b 001f01 0021bd
+_R_LED_RingUpdate   r_led.o                
+                    r_tasks.o               001969 001bd3 001be7 001cb9 001ccd
+                                            00222b 002269 0022af 0022ed 002339
+                                            00237b 0023bd 002433 002479 002587
+_R_LED_SetPwmDuty   r_led.o                
+                    r_tasks.o               0017a3 0017d9 001829 00185f 001a71
+                                            001a89 001aa1 001b19 001b31 001b49
+                                            001c07 001c29 001c33 001e7b 001e93
+                                            001eab 002179 002183 00218b 002193
+                                            00219b 00220f 00224d 002293 0022d1
+                                            002319 00235b 00239d 0023e7 0023fd
+                                            002413 00245d 002467 002471 002543
+                                            00254b 002553 00255b 002563
+_R_LIN_Deinit       r_lin.o                
+                    r_tasks.o               002165
+_R_LIN_Init         r_lin.o                
+                    r_tasks.o               0020eb
+_R_LIN_RxFrame      r_lin.o                
+_R_LIN_Test         r_lin.o                
+                    r_tasks.o               002143
+_R_LIN_TxFrame      r_lin.o                
+_R_LPS_Disable      r_lps.o                
+_R_LPS_Init         r_lps.o                
+                    r_system.o              0037c1
+_R_LPS_SetCompareValue r_lps.o                
+                    r_system.o              00377d
+_R_OSTM0_Init       r_ostm.o               
+                    r_system.o              003813
+_R_OSTM0_SetCompareValue r_ostm.o               
+                    r_system.o              00381b
+_R_OSTM0_Start      r_ostm.o               
+                    r_system.o              00384f
+_R_OSTM0_Stop       r_ostm.o               
+                    r_system.o              003861
+_R_PORT_GetLevel    r_port.o               
+                    r_display.o             00282b
+                    r_system.o              00355b 003585 0035b3 0035e1 00360f
+                                            00363d 00366b 003699
+                    r_ui.o                  0039a5 0039c5 003a51 003a71
+_R_PORT_SetAltFunc  r_port.o               
+                    r_can.o                 002719 002725 002731 00273d
+                    r_display.o             002923 00292f 00293b 002947
+                    r_led.o                 003173 003189 00319b 0031ad 0031bf
+                                            003371 00337d 003389
+                    r_lin.o                 003425 003431
+                    r_system.o              00376d 003789 003795 0037a1 0037ad
+                                            0037b9
+                    r_uart.o                0038c1 0038cd
+                    r_ui.o                  003add 003aff 003b19 003b25
+_R_PORT_SetAnalogFilter r_port.o               
+                    r_ui.o                  003ad1 003af3
+_R_PORT_SetGpioHighZ r_port.o               
+                    r_can.o                 00276b 002773 00277b 002783 00278b
+                                            002793
+                    r_display.o             00284b 002853 00285b 002863 00286b
+                                            002873 00287b 002883
+                    r_lin.o                 00344f 003457
+                    r_uart.o                0038f7 0038ff
+                    r_ui.o                  00394d 00398f 003a3b 003b43 003b4b
+_R_PORT_SetGpioInput r_port.o               
+                    r_display.o             002917
+                    r_system.o              003535
+                    r_ui.o                  003979 003a25
+_R_PORT_SetGpioOutput r_port.o               
+                    r_can.o                 002747 002751
+                    r_display.o             00289b 0028d9 0028eb 0028fd 00290f
+                                            002f67 002f91 002fc1
+                    r_led.o                 00301f 00302b 003037 003043 00304f
+                                            00308d 003099 0030a5 0030b1 0030bd
+                                            0030fb 003107 003113 00311f 00312b
+                                            00335b 003365 00339d 0033a7 0033bf
+                                            0033d7 0033fd 003407
+                    r_system.o              00352d 00353f 003549 003553 003569
+                                            003573 00357d 003597 0035a1 0035ab
+                                            0035c5 0035cf 0035d9 0035f3 0035fd
+                                            003607 003621 00362b 003635 00364f
+                                            003659 003663 00367d 003687 003691
+                                            003719
+                    r_ui.o                  003945
+_R_PORT_SetOpenDrain r_port.o               
+_R_PORT_SetPushPull r_port.o               
+                    r_system.o              003523
+_R_PORT_ToggleGpioOutput r_port.o               
+_R_PWMD_Channel64DutyUpdate r_pwmd.o               
+                    r_led.o                 00322d
+_R_PWMD_Channel64Init r_pwmd.o               
+                    r_led.o                 00318f
+_R_PWMD_Channel65DutyUpdate r_pwmd.o               
+                    r_led.o                 003235
+_R_PWMD_Channel65Init r_pwmd.o               
+                    r_led.o                 0031a1
+_R_PWMD_Channel66DutyUpdate r_pwmd.o               
+                    r_led.o                 00323d
+_R_PWMD_Channel66Init r_pwmd.o               
+                    r_led.o                 0031b3
+_R_PWMD_ClockInit   r_pwmd.o               
+                    r_led.o                 0031d1
+_R_PWMD_DiagInit    r_pwmd.o               
+                    r_tasks.o               0025d5
+                    r_led.o                 00331f
+_R_PWMD_DiagStart   r_pwmd.o               
+                    r_tasks.o               001b97 001ef9 0021fd
+                    r_led.o                 003331
+_R_PWMD_DiagStop    r_pwmd.o               
+                    r_tasks.o               00253b
+                    r_led.o                 003343
+_R_PWMD_StartChannel r_pwmd.o               
+                    r_led.o                 00328f 003299 0032a3
+_R_PWMD_StopChannel r_pwmd.o               
+                    r_led.o                 0032f1 0032fb 003305
+_R_RLIN24_BaudrateInit r_rlin.o               
+                    r_lin.o                 003435
+_R_RLIN24_Channel1Init r_rlin.o               
+                    r_lin.o                 003439
+_R_RLIN24_Channel1RxFrame r_rlin.o               
+                    r_lin.o                 0034f9
+_R_RLIN24_Channel1TxFrame r_rlin.o               
+                    r_lin.o                 003499 0034cd
+_R_RLIN30_GetStatus r_rlin.o               
+                    r_tasks.o               001d95 002001
+                    r_uart.o                003917 00391f
+_R_RLIN30_UartInit  r_rlin.o               
+                    r_uart.o                0038d1
+_R_RLIN30_UartSendString r_rlin.o               
+                    r_uart.o                003929
+_R_RSCAN0_C3TrmByTxBuf r_rscan.o              
+                    r_can.o                 0027c1
+_R_RSCAN0_C4TrmByTxBuf r_rscan.o              
+_R_RSCAN0_Init      r_rscan.o              
+                    r_can.o                 002755
+_R_RSCAN0_ReadRxBuffer r_rscan.o              
+                    r_can.o                 0027d9
+_R_RSCAN0_SetRxRule..C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_rscan. r_rscan.o              
+_R_STBC_EnterDeepSTOP r_stbc.o               
+                    r_tasks.o               0020b5
+_R_STBC_GetWakeUpFactor r_stbc.o               
+                    r_tasks.o               00261f
+_R_STBC_PrepareWakeUp r_stbc.o               
+                    r_system.o              0037eb
+_R_STBC_ReleaseIoHold r_stbc.o               
+                    r_tasks.o               0026dd
+_R_SYSTEM_ClearResetCause r_system.o             
+_R_SYSTEM_ClearRetentionRAM r_system.o              0038a7
+_R_SYSTEM_ClockInit r_system.o             
+                    main.o                  0015d1
+_R_SYSTEM_GetResetCause r_system.o              00389f
+_R_SYSTEM_PrepareDeepSTOP r_system.o             
+                    r_tasks.o               0020b1
+_R_SYSTEM_TimerInit r_system.o             
+                    r_tasks.o               0025c9
+_R_SYSTEM_TimerStart r_system.o             
+                    r_tasks.o               001beb 001f37 0021c1
+_R_SYSTEM_TimerStop r_system.o             
+                    r_tasks.o               001dfb
+_R_SYSTEM_TimerTick r_system.o             
+                    r_tasks.o               001da9 001df1 002015 00206f 00222f
+                                            002233 00226d 002271 0022b3 0022b7
+                                            0022f1 0022f5 00233d 002341 00237f
+                                            002383 0023c1 0023c5 002437 00243b
+                                            00244b 002527 00258f
+_R_TASKS_Start      r_tasks.o              
+                    main.o                  0015f7
+_R_TAUB0_CDR_Update r_tau.o                
+                    r_led.o                 00321b
+_R_TAUB0_CK0_Prescaler r_tau.o                
+                    r_tasks.o               0025db
+_R_TAUB0_Channel6_Init r_tau.o                
+                    r_led.o                 003163
+_R_TAUB0_Channel8_Init r_tau.o                
+                    r_led.o                 003167
+_R_TAUB0_Channel_Start r_tau.o                
+                    r_led.o                 00327d
+_R_TAUB0_Channel_Stop r_tau.o                
+                    r_led.o                 0032df
+_R_TAUJ0_AssignChannel1ISR r_tau.o                
+                    r_tasks.o               001f25 00203d
+_R_TAUJ0_CDR_Update r_tau.o                
+                    r_tasks.o               00176d
+                    r_led.o                 003225
+                    r_system.o              0037d1 0037db
+_R_TAUJ0_CK0_Prescaler r_tau.o                
+                    r_tasks.o               0025e1
+_R_TAUJ0_Channel0_Init r_tau.o                
+                    r_system.o              0037bd
+_R_TAUJ0_Channel1_Init r_tau.o                
+                    r_tasks.o               0025e5
+_R_TAUJ0_Channel2_Init r_tau.o                
+                    r_led.o                 003179
+_R_TAUJ0_Channel3_Init r_tau.o                
+                    r_led.o                 00317d
+_R_TAUJ0_Channel_Start r_tau.o                
+                    r_tasks.o               001f33
+                    r_led.o                 003285
+                    r_system.o              0037c7 0037e1
+_R_TAUJ0_Channel_Stop r_tau.o                
+                    r_tasks.o               002037
+                    r_led.o                 0032e7
+_R_UART_Deinit      r_uart.o               
+_R_UART_Init        r_uart.o               
+                    r_tasks.o               0020ef 0025cd
+_R_UART_SendString  r_uart.o               
+                    r_tasks.o               00161f 001a19
+_R_UI_ButtonEnc1_Handler r_ui.o                 
+                    r_tasks.o               001d3b 001fa7
+_R_UI_ButtonEnc1_Init r_ui.o                 
+                    r_tasks.o               001b03
+_R_UI_ButtonEnc_Deinit r_ui.o                 
+_R_UI_ButtonS1_Deinit r_ui.o                 
+_R_UI_ButtonS1_Handler r_ui.o                 
+                    r_tasks.o               001d35 001fa1
+_R_UI_ButtonS1_Init r_ui.o                 
+                    r_tasks.o               001aff 001e65
+_R_UI_Enc1_Deinit   r_ui.o                 
+_R_UI_Enc1_Init     r_ui.o                 
+                    r_tasks.o               002613
+_R_UI_Get_ButtonEnc1_State r_ui.o                 
+_R_UI_Get_ButtonS1_State r_ui.o                 
+                    r_tasks.o               0020a1
+_R_UI_INTP12_Init   r_ui.o                 
+                    r_tasks.o               0020a9
+_R_UI_INTP15_Init   r_ui.o                 
+                    r_tasks.o               0020ad
+_R_UI_Pot1_Init     r_ui.o                 
+                    r_tasks.o               002617
+_R_UI_Pot1_Read     r_ui.o                 
+_RenesasPicture     r_tasks.o               0024f4
+_RgbLedDiagOutput   r_tasks.o               001ce7
+                                            001f9d
+_SwitchRGBColor     r_tasks.o               001d63
+                                            001fcf
+_UpperByteMirror    r_tasks.o               001959
+__Exit              libansi.a(ccexit.o)     005361
+___atexit_cleanup_func libansi.a(ccexit.o)     005330 005338 005343
+___cpp_exception_cleanup libsys.a(ind_exit.o)    006516 00651e
+___cpp_exception_init libsys.a(ind_crt1.o)    fede6024
+___dotsyscall       crt0.o                  001430
+                    libsys.a(ind_call.o)    0065a2
+___gh_FOPEN_MAX     libsys.a(ind_iob.o)     00641e 006424
+                    libansi.a(ccflsbuf.o)   005c90 005c96
+                    libansi.a(ccfflush.o)   005e08 005e0c
+___gh_bufclose     
+___gh_buffersizes   libansi.a(ccbufsiz.o)   005c02 005c28 005c58
+___gh_bufinit       libansi.a(ccvprntf.o)   005b65 005bb1
+___gh_bufsize       libansi.a(ccvprntf.o)   005b59
+                    libansi.a(ccflsbuf.o)   005d0f
+                    libansi.a(ccfflush.o)   005e7b
+___gh_errno_ptr    
+___gh_float_printf  libansi.a(ccvsprnt.o)   0059ea 0059f2 005a0b
+___gh_get_errno    
+___gh_hexout        libansi.a(ccvsprnt.o)   005643
+___gh_iob_init      libsys.a(ind_crt1.o)    fede6020 006753
+___gh_lock_init     libsys.a(ind_crt1.o)    fede601c 006747
+___gh_long_long_printf libansi.a(ccvsprnt.o)   0058d2 0058da 0058e9 00598e 005996
+___gh_octhexout     libansi.a(ccvsprnt.o)   00594d
+___gh_outchars      libansi.a(ccvsprnt.o)   0053c1 005535
+___gh_outspaces     libansi.a(ccvsprnt.o)   0054f9 005593
+___gh_set_errno     libansi.a(ccvprntf.o)   005b1d 005b35
+                    libansi.a(ccflsbuf.o)   005cb3
+                    libsys.a(ind_call.o)    0065ab
+___gh_store_wc     
+___gh_strout        libansi.a(ccvsprnt.o)   0055cd 00564b 005ac5
+___gh_undefined_float_func libansi.a(ccvsprnt.o)   0059e6 0059ee
+___gh_undefined_long_long_func libansi.a(ccvsprnt.o)   0058ce 0058d6 00598a 005992
+___gh_undefined_uns_long_long_func
+___gh_ungetc_cleanup
+___gh_uns_long_long_printf libansi.a(ccvsprnt.o)   0059a5
+___gh_vsprintf      libansi.a(ccsprntf.o)   005277
+                    libansi.a(ccvprntf.o)   005b89
+___gh_wctomb        libansi.a(ccvsprnt.o)   005433 005549
+___gh_xxdecout      libansi.a(ccvsprnt.o)   0055b5
+___ghsLock          libsys.a(ind_exit.o)    0064f5 006553
+___ghsUnlock        libsys.a(ind_exit.o)    00652b 006563
+___ghs_GetCurrentThreadID
+___ghs_GetCurrentThreadName
+___ghs_GetThreadLocalStorageItem
+___ghs_InterruptLock
+___ghs_InterruptUnlock
+___ghs_RestoreSignalContext
+___ghs_RunTimeErrorDetected
+___ghs_SaveSignalContext
+___ghs_at_exit     
+___ghs_board_cache_sync libstartup.a(ind_crt0.o) 005f7e 005f8e
+___ghs_board_devices_init libsys.a(ind_crt1.o)    fede6018 00673b
+___ghs_board_memory_init crt0.o                  001492 001496 00149b
+___ghs_call_table   crt0.o                  0014b2
+___ghs_checksum     libstartup.a(ind_crt0.o) 0061d2
+___ghs_coverage_init libsys.a(ind_crt1.o)    fede602c 006777
+___ghs_cpp_exception_cleanup libsys.a(ind_exit.o)    006527
+___ghs_cpp_exception_init libsys.a(ind_crt1.o)    00675f
+___ghs_decompress   libstartup.a(ind_crt0.o) 005f42 005f54 006118 006120
+___ghs_eofn_BoardCheck r_tasks.o              
+___ghs_eofn_DeepSTOP r_tasks.o              
+___ghs_eofn_INTADCA0ERR r_adc.o                
+___ghs_eofn_INTRLIN30UR0 r_rlin.o               
+___ghs_eofn_INTTAUJ0I1 r_tau.o                
+___ghs_eofn_LedUpdate r_tasks.o              
+___ghs_eofn_Mode1   r_tasks.o              
+___ghs_eofn_Mode2   r_tasks.o              
+___ghs_eofn_PrintStatus r_tasks.o              
+___ghs_eofn_PrintText r_tasks.o              
+___ghs_eofn_PwmErrorCallBack r_tasks.o              
+___ghs_eofn_R_ADCA0_AssignLimitErrorCB r_adc.o                
+___ghs_eofn_R_ADCA0_ConnectPullDown r_adc.o                
+___ghs_eofn_R_ADCA0_DisconnectPullDown r_adc.o                
+___ghs_eofn_R_ADCA0_Init r_adc.o                
+___ghs_eofn_R_ADCA0_LpsInit r_adc.o                
+___ghs_eofn_R_ADCA0_PinRead r_adc.o                
+___ghs_eofn_R_ADCA0_PwsaTriggerDisable r_adc.o                
+___ghs_eofn_R_ADCA0_PwsaTriggerEnable r_adc.o                
+___ghs_eofn_R_ADCA0_SetUpperLowerLimit r_adc.o                
+___ghs_eofn_R_CAN_Deinit r_can.o                
+___ghs_eofn_R_CAN_Init r_can.o                
+___ghs_eofn_R_CAN_Test r_can.o                
+___ghs_eofn_R_CLKC_PllInit r_clkc.o               
+___ghs_eofn_R_CLKC_ResetAdca0StopMask r_clkc.o               
+___ghs_eofn_R_CLKC_ResetTaujStopMask r_clkc.o               
+___ghs_eofn_R_CLKC_SetAdca0ClockDomain r_clkc.o               
+___ghs_eofn_R_CLKC_SetAdca0StopMask r_clkc.o               
+___ghs_eofn_R_CLKC_SetRscanClockDomain r_clkc.o               
+___ghs_eofn_R_CLKC_SetTaujClockDomain r_clkc.o               
+___ghs_eofn_R_CLKC_SetTaujStopMask r_clkc.o               
+___ghs_eofn_R_CSIG0_Init r_csi.o                
+___ghs_eofn_R_CSIG0_TransmitData r_csi.o                
+___ghs_eofn_R_CSIH2_C4_SetTxSize r_csi.o                
+___ghs_eofn_R_CSIH2_Init r_csi.o                
+___ghs_eofn_R_CSIH2_TransmitBuffer r_csi.o                
+___ghs_eofn_R_CSIH2_TransmitData r_csi.o                
+___ghs_eofn_R_DISPLAY_Deinit r_display.o            
+___ghs_eofn_R_DISPLAY_DrawImg r_display.o            
+___ghs_eofn_R_DISPLAY_DrawRect r_display.o            
+___ghs_eofn_R_DISPLAY_DrawText r_display.o            
+___ghs_eofn_R_DISPLAY_Init r_display.o            
+___ghs_eofn_R_DISPLAY_ResetRelease r_display.o            
+___ghs_eofn_R_DISPLAY_SDCard_Test r_display.o            
+___ghs_eofn_R_ENCA0_GetFlags r_enc.o                
+___ghs_eofn_R_ENCA0_Init r_enc.o                
+___ghs_eofn_R_ENCA0_Read r_enc.o                
+___ghs_eofn_R_ENCA0_Start r_enc.o                
+___ghs_eofn_R_ENCA0_Stop r_enc.o                
+___ghs_eofn_R_INTC_GetRequestFlag r_intc.o               
+___ghs_eofn_R_INTC_MaskInterrupt r_intc.o               
+___ghs_eofn_R_INTC_ResetRequestFlag r_intc.o               
+___ghs_eofn_R_INTC_ResetTableBit r_intc.o               
+___ghs_eofn_R_INTC_SetPriority r_intc.o               
+___ghs_eofn_R_INTC_SetRequestFlag r_intc.o               
+___ghs_eofn_R_INTC_SetTableBit r_intc.o               
+___ghs_eofn_R_INTC_UnmaskInterrupt r_intc.o               
+___ghs_eofn_R_LED_GpioInit r_led.o                
+___ghs_eofn_R_LED_GpioOff r_led.o                
+___ghs_eofn_R_LED_GpioOn r_led.o                
+___ghs_eofn_R_LED_PwmInit r_led.o                
+___ghs_eofn_R_LED_PwmStart r_led.o                
+___ghs_eofn_R_LED_PwmStop r_led.o                
+___ghs_eofn_R_LED_RgbDiagInit r_led.o                
+___ghs_eofn_R_LED_RgbDiagStart r_led.o                
+___ghs_eofn_R_LED_RgbDiagStop r_led.o                
+___ghs_eofn_R_LED_RingInit r_led.o                
+___ghs_eofn_R_LED_RingOutputDisable r_led.o                
+___ghs_eofn_R_LED_RingOutputEnable r_led.o                
+___ghs_eofn_R_LED_RingUpdate r_led.o                
+___ghs_eofn_R_LED_SetPwmDuty r_led.o                
+___ghs_eofn_R_LIN_Deinit r_lin.o                
+___ghs_eofn_R_LIN_Init r_lin.o                
+___ghs_eofn_R_LIN_RxFrame r_lin.o                
+___ghs_eofn_R_LIN_Test r_lin.o                
+___ghs_eofn_R_LIN_TxFrame r_lin.o                
+___ghs_eofn_R_LPS_Disable r_lps.o                
+___ghs_eofn_R_LPS_Init r_lps.o                
+___ghs_eofn_R_LPS_SetCompareValue r_lps.o                
+___ghs_eofn_R_OSTM0_Init r_ostm.o               
+___ghs_eofn_R_OSTM0_SetCompareValue r_ostm.o               
+___ghs_eofn_R_OSTM0_Start r_ostm.o               
+___ghs_eofn_R_OSTM0_Stop r_ostm.o               
+___ghs_eofn_R_PORT_GetLevel r_port.o               
+___ghs_eofn_R_PORT_SetAltFunc r_port.o               
+___ghs_eofn_R_PORT_SetAnalogFilter r_port.o               
+___ghs_eofn_R_PORT_SetGpioHighZ r_port.o               
+___ghs_eofn_R_PORT_SetGpioInput r_port.o               
+___ghs_eofn_R_PORT_SetGpioOutput r_port.o               
+___ghs_eofn_R_PORT_SetOpenDrain r_port.o               
+___ghs_eofn_R_PORT_SetPushPull r_port.o               
+___ghs_eofn_R_PORT_ToggleGpioOutput r_port.o               
+___ghs_eofn_R_PWMD_Channel64DutyUpdate r_pwmd.o               
+___ghs_eofn_R_PWMD_Channel64Init r_pwmd.o               
+___ghs_eofn_R_PWMD_Channel65DutyUpdate r_pwmd.o               
+___ghs_eofn_R_PWMD_Channel65Init r_pwmd.o               
+___ghs_eofn_R_PWMD_Channel66DutyUpdate r_pwmd.o               
+___ghs_eofn_R_PWMD_Channel66Init r_pwmd.o               
+___ghs_eofn_R_PWMD_ClockInit r_pwmd.o               
+___ghs_eofn_R_PWMD_DiagInit r_pwmd.o               
+___ghs_eofn_R_PWMD_DiagStart r_pwmd.o               
+___ghs_eofn_R_PWMD_DiagStop r_pwmd.o               
+___ghs_eofn_R_PWMD_StartChannel r_pwmd.o               
+___ghs_eofn_R_PWMD_StopChannel r_pwmd.o               
+___ghs_eofn_R_RLIN24_BaudrateInit r_rlin.o               
+___ghs_eofn_R_RLIN24_Channel1Init r_rlin.o               
+___ghs_eofn_R_RLIN24_Channel1RxFrame r_rlin.o               
+___ghs_eofn_R_RLIN24_Channel1TxFrame r_rlin.o               
+___ghs_eofn_R_RLIN30_GetStatus r_rlin.o               
+___ghs_eofn_R_RLIN30_UartInit r_rlin.o               
+___ghs_eofn_R_RLIN30_UartSendString r_rlin.o               
+___ghs_eofn_R_RSCAN0_C3TrmByTxBuf r_rscan.o              
+___ghs_eofn_R_RSCAN0_C4TrmByTxBuf r_rscan.o              
+___ghs_eofn_R_RSCAN0_Init r_rscan.o              
+___ghs_eofn_R_RSCAN0_ReadRxBuffer r_rscan.o              
+___ghs_eofn_R_STBC_EnterDeepSTOP r_stbc.o               
+___ghs_eofn_R_STBC_GetWakeUpFactor r_stbc.o               
+___ghs_eofn_R_STBC_PrepareWakeUp r_stbc.o               
+___ghs_eofn_R_STBC_ReleaseIoHold r_stbc.o               
+___ghs_eofn_R_SYSTEM_ClearResetCause r_system.o             
+___ghs_eofn_R_SYSTEM_ClearRetentionRAM r_system.o             
+___ghs_eofn_R_SYSTEM_ClockInit r_system.o             
+___ghs_eofn_R_SYSTEM_GetResetCause r_system.o             
+___ghs_eofn_R_SYSTEM_PrepareDeepSTOP r_system.o             
+___ghs_eofn_R_SYSTEM_TimerInit r_system.o             
+___ghs_eofn_R_SYSTEM_TimerStart r_system.o             
+___ghs_eofn_R_SYSTEM_TimerStop r_system.o             
+___ghs_eofn_R_SYSTEM_TimerTick r_system.o             
+___ghs_eofn_R_TASKS_Start r_tasks.o              
+___ghs_eofn_R_TAUB0_CDR_Update r_tau.o                
+___ghs_eofn_R_TAUB0_CK0_Prescaler r_tau.o                
+___ghs_eofn_R_TAUB0_Channel6_Init r_tau.o                
+___ghs_eofn_R_TAUB0_Channel8_Init r_tau.o                
+___ghs_eofn_R_TAUB0_Channel_Start r_tau.o                
+___ghs_eofn_R_TAUB0_Channel_Stop r_tau.o                
+___ghs_eofn_R_TAUJ0_AssignChannel1ISR r_tau.o                
+___ghs_eofn_R_TAUJ0_CDR_Update r_tau.o                
+___ghs_eofn_R_TAUJ0_CK0_Prescaler r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel0_Init r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel1_Init r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel2_Init r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel3_Init r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel_Start r_tau.o                
+___ghs_eofn_R_TAUJ0_Channel_Stop r_tau.o                
+___ghs_eofn_R_UART_Deinit r_uart.o               
+___ghs_eofn_R_UART_Init r_uart.o               
+___ghs_eofn_R_UART_SendString r_uart.o               
+___ghs_eofn_R_UI_ButtonEnc1_Handler r_ui.o                 
+___ghs_eofn_R_UI_ButtonEnc1_Init r_ui.o                 
+___ghs_eofn_R_UI_ButtonEnc_Deinit r_ui.o                 
+___ghs_eofn_R_UI_ButtonS1_Deinit r_ui.o                 
+___ghs_eofn_R_UI_ButtonS1_Handler r_ui.o                 
+___ghs_eofn_R_UI_ButtonS1_Init r_ui.o                 
+___ghs_eofn_R_UI_Enc1_Deinit r_ui.o                 
+___ghs_eofn_R_UI_Enc1_Init r_ui.o                 
+___ghs_eofn_R_UI_Get_ButtonEnc1_State r_ui.o                 
+___ghs_eofn_R_UI_Get_ButtonS1_State r_ui.o                 
+___ghs_eofn_R_UI_INTP12_Init r_ui.o                 
+___ghs_eofn_R_UI_INTP15_Init r_ui.o                 
+___ghs_eofn_R_UI_Pot1_Init r_ui.o                 
+___ghs_eofn_R_UI_Pot1_Read r_ui.o                 
+___ghs_eofn_RgbLedDiagOutput r_tasks.o              
+___ghs_eofn_SwitchRGBColor r_tasks.o              
+___ghs_eofn_UpperByteMirror r_tasks.o              
+___ghs_eofn___lowinit r_system.o             
+___ghs_eofn_add_kar_le subproj.o              
+___ghs_eofn_delay   r_display.o            
+___ghs_eofn_drawChar r_display.o            
+___ghs_eofn_drawPixel r_display.o            
+___ghs_eofn_goTo    r_display.o            
+___ghs_eofn_loc_LpsManualRead r_system.o             
+___ghs_eofn_main    main.o                 
+___ghs_eofn_unused_isr main.o                 
+___ghs_eofn_writeBuffer r_display.o            
+___ghs_eofn_writeCommand r_display.o            
+___ghs_eofn_writeData r_display.o            
+___ghs_flock_create libansi.a(ccflock.o)    005d33
+___ghs_flock_destroy libansi.a(ccflock.o)    005d51
+___ghs_flock_file   libansi.a(ccflock.o)    005d71
+___ghs_flock_in_use
+___ghs_flock_ptr    libsys.a(ind_iob.o)     006445
+                    libansi.a(ccflock.o)    005d29 005d3f 005d61 005d7d 005d99
+                                            005dbb 005dd9
+___ghs_flock_word  
+___ghs_ftrylock_file libansi.a(ccflock.o)    005da9
+___ghs_funlock_file libansi.a(ccflock.o)    005d8d
+___ghs_hostio_close
+___ghs_hostio_creat
+___ghs_hostio_fcntl
+___ghs_hostio_lseek
+___ghs_hostio_open 
+___ghs_hostio_read 
+___ghs_hostio_unlink
+___ghs_hostio_write
+___ghs_ind_crt0     crt0.o                  001519
+___ghs_ind_crt1     libstartup.a(ind_crt0.o) 005f4e 005f68
+___ghs_initial_dotsyscall crt0.o                  001447
+___ghs_load23       libarch.a(indarchc.o)   00689e 0068a2 0068a6 0068a8
+                    libarch.a(indarchb.o)   0068d3
+___ghs_load27       libarch.a(indarchd.o)   00687c 006880 006882
+                    libarch.a(indarchc.o)   0068b9
+___ghs_lock_create 
+___ghs_lock_destroy
+___ghs_lock_lock   
+___ghs_lock_unlock 
+___ghs_log_fee_level
+___ghs_manprf_init  libsys.a(ind_crt1.o)    fede6028 00676b
+___ghs_multicore_init_flag crt0.o                  001542 001546
+___ghs_multicore_wait_for_init
+___ghs_rambootcodeend crt0.o                  001534
+___ghs_rambootcodestart crt0.o                  001530
+___ghs_ramend       dr7f701057_startup.o    00159c
+___ghs_ramstart     dr7f701057_startup.o    001596
+___ghs_rombootcodeend crt0.o                  00153c
+___ghs_rombootcodestart crt0.o                  001538 0014b8
+___ghs_romend      
+___ghs_romstart    
+___ghs_rramend      r_system.o              00388e
+___ghs_rramstart    r_system.o              003882
+___ghs_save23       libarch.a(indarchf.o)   0068f4 0068fa 006900 006906
+                    libarch.a(indarche.o)   006875
+___ghs_save23a      libarch.a(indarchi.o)   0067f8 0067fe 006804 00680a
+___ghs_save27       libarch.a(indarchg.o)   006826 00682c 006832 006836
+                    libarch.a(indarchf.o)   006919
+___ghs_save27a      libarch.a(indarchj.o)   0067d4 0067da 0067de
+                    libarch.a(indarchi.o)   00681d
+___ghs_set_stack_chk_guard libsys.a(ind_crt1.o)    fede6030 006783
+___ghs_strlen      
+___ghs_syscall      libsys.a(ind_exit.o)    006533
+                    libsys.a(ind_io.o)      0065d1 0065f7 00663f 006667 00668b
+                                            0066b3 0066d7 0066ff
+___ghs_undefined_func libstartup.a(ind_crt0.o) 005f74 005f84 006114 00611c
+                    libsys.a(ind_exit.o)    006512 00651a
+___ghs_undefined_ungetc_func
+___ghsbegin_fixaddr libstartup.a(ind_crt0.o) 0061ae 0061b6
+___ghsbegin_fixtype libstartup.a(ind_crt0.o) 0061be 0061c6
+___ghsbegin_picbase crt0.o                  001524
+                    libstartup.a(ind_crt0.o) 006006 00600c
+___ghsbegin_pidbase crt0.o                  00152c
+                    libstartup.a(ind_crt0.o) 006000
+___ghsbegin_robase  crt0.o                  001528
+                    libstartup.a(ind_crt0.o) 006016
+___ghsbegin_sda_end
+___ghsbegin_sda_start crt0.o                  00146c 00147c
+___ghsbegin_sdabase crt0.o                  001462
+___ghsbegin_secinfo libstartup.a(ind_crt0.o) 005fb0 005fb6
+___ghsbinfo_aclear  libstartup.a(ind_crt0.o) 00603c 006040
+___ghsbinfo_acopy  
+___ghsbinfo_bcopy  
+___ghsbinfo_clear   libstartup.a(ind_crt0.o) 006028 006030
+___ghsbinfo_comacopy
+___ghsbinfo_comcopy libstartup.a(ind_crt0.o) 006128 006130
+___ghsbinfo_comtcopy libstartup.a(ind_crt0.o) 00612c 006134
+___ghsbinfo_copy    libstartup.a(ind_crt0.o) 00608e 006096
+___ghsbinfo_tcopy   libstartup.a(ind_crt0.o) 006092 00609a
+___ghseinfo_bcopy  
+___ghseinfo_clear   libstartup.a(ind_crt0.o) 006022 00602c
+___ghseinfo_comcopy libstartup.a(ind_crt0.o) 006138 006142
+___ghseinfo_copy    libstartup.a(ind_crt0.o) 00609e 0060a6
+___ghsend_fixaddr   libstartup.a(ind_crt0.o) 0061b2 0061ba
+___ghsend_fixtype  
+___ghsend_stack     crt0.o                  001452
+                    dr7f701057_startup.o    001566 00156a
+___ghsload20        libarch.a(indarchb.o)   0068c0 0068c4
+                    libansi.a(ccvsprnt.o)   00559d
+___ghsload21       
+___ghsload22       
+___ghsload23       
+___ghsload24       
+___ghsload25        libansi.a(ccvsprnt.o)   0053b9
+                    libansi.a(ccfflush.o)   005e93
+___ghsload26       
+___ghsload27       
+___ghsload28        libansi.a(ccvsprnt.o)   0055d5
+                    libansi.a(ccflsbuf.o)   005d21
+                    libansi.a(ccflock.o)    005df3
+___ghsload29        libansi.a(ccvsprnt.o)   005653
+                    libansi.a(ccflock.o)    005d59
+___ghsloadlp        libarch.a(indarcha.o)   0068e6
+                    libansi.a(ccflock.o)    005d37 005d75 005d91 005db1
+___ghsloadlpx      
+___ghssave20        libarch.a(indarche.o)   00685c 006862
+                    libansi.a(ccvsprnt.o)   0053c7
+___ghssave21       
+___ghssave22       
+___ghssave23       
+___ghssave23a      
+___ghssave24       
+___ghssave24a      
+___ghssave25       
+___ghssave25a       libansi.a(ccvsprnt.o)   005399
+                    libansi.a(ccfflush.o)   005df7
+___ghssave26       
+___ghssave26a      
+___ghssave27       
+___ghssave27a      
+___ghssave28        libansi.a(ccvsprnt.o)   0055a3
+                    libansi.a(ccflsbuf.o)   005c8b
+___ghssave28a       libansi.a(ccflock.o)    005db5
+___ghssave29        libansi.a(ccvsprnt.o)   00561b
+___ghssave29a       libansi.a(ccflock.o)    005d3b
+___ghssavelp       
+___ghssavelpa       libansi.a(ccflock.o)    005d25 005d5d 005d79 005d95
+___lowinit          r_system.o             
+                    dr7f701057_startup.o    0015b1
+___mcopy           
+__cleanup           libansi.a(ccexit.o)     00534a 005352 00535b
+__ep                crt0.o                  0014a6 0014aa
+__exit             
+__flsbuf            libansi.a(ccputcu.o)    005c71
+__ghs_rh850_misalign crt0.o                  0014fc
+__ghs_v800_r20_initializer crt0.o                  0014d0
+__ghs_v800_r21_initializer crt0.o                  0014d6
+__ghs_v800_r22_initializer crt0.o                  0014dc
+__ghs_v800_r23_initializer crt0.o                  0014e2
+__ghs_v800_r24_initializer crt0.o                  0014e8
+__ghs_v800_sda_model crt0.o                  00144c
+__gp                crt0.o                  001476
+                    dr7f701057_startup.o    00155a
+__iob               libsys.a(ind_iob.o)     006416 006466
+                    libansi.a(ccprintf.o)   005300
+                    libansi.a(ccbufsiz.o)   005bf8 005c1e 005c4c
+                    libansi.a(ccflsbuf.o)   005c9a
+                    libansi.a(ccflock.o)    005dcc
+                    libansi.a(ccfflush.o)   005e10
+__iob_lock          libsys.a(ind_iob.o)     006430
+__multiArgs        
+__multibufSize     
+__multibuffer      
+__multiend         
+__start             dr7f701057_startup.o    0015b5
+__top_of_iRAM_0    
+__top_of_iRAM_1    
+__top_of_iRAM_R    
+__top_of_iROM1     
+__top_of_iROM_0    
+__tp                crt0.o                  0014a0
+                    dr7f701057_startup.o    001560
+__unused_isr        dr7f701057_startup.o    0015b8 000011 000031
+                                            000041 000051 000061 000081 000091
+                                            0000a1 0000c1 0000e1 0000f1 000101
+                                            000111 000121 000131 000141 000151
+                                            000161 000171 000181 000191 0001a1
+                                            0001b1 0001c1 0001d1 0001e1 0001f1
+                                            000200 000204 000208 00020c 000210
+                                            000214 000218 00021c 000220 000224
+                                            000228 00022c 000230 000234 000238
+                                            00023c 000240 000244 000248 00024c
+                                            000250 000254 000258 00025c 000260
+                                            000264 00026c 000270 000274 000278
+                                            00027c 000280 000284 000288 00028c
+                                            000290 000294 000298 00029c 0002a0
+                                            0002a4 0002a8 0002ac 0002b0 0002b4
+                                            0002b8 0002c4 0002c8 0002cc 0002d0
+                                            0002d4 0002d8 0002dc 0002e0 0002e4
+                                            0002e8 0002ec 0002f0 0002f4 0002f8
+                                            0002fc 000300 000304 000308 00030c
+                                            000310 000314 000318 00031c 000320
+                                            000328 00032c 000330 000334 000338
+                                            00033c 000340 000344 000348 00034c
+                                            000350 000354 000358 00035c 000360
+                                            000364 000368 00036c 000370 000374
+                                            000378 00037c 000398 00039c 0003a0
+                                            0003a4 0003a8 0003ac 0003b0 0003b4
+                                            0003b8 0003bc 0003c0 0003c4 0003c8
+                                            0003cc 0003d0 0003d4 0003d8 0003dc
+                                            0003e0 0003e4 0003e8 0003ec 0003f0
+                                            0003f4 0003f8 0003fc 000418 00041c
+                                            000420 000424 000428 00042c 000430
+                                            000434 000438 00043c 000440 000444
+                                            000448 00044c 000450 000454 000458
+                                            00045c 000460 000464 000468 00046c
+                                            000470 000474 000478 00047c 000480
+                                            000484 000488 00048c 0004c0 0004c4
+                                            0004c8 0004cc 0004d0 0004d4 0004d8
+                                            0004dc 0004e0 0004e4 0004e8 0004ec
+                                            0004f0 0004f4 0004f8 0004fc 000500
+                                            000504 000508 00050c 000510 000514
+                                            000518 00051c 000520 000524 000528
+                                            00052c 000530 000534 000538 00053c
+                                            000544 000548 00054c 000550 000554
+                                            000558 00055c 000560 000564 000568
+                                            00056c 000570 000574 000578 00057c
+                                            000580 000584 000588 00058c 000590
+                                            000594 000598 00059c 0005a0 0005a4
+                                            0005a8 0005ac 0005b0 0005b4 0005b8
+                                            0005bc 0005c0 0005c4 0005c8 0005cc
+                                            0005d0 0005d4 0005d8 0005dc 0005e0
+                                            0005e4 0005e8 0005ec 0005f0 0005f4
+                                            0005f8 0005fc 000600 000604 000608
+                                            00060c 000610 000614 000618 00061c
+                                            000620 000624 000628 00062c 000630
+                                            000634 000638 00063c 000640 000644
+                                            000648 00064c 000650 000654 000658
+                                            00065c 000660 000664
+_add_kar_le         subproj.o              
+                    main.o                  0015e1
+_close             
+_creat             
+_delay              r_display.o             0028b7
+                                            0028e1 0028f3 002905 002ab7 002b8b
+                                            002c97
+_drawChar           r_display.o             002f1b
+_drawPixel          r_display.o             002d55
+                                            002d93
+_environ            libsys.a(ind_crt1.o)    0067b4 0067b8
+_errno              libsys.a(ind_errn.o)    00657c 006580 006586 00658e 006592
+_exit               crt0.o                  001430
+                    libsys.a(ind_crt1.o)    0067c5
+_fcntl             
+_fflush             libansi.a(ccvprntf.o)   005b9d 005bc3
+                    libansi.a(ccflsbuf.o)   005cf3
+_flockcreate        libsys.a(ind_iob.o)     0064ab 0064b3 0064bb
+_flockdestroy      
+_flockfile          libansi.a(ccvprntf.o)   005b29
+                    libansi.a(ccfflush.o)   005e21
+_font               r_display.o             002d2e
+_ftrylockfile      
+_funlockfile        libansi.a(ccvprntf.o)   005bd5
+                    libansi.a(ccfflush.o)   005e85
+_g_Enc1Compare      r_tasks.o               001882 00193c 001bb0 001c3e
+                                            001cd8 001f1a
+_g_Enc1Value        r_tasks.o               00187c 001936 001ba4 001baa
+                                            001c38 001cd2 001ce2 001f0e 001f14
+                                            001f4e
+_g_FixedRGBColors   r_tasks.o               001a42 001ae6 001e4c
+_g_LEDRingPattern   r_tasks.o               001ae0 0020e0
+_g_PWMDClockInitDone r_led.o                 0031c8 0031d8
+_g_Pot1Value        r_tasks.o               00175c 0019ce 001bfa 001c00
+                                            001c0c 001c18 001d00 001d0a 001d1e
+                                            001d30 001f44 001f68 001f72 001f86
+                                            001f98
+_g_StatusText       r_tasks.o               0019c8
+_g_SystemStatus     r_tasks.o               001650 0016ca 00188c 0019ec
+                                            001a3c 001ada 001e46 0020da 0025c4
+_g_pNextData        r_rlin.o                00488a 004892 004898 0048a4
+                                            004ab0 004ab6
+_goTo               r_display.o             002e97
+_loc_ButtonEnc1Count.R_UI_ButtonEnc1_Handler.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_ui..1 r_ui.o                 
+_loc_ButtonS1Count.R_UI_ButtonS1_Handler.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_ui..0 r_ui.o                 
+_loc_LED1Duty.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..0 r_tasks.o              
+_loc_LED2Duty.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..1 r_tasks.o              
+_loc_LEDRingMask.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..5 r_tasks.o              
+_loc_LEDWave.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..3 r_tasks.o              
+_loc_LEDWaveDirection.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..2 r_tasks.o              
+_loc_LpsManualRead  r_system.o              003775
+_loc_PatternNr.Mode1.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..7 r_tasks.o              
+_loc_UpdateCounter.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..4 r_tasks.o              
+_loc_temp.LedUpdate.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_tasks..6 r_tasks.o              
+_lseek             
+_main               main.o                 
+                    libsys.a(ind_crt1.o)    0067bf
+_memcpy             libstartup.a(ind_crt0.o) 005f46 005f58
+_memcpy..trg.2Frh850.2Fobjs.2Flibs.2Flibstartup.2Find_mcpy.
+_memcpy_mcopy       libstartup.a(ind_mcpy.o) 0063e3
+_memset             libstartup.a(ind_crt0.o) 005f4a 005f62
+_multiBreak         libmulti.a              00523c
+_multiCall         
+_open              
+_printf             main.o                  0015ef
+                    r_tasks.o               001625
+_putc_unlocked      libansi.a(ccvprntf.o)   005b7a 005b84
+_read              
+_sprintf            r_tasks.o               001a13
+_sputc..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccsprntf.
+_strlen             libansi.a(ccvsprnt.o)   005415
+_undefined_cleanup  libansi.a(ccexit.o)     005346 00534e
+_undefined_cleanup_func libansi.a(ccexit.o)     00532c 005334
+_unlink            
+_unsout..trg.2Frh850.2Fobjs.2Flibs.2Flibansi.2Fccvsprnt.
+_unused_isr         main.o                 
+_vfprintf           libansi.a(ccprintf.o)   005305
+_vsprintf           libansi.a(ccsprntf.o)   0052b3
+_wctomb             libansi.a(ccvsprnt.o)   005401
+                    libwc_s32.a(ccstorewc.o) 005ed5
+_write              libansi.a(ccflsbuf.o)   005ce1
+                    libansi.a(ccfflush.o)   005e41
+_writeBuffer        r_display.o            
+_writeCommand       r_display.o             002959
+                                            002969 002979 002981 002991 0029a1
+                                            0029b1 0029c7 0029dd 0029ed 0029fb
+                                            002a09 002a19 002a29 002a37 002a3f
+                                            002a5f 002a6d 002a8d 002aaf 002b4b
+                                            002b67 002b83 002c57 002c73 002c8f
+                                            002e27 002e3d 002e53
+_writeData          r_display.o             002961
+                                            002971 002989 002999 0029a9 0029b7
+                                            0029bf 0029cd 0029d5 0029e5 0029f3
+                                            002a01 002a11 002a21 002a2f 002a47
+                                            002a4f 002a57 002a65 002a75 002a7d
+                                            002a85 002a93 002b51 002b5f 002b6d
+                                            002b7b 002b9f 002c5d 002c6b 002c79
+                                            002c87 002ca9 002e2d 002e35 002e43
+                                            002e4b 002ea5

@@ -1,0 +1,8 @@
+#!gbuild
+[Subproject]
+	-I../device
+app\app.gpj
+modules\modules.gpj
+peripherals\peripherals.gpj
+subprojtest\myproject.gpj
+test5\test5.gpj

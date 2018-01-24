@@ -1,0 +1,2121 @@
+                                                                      Page 1
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+Command Line: C:\ghs\comp_201517\ease850.exe -w -elf -b0 -I..\..\device -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5 -IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest -IC:\ghs\comp_201517\lib\rh850 -cg_underscore -cpu=rh850g3k -nofpu -no_v850_simd -rh850_fpsimd=none -nomacro -patch_dbo=C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS\output\obj\r_enc.dbo -source=r_enc.c -o output\obj\gh_000aen81.o -list=output\list\r_enc.lst C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s 
+Original File: C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+Source File: r_enc.c
+Directory: C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+Host OS: Windows 7 Service Pack 1
+EASE: Copyright (C) 1983-2015 Green Hills Software.  All Rights Reserved.
+Release: Compiler v2015.1.7
+Build Directory: [Directory] BTOWORKER6:c:/build_2015_1_bto/2015-10-21.2100-2015_1_bto/win32-comp-ecom
+Revision: [VCInfo] http://toolsvc/branches/release-branch-70-bto/src@544153 (built by build)
+Revision Date: Thu Oct 22 01:50:13 2015
+
+Release Date: Thu Oct 22 03:32:32 2015
+
+                           1 --Driver Command: ccv850 -c -MD -I..\..\device
+                           2 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\test5
+                           3 --		-IC:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\source\subprojtest
+                           4 --		-G -object_dir=output\obj -list -list_dir=output/list -passsource
+                           5 --		-bsp generic -fsoft -cpu=rh850g3k -D__GHS__ -dwarf2 -large_sda
+                           6 --		-sda -filetype.c ..\..\source\peripherals\enc\r_enc.c -o
+                           7 --		output\obj\r_enc.o
+                           8 --Source File:   ..\..\source\peripherals\enc\r_enc.c
+                           9 --Directory:     
+                          10 --		C:\Users\nikhil.patil\Documents\renesas\RH850_F1L_sample\toolchain\GHS
+                          11 --Compile Date:  Thu Jan 18 08:13:38 2018
+                          12 --Host OS:       Win32
+                          13 --Version:       C-RH850 2015.1.7 RELEASE VERSION
+                          14 --Release:       Compiler v2015.1.7
+                          15 --Revision Date: Thu Oct 22 02:06:12 2015
+                          16 --Release Date:  Thu Oct 22 03:34:32 2015
+                          17 -- ecom  -g -w
+                          18 
+                          19 --1: /*===========================================================================*/
+                          20 --2: /* Project:  F1x StarterKit V3 Sample Software                               */
+                          21 --3: /* Module :  r_enc.c                                                         */
+                          22 --4: /* Version:  V1.00                                                           */
+                          23 --5: /*===========================================================================*/
+                          24 --6: /*                                  COPYRIGHT                                */
+                          25 --7: /*===========================================================================*/
+                          26 --8: /* Copyright (c) 2016 by Renesas Electronics Europe GmbH,                    */
+                          27 --9: /*               a company of the Renesas Electronics Corporation            */
+                          28 --10: /*===========================================================================*/
+                          29 --11: /* In case of any question please do not hesitate to contact:                */
+                          30 --12: /*                                                                           */
+                          31 --13: /*        ABG Software Tool Support                                          */
+                          32 --14: /*                                                                           */
+                          33 --15: /*        Renesas Electronics Europe GmbH                                    */
+                          34 --16: /*        Arcadiastrasse 10                                                  */
+                          35 --17: /*        D-40472 Duesseldorf, Germany                                       */
+                          36 --18: /*                                                                           */
+                          37 --19: /*        e-mail: software_support-eu@lm.renesas.com                         */
+                          38 --20: /*        FAX:   +49 - (0)211 / 65 03 - 11 31                                */
+                          39 --21: /*                                                                           */
+                          40 --22: /*===========================================================================*/
+                          41 --23: /* Warranty Disclaimer                                                       */
+                          42 --24: /*                                                                           */
+                          43 --25: /* Because the Product(s) is licensed free of charge, there is no warranty   */
+                          44 --26: /* of any kind whatsoever and expressly disclaimed and excluded by Renesas,  */
+                          45 --27: /* either expressed or implied, including but not limited to those for       */
+                          46 --28: /* non-infringement of intellectual property, merchantability and/or         */
+                          47 --29: /* fitness for the particular purpose.                                       */
+                          48 --30: /* Renesas shall not have any obligation to maintain, service or provide bug */
+                          49 --31: /* fixes for the supplied Product(s) and/or the Application.                 */
+                          50 --32: /*                                                                           */
+
+                                                                      Page 2
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                          51 --33: /* Each User is solely responsible for determining the appropriateness of    */
+                          52 --34: /* using the Product(s) and assumes all risks associated with its exercise   */
+                          53 --35: /* of rights under this Agreement, including, but not limited to the risks   */
+                          54 --36: /* and costs of program errors, compliance with applicable laws, damage to   */
+                          55 --37: /* or loss of data, programs or equipment, and unavailability or             */
+                          56 --38: /* interruption of operations.                                               */
+                          57 --39: /*                                                                           */
+                          58 --40: /* Limitation of Liability                                                   */
+                          59 --41: /*                                                                           */
+                          60 --42: /* In no event shall Renesas be liable to the User for any incidental,       */
+                          61 --43: /* consequential, indirect, or punitive damage (including but not limited    */
+                          62 --44: /* to lost profits) regardless of whether such liability is based on breach  */
+                          63 --45: /* of contract, tort, strict liability, breach of warranties, failure of     */
+                          64 --46: /* essential purpose or otherwise and even if advised of the possibility of  */
+                          65 --47: /* such damages. Renesas shall not be liable for any services or products    */
+                          66 --48: /* provided by third party vendors, developers or consultants identified or  */
+                          67 --49: /* referred to the User by Renesas in connection with the Product(s) and/or  */
+                          68 --50: /* the Application.                                                          */
+                          69 --51: /*                                                                           */
+                          70 --52: /*===========================================================================*/
+                          71 --53: /*                                                                           */
+                          72 --54: /* Source code for the Encoder timer functions.                              */
+                          73 --55: /*                                                                           */
+                          74 --56: /*===========================================================================*/
+                          75 --58: /*===========================================================================*/
+                          76 --59: /* Includes */
+                          77 --60: /*===========================================================================*/
+                          78 --61: #include "r_device.h"
+                          79 --62: #include "r_enc.h"
+                          80 --64: /*===========================================================================*/
+                          81 --65: /* Functions */
+                          82 --66: /*===========================================================================*/
+                          83 --67: /******************************************************************************
+                          84 --68: ** Function:    R_ENCA0_Init
+                          85 --69: ** Description: Initializes the ENCA encoder module.
+                          86 --70: ** Parameter:   None            
+                          87 --71: ** Return:      None
+                          88 --72: ******************************************************************************/
+                          89 --73: void R_ENCA0_Init(void)
+                          90 	.text
+                          91 ..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_enc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0::
+                          92 	.align	2
+                          93 	.global	_R_ENCA0_Init
+                          94 _R_ENCA0_Init:
+                          95 --	    .bf
+                          96 .LDW01:
+                          97 --74: {
+                          98 --75:   DNFAENCA0IEN = 0x1f;   /* Noise Filter */
+00000000 200e1f00         99 	movea	31,zero,r1
+00000004 a0074d0e0086    100 	st.h	r1,4290969700[zero]
+                         101 --76:   ENCA0CTL  = 0x02;      /* Rising edge - up-count, falling edge - down-count */
+0000000a 020a            102 	mov	2,r1
+0000000c a0070d0c00d0    103 	st.h	r1,4293394496[zero]
+                         104 --77: }
+                         105 --	    .ef
+                         106 .LDW11:
+00000012 7f00            107 	jmp	[lp]
+                         108 	.global	___ghs_eofn_R_ENCA0_Init
+                         109 ___ghs_eofn_R_ENCA0_Init:
+                         110 	.type	_R_ENCA0_Init,@function
+                         111 	.size	_R_ENCA0_Init,.-_R_ENCA0_Init
+
+                                                                      Page 3
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                         112 	.align	2
+                         113 
+                         114 	.section ".bss","awb"
+                         115 .L38:
+                         116 	.type	.L38,@object
+                         117 	.size	.L38,0
+                         118 	.data
+                         119 	.text
+                         120 
+                         121 
+                         122 --79: /******************************************************************************
+                         123 --80: ** Function:    R_ENCA0_Start
+                         124 --81: ** Description: Starts the ENCA0 operation.
+                         125 --82: ** Parameter:   None
+                         126 --83: ** Return:      None
+                         127 --84: ******************************************************************************/
+                         128 --85: void R_ENCA0_Start(void)
+                         129 	.align	2
+                         130 	.align	2
+                         131 	.global	_R_ENCA0_Start
+                         132 _R_ENCA0_Start:
+                         133 --	    .bf
+                         134 .LDW21:
+                         135 --86: {
+                         136 --87:    ENCA0TS = 0x01;
+00000014 010a            137 	mov	1,r1
+00000016 80078d0900d0    138 	st.b	r1,4293394456[zero]
+                         139 --88: }  
+                         140 --	    .ef
+                         141 .LDW31:
+0000001c 7f00            142 	jmp	[lp]
+                         143 	.global	___ghs_eofn_R_ENCA0_Start
+                         144 ___ghs_eofn_R_ENCA0_Start:
+                         145 	.type	_R_ENCA0_Start,@function
+                         146 	.size	_R_ENCA0_Start,.-_R_ENCA0_Start
+                         147 	.align	2
+                         148 
+                         149 	.section ".bss","awb"
+                         150 .L82:
+                         151 	.type	.L82,@object
+                         152 	.size	.L82,0
+                         153 	.data
+                         154 	.text
+                         155 
+                         156 
+                         157 --90: /******************************************************************************
+                         158 --91: ** Function:    R_ENCA0_Stop
+                         159 --92: ** Description: Stops the ENCA0 operation.
+                         160 --93: ** Parameter:   None
+                         161 --94: ** Return:      None
+                         162 --95: ******************************************************************************/
+                         163 --96: void R_ENCA0_Stop(void)
+                         164 	.align	2
+                         165 	.align	2
+                         166 	.global	_R_ENCA0_Stop
+                         167 _R_ENCA0_Stop:
+                         168 --	    .bf
+                         169 .LDW41:
+                         170 --97: {
+                         171 --98:    ENCA0TT = 0x01;  
+0000001e 010a            172 	mov	1,r1
+
+                                                                      Page 4
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000020 8007cd0900d0    173 	st.b	r1,4293394460[zero]
+                         174 --99: }
+                         175 --	    .ef
+                         176 .LDW51:
+00000026 7f00            177 	jmp	[lp]
+                         178 	.global	___ghs_eofn_R_ENCA0_Stop
+                         179 ___ghs_eofn_R_ENCA0_Stop:
+                         180 	.type	_R_ENCA0_Stop,@function
+                         181 	.size	_R_ENCA0_Stop,.-_R_ENCA0_Stop
+                         182 	.align	2
+                         183 
+                         184 	.section ".bss","awb"
+                         185 .L130:
+                         186 	.type	.L130,@object
+                         187 	.size	.L130,0
+                         188 	.data
+                         189 	.text
+                         190 
+                         191 
+                         192 --101: /******************************************************************************
+                         193 --102: ** Function:    R_ENCA0_Read
+                         194 --103: ** Description: Returns the value of the ENCA0 count register.
+                         195 --104: ** Parameter:   None
+                         196 --105: ** Return:      ENCA0CNT
+                         197 --106: ******************************************************************************/
+                         198 --107: uint16_t R_ENCA0_Read(void)
+                         199 	.align	2
+                         200 	.align	2
+                         201 	.global	_R_ENCA0_Read
+                         202 _R_ENCA0_Read:
+                         203 --	    .bf
+                         204 .LDW61:
+                         205 --108: {
+                         206 --109:     return ENCA0CNT;
+00000028 a007875000d0    207 	ld.hu	4293394440[zero],r10
+                         208 --	    .ef
+                         209 .LDW71:
+0000002e 7f00            210 	jmp	[lp]
+                         211 	.global	___ghs_eofn_R_ENCA0_Read
+                         212 ___ghs_eofn_R_ENCA0_Read:
+                         213 	.type	_R_ENCA0_Read,@function
+                         214 	.size	_R_ENCA0_Read,.-_R_ENCA0_Read
+                         215 	.align	2
+                         216 
+                         217 	.section ".bss","awb"
+                         218 .L174:
+                         219 	.type	.L174,@object
+                         220 	.size	.L174,0
+                         221 	.data
+                         222 	.text
+                         223 
+                         224 --110: }
+                         225 
+                         226 --112: /******************************************************************************
+                         227 --113: ** Function:    R_ENCA0_GetFlags
+                         228 --114: ** Description: Returns the ENCA0 flags such as count direction.
+                         229 --115: ** Parameter:   None
+                         230 --116: ** Return:      ENCA0FLG
+                         231 --117: ******************************************************************************/
+                         232 --118: uint8_t R_ENCA0_GetFlags(void)
+                         233 	.align	2
+
+                                                                      Page 5
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                         234 	.align	2
+                         235 	.global	_R_ENCA0_GetFlags
+                         236 _R_ENCA0_GetFlags:
+                         237 --	    .bf
+                         238 .LDW81:
+                         239 --119: {
+                         240 --120:     return ENCA0FLG;
+00000030 a007c55000d0    241 	ld.bu	4293394444[zero],r10
+                         242 --	    .ef
+                         243 .LDW91:
+00000036 7f00            244 	jmp	[lp]
+                         245 	.global	___ghs_eofn_R_ENCA0_GetFlags
+                         246 ___ghs_eofn_R_ENCA0_GetFlags:
+                         247 	.type	_R_ENCA0_GetFlags,@function
+                         248 	.size	_R_ENCA0_GetFlags,.-_R_ENCA0_GetFlags
+                         249 	.align	2
+                         250 
+                         251 	.section ".bss","awb"
+                         252 .L206:
+                         253 	.type	.L206,@object
+                         254 	.size	.L206,0
+                         255 	.data
+                         256 	.text
+                         257 
+                         258 --121: }
+                         259 	.align	2
+                         260 
+                         261 	.data
+                         262 	.ghsnote version,17
+                         263 	.ghsnote tools,3
+                         264 	.ghsnote options,144
+                         265 	.text
+                         266 	.align	2
+                         267 ..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_enc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0::
+                         268 	.section	.debug_info
+                         269 .Ldw_begin:
+00000000 ad040000        270 	.word	.Ldw_end-.Ldw_begin-4
+00000004 0200            271 	.byte	2,0
+00000006 00000000*       272 	.word	.Ldw_abbr_begin
+0000000a 04              273 	.byte	4
+                         274 	.section	.debug_abbrev
+                         275 .Ldw_abbr_begin:
+                         276 	.section	.debug_info
+0000000b 01              277 	.byte	1
+0000000c 00000000*       278 	.word	..bof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_enc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0
+00000010 00000000*       279 	.word	..eof.C.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS.5Coutput.5Cobj.5Cr_enc...43.3A.5CUsers.5Cnikhil.2Epatil.5CDocuments.5Crenesas.5CRH850_F1L_sample.5Ctoolchain.5CGHS..5A609D82..0
+00000014 2e2e5c2e2e5c    280 	.strz	"..\\..\\source\\peripherals\\enc\\r_enc.c"
+0000001a 736f75726365 
+00000020 5c7065726970 
+00000026 686572616c73 
+0000002c 5c656e635c72 
+00000032 5f656e632e63 
+00000038 00 
+00000039 433a5c557365    281 	.strz	"C:\\Users\\nikhil.patil\\Documents\\renesas\\RH850_F1L_sample\\toolchain\\GHS"
+0000003f 72735c6e696b 
+00000045 68696c2e7061 
+0000004b 74696c5c446f 
+00000051 63756d656e74 
+00000057 735c72656e65 
+0000005d 7361735c5248 
+00000063 3835305f4631 
+
+                                                                      Page 6
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000069 4c5f73616d70 
+0000006f 6c655c746f6f 
+00000075 6c636861696e 
+0000007b 5c47485300 
+00000080 474853204320    282 	.strz	"GHS C 2015.1.7 [dual]"
+00000086 323031352e31 
+0000008c 2e37205b6475 
+00000092 616c5d00 
+00000096 0100            283 	.byte	1,0
+00000098 00000000*       284 	.word	.Ldw_line_begin
+0000009c 00000000*       285 	.word	.Ldw_macinfo_begin
+000000a0 00              286 	.byte	0
+                         287 
+                         288 	.section	.debug_abbrev
+00000000 01              289 	.byte	1
+00000001 11              290 	.byte	17
+00000002 01              291 	.byte	1
+00000003 1101            292 	.byte	17,1
+00000005 1201            293 	.byte	18,1
+00000007 0308            294 	.byte	3,8
+00000009 1b08            295 	.byte	27,8
+0000000b 2508            296 	.byte	37,8
+0000000d 1305            297 	.byte	19,5
+0000000f 1006            298 	.byte	16,6
+00000011 4306            299 	.byte	67,6
+00000013 420b            300 	.byte	66,11
+00000015 0000            301 	.byte	0,0
+                         302 
+                         303 	.section	.debug_line
+                         304 .Ldw_line_begin:
+00000000 8c010000        305 	.word	.Ldw_line_end-.Ldw_line_begin-4
+00000004 0200            306 	.byte	2,0
+00000006 00000000*       307 	.word	.Ldw_lpro_end-.Ldw_lpro_begin
+                         308 .Ldw_lpro_begin:
+0000000a 01              309 	.byte	1
+0000000b 00              310 	.byte	0
+0000000c 00              311 	.byte	0
+0000000d 04              312 	.byte	4
+0000000e 0a              313 	.byte	10
+0000000f 000101          314 	.byte	0,1,1
+00000012 010100          315 	.byte	1,1,0
+00000015 000001          316 	.byte	0,0,1
+00000018 00              317 	.byte	0
+00000019 2e2e5c2e2e5c    318 	.strz	"..\\..\\source\\peripherals\\enc\\r_enc.c"
+0000001f 736f75726365 
+00000025 5c7065726970 
+0000002b 686572616c73 
+00000031 5c656e635c72 
+00000037 5f656e632e63 
+0000003d 00 
+0000003e 000000          319 	.byte	0,0,0
+00000041 2e2e5c2e2e5c    320 	.strz	"..\\..\\device\\r_device.h"
+00000047 646576696365 
+0000004d 5c725f646576 
+00000053 6963652e6800 
+00000059 000000          321 	.byte	0,0,0
+0000005c 2e2e5c2e2e5c    322 	.strz	"..\\..\\device\\dr7f701057.dvf.h"
+00000062 646576696365 
+00000068 5c6472376637 
+0000006e 30313035372e 
+00000074 6476662e6800 
+
+                                                                      Page 7
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000007a 000000          323 	.byte	0,0,0
+0000007d 2e2e5c2e2e5c    324 	.strz	"..\\..\\device\\icu_feret.h"
+00000083 646576696365 
+00000089 5c6963755f66 
+0000008f 657265742e68 
+00000095 00 
+00000096 000000          325 	.byte	0,0,0
+00000099 2e2e5c2e2e5c    326 	.strz	"..\\..\\device\\cpu.h"
+0000009f 646576696365 
+000000a5 5c6370752e68 
+000000ab 00 
+000000ac 000000          327 	.byte	0,0,0
+000000af 433a5c676873    328 	.strz	"C:\\ghs\\comp_201517\\ansi\\..\\include\\v800\\v800_ghs.h"
+000000b5 5c636f6d705f 
+000000bb 323031353137 
+000000c1 5c616e73695c 
+000000c7 2e2e5c696e63 
+000000cd 6c7564655c76 
+000000d3 3830305c7638 
+000000d9 30305f676873 
+000000df 2e6800 
+000000e2 000000          329 	.byte	0,0,0
+000000e5 2e2e5c2e2e5c    330 	.strz	"..\\..\\device\\r_typedefs.h"
+000000eb 646576696365 
+000000f1 5c725f747970 
+000000f7 65646566732e 
+000000fd 6800 
+000000ff 000000          331 	.byte	0,0,0
+00000102 2e2e5c2e2e5c    332 	.strz	"..\\..\\source\\peripherals\\enc\\r_enc.h"
+00000108 736f75726365 
+0000010e 5c7065726970 
+00000114 686572616c73 
+0000011a 5c656e635c72 
+00000120 5f656e632e68 
+00000126 00 
+00000127 000000          333 	.byte	0,0,0
+0000012a 00              334 	.byte	0
+                         335 .Ldw_lpro_end:
+                         336 	.section	.debug_macinfo
+                         337 .Ldw_macinfo_begin:
+                         338 	.section	.debug_frame
+                         339 .LDW_4a42510:
+00000000 00000000*       340 	.word	.LDW_unq_2-.LDW_unq_1
+                         341 .LDW_unq_1:
+00000004 ffffffff        342 	.byte	255,255,255,255
+00000008 01              343 	.byte	1
+00000009 00              344 	.byte	0
+0000000a 01              345 	.byte	1
+0000000b 01              346 	.byte	1
+0000000c 1f              347 	.byte	31
+0000000d 0c              348 	.byte	12
+0000000e 03              349 	.byte	3
+0000000f 00              350 	.byte	0
+00000010 07              351 	.byte	7
+00000011 00              352 	.byte	0
+00000012 07              353 	.byte	7
+00000013 01              354 	.byte	1
+00000014 07              355 	.byte	7
+00000015 02              356 	.byte	2
+00000016 07              357 	.byte	7
+00000017 03              358 	.byte	3
+
+                                                                      Page 8
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000018 07              359 	.byte	7
+00000019 04              360 	.byte	4
+0000001a 07              361 	.byte	7
+0000001b 05              362 	.byte	5
+0000001c 07              363 	.byte	7
+0000001d 06              364 	.byte	6
+0000001e 07              365 	.byte	7
+0000001f 07              366 	.byte	7
+00000020 07              367 	.byte	7
+00000021 08              368 	.byte	8
+00000022 07              369 	.byte	7
+00000023 09              370 	.byte	9
+00000024 07              371 	.byte	7
+00000025 0a              372 	.byte	10
+00000026 07              373 	.byte	7
+00000027 0b              374 	.byte	11
+00000028 07              375 	.byte	7
+00000029 0c              376 	.byte	12
+0000002a 07              377 	.byte	7
+0000002b 0d              378 	.byte	13
+0000002c 07              379 	.byte	7
+0000002d 0e              380 	.byte	14
+0000002e 07              381 	.byte	7
+0000002f 0f              382 	.byte	15
+00000030 07              383 	.byte	7
+00000031 10              384 	.byte	16
+00000032 07              385 	.byte	7
+00000033 11              386 	.byte	17
+00000034 07              387 	.byte	7
+00000035 12              388 	.byte	18
+00000036 07              389 	.byte	7
+00000037 13              390 	.byte	19
+00000038 08              391 	.byte	8
+00000039 14              392 	.byte	20
+0000003a 08              393 	.byte	8
+0000003b 15              394 	.byte	21
+0000003c 08              395 	.byte	8
+0000003d 16              396 	.byte	22
+0000003e 08              397 	.byte	8
+0000003f 17              398 	.byte	23
+00000040 08              399 	.byte	8
+00000041 18              400 	.byte	24
+00000042 08              401 	.byte	8
+00000043 19              402 	.byte	25
+00000044 08              403 	.byte	8
+00000045 1a              404 	.byte	26
+00000046 08              405 	.byte	8
+00000047 1b              406 	.byte	27
+00000048 08              407 	.byte	8
+00000049 1c              408 	.byte	28
+0000004a 08              409 	.byte	8
+0000004b 1d              410 	.byte	29
+0000004c 07              411 	.byte	7
+0000004d 1e              412 	.byte	30
+0000004e 08              413 	.byte	8
+0000004f 1f              414 	.byte	31
+00000050 07              415 	.byte	7
+00000051 20              416 	.byte	32
+00000052 07              417 	.byte	7
+00000053 21              418 	.byte	33
+00000054 07              419 	.byte	7
+
+                                                                      Page 9
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000055 22              420 	.byte	34
+00000056 07              421 	.byte	7
+00000057 23              422 	.byte	35
+00000058 07              423 	.byte	7
+00000059 24              424 	.byte	36
+0000005a 07              425 	.byte	7
+0000005b 25              426 	.byte	37
+0000005c 07              427 	.byte	7
+0000005d 26              428 	.byte	38
+0000005e 07              429 	.byte	7
+0000005f 27              430 	.byte	39
+00000060 07              431 	.byte	7
+00000061 28              432 	.byte	40
+00000062 07              433 	.byte	7
+00000063 29              434 	.byte	41
+00000064 07              435 	.byte	7
+00000065 2a              436 	.byte	42
+00000066 07              437 	.byte	7
+00000067 2b              438 	.byte	43
+00000068 07              439 	.byte	7
+00000069 2c              440 	.byte	44
+0000006a 07              441 	.byte	7
+0000006b 2d              442 	.byte	45
+0000006c 07              443 	.byte	7
+0000006d 2e              444 	.byte	46
+0000006e 07              445 	.byte	7
+0000006f 2f              446 	.byte	47
+00000070 07              447 	.byte	7
+00000071 30              448 	.byte	48
+00000072 07              449 	.byte	7
+00000073 31              450 	.byte	49
+00000074 07              451 	.byte	7
+00000075 32              452 	.byte	50
+00000076 07              453 	.byte	7
+00000077 33              454 	.byte	51
+00000078 07              455 	.byte	7
+00000079 34              456 	.byte	52
+0000007a 07              457 	.byte	7
+0000007b 35              458 	.byte	53
+0000007c 07              459 	.byte	7
+0000007d 36              460 	.byte	54
+0000007e 07              461 	.byte	7
+0000007f 37              462 	.byte	55
+00000080 07              463 	.byte	7
+00000081 38              464 	.byte	56
+00000082 07              465 	.byte	7
+00000083 39              466 	.byte	57
+00000084 07              467 	.byte	7
+00000085 3a              468 	.byte	58
+00000086 07              469 	.byte	7
+00000087 3b              470 	.byte	59
+00000088 07              471 	.byte	7
+00000089 3c              472 	.byte	60
+0000008a 07              473 	.byte	7
+0000008b 3d              474 	.byte	61
+0000008c 07              475 	.byte	7
+0000008d 3e              476 	.byte	62
+0000008e 07              477 	.byte	7
+0000008f 3f              478 	.byte	63
+                         479 .LDW_unq_2:
+                         480 	.section	.debug_info
+
+                                                                      Page 10
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                         481 .LDW_4ac9d70:
+000000a1 45              482 	.byte	69
+000000a2 01              483 	.byte	1
+                         484 
+                         485 	.section	.debug_abbrev
+00000017 45              486 	.byte	69
+00000018 15              487 	.byte	21
+00000019 01              488 	.byte	1
+0000001a 270c            489 	.byte	39,12
+0000001c 0000            490 	.byte	0,0
+                         491 
+                         492 	.section	.debug_info
+000000a3 00              493 	.byte	0
+                         494 
+                         495 .LDW_4ac9da8:
+000000a4 45              496 	.byte	69
+000000a5 01              497 	.byte	1
+                         498 
+000000a6 00              499 	.byte	0
+                         500 
+                         501 .LDW_4ac9de0:
+000000a7 45              502 	.byte	69
+000000a8 01              503 	.byte	1
+                         504 
+000000a9 00              505 	.byte	0
+                         506 
+                         507 .LDW_4ac9e18:
+000000aa 25              508 	.byte	37
+000000ab 756e7369676e    509 	.strz	"unsigned short"
+000000b1 65642073686f 
+000000b7 727400 
+000000ba 07              510 	.byte	7
+000000bb 02              511 	.byte	2
+                         512 
+                         513 	.section	.debug_abbrev
+0000001e 25              514 	.byte	37
+0000001f 24              515 	.byte	36
+00000020 00              516 	.byte	0
+00000021 0308            517 	.byte	3,8
+00000023 3e0b            518 	.byte	62,11
+00000025 0b0b            519 	.byte	11,11
+00000027 0000            520 	.byte	0,0
+                         521 
+                         522 	.section	.debug_info
+                         523 .LDW_4ac9e50:
+000000bc 44              524 	.byte	68
+000000bd 00000000*       525 	.word	.LDW_4a93d90
+000000c1 01              526 	.byte	1
+                         527 
+                         528 	.section	.debug_abbrev
+00000029 44              529 	.byte	68
+0000002a 15              530 	.byte	21
+0000002b 01              531 	.byte	1
+0000002c 4910            532 	.byte	73,16
+0000002e 270c            533 	.byte	39,12
+00000030 0000            534 	.byte	0,0
+                         535 
+                         536 	.section	.debug_info
+000000c2 00              537 	.byte	0
+                         538 
+                         539 .LDW_4ac9e88:
+
+                                                                      Page 11
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000000c3 25              540 	.byte	37
+000000c4 756e7369676e    541 	.strz	"unsigned char"
+000000ca 656420636861 
+000000d0 7200 
+000000d2 08              542 	.byte	8
+000000d3 01              543 	.byte	1
+                         544 
+                         545 .LDW_4ac9ec0:
+000000d4 44              546 	.byte	68
+000000d5 00000000*       547 	.word	.LDW_4a93de8
+000000d9 01              548 	.byte	1
+                         549 
+000000da 00              550 	.byte	0
+                         551 
+                         552 .LDW_4a94310:
+000000db 29              553 	.byte	41
+000000dc 00000000*       554 	.word	.LDW_4a93e40
+                         555 
+                         556 	.section	.debug_abbrev
+00000032 29              557 	.byte	41
+00000033 26              558 	.byte	38
+00000034 00              559 	.byte	0
+00000035 4910            560 	.byte	73,16
+00000037 0000            561 	.byte	0,0
+                         562 
+                         563 	.section	.debug_info
+                         564 .LDW_4ac9ef8:
+000000e0 25              565 	.byte	37
+000000e1 696e7400        566 	.strz	"int"
+000000e5 05              567 	.byte	5
+000000e6 04              568 	.byte	4
+                         569 
+                         570 .LDW_4b08d88:
+000000e7 3a              571 	.byte	58
+000000e8 00              572 	.byte	0
+000000e9 02              573 	.byte	2
+000000ea 00000000*       574 	.word	.LDW_4a93e40
+                         575 
+                         576 	.section	.debug_abbrev
+00000039 3a              577 	.byte	58
+0000003a 01              578 	.byte	1
+0000003b 01              579 	.byte	1
+0000003c 090b            580 	.byte	9,11
+0000003e 0b0f            581 	.byte	11,15
+00000040 4910            582 	.byte	73,16
+00000042 0000            583 	.byte	0,0
+                         584 
+                         585 	.section	.debug_info
+000000ee 32              586 	.byte	50
+000000ef 00000000*       587 	.word	.LDW_4ac9ef8
+000000f3 04              588 	.byte	4
+000000f4 00              589 	.byte	0
+000000f5 01              590 	.byte	1
+                         591 
+                         592 	.section	.debug_abbrev
+00000044 32              593 	.byte	50
+00000045 21              594 	.byte	33
+00000046 00              595 	.byte	0
+00000047 4910            596 	.byte	73,16
+00000049 0b0f            597 	.byte	11,15
+0000004b 220d            598 	.byte	34,13
+
+                                                                      Page 12
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000004d 2f0d            599 	.byte	47,13
+0000004f 0000            600 	.byte	0,0
+                         601 
+                         602 	.section	.debug_info
+000000f6 00              603 	.byte	0
+                         604 
+                         605 .LDW_4b08e10:
+000000f7 3a              606 	.byte	58
+000000f8 00              607 	.byte	0
+000000f9 02              608 	.byte	2
+000000fa 00000000*       609 	.word	.LDW_4a93e40
+                         610 
+000000fe 32              611 	.byte	50
+000000ff 00000000*       612 	.word	.LDW_4ac9ef8
+00000103 04              613 	.byte	4
+00000104 00              614 	.byte	0
+00000105 01              615 	.byte	1
+                         616 
+00000106 00              617 	.byte	0
+                         618 
+                         619 .LDW_4b08e98:
+00000107 3a              620 	.byte	58
+00000108 00              621 	.byte	0
+00000109 02              622 	.byte	2
+0000010a 00000000*       623 	.word	.LDW_4a93e40
+                         624 
+0000010e 32              625 	.byte	50
+0000010f 00000000*       626 	.word	.LDW_4ac9ef8
+00000113 04              627 	.byte	4
+00000114 00              628 	.byte	0
+00000115 01              629 	.byte	1
+                         630 
+00000116 00              631 	.byte	0
+                         632 
+                         633 .LDW_4b0cf40:
+00000117 3a              634 	.byte	58
+00000118 00              635 	.byte	0
+00000119 03              636 	.byte	3
+0000011a 00000000*       637 	.word	.LDW_4a93e40
+                         638 
+0000011e 32              639 	.byte	50
+0000011f 00000000*       640 	.word	.LDW_4ac9ef8
+00000123 04              641 	.byte	4
+00000124 00              642 	.byte	0
+00000125 02              643 	.byte	2
+                         644 
+00000126 00              645 	.byte	0
+                         646 
+                         647 .LDW_4b0cfc8:
+00000127 3a              648 	.byte	58
+00000128 00              649 	.byte	0
+00000129 03              650 	.byte	3
+0000012a 00000000*       651 	.word	.LDW_4a93e40
+                         652 
+0000012e 32              653 	.byte	50
+0000012f 00000000*       654 	.word	.LDW_4ac9ef8
+00000133 04              655 	.byte	4
+00000134 00              656 	.byte	0
+00000135 02              657 	.byte	2
+                         658 
+00000136 00              659 	.byte	0
+
+                                                                      Page 13
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                         660 
+                         661 .LDW_4b0d050:
+00000137 3a              662 	.byte	58
+00000138 00              663 	.byte	0
+00000139 03              664 	.byte	3
+0000013a 00000000*       665 	.word	.LDW_4a93e40
+                         666 
+0000013e 32              667 	.byte	50
+0000013f 00000000*       668 	.word	.LDW_4ac9ef8
+00000143 04              669 	.byte	4
+00000144 00              670 	.byte	0
+00000145 02              671 	.byte	2
+                         672 
+00000146 00              673 	.byte	0
+                         674 
+                         675 .LDW_4b0d0d8:
+00000147 3a              676 	.byte	58
+00000148 00              677 	.byte	0
+00000149 03              678 	.byte	3
+0000014a 00000000*       679 	.word	.LDW_4a93e40
+                         680 
+0000014e 32              681 	.byte	50
+0000014f 00000000*       682 	.word	.LDW_4ac9ef8
+00000153 04              683 	.byte	4
+00000154 00              684 	.byte	0
+00000155 02              685 	.byte	2
+                         686 
+00000156 00              687 	.byte	0
+                         688 
+                         689 .LDW_4b0d160:
+00000157 3a              690 	.byte	58
+00000158 00              691 	.byte	0
+00000159 03              692 	.byte	3
+0000015a 00000000*       693 	.word	.LDW_4a93e40
+                         694 
+0000015e 32              695 	.byte	50
+0000015f 00000000*       696 	.word	.LDW_4ac9ef8
+00000163 04              697 	.byte	4
+00000164 00              698 	.byte	0
+00000165 02              699 	.byte	2
+                         700 
+00000166 00              701 	.byte	0
+                         702 
+                         703 .LDW_4b0d1e8:
+00000167 3a              704 	.byte	58
+00000168 00              705 	.byte	0
+00000169 1f              706 	.byte	31
+0000016a 00000000*       707 	.word	.LDW_4a93e40
+                         708 
+0000016e 32              709 	.byte	50
+0000016f 00000000*       710 	.word	.LDW_4ac9ef8
+00000173 04              711 	.byte	4
+00000174 00              712 	.byte	0
+00000175 1e              713 	.byte	30
+                         714 
+00000176 00              715 	.byte	0
+                         716 
+                         717 .LDW_4b0d270:
+00000177 3a              718 	.byte	58
+00000178 00              719 	.byte	0
+00000179 02              720 	.byte	2
+
+                                                                      Page 14
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000017a 00000000*       721 	.word	.LDW_4a93e40
+                         722 
+0000017e 32              723 	.byte	50
+0000017f 00000000*       724 	.word	.LDW_4ac9ef8
+00000183 04              725 	.byte	4
+00000184 00              726 	.byte	0
+00000185 01              727 	.byte	1
+                         728 
+00000186 00              729 	.byte	0
+                         730 
+                         731 .LDW_4b0d2f8:
+00000187 3a              732 	.byte	58
+00000188 00              733 	.byte	0
+00000189 03              734 	.byte	3
+0000018a 00000000*       735 	.word	.LDW_4a93e40
+                         736 
+0000018e 32              737 	.byte	50
+0000018f 00000000*       738 	.word	.LDW_4ac9ef8
+00000193 04              739 	.byte	4
+00000194 00              740 	.byte	0
+00000195 02              741 	.byte	2
+                         742 
+00000196 00              743 	.byte	0
+                         744 
+                         745 .LDW_4a93e40:
+00000197 28              746 	.byte	40
+00000198 75696e743800    747 	.strz	"uint8"
+0000019e 29              748 	.byte	41
+0000019f 19              749 	.byte	25
+000001a0 03              750 	.byte	3
+000001a1 00000000*       751 	.word	.LDW_4ac9e88
+                         752 
+                         753 	.section	.debug_abbrev
+00000051 28              754 	.byte	40
+00000052 16              755 	.byte	22
+00000053 00              756 	.byte	0
+00000054 0308            757 	.byte	3,8
+00000056 3b0f            758 	.byte	59,15
+00000058 390f            759 	.byte	57,15
+0000005a 3a0f            760 	.byte	58,15
+0000005c 4910            761 	.byte	73,16
+0000005e 0000            762 	.byte	0,0
+                         763 
+                         764 	.section	.debug_info
+                         765 .LDW_4a93e98:
+000001a5 28              766 	.byte	40
+000001a6 75696e743136    767 	.strz	"uint16"
+000001ac 00 
+000001ad 2a              768 	.byte	42
+000001ae 19              769 	.byte	25
+000001af 03              770 	.byte	3
+000001b0 00000000*       771 	.word	.LDW_4ac9e18
+                         772 
+                         773 .LDW_4170dd8:
+000001b4 41              774 	.byte	65
+000001b5 9c15            775 	.byte	156,21
+000001b7 01              776 	.byte	1
+000001b8 03              777 	.byte	3
+000001b9 4a              778 	.byte	74
+000001ba 01              779 	.byte	1
+                         780 
+
+                                                                      Page 15
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                         781 	.section	.debug_abbrev
+00000060 41              782 	.byte	65
+00000061 13              783 	.byte	19
+00000062 01              784 	.byte	1
+00000063 3b0f            785 	.byte	59,15
+00000065 390f            786 	.byte	57,15
+00000067 3a0f            787 	.byte	58,15
+00000069 0b0f            788 	.byte	11,15
+0000006b 320b            789 	.byte	50,11
+0000006d 0000            790 	.byte	0,0
+                         791 
+                         792 	.section	.debug_info
+                         793 .LDW_4b06ed0:
+000001bb 23              794 	.byte	35
+000001bc 4343523000      795 	.strz	"CCR0"
+000001c1 9d15            796 	.byte	157,21
+000001c3 0c              797 	.byte	12
+000001c4 03              798 	.byte	3
+000001c5 00000000*       799 	.word	.LDW_4a93e98
+000001c9 0223            800 	.byte	2,35
+000001cb 00              801 	.byte	0
+000001cc 01              802 	.byte	1
+                         803 
+                         804 	.section	.debug_abbrev
+0000006f 23              805 	.byte	35
+00000070 0d              806 	.byte	13
+00000071 00              807 	.byte	0
+00000072 0308            808 	.byte	3,8
+00000074 3b0f            809 	.byte	59,15
+00000076 390f            810 	.byte	57,15
+00000078 3a0f            811 	.byte	58,15
+0000007a 4910            812 	.byte	73,16
+0000007c 380a            813 	.byte	56,10
+0000007e 320b            814 	.byte	50,11
+00000080 0000            815 	.byte	0,0
+                         816 
+                         817 	.section	.debug_info
+                         818 .LDW_4b08f40:
+000001cd 23              819 	.byte	35
+000001ce 64756d6d7934    820 	.strz	"dummy425"
+000001d4 323500 
+000001d7 9e15            821 	.byte	158,21
+000001d9 0c              822 	.byte	12
+000001da 03              823 	.byte	3
+000001db 00000000*       824 	.word	.LDW_4b08d88
+000001df 0223            825 	.byte	2,35
+000001e1 02              826 	.byte	2
+000001e2 01              827 	.byte	1
+                         828 
+                         829 .LDW_4b08f88:
+000001e3 23              830 	.byte	35
+000001e4 4343523100      831 	.strz	"CCR1"
+000001e9 9f15            832 	.byte	159,21
+000001eb 0c              833 	.byte	12
+000001ec 03              834 	.byte	3
+000001ed 00000000*       835 	.word	.LDW_4a93e98
+000001f1 0223            836 	.byte	2,35
+000001f3 04              837 	.byte	4
+000001f4 01              838 	.byte	1
+                         839 
+                         840 .LDW_4b08fd0:
+
+                                                                      Page 16
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000001f5 23              841 	.byte	35
+000001f6 64756d6d7934    842 	.strz	"dummy426"
+000001fc 323600 
+000001ff a015            843 	.byte	160,21
+00000201 0c              844 	.byte	12
+00000202 03              845 	.byte	3
+00000203 00000000*       846 	.word	.LDW_4b08e10
+00000207 0223            847 	.byte	2,35
+00000209 06              848 	.byte	6
+0000020a 01              849 	.byte	1
+                         850 
+                         851 .LDW_4b09018:
+0000020b 23              852 	.byte	35
+0000020c 434e5400        853 	.strz	"CNT"
+00000210 a115            854 	.byte	161,21
+00000212 0c              855 	.byte	12
+00000213 03              856 	.byte	3
+00000214 00000000*       857 	.word	.LDW_4a93e98
+00000218 0223            858 	.byte	2,35
+0000021a 08              859 	.byte	8
+0000021b 01              860 	.byte	1
+                         861 
+                         862 .LDW_4b09060:
+0000021c 23              863 	.byte	35
+0000021d 64756d6d7934    864 	.strz	"dummy427"
+00000223 323700 
+00000226 a215            865 	.byte	162,21
+00000228 0c              866 	.byte	12
+00000229 03              867 	.byte	3
+0000022a 00000000*       868 	.word	.LDW_4b08e98
+0000022e 0223            869 	.byte	2,35
+00000230 0a              870 	.byte	10
+00000231 01              871 	.byte	1
+                         872 
+                         873 .LDW_4b090a8:
+00000232 23              874 	.byte	35
+00000233 464c4700        875 	.strz	"FLG"
+00000237 a315            876 	.byte	163,21
+00000239 12              877 	.byte	18
+0000023a 03              878 	.byte	3
+0000023b 00000000*       879 	.word	.LDW_4a94310
+0000023f 0223            880 	.byte	2,35
+00000241 0c              881 	.byte	12
+00000242 01              882 	.byte	1
+                         883 
+                         884 .LDW_4b090f0:
+00000243 23              885 	.byte	35
+00000244 64756d6d7934    886 	.strz	"dummy428"
+0000024a 323800 
+0000024d a415            887 	.byte	164,21
+0000024f 0c              888 	.byte	12
+00000250 03              889 	.byte	3
+00000251 00000000*       890 	.word	.LDW_4b0cf40
+00000255 0223            891 	.byte	2,35
+00000257 0d              892 	.byte	13
+00000258 01              893 	.byte	1
+                         894 
+                         895 .LDW_4b09138:
+00000259 23              896 	.byte	35
+0000025a 46474300        897 	.strz	"FGC"
+0000025e a515            898 	.byte	165,21
+
+                                                                      Page 17
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000260 0c              899 	.byte	12
+00000261 03              900 	.byte	3
+00000262 00000000*       901 	.word	.LDW_4a93e40
+00000266 0223            902 	.byte	2,35
+00000268 10              903 	.byte	16
+00000269 01              904 	.byte	1
+                         905 
+                         906 .LDW_4b09180:
+0000026a 23              907 	.byte	35
+0000026b 64756d6d7934    908 	.strz	"dummy429"
+00000271 323900 
+00000274 a615            909 	.byte	166,21
+00000276 0c              910 	.byte	12
+00000277 03              911 	.byte	3
+00000278 00000000*       912 	.word	.LDW_4b0cfc8
+0000027c 0223            913 	.byte	2,35
+0000027e 11              914 	.byte	17
+0000027f 01              915 	.byte	1
+                         916 
+                         917 .LDW_4b091c8:
+00000280 23              918 	.byte	35
+00000281 544500          919 	.strz	"TE"
+00000284 a715            920 	.byte	167,21
+00000286 12              921 	.byte	18
+00000287 03              922 	.byte	3
+00000288 00000000*       923 	.word	.LDW_4a94310
+0000028c 0223            924 	.byte	2,35
+0000028e 14              925 	.byte	20
+0000028f 01              926 	.byte	1
+                         927 
+                         928 .LDW_4b09210:
+00000290 23              929 	.byte	35
+00000291 64756d6d7934    930 	.strz	"dummy430"
+00000297 333000 
+0000029a a815            931 	.byte	168,21
+0000029c 0c              932 	.byte	12
+0000029d 03              933 	.byte	3
+0000029e 00000000*       934 	.word	.LDW_4b0d050
+000002a2 0223            935 	.byte	2,35
+000002a4 15              936 	.byte	21
+000002a5 01              937 	.byte	1
+                         938 
+                         939 .LDW_4b09258:
+000002a6 23              940 	.byte	35
+000002a7 545300          941 	.strz	"TS"
+000002aa a915            942 	.byte	169,21
+000002ac 0c              943 	.byte	12
+000002ad 03              944 	.byte	3
+000002ae 00000000*       945 	.word	.LDW_4a93e40
+000002b2 0223            946 	.byte	2,35
+000002b4 18              947 	.byte	24
+000002b5 01              948 	.byte	1
+                         949 
+                         950 .LDW_4b092a0:
+000002b6 23              951 	.byte	35
+000002b7 64756d6d7934    952 	.strz	"dummy431"
+000002bd 333100 
+000002c0 aa15            953 	.byte	170,21
+000002c2 0c              954 	.byte	12
+000002c3 03              955 	.byte	3
+000002c4 00000000*       956 	.word	.LDW_4b0d0d8
+
+                                                                      Page 18
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000002c8 0223            957 	.byte	2,35
+000002ca 19              958 	.byte	25
+000002cb 01              959 	.byte	1
+                         960 
+                         961 .LDW_4b092e8:
+000002cc 23              962 	.byte	35
+000002cd 545400          963 	.strz	"TT"
+000002d0 ab15            964 	.byte	171,21
+000002d2 0c              965 	.byte	12
+000002d3 03              966 	.byte	3
+000002d4 00000000*       967 	.word	.LDW_4a93e40
+000002d8 0223            968 	.byte	2,35
+000002da 1c              969 	.byte	28
+000002db 01              970 	.byte	1
+                         971 
+                         972 .LDW_4b09330:
+000002dc 23              973 	.byte	35
+000002dd 64756d6d7934    974 	.strz	"dummy432"
+000002e3 333200 
+000002e6 ac15            975 	.byte	172,21
+000002e8 0c              976 	.byte	12
+000002e9 03              977 	.byte	3
+000002ea 00000000*       978 	.word	.LDW_4b0d160
+000002ee 0223            979 	.byte	2,35
+000002f0 1d              980 	.byte	29
+000002f1 01              981 	.byte	1
+                         982 
+                         983 .LDW_4b09378:
+000002f2 23              984 	.byte	35
+000002f3 494f433000      985 	.strz	"IOC0"
+000002f8 ad15            986 	.byte	173,21
+000002fa 0c              987 	.byte	12
+000002fb 03              988 	.byte	3
+000002fc 00000000*       989 	.word	.LDW_4a93e40
+00000300 0223            990 	.byte	2,35
+00000302 20              991 	.byte	32
+00000303 01              992 	.byte	1
+                         993 
+                         994 .LDW_4b093c0:
+00000304 23              995 	.byte	35
+00000305 64756d6d7934    996 	.strz	"dummy433"
+0000030b 333300 
+0000030e ae15            997 	.byte	174,21
+00000310 0c              998 	.byte	12
+00000311 03              999 	.byte	3
+00000312 00000000*      1000 	.word	.LDW_4b0d1e8
+00000316 0223           1001 	.byte	2,35
+00000318 21             1002 	.byte	33
+00000319 01             1003 	.byte	1
+                        1004 
+                        1005 .LDW_4b09408:
+0000031a 23             1006 	.byte	35
+0000031b 43544c00       1007 	.strz	"CTL"
+0000031f af15           1008 	.byte	175,21
+00000321 0c             1009 	.byte	12
+00000322 03             1010 	.byte	3
+00000323 00000000*      1011 	.word	.LDW_4a93e98
+00000327 0223           1012 	.byte	2,35
+00000329 40             1013 	.byte	64
+0000032a 01             1014 	.byte	1
+                        1015 
+
+                                                                      Page 19
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                        1016 .LDW_4b09450:
+0000032b 23             1017 	.byte	35
+0000032c 64756d6d7934   1018 	.strz	"dummy434"
+00000332 333400 
+00000335 b015           1019 	.byte	176,21
+00000337 0c             1020 	.byte	12
+00000338 03             1021 	.byte	3
+00000339 00000000*      1022 	.word	.LDW_4b0d270
+0000033d 0223           1023 	.byte	2,35
+0000033f 42             1024 	.byte	66
+00000340 01             1025 	.byte	1
+                        1026 
+                        1027 .LDW_4b09498:
+00000341 23             1028 	.byte	35
+00000342 494f433100     1029 	.strz	"IOC1"
+00000347 b115           1030 	.byte	177,21
+00000349 0c             1031 	.byte	12
+0000034a 03             1032 	.byte	3
+0000034b 00000000*      1033 	.word	.LDW_4a93e40
+0000034f 0223           1034 	.byte	2,35
+00000351 44             1035 	.byte	68
+00000352 01             1036 	.byte	1
+                        1037 
+                        1038 .LDW_4b094e0:
+00000353 23             1039 	.byte	35
+00000354 64756d6d7934   1040 	.strz	"dummy435"
+0000035a 333500 
+0000035d b215           1041 	.byte	178,21
+0000035f 0c             1042 	.byte	12
+00000360 03             1043 	.byte	3
+00000361 00000000*      1044 	.word	.LDW_4b0d2f8
+00000365 0223           1045 	.byte	2,35
+00000367 45             1046 	.byte	69
+00000368 01             1047 	.byte	1
+                        1048 
+                        1049 .LDW_4b09528:
+00000369 23             1050 	.byte	35
+0000036a 454d5500       1051 	.strz	"EMU"
+0000036e b315           1052 	.byte	179,21
+00000370 0c             1053 	.byte	12
+00000371 03             1054 	.byte	3
+00000372 00000000*      1055 	.word	.LDW_4a93e40
+00000376 0223           1056 	.byte	2,35
+00000378 48             1057 	.byte	72
+00000379 01             1058 	.byte	1
+                        1059 
+0000037a 00             1060 	.byte	0
+                        1061 
+                        1062 .LDW_4170e30:
+0000037b 28             1063 	.byte	40
+0000037c 5f5f74797065   1064 	.strz	"__type45"
+00000382 343500 
+00000385 b415           1065 	.byte	180,21
+00000387 03             1066 	.byte	3
+00000388 03             1067 	.byte	3
+00000389 00000000*      1068 	.word	.LDW_4170dd8
+                        1069 
+                        1070 .LDW_4a93de8:
+0000038d 28             1071 	.byte	40
+0000038e 75696e74385f   1072 	.strz	"uint8_t"
+00000394 7400 
+
+                                                                      Page 20
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000396 7b             1073 	.byte	123
+00000397 1c             1074 	.byte	28
+00000398 07             1075 	.byte	7
+00000399 00000000*      1076 	.word	.LDW_4ac9e88
+                        1077 
+                        1078 .LDW_4a93d90:
+0000039d 28             1079 	.byte	40
+0000039e 75696e743136   1080 	.strz	"uint16_t"
+000003a4 5f7400 
+000003a7 7c             1081 	.byte	124
+000003a8 1c             1082 	.byte	28
+000003a9 07             1083 	.byte	7
+000003aa 00000000*      1084 	.word	.LDW_4ac9e18
+                        1085 
+                        1086 .LDW_4ac8118:
+000003ae 13             1087 	.byte	19
+000003af 525f454e4341   1088 	.strz	"R_ENCA0_Init"
+000003b5 305f496e6974 
+000003bb 00 
+000003bc 49             1089 	.byte	73
+000003bd 06             1090 	.byte	6
+000003be 01             1091 	.byte	1
+000003bf 00000000*      1092 	.word	_R_ENCA0_Init
+000003c3 00000000*      1093 	.word	___ghs_eofn_R_ENCA0_Init
+000003c7 0153           1094 	.byte	1,83
+000003c9 02             1095 	.byte	2
+000003ca 00             1096 	.byte	0
+000003cb 02             1097 	.byte	2
+000003cc 00             1098 	.byte	0
+000003cd 00             1099 	.byte	0
+000003ce 00             1100 	.byte	0
+000003cf 00             1101 	.byte	0
+000003d0 01             1102 	.byte	1
+000003d1 01             1103 	.byte	1
+000003d2 00             1104 	.byte	0
+000003d3 01             1105 	.byte	1
+                        1106 
+                        1107 	.section	.debug_abbrev
+00000082 13             1108 	.byte	19
+00000083 2e             1109 	.byte	46
+00000084 01             1110 	.byte	1
+00000085 0308           1111 	.byte	3,8
+00000087 3b0f           1112 	.byte	59,15
+00000089 390f           1113 	.byte	57,15
+0000008b 3a0f           1114 	.byte	58,15
+0000008d 1101           1115 	.byte	17,1
+0000008f 1201           1116 	.byte	18,1
+00000091 400a           1117 	.byte	64,10
+00000093 8341           1118 	.byte	131,65
+00000095 0f             1119 	.byte	15
+00000096 8741           1120 	.byte	135,65
+00000098 0d             1121 	.byte	13
+00000099 8541           1122 	.byte	133,65
+0000009b 0f             1123 	.byte	15
+0000009c 8641           1124 	.byte	134,65
+0000009e 0d             1125 	.byte	13
+0000009f 9241           1126 	.byte	146,65
+000000a1 0f             1127 	.byte	15
+000000a2 3c0c           1128 	.byte	60,12
+000000a4 200b           1129 	.byte	32,11
+000000a6 3f0c           1130 	.byte	63,12
+
+                                                                      Page 21
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000000a8 320b           1131 	.byte	50,11
+000000aa 4c0b           1132 	.byte	76,11
+000000ac 270c           1133 	.byte	39,12
+000000ae 0000           1134 	.byte	0,0
+                        1135 
+                        1136 	.section	.debug_frame
+                        1137 .LDW_4b1efa0:
+00000090 00000000*      1138 	.word	.LDW_unq_4-.LDW_unq_3
+                        1139 .LDW_unq_3:
+00000094 00000000*      1140 	.word	.LDW_4a42510
+00000098 00000000*      1141 	.word	_R_ENCA0_Init
+0000009c 00000000*      1142 	.word	___ghs_eofn_R_ENCA0_Init-_R_ENCA0_Init
+000000a0 01             1143 	.byte	1
+000000a1 00000000*      1144 	.word	.LDW11
+000000a5 00             1145 	.byte	0
+000000a6 00             1146 	.byte	0
+000000a7 00             1147 	.byte	0
+                        1148 .LDW_unq_4:
+                        1149 	.section	.debug_line
+0000012b 000502         1150 	.byte	0,5,2
+0000012e 00000000*      1151 	.word	_R_ENCA0_Init
+00000132 06             1152 	.byte	6
+00000133 03             1153 	.byte	3
+00000134 ca00           1154 	.byte	202,0
+00000136 02             1155 	.byte	2
+00000137 00             1156 	.byte	0
+00000138 01             1157 	.byte	1
+00000139 33             1158 	.byte	51
+0000013a 2b             1159 	.byte	43
+0000013b 02             1160 	.byte	2
+0000013c 02             1161 	.byte	2
+0000013d 000101         1162 	.byte	0,1,1
+                        1163 	.section	.debug_info
+                        1164 .LDW_4ab79c0:
+000003d4 1d             1165 	.byte	29
+000003d5 00000000*      1166 	.word	.LDW01
+000003d9 00000000*      1167 	.word	.LDW11
+                        1168 
+                        1169 	.section	.debug_abbrev
+000000b0 1d             1170 	.byte	29
+000000b1 0b             1171 	.byte	11
+000000b2 01             1172 	.byte	1
+000000b3 1101           1173 	.byte	17,1
+000000b5 1201           1174 	.byte	18,1
+000000b7 0000           1175 	.byte	0,0
+                        1176 
+                        1177 	.section	.debug_info
+000003dd 00             1178 	.byte	0
+                        1179 
+000003de 00             1180 	.byte	0
+                        1181 
+                        1182 .LDW_4ac81b0:
+000003df 13             1183 	.byte	19
+000003e0 525f454e4341   1184 	.strz	"R_ENCA0_Start"
+000003e6 305f53746172 
+000003ec 7400 
+000003ee 55             1185 	.byte	85
+000003ef 06             1186 	.byte	6
+000003f0 01             1187 	.byte	1
+000003f1 00000000*      1188 	.word	_R_ENCA0_Start
+000003f5 00000000*      1189 	.word	___ghs_eofn_R_ENCA0_Start
+
+                                                                      Page 22
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000003f9 0153           1190 	.byte	1,83
+000003fb 02             1191 	.byte	2
+000003fc 00             1192 	.byte	0
+000003fd 02             1193 	.byte	2
+000003fe 00             1194 	.byte	0
+000003ff 00             1195 	.byte	0
+00000400 00             1196 	.byte	0
+00000401 00             1197 	.byte	0
+00000402 01             1198 	.byte	1
+00000403 01             1199 	.byte	1
+00000404 00             1200 	.byte	0
+00000405 01             1201 	.byte	1
+                        1202 
+                        1203 	.section	.debug_frame
+                        1204 .LDW_4b1e0e0:
+000000a8 00000000*      1205 	.word	.LDW_unq_6-.LDW_unq_5
+                        1206 .LDW_unq_5:
+000000ac 00000000*      1207 	.word	.LDW_4a42510
+000000b0 00000000*      1208 	.word	_R_ENCA0_Start
+000000b4 00000000*      1209 	.word	___ghs_eofn_R_ENCA0_Start-_R_ENCA0_Start
+000000b8 01             1210 	.byte	1
+000000b9 00000000*      1211 	.word	.LDW31
+000000bd 00             1212 	.byte	0
+000000be 00             1213 	.byte	0
+000000bf 00             1214 	.byte	0
+                        1215 .LDW_unq_6:
+                        1216 	.section	.debug_line
+00000140 000502         1217 	.byte	0,5,2
+00000143 00000000*      1218 	.word	_R_ENCA0_Start
+00000147 06             1219 	.byte	6
+00000148 03             1220 	.byte	3
+00000149 d600           1221 	.byte	214,0
+0000014b 02             1222 	.byte	2
+0000014c 00             1223 	.byte	0
+0000014d 01             1224 	.byte	1
+0000014e 2b             1225 	.byte	43
+0000014f 02             1226 	.byte	2
+00000150 02             1227 	.byte	2
+00000151 000101         1228 	.byte	0,1,1
+                        1229 	.section	.debug_info
+                        1230 .LDW_4ab79f0:
+00000406 1d             1231 	.byte	29
+00000407 00000000*      1232 	.word	.LDW21
+0000040b 00000000*      1233 	.word	.LDW31
+                        1234 
+0000040f 00             1235 	.byte	0
+                        1236 
+00000410 00             1237 	.byte	0
+                        1238 
+                        1239 .LDW_4ac8248:
+00000411 13             1240 	.byte	19
+00000412 525f454e4341   1241 	.strz	"R_ENCA0_Stop"
+00000418 305f53746f70 
+0000041e 00 
+0000041f 60             1242 	.byte	96
+00000420 06             1243 	.byte	6
+00000421 01             1244 	.byte	1
+00000422 00000000*      1245 	.word	_R_ENCA0_Stop
+00000426 00000000*      1246 	.word	___ghs_eofn_R_ENCA0_Stop
+0000042a 0153           1247 	.byte	1,83
+0000042c 02             1248 	.byte	2
+
+                                                                      Page 23
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000042d 00             1249 	.byte	0
+0000042e 02             1250 	.byte	2
+0000042f 00             1251 	.byte	0
+00000430 00             1252 	.byte	0
+00000431 00             1253 	.byte	0
+00000432 00             1254 	.byte	0
+00000433 01             1255 	.byte	1
+00000434 01             1256 	.byte	1
+00000435 00             1257 	.byte	0
+00000436 01             1258 	.byte	1
+                        1259 
+                        1260 	.section	.debug_frame
+                        1261 .LDW_4b1e1e0:
+000000c0 00000000*      1262 	.word	.LDW_unq_8-.LDW_unq_7
+                        1263 .LDW_unq_7:
+000000c4 00000000*      1264 	.word	.LDW_4a42510
+000000c8 00000000*      1265 	.word	_R_ENCA0_Stop
+000000cc 00000000*      1266 	.word	___ghs_eofn_R_ENCA0_Stop-_R_ENCA0_Stop
+000000d0 01             1267 	.byte	1
+000000d1 00000000*      1268 	.word	.LDW51
+000000d5 00             1269 	.byte	0
+000000d6 00             1270 	.byte	0
+000000d7 00             1271 	.byte	0
+                        1272 .LDW_unq_8:
+                        1273 	.section	.debug_line
+00000154 000502         1274 	.byte	0,5,2
+00000157 00000000*      1275 	.word	_R_ENCA0_Stop
+0000015b 06             1276 	.byte	6
+0000015c 03             1277 	.byte	3
+0000015d e100           1278 	.byte	225,0
+0000015f 02             1279 	.byte	2
+00000160 00             1280 	.byte	0
+00000161 01             1281 	.byte	1
+00000162 2b             1282 	.byte	43
+00000163 02             1283 	.byte	2
+00000164 02             1284 	.byte	2
+00000165 000101         1285 	.byte	0,1,1
+                        1286 	.section	.debug_info
+                        1287 .LDW_4ab7a20:
+00000437 1d             1288 	.byte	29
+00000438 00000000*      1289 	.word	.LDW41
+0000043c 00000000*      1290 	.word	.LDW51
+                        1291 
+00000440 00             1292 	.byte	0
+                        1293 
+00000441 00             1294 	.byte	0
+                        1295 
+                        1296 .LDW_4ac82e0:
+00000442 14             1297 	.byte	20
+00000443 525f454e4341   1298 	.strz	"R_ENCA0_Read"
+00000449 305f52656164 
+0000044f 00 
+00000450 6b             1299 	.byte	107
+00000451 0a             1300 	.byte	10
+00000452 01             1301 	.byte	1
+00000453 00000000*      1302 	.word	.LDW_4a93d90
+00000457 00000000*      1303 	.word	_R_ENCA0_Read
+0000045b 00000000*      1304 	.word	___ghs_eofn_R_ENCA0_Read
+0000045f 0153           1305 	.byte	1,83
+00000461 02             1306 	.byte	2
+00000462 00             1307 	.byte	0
+
+                                                                      Page 24
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000463 02             1308 	.byte	2
+00000464 00             1309 	.byte	0
+00000465 00             1310 	.byte	0
+00000466 00             1311 	.byte	0
+00000467 00             1312 	.byte	0
+00000468 01             1313 	.byte	1
+00000469 01             1314 	.byte	1
+0000046a 00             1315 	.byte	0
+0000046b 01             1316 	.byte	1
+                        1317 
+                        1318 	.section	.debug_abbrev
+000000b9 14             1319 	.byte	20
+000000ba 2e             1320 	.byte	46
+000000bb 01             1321 	.byte	1
+000000bc 0308           1322 	.byte	3,8
+000000be 3b0f           1323 	.byte	59,15
+000000c0 390f           1324 	.byte	57,15
+000000c2 3a0f           1325 	.byte	58,15
+000000c4 4910           1326 	.byte	73,16
+000000c6 1101           1327 	.byte	17,1
+000000c8 1201           1328 	.byte	18,1
+000000ca 400a           1329 	.byte	64,10
+000000cc 8341           1330 	.byte	131,65
+000000ce 0f             1331 	.byte	15
+000000cf 8741           1332 	.byte	135,65
+000000d1 0d             1333 	.byte	13
+000000d2 8541           1334 	.byte	133,65
+000000d4 0f             1335 	.byte	15
+000000d5 8641           1336 	.byte	134,65
+000000d7 0d             1337 	.byte	13
+000000d8 9241           1338 	.byte	146,65
+000000da 0f             1339 	.byte	15
+000000db 3c0c           1340 	.byte	60,12
+000000dd 200b           1341 	.byte	32,11
+000000df 3f0c           1342 	.byte	63,12
+000000e1 320b           1343 	.byte	50,11
+000000e3 4c0b           1344 	.byte	76,11
+000000e5 270c           1345 	.byte	39,12
+000000e7 0000           1346 	.byte	0,0
+                        1347 
+                        1348 	.section	.debug_frame
+                        1349 .LDW_4b1e2e0:
+000000d8 00000000*      1350 	.word	.LDW_unq_a-.LDW_unq_9
+                        1351 .LDW_unq_9:
+000000dc 00000000*      1352 	.word	.LDW_4a42510
+000000e0 00000000*      1353 	.word	_R_ENCA0_Read
+000000e4 00000000*      1354 	.word	___ghs_eofn_R_ENCA0_Read-_R_ENCA0_Read
+000000e8 01             1355 	.byte	1
+000000e9 00000000*      1356 	.word	.LDW71
+000000ed 00             1357 	.byte	0
+000000ee 00             1358 	.byte	0
+000000ef 00             1359 	.byte	0
+                        1360 .LDW_unq_a:
+                        1361 	.section	.debug_line
+00000168 000502         1362 	.byte	0,5,2
+0000016b 00000000*      1363 	.word	_R_ENCA0_Read
+0000016f 06             1364 	.byte	6
+00000170 03             1365 	.byte	3
+00000171 ec00           1366 	.byte	236,0
+00000173 02             1367 	.byte	2
+00000174 00             1368 	.byte	0
+
+                                                                      Page 25
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000175 01             1369 	.byte	1
+00000176 23             1370 	.byte	35
+00000177 02             1371 	.byte	2
+00000178 02             1372 	.byte	2
+00000179 000101         1373 	.byte	0,1,1
+                        1374 	.section	.debug_info
+                        1375 .LDW_4ab7a50:
+0000046c 1d             1376 	.byte	29
+0000046d 00000000*      1377 	.word	.LDW61
+00000471 00000000*      1378 	.word	.LDW71
+                        1379 
+00000475 00             1380 	.byte	0
+                        1381 
+00000476 00             1382 	.byte	0
+                        1383 
+                        1384 .LDW_4ac8378:
+00000477 14             1385 	.byte	20
+00000478 525f454e4341   1386 	.strz	"R_ENCA0_GetFlags"
+0000047e 305f47657446 
+00000484 6c61677300 
+00000489 76             1387 	.byte	118
+0000048a 09             1388 	.byte	9
+0000048b 01             1389 	.byte	1
+0000048c 00000000*      1390 	.word	.LDW_4a93de8
+00000490 00000000*      1391 	.word	_R_ENCA0_GetFlags
+00000494 00000000*      1392 	.word	___ghs_eofn_R_ENCA0_GetFlags
+00000498 0153           1393 	.byte	1,83
+0000049a 02             1394 	.byte	2
+0000049b 00             1395 	.byte	0
+0000049c 02             1396 	.byte	2
+0000049d 00             1397 	.byte	0
+0000049e 00             1398 	.byte	0
+0000049f 00             1399 	.byte	0
+000004a0 00             1400 	.byte	0
+000004a1 01             1401 	.byte	1
+000004a2 01             1402 	.byte	1
+000004a3 00             1403 	.byte	0
+000004a4 01             1404 	.byte	1
+                        1405 
+                        1406 	.section	.debug_frame
+                        1407 .LDW_4b1e3e0:
+000000f0 00000000*      1408 	.word	.LDW_unq_c-.LDW_unq_b
+                        1409 .LDW_unq_b:
+000000f4 00000000*      1410 	.word	.LDW_4a42510
+000000f8 00000000*      1411 	.word	_R_ENCA0_GetFlags
+000000fc 00000000*      1412 	.word	___ghs_eofn_R_ENCA0_GetFlags-_R_ENCA0_GetFlags
+00000100 01             1413 	.byte	1
+00000101 00000000*      1414 	.word	.LDW91
+00000105 00             1415 	.byte	0
+00000106 00             1416 	.byte	0
+00000107 00             1417 	.byte	0
+                        1418 .LDW_unq_c:
+                        1419 	.section	.debug_line
+0000017c 000502         1420 	.byte	0,5,2
+0000017f 00000000*      1421 	.word	_R_ENCA0_GetFlags
+00000183 06             1422 	.byte	6
+00000184 03             1423 	.byte	3
+00000185 f700           1424 	.byte	247,0
+00000187 02             1425 	.byte	2
+00000188 00             1426 	.byte	0
+00000189 01             1427 	.byte	1
+
+                                                                      Page 26
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000018a 23             1428 	.byte	35
+0000018b 02             1429 	.byte	2
+0000018c 02             1430 	.byte	2
+0000018d 000101         1431 	.byte	0,1,1
+                        1432 	.section	.debug_info
+                        1433 .LDW_4ab7a80:
+000004a5 1d             1434 	.byte	29
+000004a6 00000000*      1435 	.word	.LDW81
+000004aa 00000000*      1436 	.word	.LDW91
+                        1437 
+000004ae 00             1438 	.byte	0
+                        1439 
+000004af 00             1440 	.byte	0
+                        1441 
+000004b0 00             1442 	.byte	0
+                        1443 
+                        1444 	.section	.debug_line
+                        1445 .Ldw_line_end:
+                        1446 	.section	.debug_macinfo
+00000000 01             1447 	.byte	1
+00000001 00             1448 	.byte	0
+00000002 5f5f474e555f   1449 	.strz	"__GNU_ASM_SUPPORT__ 1"
+00000008 41534d5f5355 
+0000000e 50504f52545f 
+00000014 5f203100 
+00000018 01             1450 	.byte	1
+00000019 00             1451 	.byte	0
+0000001a 5f5f67687320   1452 	.strz	"__ghs 1"
+00000020 3100 
+00000022 01             1453 	.byte	1
+00000023 00             1454 	.byte	0
+00000024 5f5f41545452   1455 	.strz	"__ATTRIBUTES 1"
+0000002a 494255544553 
+00000030 203100 
+00000033 01             1456 	.byte	1
+00000034 00             1457 	.byte	0
+00000035 5f5f4544475f   1458 	.strz	"__EDG__ 1"
+0000003b 5f203100 
+0000003f 01             1459 	.byte	1
+00000040 00             1460 	.byte	0
+00000041 5f5f536f6674   1461 	.strz	"__SoftwareFloat__ 1"
+00000047 77617265466c 
+0000004d 6f61745f5f20 
+00000053 3100 
+00000055 01             1462 	.byte	1
+00000056 00             1463 	.byte	0
+00000057 5f5f434f5245   1464 	.strz	"__CORE_V850E3V5__ 1"
+0000005d 5f5638353045 
+00000063 3356355f5f20 
+00000069 3100 
+0000006b 01             1465 	.byte	1
+0000006c 00             1466 	.byte	0
+0000006d 5f5f56383530   1467 	.strz	"__V850E__ 1"
+00000073 455f5f203100 
+00000079 01             1468 	.byte	1
+0000007a 00             1469 	.byte	0
+0000007b 5f5f56383530   1470 	.strz	"__V850E2__ 1"
+00000081 45325f5f2031 
+00000087 00 
+00000088 01             1471 	.byte	1
+00000089 00             1472 	.byte	0
+
+                                                                      Page 27
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000008a 5f5f56383530   1473 	.strz	"__V850E2R__ 1"
+00000090 4532525f5f20 
+00000096 3100 
+00000098 01             1474 	.byte	1
+00000099 00             1475 	.byte	0
+0000009a 5f5f56383530   1476 	.strz	"__V850E2V3__ 1"
+000000a0 453256335f5f 
+000000a6 203100 
+000000a9 01             1477 	.byte	1
+000000aa 00             1478 	.byte	0
+000000ab 5f5f56383530   1479 	.strz	"__V850E3__ 1"
+000000b1 45335f5f2031 
+000000b7 00 
+000000b8 01             1480 	.byte	1
+000000b9 00             1481 	.byte	0
+000000ba 5f5f56383030   1482 	.strz	"__V800_registermode 32"
+000000c0 5f7265676973 
+000000c6 7465726d6f64 
+000000cc 6520333200 
+000000d1 01             1483 	.byte	1
+000000d2 00             1484 	.byte	0
+000000d3 5f5f4748535f   1485 	.strz	"__GHS__ 1"
+000000d9 5f203100 
+000000dd 03             1486 	.byte	3
+000000de 00             1487 	.byte	0
+000000df 01             1488 	.byte	1
+000000e0 03             1489 	.byte	3
+000000e1 3d             1490 	.byte	61
+000000e2 02             1491 	.byte	2
+000000e3 03             1492 	.byte	3
+000000e4 34             1493 	.byte	52
+000000e5 03             1494 	.byte	3
+000000e6 01             1495 	.byte	1
+000000e7 861b           1496 	.byte	134,27
+000000e9 444e4641454e   1497 	.strz	"DNFAENCA0IEN (*(volatile uint16 *)0xFFC30064)"
+000000ef 43413049454e 
+000000f5 20282a28766f 
+000000fb 6c6174696c65 
+00000101 2075696e7431 
+00000107 36202a293078 
+0000010d 464643333030 
+00000113 36342900 
+00000117 01             1498 	.byte	1
+00000118 8039           1499 	.byte	128,57
+0000011a 454e43413020   1500 	.strz	"ENCA0 (*(volatile __type45 *)0xFFE80000)"
+00000120 282a28766f6c 
+00000126 6174696c6520 
+0000012c 5f5f74797065 
+00000132 3435202a2930 
+00000138 784646453830 
+0000013e 3030302900 
+00000143 01             1501 	.byte	1
+00000144 e88501         1502 	.byte	232,133,1
+00000147 454e43413043   1503 	.strz	"ENCA0CNT ENCA0.CNT"
+0000014d 4e5420454e43 
+00000153 41302e434e54 
+00000159 00 
+0000015a 01             1504 	.byte	1
+0000015b e98501         1505 	.byte	233,133,1
+0000015e 454e43413046   1506 	.strz	"ENCA0FLG ENCA0.FLG"
+00000164 4c4720454e43 
+
+                                                                      Page 28
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000016a 41302e464c47 
+00000170 00 
+00000171 01             1507 	.byte	1
+00000172 ec8501         1508 	.byte	236,133,1
+00000175 454e43413054   1509 	.strz	"ENCA0TS ENCA0.TS"
+0000017b 5320454e4341 
+00000181 302e545300 
+00000186 01             1510 	.byte	1
+00000187 ed8501         1511 	.byte	237,133,1
+0000018a 454e43413054   1512 	.strz	"ENCA0TT ENCA0.TT"
+00000190 5420454e4341 
+00000196 302e545400 
+0000019b 01             1513 	.byte	1
+0000019c ef8501         1514 	.byte	239,133,1
+0000019f 454e43413043   1515 	.strz	"ENCA0CTL ENCA0.CTL"
+000001a5 544c20454e43 
+000001ab 41302e43544c 
+000001b1 00 
+000001b2 04             1516 	.byte	4
+000001b3 03             1517 	.byte	3
+000001b4 35             1518 	.byte	53
+000001b5 04             1519 	.byte	4
+000001b6 01             1520 	.byte	1
+000001b7 3c             1521 	.byte	60
+000001b8 5f5f4841535f   1522 	.strz	"__HAS_FPU__ "
+000001be 4650555f5f20 
+000001c4 00 
+000001c5 04             1523 	.byte	4
+000001c6 03             1524 	.byte	3
+000001c7 36             1525 	.byte	54
+000001c8 05             1526 	.byte	5
+000001c9 01             1527 	.byte	1
+000001ca 37             1528 	.byte	55
+000001cb 5f494e4c494e   1529 	.strz	"_INLINE_ __inline"
+000001d1 455f205f5f69 
+000001d7 6e6c696e6500 
+000001dd 03             1530 	.byte	3
+000001de 3f             1531 	.byte	63
+000001df 06             1532 	.byte	6
+000001e0 01             1533 	.byte	1
+000001e1 0f             1534 	.byte	15
+000001e2 5f5f41545452   1535 	.strz	"__ATTRIBUTE(x) __attribute__(x)"
+000001e8 494255544528 
+000001ee 7829205f5f61 
+000001f4 747472696275 
+000001fa 74655f5f2878 
+00000200 2900 
+00000202 01             1536 	.byte	1
+00000203 9101           1537 	.byte	145,1
+00000205 5f5f47455453   1538 	.strz	"__GETSP_macro() asm (\"mov sp, %0\" : \"=r\" (result));"
+0000020b 505f6d616372 
+00000211 6f2829206173 
+00000217 6d2028226d6f 
+0000021d 762073702c20 
+00000223 253022203a20 
+00000229 223d72222028 
+0000022f 726573756c74 
+00000235 29293b00 
+00000239 04             1539 	.byte	4
+0000023a 01             1540 	.byte	1
+0000023b 46             1541 	.byte	70
+
+                                                                      Page 29
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000023c 7533325f5420   1542 	.strz	"u32_T unsigned long"
+00000242 756e7369676e 
+00000248 6564206c6f6e 
+0000024e 6700 
+00000250 01             1543 	.byte	1
+00000251 8803           1544 	.byte	136,3
+00000253 50535720352c   1545 	.strz	"PSW 5, 0"
+00000259 203000 
+0000025c 01             1546 	.byte	1
+0000025d 9203           1547 	.byte	146,3
+0000025f 4d4346473020   1548 	.strz	"MCFG0 0, 1"
+00000265 302c203100 
+0000026a 01             1549 	.byte	1
+0000026b 9403           1550 	.byte	148,3
+0000026d 454241534520   1551 	.strz	"EBASE 3, 1"
+00000273 332c203100 
+00000278 01             1552 	.byte	1
+00000279 9503           1553 	.byte	149,3
+0000027b 494e54425020   1554 	.strz	"INTBP 4, 1"
+00000281 342c203100 
+00000286 01             1555 	.byte	1
+00000287 9603           1556 	.byte	150,3
+00000289 4d43544c2035   1557 	.strz	"MCTL 5, 1"
+0000028f 2c203100 
+00000293 01             1558 	.byte	1
+00000294 9703           1559 	.byte	151,3
+00000296 50494420362c   1560 	.strz	"PID 6, 1"
+0000029c 203100 
+0000029f 01             1561 	.byte	1
+000002a0 9803           1562 	.byte	152,3
+000002a2 534343464720   1563 	.strz	"SCCFG 11, 1"
+000002a8 31312c203100 
+000002ae 01             1564 	.byte	1
+000002af 9d03           1565 	.byte	157,3
+000002b1 415349442037   1566 	.strz	"ASID 7, 2"
+000002b7 2c203200 
+000002bb 01             1567 	.byte	1
+000002bc 9f03           1568 	.byte	159,3
+000002be 495350522031   1569 	.strz	"ISPR 10, 2"
+000002c4 302c203200 
+000002c9 01             1570 	.byte	1
+000002ca a003           1571 	.byte	160,3
+000002cc 504d52203131   1572 	.strz	"PMR 11, 2"
+000002d2 2c203200 
+000002d6 01             1573 	.byte	1
+000002d7 a103           1574 	.byte	161,3
+000002d9 494353522031   1575 	.strz	"ICSR 12, 2"
+000002df 322c203200 
+000002e4 01             1576 	.byte	1
+000002e5 a203           1577 	.byte	162,3
+000002e7 494e54434647   1578 	.strz	"INTCFG 13, 2"
+000002ed 2031332c2032 
+000002f3 00 
+000002f4 01             1579 	.byte	1
+000002f5 a403           1580 	.byte	164,3
+000002f7 4d504d20302c   1581 	.strz	"MPM 0, 5"
+000002fd 203500 
+00000300 01             1582 	.byte	1
+00000301 a503           1583 	.byte	165,3
+00000303 4d5052432031   1584 	.strz	"MPRC 1, 5"
+00000309 2c203500 
+
+                                                                      Page 30
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+0000030d 01             1585 	.byte	1
+0000030e a603           1586 	.byte	166,3
+00000310 4d504252474e   1587 	.strz	"MPBRGN 4, 5"
+00000316 20342c203500 
+0000031c 01             1588 	.byte	1
+0000031d a703           1589 	.byte	167,3
+0000031f 4d505452474e   1590 	.strz	"MPTRGN 5, 5"
+00000325 20352c203500 
+0000032b 01             1591 	.byte	1
+0000032c a803           1592 	.byte	168,3
+0000032e 4d434120382c   1593 	.strz	"MCA 8, 5"
+00000334 203500 
+00000337 01             1594 	.byte	1
+00000338 a903           1595 	.byte	169,3
+0000033a 4d435320392c   1596 	.strz	"MCS 9, 5"
+00000340 203500 
+00000343 01             1597 	.byte	1
+00000344 aa03           1598 	.byte	170,3
+00000346 4d4343203130   1599 	.strz	"MCC 10, 5"
+0000034c 2c203500 
+00000350 01             1600 	.byte	1
+00000351 ab03           1601 	.byte	171,3
+00000353 4d4352203131   1602 	.strz	"MCR 11, 5"
+00000359 2c203500 
+0000035d 01             1603 	.byte	1
+0000035e ad03           1604 	.byte	173,3
+00000360 4d504c413020   1605 	.strz	"MPLA0 0, 6"
+00000366 302c203600 
+0000036b 01             1606 	.byte	1
+0000036c ae03           1607 	.byte	174,3
+0000036e 4d5055413020   1608 	.strz	"MPUA0 1, 6"
+00000374 312c203600 
+00000379 01             1609 	.byte	1
+0000037a af03           1610 	.byte	175,3
+0000037c 4d5041543020   1611 	.strz	"MPAT0 2, 6"
+00000382 322c203600 
+00000387 01             1612 	.byte	1
+00000388 b003           1613 	.byte	176,3
+0000038a 4d504c413120   1614 	.strz	"MPLA1 4, 6"
+00000390 342c203600 
+00000395 01             1615 	.byte	1
+00000396 b103           1616 	.byte	177,3
+00000398 4d5055413120   1617 	.strz	"MPUA1 5, 6"
+0000039e 352c203600 
+000003a3 01             1618 	.byte	1
+000003a4 b203           1619 	.byte	178,3
+000003a6 4d5041543120   1620 	.strz	"MPAT1 6, 6"
+000003ac 362c203600 
+000003b1 01             1621 	.byte	1
+000003b2 b303           1622 	.byte	179,3
+000003b4 4d504c413220   1623 	.strz	"MPLA2 8, 6"
+000003ba 382c203600 
+000003bf 01             1624 	.byte	1
+000003c0 b403           1625 	.byte	180,3
+000003c2 4d5055413220   1626 	.strz	"MPUA2 9, 6"
+000003c8 392c203600 
+000003cd 01             1627 	.byte	1
+000003ce b503           1628 	.byte	181,3
+000003d0 4d5041543220   1629 	.strz	"MPAT2 10, 6"
+000003d6 31302c203600 
+000003dc 01             1630 	.byte	1
+
+                                                                      Page 31
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000003dd b603           1631 	.byte	182,3
+000003df 4d504c413320   1632 	.strz	"MPLA3 12, 6"
+000003e5 31322c203600 
+000003eb 01             1633 	.byte	1
+000003ec b703           1634 	.byte	183,3
+000003ee 4d5055413320   1635 	.strz	"MPUA3 13, 6"
+000003f4 31332c203600 
+000003fa 01             1636 	.byte	1
+000003fb b803           1637 	.byte	184,3
+000003fd 4d5041543320   1638 	.strz	"MPAT3 14, 6"
+00000403 31342c203600 
+00000409 01             1639 	.byte	1
+0000040a b903           1640 	.byte	185,3
+0000040c 4d504c413420   1641 	.strz	"MPLA4 16, 6"
+00000412 31362c203600 
+00000418 01             1642 	.byte	1
+00000419 ba03           1643 	.byte	186,3
+0000041b 4d5055413420   1644 	.strz	"MPUA4 17, 6"
+00000421 31372c203600 
+00000427 01             1645 	.byte	1
+00000428 bb03           1646 	.byte	187,3
+0000042a 4d5041543420   1647 	.strz	"MPAT4 18, 6"
+00000430 31382c203600 
+00000436 01             1648 	.byte	1
+00000437 bc03           1649 	.byte	188,3
+00000439 4d504c413520   1650 	.strz	"MPLA5 20, 6"
+0000043f 32302c203600 
+00000445 01             1651 	.byte	1
+00000446 bd03           1652 	.byte	189,3
+00000448 4d5055413520   1653 	.strz	"MPUA5 21, 6"
+0000044e 32312c203600 
+00000454 01             1654 	.byte	1
+00000455 be03           1655 	.byte	190,3
+00000457 4d5041543520   1656 	.strz	"MPAT5 22, 6"
+0000045d 32322c203600 
+00000463 01             1657 	.byte	1
+00000464 bf03           1658 	.byte	191,3
+00000466 4d504c413620   1659 	.strz	"MPLA6 24, 6"
+0000046c 32342c203600 
+00000472 01             1660 	.byte	1
+00000473 c003           1661 	.byte	192,3
+00000475 4d5055413620   1662 	.strz	"MPUA6 25, 6"
+0000047b 32352c203600 
+00000481 01             1663 	.byte	1
+00000482 c103           1664 	.byte	193,3
+00000484 4d5041543620   1665 	.strz	"MPAT6 26, 6"
+0000048a 32362c203600 
+00000490 01             1666 	.byte	1
+00000491 c203           1667 	.byte	194,3
+00000493 4d4c55413720   1668 	.strz	"MLUA7 28, 6"
+00000499 32382c203600 
+0000049f 01             1669 	.byte	1
+000004a0 c303           1670 	.byte	195,3
+000004a2 4d5055413720   1671 	.strz	"MPUA7 29, 6"
+000004a8 32392c203600 
+000004ae 01             1672 	.byte	1
+000004af c403           1673 	.byte	196,3
+000004b1 4d5041543720   1674 	.strz	"MPAT7 30, 6"
+000004b7 33302c203600 
+000004bd 01             1675 	.byte	1
+000004be c503           1676 	.byte	197,3
+
+                                                                      Page 32
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+000004c0 4d504c413820   1677 	.strz	"MPLA8 0, 7"
+000004c6 302c203700 
+000004cb 01             1678 	.byte	1
+000004cc c603           1679 	.byte	198,3
+000004ce 4d5055413820   1680 	.strz	"MPUA8 1, 7"
+000004d4 312c203700 
+000004d9 01             1681 	.byte	1
+000004da c703           1682 	.byte	199,3
+000004dc 4d5041543820   1683 	.strz	"MPAT8 2, 7"
+000004e2 322c203700 
+000004e7 01             1684 	.byte	1
+000004e8 c803           1685 	.byte	200,3
+000004ea 4d504c413920   1686 	.strz	"MPLA9 4, 7"
+000004f0 342c203700 
+000004f5 01             1687 	.byte	1
+000004f6 c903           1688 	.byte	201,3
+000004f8 4d5055413920   1689 	.strz	"MPUA9 5, 7"
+000004fe 352c203700 
+00000503 01             1690 	.byte	1
+00000504 ca03           1691 	.byte	202,3
+00000506 4d5041543920   1692 	.strz	"MPAT9 6, 7"
+0000050c 362c203700 
+00000511 01             1693 	.byte	1
+00000512 cb03           1694 	.byte	203,3
+00000514 4d504c413130   1695 	.strz	"MPLA10 8, 7"
+0000051a 20382c203700 
+00000520 01             1696 	.byte	1
+00000521 cc03           1697 	.byte	204,3
+00000523 4d5055413130   1698 	.strz	"MPUA10 9, 7"
+00000529 20392c203700 
+0000052f 01             1699 	.byte	1
+00000530 cd03           1700 	.byte	205,3
+00000532 4d5041543130   1701 	.strz	"MPAT10 10, 7"
+00000538 2031302c2037 
+0000053e 00 
+0000053f 01             1702 	.byte	1
+00000540 ce03           1703 	.byte	206,3
+00000542 4d504c413131   1704 	.strz	"MPLA11 12, 7"
+00000548 2031322c2037 
+0000054e 00 
+0000054f 01             1705 	.byte	1
+00000550 cf03           1706 	.byte	207,3
+00000552 4d5055413131   1707 	.strz	"MPUA11 13, 7"
+00000558 2031332c2037 
+0000055e 00 
+0000055f 01             1708 	.byte	1
+00000560 d003           1709 	.byte	208,3
+00000562 4d5041543131   1710 	.strz	"MPAT11 14, 7"
+00000568 2031342c2037 
+0000056e 00 
+0000056f 01             1711 	.byte	1
+00000570 d103           1712 	.byte	209,3
+00000572 4d504c413132   1713 	.strz	"MPLA12 16, 7"
+00000578 2031362c2037 
+0000057e 00 
+0000057f 01             1714 	.byte	1
+00000580 d203           1715 	.byte	210,3
+00000582 4d5055413132   1716 	.strz	"MPUA12 17, 7"
+00000588 2031372c2037 
+0000058e 00 
+0000058f 01             1717 	.byte	1
+
+                                                                      Page 33
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+00000590 d303           1718 	.byte	211,3
+00000592 4d5041543132   1719 	.strz	"MPAT12 18, 7"
+00000598 2031382c2037 
+0000059e 00 
+0000059f 01             1720 	.byte	1
+000005a0 d403           1721 	.byte	212,3
+000005a2 4d504c413133   1722 	.strz	"MPLA13 20, 7"
+000005a8 2032302c2037 
+000005ae 00 
+000005af 01             1723 	.byte	1
+000005b0 d503           1724 	.byte	213,3
+000005b2 4d5055413133   1725 	.strz	"MPUA13 21, 7"
+000005b8 2032312c2037 
+000005be 00 
+000005bf 01             1726 	.byte	1
+000005c0 d603           1727 	.byte	214,3
+000005c2 4d5041543133   1728 	.strz	"MPAT13 22, 7"
+000005c8 2032322c2037 
+000005ce 00 
+000005cf 01             1729 	.byte	1
+000005d0 d703           1730 	.byte	215,3
+000005d2 4d504c413134   1731 	.strz	"MPLA14 24, 7"
+000005d8 2032342c2037 
+000005de 00 
+000005df 01             1732 	.byte	1
+000005e0 d803           1733 	.byte	216,3
+000005e2 4d5055413134   1734 	.strz	"MPUA14 25, 7"
+000005e8 2032352c2037 
+000005ee 00 
+000005ef 01             1735 	.byte	1
+000005f0 d903           1736 	.byte	217,3
+000005f2 4d5041543134   1737 	.strz	"MPAT14 26, 7"
+000005f8 2032362c2037 
+000005fe 00 
+000005ff 01             1738 	.byte	1
+00000600 da03           1739 	.byte	218,3
+00000602 4d504c413135   1740 	.strz	"MPLA15 28, 7"
+00000608 2032382c2037 
+0000060e 00 
+0000060f 01             1741 	.byte	1
+00000610 db03           1742 	.byte	219,3
+00000612 4d5055413135   1743 	.strz	"MPUA15 29, 7"
+00000618 2032392c2037 
+0000061e 00 
+0000061f 01             1744 	.byte	1
+00000620 dc03           1745 	.byte	220,3
+00000622 4d5041543135   1746 	.strz	"MPAT15 30, 7"
+00000628 2033302c2037 
+0000062e 00 
+0000062f 04             1747 	.byte	4
+00000630 03             1748 	.byte	3
+00000631 47             1749 	.byte	71
+00000632 07             1750 	.byte	7
+00000633 04             1751 	.byte	4
+00000634 04             1752 	.byte	4
+00000635 03             1753 	.byte	3
+00000636 3e             1754 	.byte	62
+00000637 08             1755 	.byte	8
+00000638 04             1756 	.byte	4
+00000639 04             1757 	.byte	4
+0000063a 00             1758 	.byte	0
+
+                                                                      Page 34
+                                                              C:\Users\NIKHIL~1.PAT\AppData\Local\Temp\gh_000aen81.s
+                        1759 	.section	.debug_abbrev
+000000e9 00             1760 	.byte	0
+                        1761 	.section	.debug_info
+                        1762 .Ldw_end:
+                        1763 .rh850_flags REGMODE32,DATA_ALIGN8,GP_FIX,EP_NONFIX,TP_FIX,REG2_NONRESERVE,G3K,SDA_EXTRA_REGS_0
