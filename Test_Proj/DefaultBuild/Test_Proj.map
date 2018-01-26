@@ -1,0 +1,48 @@
+Renesas Optimizing Linker (W2.07.00 )             26-Jan-2018 10:57:30
+
+*** Options ***
+
+-subcommand=DefaultBuild\Test_Proj.clnk
+-input=DefaultBuild\boot.obj
+-input=DefaultBuild\cstart.obj
+-input=DefaultBuild\main.obj
+-input=DefaultBuild\system.obj
+-input=DefaultBuild\system_clock.obj
+-input=DefaultBuild\port.obj
+-debug
+-nocompress
+-output=DefaultBuild\Test_Proj.abs
+-library=v850e3v5\rhs8n.lib
+-library=v850e3v5\libmalloc.lib
+-list=DefaultBuild\Test_Proj.map
+-start=RESET,EIINTTBL/0,.const,.INIT_DSEC.const,.INIT_BSEC.const,.text,.data/00008000,.data.R,.bss,.stack.bss/FEDFC000
+-rom=.data=.data.R
+-memory=high
+-nologo
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+RESET
+                                  00000000  000001f7       1f8   200
+EIINTTBL
+                                  00000200  000009ff       800   200
+.const
+                                  00008000  0000826f       270   4
+.INIT_DSEC.const
+                                  00008270  0000827b         c   4
+.INIT_BSEC.const
+                                  0000827c  00008283         8   4
+.text
+                                  00008284  00008a17       794   2
+.data
+                                  00008a18  00008a18         0   4
+.data.R
+                                  fedfc000  fedfc000         0   4
+.bss
+                                  fedfc000  fedfc000         0   4
+.stack.bss
+                                  fedfc000  fedfc1ff       200   4
