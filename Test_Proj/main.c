@@ -9,7 +9,7 @@
 /***********************************************************************/
 #include "system.h"
 #include "port.h"
-#define WAIT_DELAY	110
+#define WAIT_DELAY	1100
 
 void delay_us(int );
 void delay_ms(int );
@@ -21,11 +21,14 @@ void main(void)
 	R_SYSTEM_ClockInit();	
 	
 	while(1){
+		R_PORT_SetGpioOutput(Port0, 11, Low);
+		 R_PORT_SetGpioOutput(Port8, 5, Low);
+		delay_ms(1000);
+
+		 R_PORT_SetGpioOutput(Port0, 11, High);
+		 R_PORT_SetGpioOutput(Port8, 5, High);
 		delay_ms(500);
-		 R_PORT_SetGpioOutput(Port1, 14, Low);
-		 delay_ms(500);
-		 R_PORT_SetGpioOutput(Port1, 14, High);
-		//Port P1 = ~1;
+		
 	}
 }
 
