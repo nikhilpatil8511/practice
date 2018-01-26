@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W2.07.00 )             25-Jan-2018 15:04:31
+Renesas Optimizing Linker (W2.07.00 )             26-Jan-2018 10:57:30
 
 *** Options ***
 
@@ -6,6 +6,9 @@ Renesas Optimizing Linker (W2.07.00 )             25-Jan-2018 15:04:31
 -input=DefaultBuild\boot.obj
 -input=DefaultBuild\cstart.obj
 -input=DefaultBuild\main.obj
+-input=DefaultBuild\system.obj
+-input=DefaultBuild\system_clock.obj
+-input=DefaultBuild\port.obj
 -debug
 -nocompress
 -output=DefaultBuild\Test_Proj.abs
@@ -28,15 +31,15 @@ RESET
 EIINTTBL
                                   00000200  000009ff       800   200
 .const
-                                  00008000  00008000         0   4
+                                  00008000  0000826f       270   4
 .INIT_DSEC.const
-                                  00008000  0000800b         c   4
+                                  00008270  0000827b         c   4
 .INIT_BSEC.const
-                                  0000800c  00008013         8   4
+                                  0000827c  00008283         8   4
 .text
-                                  00008014  000081af       19c   2
+                                  00008284  00008a17       794   2
 .data
-                                  000081b0  000081b0         0   4
+                                  00008a18  00008a18         0   4
 .data.R
                                   fedfc000  fedfc000         0   4
 .bss

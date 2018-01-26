@@ -1,6 +1,9 @@
 -input=DefaultBuild\boot.obj
 -input=DefaultBuild\cstart.obj
 -input=DefaultBuild\main.obj
+-input=DefaultBuild\system.obj
+-input=DefaultBuild\system_clock.obj
+-input=DefaultBuild\port.obj
 -debug
 -nocompress
 -output=DefaultBuild\Test_Proj.abs

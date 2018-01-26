@@ -38,10 +38,104 @@
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
     </Instance>
+    <Instance Guid="e5c69b55-30bd-473f-80be-380528e1c3aa">
+      <Name>r_typedefs.h</Name>
+      <Type>File</Type>
+      <RelativePath>r_typedefs.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
+    </Instance>
+    <Instance Guid="cfd951f0-becd-4ae1-828c-86146ec31dd4">
+      <Name>device_initialize</Name>
+      <Type>Category</Type>
+      <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
+      <Property>060d4537-ff66-4de1-931f-14bc10f97330</Property>
+    </Instance>
+    <Instance Guid="cab3a468-91e9-4d77-98db-5c44974b675c">
+      <Name>clk</Name>
+      <Type>Category</Type>
+      <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
+      <Property>2020ba37-a401-4e15-9240-f04cf16c0f6b</Property>
+    </Instance>
+    <Instance Guid="7393ec75-ccf2-4f2a-87c5-91791c4a6471">
+      <Name>system</Name>
+      <Type>Category</Type>
+      <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
+      <Property>79c78541-c727-40b7-8c62-e5bb6968acc6</Property>
+    </Instance>
+    <Instance Guid="809493ed-57dd-4322-a7ef-81951e1fbdb9">
+      <Name>Ports</Name>
+      <Type>Category</Type>
+      <ParentItem>4dc1c176-49c7-4513-9865-8f6f20ea1958</ParentItem>
+      <Property>e3fc81d5-1b59-49ec-b956-a0009dc0a6c7</Property>
+    </Instance>
+    <Instance Guid="5ef97285-a01b-4b6a-a462-73dd70414029">
+      <Name>t_device_init.h</Name>
+      <Type>File</Type>
+      <RelativePath>t_device_init.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>cfd951f0-becd-4ae1-828c-86146ec31dd4</ParentItem>
+    </Instance>
+    <Instance Guid="bb92d904-e652-42f6-a2a7-d432067c32b9">
+      <Name>system_clock.c</Name>
+      <Type>File</Type>
+      <RelativePath>system_clock.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>cab3a468-91e9-4d77-98db-5c44974b675c</ParentItem>
+    </Instance>
+    <Instance Guid="b2da8a35-2fc5-47f0-bfab-73eec2c857c0">
+      <Name>system_clock.h</Name>
+      <Type>File</Type>
+      <RelativePath>system_clock.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>cab3a468-91e9-4d77-98db-5c44974b675c</ParentItem>
+    </Instance>
+    <Instance Guid="e6878b35-425d-4b5d-a1d3-985415554918">
+      <Name>system.c</Name>
+      <Type>File</Type>
+      <RelativePath>system.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>7393ec75-ccf2-4f2a-87c5-91791c4a6471</ParentItem>
+    </Instance>
+    <Instance Guid="8bec2838-5da3-4379-8d5d-2acb504b027b">
+      <Name>system.h</Name>
+      <Type>File</Type>
+      <RelativePath>system.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>7393ec75-ccf2-4f2a-87c5-91791c4a6471</ParentItem>
+    </Instance>
+    <Instance Guid="d1f2b068-8bf2-4a50-a689-c9b0d82c5ff4">
+      <Name>port.c</Name>
+      <Type>File</Type>
+      <RelativePath>port.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>809493ed-57dd-4322-a7ef-81951e1fbdb9</ParentItem>
+    </Instance>
+    <Instance Guid="21bcf59f-1bff-4817-bb54-3eb1b20e7488">
+      <Name>port.h</Name>
+      <Type>File</Type>
+      <RelativePath>port.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>809493ed-57dd-4322-a7ef-81951e1fbdb9</ParentItem>
+    </Instance>
   </Class>
   <Class Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
     <Instance Guid="fb98844b-2c27-4275-9804-f6e63e204da0">
       <UseStandardLicenseOnly>True</UseStandardLicenseOnly>
+      <MemoCount>0</MemoCount>
+    </Instance>
+  </Class>
+  <Class Guid="78a5c5cd-76cb-4bcc-a031-3020011fbc9a">
+    <Instance Guid="060d4537-ff66-4de1-931f-14bc10f97330">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="2020ba37-a401-4e15-9240-f04cf16c0f6b">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="79c78541-c727-40b7-8c62-e5bb6968acc6">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="e3fc81d5-1b59-49ec-b956-a0009dc0a6c7">
       <MemoCount>0</MemoCount>
     </Instance>
   </Class>
@@ -72,6 +166,12 @@
       <IsStructuredNaming>True</IsStructuredNaming>
     </Instance>
   </Class>
+  <Class Guid="873c9a58-9bc5-439a-b476-78629a4553ed">
+    <Instance Guid="873c9a58-9bc5-439a-b476-78629a4553ed">
+      <ProjectDeviceChangedCounter>0</ProjectDeviceChangedCounter>
+      <ProjectInitialDeviceName>R7F701057xxFP</ProjectInitialDeviceName>
+    </Instance>
+  </Class>
   <Class Guid="c3835e31-dea3-4c93-b02b-d2db997f7630">
     <Instance Guid="c3835e31-dea3-4c93-b02b-d2db997f7630">
       <BuildToolManager>eb3b4b69-af1a-4dc1-b2bc-4b81a50fb2a4</BuildToolManager>
@@ -90,7 +190,13 @@
       <SourceItemType1>AsmSource</SourceItemType1>
       <SourceItemGuid2>1ce31fdf-6c96-408d-bc1f-c71d1fe091a5</SourceItemGuid2>
       <SourceItemType2>CSource</SourceItemType2>
-      <SourceItemCount>3</SourceItemCount>
+      <SourceItemGuid3>bb92d904-e652-42f6-a2a7-d432067c32b9</SourceItemGuid3>
+      <SourceItemType3>CSource</SourceItemType3>
+      <SourceItemGuid4>e6878b35-425d-4b5d-a1d3-985415554918</SourceItemGuid4>
+      <SourceItemType4>CSource</SourceItemType4>
+      <SourceItemGuid5>d1f2b068-8bf2-4a50-a689-c9b0d82c5ff4</SourceItemGuid5>
+      <SourceItemType5>CSource</SourceItemType5>
+      <SourceItemCount>6</SourceItemCount>
       <LastDeviceChangedCounter>0</LastDeviceChangedCounter>
     </Instance>
     <Instance Guid="989d6783-59a0-4525-8ee4-a067fda90fe2">
@@ -288,9 +394,10 @@
       <COptionInsertDbtagWithLabelParameters-DefaultValue />
       <COptionXmultiLevel-DefaultValue>Level0</COptionXmultiLevel-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
-      <TimeTagModified--0>-8586846970730205768</TimeTagModified--0>
+      <TimeTagModified--0>-8586846948888929078</TimeTagModified--0>
       <COptionG-0>True</COptionG-0>
-      <COptionI-0 />
+      <COptionI-0>.
+</COptionI-0>
       <COptionOsize-0>Default</COptionOsize-0>
       <COptionPreCompileCommands-0 />
       <COptionXansi-0>False</COptionXansi-0>
@@ -716,6 +823,38 @@
       <ItemAddTime>636524886134290040</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="5ef97285-a01b-4b6a-a462-73dd70414029">
+      <ItemAddTime>636524907966046726</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="e6878b35-425d-4b5d-a1d3-985415554918">
+      <ItemAddTime>636524908825190934</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="8bec2838-5da3-4379-8d5d-2acb504b027b">
+      <ItemAddTime>636524908941798708</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="bb92d904-e652-42f6-a2a7-d432067c32b9">
+      <ItemAddTime>636524910055781552</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="b2da8a35-2fc5-47f0-bfab-73eec2c857c0">
+      <ItemAddTime>636524910210454654</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="e5c69b55-30bd-473f-80be-380528e1c3aa">
+      <ItemAddTime>636524916633120509</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="d1f2b068-8bf2-4a50-a689-c9b0d82c5ff4">
+      <ItemAddTime>636525592172645911</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="21bcf59f-1bff-4817-bb54-3eb1b20e7488">
+      <ItemAddTime>636525592172645911</ItemAddTime>
+      <ItemAddTimeCount>1</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="149baf2a-1b8c-4f78-9702-3ac495e87f5a">
       <TimeTagModified-SourceItem0--0>-8586846970729605768</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -731,6 +870,18 @@
       <SourceItem2-IsLockedByUser>False</SourceItem2-IsLockedByUser>
       <SourceItem2-IndividualCompileOption-0>False</SourceItem2-IndividualCompileOption-0>
       <SourceItem2-BuildingTarget-0>True</SourceItem2-BuildingTarget-0>
+      <TimeTagModified-SourceItem3--0>-8586846946798994256</TimeTagModified-SourceItem3--0>
+      <SourceItem3-IsLockedByUser>False</SourceItem3-IsLockedByUser>
+      <SourceItem3-IndividualCompileOption-0>False</SourceItem3-IndividualCompileOption-0>
+      <SourceItem3-BuildingTarget-0>True</SourceItem3-BuildingTarget-0>
+      <TimeTagModified-SourceItem4--0>-8586846948029584874</TimeTagModified-SourceItem4--0>
+      <SourceItem4-IsLockedByUser>False</SourceItem4-IsLockedByUser>
+      <SourceItem4-IndividualCompileOption-0>False</SourceItem4-IndividualCompileOption-0>
+      <SourceItem4-BuildingTarget-0>True</SourceItem4-BuildingTarget-0>
+      <TimeTagModified-SourceItem5--0>-8586846264682129897</TimeTagModified-SourceItem5--0>
+      <SourceItem5-IsLockedByUser>False</SourceItem5-IsLockedByUser>
+      <SourceItem5-IndividualCompileOption-0>False</SourceItem5-IndividualCompileOption-0>
+      <SourceItem5-BuildingTarget-0>True</SourceItem5-BuildingTarget-0>
     </Instance>
   </Class>
   <Class Guid="44fa27c9-0aa0-4297-bd3b-2c5c5bdb8881">
@@ -963,6 +1114,11 @@
       <ChannelColor14>c0317f0c</ChannelColor14>
       <ChannelColor15>c060493e</ChannelColor15>
       <ChannelColor16>c072808e</ChannelColor16>
+    </Instance>
+  </Class>
+  <Class Guid="2a2c2a43-ecdb-4e88-80bd-e75f3e33db90">
+    <Instance Guid="2a2c2a43-ecdb-4e88-80bd-e75f3e33db90">
+      <ProductVersion>8.00.00.00</ProductVersion>
     </Instance>
   </Class>
 </CubeSuiteProject>
