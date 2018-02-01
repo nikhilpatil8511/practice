@@ -12,8 +12,9 @@
 	; if using eiint as table reference method,
 	; enable next line's macro.
 
-	;USE_TABLE_REFERENCE_METHOD .set 1
+	USE_TABLE_REFERENCE_METHOD .set 1
 
+.extern __lowinit
 ;-----------------------------------------------------------------------------
 ;	exception vector table
 ;-----------------------------------------------------------------------------
@@ -136,12 +137,19 @@
 
 	.section "EIINTTBL", const
 	.align	512
-	.dw	#_Dummy_EI ; INT0
-	.dw	#_Dummy_EI ; INT1
-	.dw	#_Dummy_EI ; INT2
-	.rept	512 - 3
-	.dw	#_Dummy_EI ; INTn
-	.endm
+	.offset (0x1A*4)
+	.dw	#_INTRLIN30UR0
+	;.offset (0x2F*4)
+	;.dw	#_INTADCA0ERR
+	.offset (0x49*4)
+	.dw	#_INTTAUJ0I1
+	;.dw	#_Dummy_EI ; INT0
+	;.dw	#_Dummy_EI ; INT1
+	;.dw	#_Dummy_EI ; INT2
+	;.rept	512 - 3
+	;.dw	#_Dummy_EI ; INTn
+	;.endm
+
 
 	.section ".text", text
 	.align	2
@@ -194,7 +202,7 @@ $if 1	; initialize register
 	ldsr	r0, 0, 0		;  EIPC
 	ldsr	r0, 16, 0		;  CTPC
 $endif
-
+	
 	jarl	_hdwinit, lp	; initialize hardware
 $ifdef USE_TABLE_REFERENCE_METHOD
 	mov	#__sEIINTTBL, r6
@@ -208,8 +216,8 @@ $endif
 ;-----------------------------------------------------------------------------
 	GLOBAL_RAM_ADDR	.set	0
 	GLOBAL_RAM_END	.set	0
-	LOCAL_RAM_ADDR	.set	0
-	LOCAL_RAM_END	.set	0
+	LOCAL_RAM_ADDR	.set	0xFEBD0000
+	LOCAL_RAM_END	.set	0xFEBEFFFF
 
 	.align	2
 _hdwinit:

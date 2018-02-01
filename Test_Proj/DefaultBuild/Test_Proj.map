@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W2.07.00 )             26-Jan-2018 15:04:07
+Renesas Optimizing Linker (W2.07.00 )             31-Jan-2018 14:28:23
 
 *** Options ***
 
@@ -9,6 +9,11 @@ Renesas Optimizing Linker (W2.07.00 )             26-Jan-2018 15:04:07
 -input=DefaultBuild\system.obj
 -input=DefaultBuild\system_clock.obj
 -input=DefaultBuild\port.obj
+-input=DefaultBuild\taud.obj
+-input=DefaultBuild\r_intc.obj
+-input=DefaultBuild\r_ostm.obj
+-input=DefaultBuild\r_rlin.obj
+-input=DefaultBuild\uart.obj
 -debug
 -nocompress
 -output=DefaultBuild\Test_Proj.abs
@@ -29,7 +34,7 @@ SECTION                            START      END         SIZE   ALIGN
 RESET
                                   00000000  000001f7       1f8   200
 EIINTTBL
-                                  00000200  000009ff       800   200
+                                  00000200  00000327       128   200
 .const
                                   00008000  0000826f       270   4
 .INIT_DSEC.const
@@ -37,12 +42,12 @@ EIINTTBL
 .INIT_BSEC.const
                                   0000827c  00008283         8   4
 .text
-                                  00008284  00008a31       7ae   2
+                                  00008284  00009151       ece   2
 .data
-                                  00008a34  00008a34         0   4
+                                  00009154  0000918f        3c   4
 .data.R
-                                  fedfc000  fedfc000         0   4
+                                  fedfc000  fedfc03b        3c   4
 .bss
-                                  fedfc000  fedfc000         0   4
+                                  fedfc03c  fedfc03f         4   4
 .stack.bss
-                                  fedfc000  fedfc1ff       200   4
+                                  fedfc040  fedfc23f       200   4

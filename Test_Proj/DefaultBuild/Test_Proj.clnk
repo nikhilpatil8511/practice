@@ -4,6 +4,11 @@
 -input=DefaultBuild\system.obj
 -input=DefaultBuild\system_clock.obj
 -input=DefaultBuild\port.obj
+-input=DefaultBuild\taud.obj
+-input=DefaultBuild\r_intc.obj
+-input=DefaultBuild\r_ostm.obj
+-input=DefaultBuild\r_rlin.obj
+-input=DefaultBuild\uart.obj
 -debug
 -nocompress
 -output=DefaultBuild\Test_Proj.abs
