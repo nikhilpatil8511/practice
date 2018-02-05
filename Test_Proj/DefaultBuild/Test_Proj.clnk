@@ -6,9 +6,12 @@
 -input=DefaultBuild\port.obj
 -input=DefaultBuild\taud.obj
 -input=DefaultBuild\r_intc.obj
+-input=DefaultBuild\r_tau.obj
 -input=DefaultBuild\r_ostm.obj
 -input=DefaultBuild\r_rlin.obj
 -input=DefaultBuild\uart.obj
+-input=DefaultBuild\adc.obj
+-input=DefaultBuild\pwm.obj
 -debug
 -nocompress
 -output=DefaultBuild\Test_Proj.abs

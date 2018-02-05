@@ -414,193 +414,193 @@ void SwitchRGBColor(void)
 ******************************************************************************/
 void Mode1(void)
 {
-    r_Button_t loc_ButtonS1State, loc_ButtonEnc1State;
-    static uint16_t loc_PatternNr = 0;
-    uint16_t loc_tmpPot1;
-    uint32_t loc_i;
-    /* Reset the counter values */
-    g_SystemStatus.System_Counter = 0u;                
-    g_SystemStatus.DeepSTOP_Counter = 0u;
+//    r_Button_t loc_ButtonS1State, loc_ButtonEnc1State;
+//    static uint16_t loc_PatternNr = 0;
+//    uint16_t loc_tmpPot1;
+//    uint32_t loc_i;
+//    /* Reset the counter values */
+//    g_SystemStatus.System_Counter = 0u;                
+//    g_SystemStatus.DeepSTOP_Counter = 0u;
     
-    /* Reset RGB Status */
-    g_SystemStatus.LEDR_Error = R_OK;
-    g_SystemStatus.LEDG_Error = R_OK;
-    g_SystemStatus.LEDB_Error = R_OK;
+//    /* Reset RGB Status */
+//    g_SystemStatus.LEDR_Error = R_OK;
+//    g_SystemStatus.LEDG_Error = R_OK;
+//    g_SystemStatus.LEDB_Error = R_OK;
 	
-    R_UI_ButtonS1_Init();
-    R_UI_ButtonEnc1_Init();
+//    R_UI_ButtonS1_Init();
+//    R_UI_ButtonEnc1_Init();
     
     /* Init LEDs and PWM Diagnosis */
     R_LED_SetPwmDuty(LEDR, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDR]);
     R_LED_SetPwmDuty(LEDG, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDG]);
     R_LED_SetPwmDuty(LEDB, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDB]);
 
-    R_LED_PwmStart(LED1);
-    R_LED_PwmStart(LED2);
+//    R_LED_PwmStart(LED1);
+//    R_LED_PwmStart(LED2);
     R_LED_PwmStart(LEDR);
-    R_LED_PwmStart(LEDG);
-    R_LED_PwmStart(LEDB);
+//    R_LED_PwmStart(LEDG);
+//    R_LED_PwmStart(LEDB);
     
-    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
-    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
-    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
-    R_ADCA0_SetUpperLowerLimit(0,1000,600);
-    R_ADCA0_PwsaTriggerEnable();
-    R_PWMD_DiagStart();
+//    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
+//    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
+//    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
+//    R_ADCA0_SetUpperLowerLimit(0,1000,600);
+//    R_ADCA0_PwsaTriggerEnable();
+//    R_PWMD_DiagStart();
       
-    R_LED_RingOutputEnable();
+//    R_LED_RingOutputEnable();
     
     /* Initial Encoder read */
-    g_Enc1Value = R_ENCA0_Read();
-    g_Enc1Compare = g_Enc1Value;
+//    g_Enc1Value = R_ENCA0_Read();
+//    g_Enc1Compare = g_Enc1Value;
     
-    if(loc_PatternNr > 15)
-    {
-        R_LED_RingUpdate(~g_LEDRingPattern[loc_PatternNr-16]);
-    }
-    else
-    {
-        R_LED_RingUpdate(g_LEDRingPattern[loc_PatternNr]);
-    }
+//    if(loc_PatternNr > 15)
+//    {
+//        R_LED_RingUpdate(~g_LEDRingPattern[loc_PatternNr-16]);
+//    }
+//    else
+//    {
+//        R_LED_RingUpdate(g_LEDRingPattern[loc_PatternNr]);
+//    }
     
-    R_SYSTEM_TimerStart();
+//    R_SYSTEM_TimerStart();
     
     /* Enter Mode1 loop */
-    while(g_SystemStatus.CurrentMode == R_MODE1)
-    {
-        /* Update LED1 and LED2 Duty Cycle depending on position of Potentiometer 1 */
-        g_Pot1Value = R_ADCA0_PinRead(AP0_0);
-        R_LED_SetPwmDuty(LED1, g_Pot1Value);
-        if(g_Pot1Value <= 4050)
-        {
-            R_LED_SetPwmDuty(LED2, (4095-g_Pot1Value));
-        }
-        else
-        {
-            R_LED_SetPwmDuty(LED2, 0);
-        }
+//    while(g_SystemStatus.CurrentMode == R_MODE1)
+//    {
+//        /* Update LED1 and LED2 Duty Cycle depending on position of Potentiometer 1 */
+//        g_Pot1Value = R_ADCA0_PinRead(AP0_0);
+//        R_LED_SetPwmDuty(LED1, g_Pot1Value);
+//        if(g_Pot1Value <= 4050)
+//        {
+//            R_LED_SetPwmDuty(LED2, (4095-g_Pot1Value));
+//        }
+//        else
+//        {
+//            R_LED_SetPwmDuty(LED2, 0);
+//        }
         
-        /* Follow encoder position with LED ring */
-        if(g_Enc1Compare != g_Enc1Value)
-        {
-          g_SystemStatus.DeepSTOP_Counter = 0;
-          if(R_ENCA0_GetFlags() & R_ENCA_DOWN_COUNT)
-          {
-              if(loc_PatternNr == 31)
-              {
-                  loc_PatternNr = 0;
-              }
-              else
-              {
-                  loc_PatternNr++;
-              }
-          }
-          else
-          {
-              if(loc_PatternNr == 0)
-              {
-                  loc_PatternNr = 31;
-              }
-              else
-              {
-                  loc_PatternNr--;
-              }
-          }
-          if(loc_PatternNr > 15)
-          {
-              R_LED_RingUpdate(~g_LEDRingPattern[loc_PatternNr-16]);
-          }
-          else
-          {
-              R_LED_RingUpdate(g_LEDRingPattern[loc_PatternNr]);
-          }
-        }
-        g_Enc1Compare = g_Enc1Value;
+//        /* Follow encoder position with LED ring */
+//        if(g_Enc1Compare != g_Enc1Value)
+//        {
+//          g_SystemStatus.DeepSTOP_Counter = 0;
+//          if(R_ENCA0_GetFlags() & R_ENCA_DOWN_COUNT)
+//          {
+//              if(loc_PatternNr == 31)
+//              {
+//                  loc_PatternNr = 0;
+//              }
+//              else
+//              {
+//                  loc_PatternNr++;
+//              }
+//          }
+//          else
+//          {
+//              if(loc_PatternNr == 0)
+//              {
+//                  loc_PatternNr = 31;
+//              }
+//              else
+//              {
+//                  loc_PatternNr--;
+//              }
+//          }
+//          if(loc_PatternNr > 15)
+//          {
+//              R_LED_RingUpdate(~g_LEDRingPattern[loc_PatternNr-16]);
+//          }
+//          else
+//          {
+//              R_LED_RingUpdate(g_LEDRingPattern[loc_PatternNr]);
+//          }
+//        }
+//        g_Enc1Compare = g_Enc1Value;
     
-        g_Enc1Value = R_ENCA0_Read();
+//        g_Enc1Value = R_ENCA0_Read();
     
 
         /* Print RGB LED diagnostic information */
-        RgbLedDiagOutput();
+//        RgbLedDiagOutput();
                
-        /* Print time to DeepSTOP and Pot1 position via UART */
-        if(!(g_SystemStatus.System_Counter % STATUS_UPDATE_INTERVAL))
-        {
-            PrintStatus();
+//        /* Print time to DeepSTOP and Pot1 position via UART */
+//        if(!(g_SystemStatus.System_Counter % STATUS_UPDATE_INTERVAL))
+//        {
+//            PrintStatus();
             
-            /* If Pot1 was changed more than DEEPSTOP_POTI_SENSE (defined in r_system.h), reset DeepSTOP counter */
-            if(g_Pot1Value > loc_tmpPot1)
-            {
-                if((g_Pot1Value - loc_tmpPot1)>DEEPSTOP_POTI_SENSE)
-                {
-                    g_SystemStatus.DeepSTOP_Counter = 0;
-                }
-            }
-            else
-            {
-                if((loc_tmpPot1 - g_Pot1Value)>DEEPSTOP_POTI_SENSE)
-                {
-                    g_SystemStatus.DeepSTOP_Counter = 0;
-                }
-            }
-            loc_tmpPot1 = g_Pot1Value;
-        }
+//            /* If Pot1 was changed more than DEEPSTOP_POTI_SENSE (defined in r_system.h), reset DeepSTOP counter */
+//            if(g_Pot1Value > loc_tmpPot1)
+//            {
+//                if((g_Pot1Value - loc_tmpPot1)>DEEPSTOP_POTI_SENSE)
+//                {
+//                    g_SystemStatus.DeepSTOP_Counter = 0;
+//                }
+//            }
+//            else
+//            {
+//                if((loc_tmpPot1 - g_Pot1Value)>DEEPSTOP_POTI_SENSE)
+//                {
+//                    g_SystemStatus.DeepSTOP_Counter = 0;
+//                }
+//            }
+//            loc_tmpPot1 = g_Pot1Value;
+//        }
         
-        /* Check buttons */
-        loc_ButtonS1State = R_UI_ButtonS1_Handler();
-        loc_ButtonEnc1State = R_UI_ButtonEnc1_Handler();
-        if(loc_ButtonS1State == R_BUTTON_PRESSED_SHORT)
-        {
-            PrintText("\r>>Button short pressed: switch to mode 2...         \n\r");
-            g_SystemStatus.CurrentMode = R_MODE2;
-            g_SystemStatus.PreviousMode = R_MODE1;
-        }
+//        /* Check buttons */
+//        loc_ButtonS1State = R_UI_ButtonS1_Handler();
+//        loc_ButtonEnc1State = R_UI_ButtonEnc1_Handler();
+//        if(loc_ButtonS1State == R_BUTTON_PRESSED_SHORT)
+//        {
+//            PrintText("\r>>Button short pressed: switch to mode 2...         \n\r");
+//            g_SystemStatus.CurrentMode = R_MODE2;
+//            g_SystemStatus.PreviousMode = R_MODE1;
+//        }
         
-        if(loc_ButtonEnc1State == R_BUTTON_PRESSED_SHORT)
-        {
+//        if(loc_ButtonEnc1State == R_BUTTON_PRESSED_SHORT)
+//        {
           
-          g_SystemStatus.DeepSTOP_Counter = 0;
-          SwitchRGBColor();
-        }
+//          g_SystemStatus.DeepSTOP_Counter = 0;
+//          SwitchRGBColor();
+//        }
         
-        if(loc_ButtonS1State == R_BUTTON_PRESSED_LONG)
-        {
-          PrintText("\r>>Button long pressed: enter DeepSTOP...\n\r");
-          g_SystemStatus.CurrentMode = R_DEEPSTOP;
-          g_SystemStatus.PreviousMode = R_MODE1;
-        }
+//        if(loc_ButtonS1State == R_BUTTON_PRESSED_LONG)
+//        {
+//          PrintText("\r>>Button long pressed: enter DeepSTOP...\n\r");
+//          g_SystemStatus.CurrentMode = R_DEEPSTOP;
+//          g_SystemStatus.PreviousMode = R_MODE1;
+//        }
         
-		/* Enter DeepSTOP after 30s */
-		if(g_SystemStatus.DeepSTOP_Counter >= DEEPSTOP_COUNT_DOWN)      
-        {                                        
-            PrintText("\r>>30s without action - enter DeepSTOP\n\r");
-            while(R_RLIN30_GetStatus() == RLIN_BUSY){}
-            g_SystemStatus.CurrentMode = R_DEEPSTOP;
-            g_SystemStatus.PreviousMode = R_MODE1;                                    
-        }
+//		/* Enter DeepSTOP after 30s */
+//		if(g_SystemStatus.DeepSTOP_Counter >= DEEPSTOP_COUNT_DOWN)      
+//        {                                        
+//            PrintText("\r>>30s without action - enter DeepSTOP\n\r");
+//            while(R_RLIN30_GetStatus() == RLIN_BUSY){}
+//            g_SystemStatus.CurrentMode = R_DEEPSTOP;
+//            g_SystemStatus.PreviousMode = R_MODE1;                                    
+//        }
     
-        /* Wait for 1ms System Timer tick */
-        R_SYSTEM_TimerTick();
-    	/* Increment global counter */
-        g_SystemStatus.System_Counter++;
-        g_SystemStatus.DeepSTOP_Counter++;
-    } 
+//        /* Wait for 1ms System Timer tick */
+//        R_SYSTEM_TimerTick();
+//    	/* Increment global counter */
+//        g_SystemStatus.System_Counter++;
+//        g_SystemStatus.DeepSTOP_Counter++;
+//    } 
     
-    /* Leave Mode1 */
+//    /* Leave Mode1 */
        
-    R_LED_PwmStop(LED1);
-    R_LED_PwmStop(LED2);
-    R_LED_PwmStop(LEDR);
-    R_LED_PwmStop(LEDG);
-    R_LED_PwmStop(LEDB);
-    R_LED_RingOutputDisable();
+//    R_LED_PwmStop(LED1);
+//    R_LED_PwmStop(LED2);
+//    R_LED_PwmStop(LEDR);
+//    R_LED_PwmStop(LEDG);
+//    R_LED_PwmStop(LEDB);
+//    R_LED_RingOutputDisable();
     
-        /* wait for PWM channels to stop */
-    for(loc_i=0; loc_i<5; loc_i++)
-    {
-      R_SYSTEM_TimerTick();
-    }
-    R_SYSTEM_TimerStop();
+//        /* wait for PWM channels to stop */
+//    for(loc_i=0; loc_i<5; loc_i++)
+//    {
+//      R_SYSTEM_TimerTick();
+//    }
+//    R_SYSTEM_TimerStop();
 }
 
 /*****************************************************************************
@@ -609,143 +609,143 @@ void Mode1(void)
 ** Parameter:   None
 ** Return:      None
 ******************************************************************************/
-void Mode2(void)
-{
+//void Mode2(void)
+//{
 	
-    r_Button_t loc_ButtonS1State, loc_ButtonEnc1State;
-    uint16_t loc_tmpPot1;
-    uint32_t loc_i;
-    /* Reset the counter values */
-    g_SystemStatus.System_Counter = 0u;                
-    g_SystemStatus.DeepSTOP_Counter = 0u;
+//    r_Button_t loc_ButtonS1State, loc_ButtonEnc1State;
+//    uint16_t loc_tmpPot1;
+//    uint32_t loc_i;
+//    /* Reset the counter values */
+//    g_SystemStatus.System_Counter = 0u;                
+//    g_SystemStatus.DeepSTOP_Counter = 0u;
     
-    /* Reset RGB Status */
-    g_SystemStatus.LEDR_Error = R_OK;
-    g_SystemStatus.LEDG_Error = R_OK;
-    g_SystemStatus.LEDB_Error = R_OK;
+//    /* Reset RGB Status */
+//    g_SystemStatus.LEDR_Error = R_OK;
+//    g_SystemStatus.LEDG_Error = R_OK;
+//    g_SystemStatus.LEDB_Error = R_OK;
     
-    R_UI_ButtonS1_Init();
+//    R_UI_ButtonS1_Init();
     
-    /* Init LEDs and PWM Diagnosis */
-    R_LED_SetPwmDuty(LEDR, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDR]);
-    R_LED_SetPwmDuty(LEDG, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDG]);
-    R_LED_SetPwmDuty(LEDB, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDB]);
+//    /* Init LEDs and PWM Diagnosis */
+//    R_LED_SetPwmDuty(LEDR, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDR]);
+//    R_LED_SetPwmDuty(LEDG, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDG]);
+//    R_LED_SetPwmDuty(LEDB, g_FixedRGBColors[g_SystemStatus.CurrentRGB][LEDB]);
     
-    R_LED_PwmStart(LED1);
-    R_LED_PwmStart(LED2);
-    R_LED_PwmStart(LEDR);
-    R_LED_PwmStart(LEDG);
-    R_LED_PwmStart(LEDB);
+//    R_LED_PwmStart(LED1);
+//    R_LED_PwmStart(LED2);
+//    R_LED_PwmStart(LEDR);
+//    R_LED_PwmStart(LEDG);
+//    R_LED_PwmStart(LEDB);
     
-    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
-    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
-    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
-    R_ADCA0_SetUpperLowerLimit(0,1000,600);
-    R_ADCA0_PwsaTriggerEnable();
-    R_PWMD_DiagStart();
+//    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
+//    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
+//    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
+//    R_ADCA0_SetUpperLowerLimit(0,1000,600);
+//    R_ADCA0_PwsaTriggerEnable();
+//    R_PWMD_DiagStart();
     
-    R_LED_RingInit();    
-    R_LED_RingOutputEnable();
+//    R_LED_RingInit();    
+//    R_LED_RingOutputEnable();
     
-    R_ENCA0_Start();
-    g_Enc1Value = R_ENCA0_Read();
-    g_Enc1Compare = g_Enc1Value;
+//    R_ENCA0_Start();
+//    g_Enc1Value = R_ENCA0_Read();
+//    g_Enc1Compare = g_Enc1Value;
     
-    R_TAUJ0_AssignChannel1ISR(LedUpdate);
-    R_INTC_UnmaskInterrupt((uint16_t*)R_ICTAUJ0I1);
-    R_TAUJ0_Channel_Start(TAUJ0C1);
+//    R_TAUJ0_AssignChannel1ISR(LedUpdate);
+//    R_INTC_UnmaskInterrupt((uint16_t*)R_ICTAUJ0I1);
+//    R_TAUJ0_Channel_Start(TAUJ0C1);
     
-    R_SYSTEM_TimerStart();
+//    R_SYSTEM_TimerStart();
     
-    /* Enter Mode2 loop */
-    while(g_SystemStatus.CurrentMode == R_MODE2)
-    {
-        g_Pot1Value = R_ADCA0_PinRead(AP0_0);
+//    /* Enter Mode2 loop */
+//    while(g_SystemStatus.CurrentMode == R_MODE2)
+//    {
+//        g_Pot1Value = R_ADCA0_PinRead(AP0_0);
             
-        g_Enc1Value = R_ENCA0_Read();
+//        g_Enc1Value = R_ENCA0_Read();
         
-        /* Print time to DeepSTOP and Pot1 position via UART */
-        if(!(g_SystemStatus.System_Counter % STATUS_UPDATE_INTERVAL))
-        {
-            PrintStatus();
+//        /* Print time to DeepSTOP and Pot1 position via UART */
+//        if(!(g_SystemStatus.System_Counter % STATUS_UPDATE_INTERVAL))
+//        {
+//            PrintStatus();
             
-            /* If Pot1 was changed more than DEEPSTOP_POTI_SENSE (defined in r_system.h), reset DeepSTOP counter */
-            if(g_Pot1Value > loc_tmpPot1)
-            {
-                if((g_Pot1Value - loc_tmpPot1)>DEEPSTOP_POTI_SENSE)
-                {
-                    g_SystemStatus.DeepSTOP_Counter = 0;
-                }
-            }
-            else
-            {
-                if((loc_tmpPot1 - g_Pot1Value)>DEEPSTOP_POTI_SENSE)
-                {
-                    g_SystemStatus.DeepSTOP_Counter = 0;
-                }
-            }
-            loc_tmpPot1 = g_Pot1Value;
-        }
+//            /* If Pot1 was changed more than DEEPSTOP_POTI_SENSE (defined in r_system.h), reset DeepSTOP counter */
+//            if(g_Pot1Value > loc_tmpPot1)
+//            {
+//                if((g_Pot1Value - loc_tmpPot1)>DEEPSTOP_POTI_SENSE)
+//                {
+//                    g_SystemStatus.DeepSTOP_Counter = 0;
+//                }
+//            }
+//            else
+//            {
+//                if((loc_tmpPot1 - g_Pot1Value)>DEEPSTOP_POTI_SENSE)
+//                {
+//                    g_SystemStatus.DeepSTOP_Counter = 0;
+//                }
+//            }
+//            loc_tmpPot1 = g_Pot1Value;
+//        }
         
-        /* Print RGB LED diagnostic information */
-        RgbLedDiagOutput();
+//        /* Print RGB LED diagnostic information */
+//        RgbLedDiagOutput();
         
-        /* Check buttons */
-        loc_ButtonS1State = R_UI_ButtonS1_Handler();
-        loc_ButtonEnc1State = R_UI_ButtonEnc1_Handler();
-        if(loc_ButtonS1State == R_BUTTON_PRESSED_SHORT)
-        {
-            PrintText("\r>>Button short pressed: switch to mode 1...\n\r");
-            g_SystemStatus.CurrentMode = R_MODE1;
-            g_SystemStatus.PreviousMode = R_MODE2;
-        }
+//        /* Check buttons */
+//        loc_ButtonS1State = R_UI_ButtonS1_Handler();
+//        loc_ButtonEnc1State = R_UI_ButtonEnc1_Handler();
+//        if(loc_ButtonS1State == R_BUTTON_PRESSED_SHORT)
+//        {
+//            PrintText("\r>>Button short pressed: switch to mode 1...\n\r");
+//            g_SystemStatus.CurrentMode = R_MODE1;
+//            g_SystemStatus.PreviousMode = R_MODE2;
+//        }
         
-        if(loc_ButtonEnc1State == R_BUTTON_PRESSED_SHORT)
-        {
-          g_SystemStatus.DeepSTOP_Counter = 0;
-          SwitchRGBColor();
-        }
+//        if(loc_ButtonEnc1State == R_BUTTON_PRESSED_SHORT)
+//        {
+//          g_SystemStatus.DeepSTOP_Counter = 0;
+//          SwitchRGBColor();
+//        }
         
-        if(loc_ButtonS1State == R_BUTTON_PRESSED_LONG)
-        {
-            PrintText("\r>>Button long pressed: enter DeepSTOP...\n\r");
-            g_SystemStatus.CurrentMode = R_DEEPSTOP;
-            g_SystemStatus.PreviousMode = R_MODE2;
-        }
-        /* Enter DeepSTOP after 30s */
-	    if(g_SystemStatus.DeepSTOP_Counter >= DEEPSTOP_COUNT_DOWN)      
-        {                                        
-            PrintText("\r>>30s without action: enter DeepSTOP...\n\r");
-            while(R_RLIN30_GetStatus() == RLIN_BUSY){}
-            g_SystemStatus.CurrentMode = R_DEEPSTOP;
-            g_SystemStatus.PreviousMode = R_MODE2;
-        }
+//        if(loc_ButtonS1State == R_BUTTON_PRESSED_LONG)
+//        {
+//            PrintText("\r>>Button long pressed: enter DeepSTOP...\n\r");
+//            g_SystemStatus.CurrentMode = R_DEEPSTOP;
+//            g_SystemStatus.PreviousMode = R_MODE2;
+//        }
+//        /* Enter DeepSTOP after 30s */
+//	    if(g_SystemStatus.DeepSTOP_Counter >= DEEPSTOP_COUNT_DOWN)      
+//        {                                        
+//            PrintText("\r>>30s without action: enter DeepSTOP...\n\r");
+//            while(R_RLIN30_GetStatus() == RLIN_BUSY){}
+//            g_SystemStatus.CurrentMode = R_DEEPSTOP;
+//            g_SystemStatus.PreviousMode = R_MODE2;
+//        }
     
-        /* Wait for 1ms System Timer tick */
-        R_SYSTEM_TimerTick();
-    	/* Increment global counter */
-        g_SystemStatus.System_Counter++;
-        g_SystemStatus.DeepSTOP_Counter++;
-    }
+//        /* Wait for 1ms System Timer tick */
+//        R_SYSTEM_TimerTick();
+//    	/* Increment global counter */
+//        g_SystemStatus.System_Counter++;
+//        g_SystemStatus.DeepSTOP_Counter++;
+//    }
 	
-    R_TAUJ0_Channel_Stop(TAUJ0C1);
-    R_TAUJ0_AssignChannel1ISR(R_NULL);
-    R_INTC_MaskInterrupt((uint16_t*)R_ICTAUJ0I1);
+//    R_TAUJ0_Channel_Stop(TAUJ0C1);
+//    R_TAUJ0_AssignChannel1ISR(R_NULL);
+//    R_INTC_MaskInterrupt((uint16_t*)R_ICTAUJ0I1);
     
-    R_LED_PwmStop(LED1);
-    R_LED_PwmStop(LED2);
-    R_LED_PwmStop(LEDR);
-    R_LED_PwmStop(LEDG);
-    R_LED_PwmStop(LEDB);
-    R_LED_RingOutputDisable();
+//    R_LED_PwmStop(LED1);
+//    R_LED_PwmStop(LED2);
+//    R_LED_PwmStop(LEDR);
+//    R_LED_PwmStop(LEDG);
+//    R_LED_PwmStop(LEDB);
+//    R_LED_RingOutputDisable();
     
-    /* wait for PWM channels to stop */
-    for(loc_i=0; loc_i<5;loc_i++)
-    {
-      R_SYSTEM_TimerTick();
-    }
+//    /* wait for PWM channels to stop */
+//    for(loc_i=0; loc_i<5;loc_i++)
+//    {
+//      R_SYSTEM_TimerTick();
+//    }
     
-}
+//}
 
 /*****************************************************************************
 ** Function:    DeepSTOP
@@ -775,254 +775,254 @@ void DeepSTOP(void)
 ******************************************************************************/
 void BoardCheck(void)
 {
-    uint32_t    i, 
-                j = 0;
+//    uint32_t    i, 
+//                j = 0;
         
-    R_CAN_Init();
-    R_LIN_Init();
-    R_UART_Init();
+//    R_CAN_Init();
+//    R_LIN_Init();
+//    R_UART_Init();
     
-    /* Send Welcome Message via UART */
-    PrintText("\r*****************************************\n\r");
-    PrintText("*                RENESAS                *\n\r");
-    PrintText("*      RH850/F1x Starter Kit Demo!      *\n\r");
-    PrintText("*****************************************\n\r");
-    PrintText("\n\rBegin with self test...\n\r");
+//    /* Send Welcome Message via UART */
+//    PrintText("\r*****************************************\n\r");
+//    PrintText("*                RENESAS                *\n\r");
+//    PrintText("*      RH850/F1x Starter Kit Demo!      *\n\r");
+//    PrintText("*****************************************\n\r");
+//    PrintText("\n\rBegin with self test...\n\r");
     
-    /* Check CAN-Function */
-    if(R_CAN_Test() == R_OK)
-    {
-        PrintText("CAN test...Okay\n\r");
-    }
-    else
-    { 
-        PrintText("\n\rCAN-Error!\n\rPlease check if all jumpers of\n\rJ7 are closed and all switches of S4 are on.\n\n\r");
-    } 
+//    /* Check CAN-Function */
+//    if(R_CAN_Test() == R_OK)
+//    {
+//        PrintText("CAN test...Okay\n\r");
+//    }
+//    else
+//    { 
+//        PrintText("\n\rCAN-Error!\n\rPlease check if all jumpers of\n\rJ7 are closed and all switches of S4 are on.\n\n\r");
+//    } 
     
-    /* Check LIN-Function */
-    if(R_LIN_Test() == R_OK)
-    {
-        PrintText("LIN test...Okay\n\r");
-    }
-    else
-    { 
-        PrintText("LIN-Error!\n\rPlease check if all jumpers of\n\rJ17 are closed and switches 3-6 of S10 are off.\n\n\r");
-    }
+//    /* Check LIN-Function */
+//    if(R_LIN_Test() == R_OK)
+//    {
+//        PrintText("LIN test...Okay\n\r");
+//    }
+//    else
+//    { 
+//        PrintText("LIN-Error!\n\rPlease check if all jumpers of\n\rJ17 are closed and switches 3-6 of S10 are off.\n\n\r");
+//    }
 
 
     
-    R_CAN_Deinit();
-    R_LIN_Deinit();
+//    R_CAN_Deinit();
+//    R_LIN_Deinit();
     
-    /*Start RGB LED test sequence */
-    PrintText("RGB LED test...");
+//    /*Start RGB LED test sequence */
+//    PrintText("RGB LED test...");
     
-    /* Start all LED functions */
-    R_LED_SetPwmDuty(LED1, 4095);
-    R_LED_SetPwmDuty(LED2, 4095);
+//    /* Start all LED functions */
+//    R_LED_SetPwmDuty(LED1, 4095);
+//    R_LED_SetPwmDuty(LED2, 4095);
     R_LED_SetPwmDuty(LEDR, 0);
-    R_LED_SetPwmDuty(LEDG, 0);
-    R_LED_SetPwmDuty(LEDB, 0);
-    R_LED_PwmStart(LED1);
-    R_LED_PwmStart(LED2);
+//    R_LED_SetPwmDuty(LEDG, 0);
+//    R_LED_SetPwmDuty(LEDB, 0);
+//    R_LED_PwmStart(LED1);
+//    R_LED_PwmStart(LED2);
     R_LED_PwmStart(LEDR);
-    R_LED_PwmStart(LEDG);
-    R_LED_PwmStart(LEDB);
-    R_LED_RingOutputEnable();
+//    R_LED_PwmStart(LEDG);
+//    R_LED_PwmStart(LEDB);
+//    R_LED_RingOutputEnable();
     
     R_SYSTEM_TimerStart();
     
     /* Start ADC and PWM diagnosis and assign corresponding ADC call-back */
-    g_SystemStatus.LEDR_Error = R_OK;
-    g_SystemStatus.LEDG_Error = R_OK;
-    g_SystemStatus.LEDB_Error = R_OK;
-    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
-    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
-    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
-    R_ADCA0_SetUpperLowerLimit(0,1000,600);
-    R_ADCA0_PwsaTriggerEnable();
-    R_PWMD_DiagStart();
+//    g_SystemStatus.LEDR_Error = R_OK;
+//    g_SystemStatus.LEDG_Error = R_OK;
+//    g_SystemStatus.LEDB_Error = R_OK;
+//    R_ADCA0_AssignLimitErrorCB(PwmErrorCallBack);
+//    R_INTC_SetTableBit((uint16_t*)R_ICADCA0ERR);
+//    R_INTC_UnmaskInterrupt((uint16_t*)R_ICADCA0ERR);
+//    R_ADCA0_SetUpperLowerLimit(0,1000,600);
+//    R_ADCA0_PwsaTriggerEnable();
+//    R_PWMD_DiagStart();
     
     /* Generate RGB color flow and ring LEDs sequence */
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDR, (i*41));
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDR, (i*41));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDG, (i*41));
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDG, (i*41));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDR, (4059-(i*41)));
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDR, (4059-(i*41)));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=1; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDB, (i*41));
+//    for(i=1; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDB, (i*41));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    j = 0;
+//    j = 0;
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDG, (4059-(i*41)));
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDG, (4059-(i*41)));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDR, (i*41));
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDR, (i*41));
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDG, (i*41));
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDG, (i*41));
         
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<100; i++)
-    {
-        R_LED_SetPwmDuty(LEDR, (4059-(i*41)));
-        R_LED_SetPwmDuty(LEDG, (4059-(i*41)));
-        R_LED_SetPwmDuty(LEDB, (4059-(i*41)));
-        if(!(i%25))
-        {
-            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
-        }
-        R_SYSTEM_TimerTick();
-        R_SYSTEM_TimerTick();
-    }
+//    for(i=0; i<100; i++)
+//    {
+//        R_LED_SetPwmDuty(LEDR, (4059-(i*41)));
+//        R_LED_SetPwmDuty(LEDG, (4059-(i*41)));
+//        R_LED_SetPwmDuty(LEDB, (4059-(i*41)));
+//        if(!(i%25))
+//        {
+//            R_LED_RingUpdate(~g_LEDRingPattern[j++]);
+//        }
+//        R_SYSTEM_TimerTick();
+//        R_SYSTEM_TimerTick();
+//    }
     
-    for(i=0; i<200; i++)
-    {
-        R_SYSTEM_TimerTick();
-    }
+//    for(i=0; i<200; i++)
+//    {
+//        R_SYSTEM_TimerTick();
+//    }
     
     
-    /* Turn RGB to white and all ring LEDs on */
+//    /* Turn RGB to white and all ring LEDs on */
     R_LED_SetPwmDuty(LEDR, 4095);
-    R_LED_SetPwmDuty(LEDG, 4095);
-    R_LED_SetPwmDuty(LEDB, 4095);
-    R_LED_RingUpdate(0xFFFF);
+//    R_LED_SetPwmDuty(LEDG, 4095);
+//    R_LED_SetPwmDuty(LEDB, 4095);
+//    R_LED_RingUpdate(0xFFFF);
     
     
-            /* Check LED status and print message if error occured */
-    if(g_SystemStatus.LEDR_Error == R_OK && g_SystemStatus.LEDG_Error == R_OK &&  g_SystemStatus.LEDB_Error == R_OK )
-    {
-        PrintText("Okay\n\r");
-    }
-      else
-    {
-        PrintText("failed\n\r");
-    }
+//            /* Check LED status and print message if error occured */
+//    if(g_SystemStatus.LEDR_Error == R_OK && g_SystemStatus.LEDG_Error == R_OK &&  g_SystemStatus.LEDB_Error == R_OK )
+//    {
+//        PrintText("Okay\n\r");
+//    }
+//      else
+//    {
+//        PrintText("failed\n\r");
+//    }
     
-    /* Check LED status and print message if error occured */
-    if(g_SystemStatus.LEDR_Error == R_ERROR)
-    {
-        PrintText("Red LED error detected.\n\r");
-    }
-    if(g_SystemStatus.LEDG_Error == R_ERROR)
-    {
-        PrintText("Green LED error detected.\n\r");
-    }
-    if(g_SystemStatus.LEDB_Error == R_ERROR)
-    {
-        PrintText("Blue LED error detected.\n\r");
-    }
+//    /* Check LED status and print message if error occured */
+//    if(g_SystemStatus.LEDR_Error == R_ERROR)
+//    {
+//        PrintText("Red LED error detected.\n\r");
+//    }
+//    if(g_SystemStatus.LEDG_Error == R_ERROR)
+//    {
+//        PrintText("Green LED error detected.\n\r");
+//    }
+//    if(g_SystemStatus.LEDB_Error == R_ERROR)
+//    {
+//        PrintText("Blue LED error detected.\n\r");
+//    }
     
 
     
     
-    /* Check if a display is connected. If so, image is output to it */
-    if(R_DISPLAY_Init() == R_OK)
-    {
-        PrintText("Display detected.\n\r");
-        R_DISPLAY_DrawImg(0,0,128,96,(uint16_t*)RenesasPicture);
-        g_SystemStatus.DisplayDetected = 1;
-    }
-    else
-    {
+//    /* Check if a display is connected. If so, image is output to it */
+//    if(R_DISPLAY_Init() == R_OK)
+//    {
+//        PrintText("Display detected.\n\r");
+//        R_DISPLAY_DrawImg(0,0,128,96,(uint16_t*)RenesasPicture);
+//        g_SystemStatus.DisplayDetected = 1;
+//    }
+//    else
+//    {
         
-        PrintText("No display detected.\n\r");
-        g_SystemStatus.DisplayDetected = 0;
-    }
+//        PrintText("No display detected.\n\r");
+//        g_SystemStatus.DisplayDetected = 0;
+//    }
     
-    /* Wait for 500ms */
-    for(i=0; i<500; i++)
-    {
-        R_SYSTEM_TimerTick();
-    }
+//    /* Wait for 500ms */
+//    for(i=0; i<500; i++)
+//    {
+//        R_SYSTEM_TimerTick();
+//    }
     
-    R_INTC_MaskInterrupt((uint16_t*)R_ICADCA0ERR);
-    R_PWMD_DiagStop();
+//    R_INTC_MaskInterrupt((uint16_t*)R_ICADCA0ERR);
+//    R_PWMD_DiagStop();
     
-    /* Turn all LEDs off */
-    R_LED_SetPwmDuty(LED1, 0);
-    R_LED_SetPwmDuty(LED2, 0);
-    R_LED_SetPwmDuty(LEDR, 0);
-    R_LED_SetPwmDuty(LEDG, 0);
-    R_LED_SetPwmDuty(LEDB, 0);
-    R_LED_PwmStop(LED1);
-    R_LED_PwmStop(LED2);
-    R_LED_PwmStop(LEDR);
-    R_LED_PwmStop(LEDG);
-    R_LED_PwmStop(LEDB);
-    R_LED_RingUpdate(0);
+//    /* Turn all LEDs off */
+//    R_LED_SetPwmDuty(LED1, 0);
+//    R_LED_SetPwmDuty(LED2, 0);
+//    R_LED_SetPwmDuty(LEDR, 0);
+//    R_LED_SetPwmDuty(LEDG, 0);
+//    R_LED_SetPwmDuty(LEDB, 0);
+//    R_LED_PwmStop(LED1);
+//    R_LED_PwmStop(LED2);
+//    R_LED_PwmStop(LEDR);
+//    R_LED_PwmStop(LEDG);
+//    R_LED_PwmStop(LEDB);
+//    R_LED_RingUpdate(0);
     
     
-    for(i=0; i<200; i++)
-    {
-        R_SYSTEM_TimerTick();
-    }
+//    for(i=0; i<200; i++)
+//    {
+//        R_SYSTEM_TimerTick();
+//    }
 }
 
 /*****************************************************************************
@@ -1034,127 +1034,127 @@ void BoardCheck(void)
 ******************************************************************************/
 void R_TASKS_Start(void)
 { 
-    uint32_t loc_WakeUpFactor;
+//    uint32_t loc_WakeUpFactor;
     
-    R_SYSTEM_TimerInit();
-    R_UART_Init();
-    R_ADCA0_Init();
-    R_PWMD_DiagInit();
+//    R_SYSTEM_TimerInit();
+//    R_UART_Init();
+//    R_ADCA0_Init();
+//    R_PWMD_DiagInit();
     
     /* Set TAU prescalers to 2^4 = 16 */
-    R_TAUB0_CK0_Prescaler(4);
-    R_TAUJ0_CK0_Prescaler(4);
+//    R_TAUB0_CK0_Prescaler(4);
+//    R_TAUJ0_CK0_Prescaler(4);
     
-    R_TAUJ0_Channel1_Init();
-    R_INTC_SetTableBit((uint16_t*)R_ICTAUJ0I1);
+//    R_TAUJ0_Channel1_Init();
+//    R_INTC_SetTableBit((uint16_t*)R_ICTAUJ0I1);
     
     R_LED_PwmInit(LED1);
     R_LED_PwmInit(LED2);
     R_LED_PwmInit(LEDR);
-    R_LED_PwmInit(LEDG);
-    R_LED_PwmInit(LEDB);
-    R_LED_RingInit();  
+//    R_LED_PwmInit(LEDG);
+//    R_LED_PwmInit(LEDB);
+//    R_LED_RingInit();  
     
-    R_UI_Enc1_Init();
-    R_UI_Pot1_Init();
+//    R_UI_Enc1_Init();
+//    R_UI_Pot1_Init();
     
-    R_LED_RgbDiagInit();
+//    R_LED_RgbDiagInit();
     
     
-    loc_WakeUpFactor = R_STBC_GetWakeUpFactor();
-    /* No Wake-up -> Reset */
-    if(loc_WakeUpFactor == R_WUF_RESET)
-    {
-        /* Test StarterKit Board functionalities */
-        BoardCheck(); 
+//    loc_WakeUpFactor = R_STBC_GetWakeUpFactor();
+//    /* No Wake-up -> Reset */
+//    if(loc_WakeUpFactor == R_WUF_RESET)
+//    {
+//        /* Test StarterKit Board functionalities */
+//        BoardCheck(); 
         
-        /* Set initial values for System Status */
-        g_SystemStatus.CurrentMode = R_MODE1;
-        g_SystemStatus.PreviousMode = R_RESET;
-        g_SystemStatus.CurrentRGB = WHITE;
+//        /* Set initial values for System Status */
+//        g_SystemStatus.CurrentMode = R_MODE1;
+//        g_SystemStatus.PreviousMode = R_RESET;
+//        g_SystemStatus.CurrentRGB = WHITE;
         
-        PrintText("\n\r>>Enter Mode 1\n\r");
-    }
+//        PrintText("\n\r>>Enter Mode 1\n\r");
+//    }
     /* Wake-up from DeepSTOP */
-    else
-    {
-      if (R_WUF_INTP12&loc_WakeUpFactor)
-      {
-          PrintText("\n\r>>Wake-up from DeepSTOP by INTP Button!\n\r");
-      }
+//    else
+//    {
+//      if (R_WUF_INTP12&loc_WakeUpFactor)
+//      {
+//          PrintText("\n\r>>Wake-up from DeepSTOP by INTP Button!\n\r");
+//      }
       
-      if (R_WUF_INTP15&loc_WakeUpFactor)
-      {
-          PrintText("\n\r>>Wake-up from DeepSTOP by Encoder Button!\n\r");
-      }
+//      if (R_WUF_INTP15&loc_WakeUpFactor)
+//      {
+//          PrintText("\n\r>>Wake-up from DeepSTOP by Encoder Button!\n\r");
+//      }
       
-      if (R_WUF_LPS_AI&loc_WakeUpFactor)
-      {
-          PrintText("\n\r>>Wake-up from DeepSTOP by LPS (analog input)!\n\r");
-      }
+//      if (R_WUF_LPS_AI&loc_WakeUpFactor)
+//      {
+//          PrintText("\n\r>>Wake-up from DeepSTOP by LPS (analog input)!\n\r");
+//      }
       
-      if (R_WUF_LPS_DI&loc_WakeUpFactor)
-      {
-          PrintText("\n\r>>Wake-up from DeepSTOP by LPS (digital input)!\n\r");
-      }
+//      if (R_WUF_LPS_DI&loc_WakeUpFactor)
+//      {
+//          PrintText("\n\r>>Wake-up from DeepSTOP by LPS (digital input)!\n\r");
+//      }
       
-      if (R_WUF_DCUTDI == loc_WakeUpFactor)
-      {
-          PrintText("\n\r>>Wake-up from DeepSTOP by debugger!\n\r");
-      }
+//      if (R_WUF_DCUTDI == loc_WakeUpFactor)
+//      {
+//          PrintText("\n\r>>Wake-up from DeepSTOP by debugger!\n\r");
+//      }
       
 
     
         
         
-        switch(g_SystemStatus.PreviousMode)
-        {
-            case R_MODE1:
-                PrintText("\n\r>>Enter previous mode 1\n\r");
-            break;
+//        switch(g_SystemStatus.PreviousMode)
+//        {
+//            case R_MODE1:
+//                PrintText("\n\r>>Enter previous mode 1\n\r");
+//            break;
             
-            case R_MODE2:
-                PrintText("\n\r>>Enter previous mode 2\n\r");
-            break;
+//            case R_MODE2:
+//                PrintText("\n\r>>Enter previous mode 2\n\r");
+//            break;
             
-            default:
-            break;
-        }
+//            default:
+//            break;
+//        }
 
-        g_SystemStatus.CurrentMode = g_SystemStatus.PreviousMode;
-        g_SystemStatus.PreviousMode = R_DEEPSTOP;
+//        g_SystemStatus.CurrentMode = g_SystemStatus.PreviousMode;
+//        g_SystemStatus.PreviousMode = R_DEEPSTOP;
         
-        /* If display was connected configure reset pin to reset release */
-        if(g_SystemStatus.DisplayDetected)
-        {
-            R_DISPLAY_ResetRelease();
-        }
+//        /* If display was connected configure reset pin to reset release */
+//        if(g_SystemStatus.DisplayDetected)
+//        {
+//            R_DISPLAY_ResetRelease();
+//        }
         
-        /* Release IO hold state of the Ports after DeepSTOP */
-        R_STBC_ReleaseIoHold();
-    }
+//        /* Release IO hold state of the Ports after DeepSTOP */
+//        R_STBC_ReleaseIoHold();
+//    }
     
     
     /* Mode handler loop */
     while(1)
     {
-        switch(g_SystemStatus.CurrentMode)
-        {
-            case R_MODE1:
+//        switch(g_SystemStatus.CurrentMode)
+//        {
+//            case R_MODE1:
                 Mode1();
-            break;
+//            break;
             
-            case R_MODE2:
-                Mode2();
-            break;
+//            case R_MODE2:
+//                Mode2();
+//            break;
             
-            case R_DEEPSTOP:
-                DeepSTOP();
-            break;
+//            case R_DEEPSTOP:
+//                DeepSTOP();
+//            break;
             
-            default:
-            break;
-        }
+//            default:
+//            break;
+//        }
     }
 }
 

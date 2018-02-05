@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W2.07.00 )             24-Jan-2018 11:40:59
+Renesas Optimizing Linker (W2.07.00 )             02-Feb-2018 16:47:35
 
 *** Options ***
 
@@ -50,23 +50,23 @@ RESET
 EIINTTBL
                                   00000200  00000327       128   200
 .const
-                                  00008000  0000902f      1030   4
+                                  00008000  00008b9b       b9c   4
 .INIT_DSEC.const
-                                  00009030  0000903b         c   4
+                                  00008b9c  00008ba7         c   4
 .INIT_BSEC.const
-                                  0000903c  00009043         8   4
+                                  00008ba8  00008baf         8   4
 .text
-                                  00009044  0000ea5f      5a1c   2
+                                  00008bb0  0000da4d      4e9e   2
 .data
-                                  0000ea60  00014a9f      6040   4
+                                  0000da50  00013a8b      603c   4
 RETENTION_RAM.data
-                                  00014aa0  00014aa0         0   4
+                                  00013a8c  00013a8c         0   4
 .data.R
-                                  fede0000  fede603f      6040   4
+                                  fede0000  fede603b      603c   4
 .bss
-                                  fede6040  fede60bb        7c   4
+                                  fede603c  fede60b7        7c   4
 .stack.bss
-                                  fede60bc  fede62bb       200   4
+                                  fede60b8  fede62b7       200   4
 RETENTION_RAM.data.R
                                   fee00000  fee00000         0   4
 RETENTION_RAM.bss
